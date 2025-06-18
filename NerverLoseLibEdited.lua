@@ -500,7 +500,7 @@ end
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0.224000000, 439, 0.294000000, 347)
+	local ooldsize=UICustomSize or UDim2.new(0.224000000, 369, 0.294000000, 347)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -700,7 +700,7 @@ local userId = player.UserId
 -- Create main frame
 local framec = Instance.new("Frame")
 framec.Size = UDim2.new(0.0001, 230, 0.000001, 420)
-framec.Position = UDim2.new(0.5, 274, 0.000001, 56) -- Center roughly
+framec.Position = UDim2.new(0.5, 224, 0.000001, 56) -- Center roughly
 framec.BackgroundColor3 = Color3.new(0, 0, 0)
 framec.Parent = ScreenGui
 framec.Visible = false
@@ -714,7 +714,7 @@ image_.Parent = ScreenGui
 image_.BackgroundTransparency = 1
 image_.Image = "rbxthumb://type=Asset&id=123767571876753&w=420&h=420"
 image_.Size = UDim2.new(0.00333334445639938383737474, 305, 0.1000004, 250)
-image_.Position = UDim2.new(0.728, 0, 0.13400005, 0)
+image_.Position = UDim2.new(0.728, -58, 0.13400005, 0)
 image_.Visible = false
 
 local UICorner_ = Instance.new("UICorner", image_)
