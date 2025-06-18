@@ -628,7 +628,7 @@ end)
 	TabButtons.BackgroundTransparency = 1.000
 	TabButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabButtons.BorderSizePixel = 0
-	TabButtons.Position = UDim2.new(0.00760957832, 0, 0.143462211, 0)
+	TabButtons.Position = UDim2.new(0.00760957832, 0, 0.143462211, -27)
 	TabButtons.Size = UDim2.new(0.20784913, 0, 0.753122032, 0)
 	TabButtons.ZIndex = 5
 	TabButtons.CanvasSize = UDim2.new(0, 0, 0, 0)
