@@ -102,91 +102,6 @@ local function GetImageData(name:string,image:ImageLabel)
 		image.Image = "rbxassetid://10494577250"
 		image.ImageRectOffset = Vector2.new(1, 1)
 		image.ImageRectSize = Vector2.new(1200,1200)
-		local Players = game:GetService("Players")
-		local ScreenGui = Instance.new("ScreenGui")
-		ScreenGui.Parent = game.CoreGui
-		ScreenGui.Name = "View"
-local player = Players.LocalPlayer
-local userId = player.UserId
-	
--- Create main frame
-local framec = Instance.new("Frame")
-framec.Size = UDim2.new(0.200000003, 0, 0.799998105, 0)
-framec.Name = "framec"
-framec.Position = UDim2.new(0.5, 224, 0.000001, 9)
-framec.BackgroundColor3 = Color3.new(0, 0, 0)
-framec.Parent = ScreenGui
-framec.Visible = true
-
-local corner = Instance.new("UICorner")
-corner.CornerRadius = UDim.new(0, 7)
-corner.Parent = framec
-
--- Create ViewportFrame inside the frame
-local viewportFrame = Instance.new("ViewportFrame")
-viewportFrame.Size = UDim2.new(1, 0, 1, 0)
-viewportFrame.BackgroundTransparency = 1
-viewportFrame.Position = UDim2.new(0, 0, 0, -11)
-viewportFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-viewportFrame.BorderSizePixel = 0
-viewportFrame.Parent = framec
-
--- Create WorldModel container
-local worldModel = Instance.new("WorldModel")
-worldModel.Parent = viewportFrame
-
--- Camera setup
-local cam = Instance.new("Camera")
-cam.Parent = viewportFrame
-viewportFrame.CurrentCamera = cam
-cam.CFrame = CFrame.new(0, 0, 0)
-	
--- Wait until player character is loaded
-local char = player.Character or player.CharacterAdded:Wait()
-char.Archivable = true
-
-local clonedChar = char:Clone()
-clonedChar.Parent = worldModel
-clonedChar.Humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
-clonedChar:SetPrimaryPartCFrame(CFrame.new(Vector3.new(0,0,-9.5), Vector3.new(0,0,0)))
-
-local UserInputService = game:GetService("UserInputService")
-
-local mouseInViewport = false
-local holdInViewport = false
-local lastX = nil
-
-UserInputService.InputBegan:Connect(function(input)
-	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and mouseInViewport then
-		holdInViewport = true
-		lastX = nil
-	end
-end)
-
-UserInputService.InputEnded:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-		holdInViewport = false
-	end
-end)
-
-viewportFrame.MouseMoved:Connect(function(x, y)
-	if not holdInViewport then return end
-	if lastX then
-		local delta = (x - lastX) * 0.025
-		local prim = clonedChar.PrimaryPart
-		prim.CFrame = prim.CFrame * CFrame.Angles(0, delta, 0)
-	end
-	lastX = x
-end)
-
-viewportFrame.MouseEnter:Connect(function()
-	mouseInViewport = true
-end)
-
-viewportFrame.MouseLeave:Connect(function()
-	mouseInViewport = false
-	holdInViewport = false
-end)
 	end
 
 	if name == "cosmetics" then
@@ -641,7 +556,6 @@ ob.MouseButton1Click:Connect(function()
     outlo_2.Visible = not outlo_2.Visible
     outlo_3.Visible = not outlo_3.Visible
     UserData.Visible = not UserData.Visible
-    game.CoreGui.View.framec.Visible = not game.CoreGui.View.framec.Visible
 end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
