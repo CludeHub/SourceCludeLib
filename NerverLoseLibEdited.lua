@@ -124,9 +124,9 @@ corner.Parent = framec
 
 -- Create ViewportFrame inside the frame
 local viewportFrame = Instance.new("ViewportFrame")
-viewportFrame.Size = framec.Size
+viewportFrame.Size = UDim2.new(1, 0, 1, 0)
 viewportFrame.BackgroundTransparency = 1
-viewportFrame.Position = UDim2.new(0, 0, 0, -34)
+viewportFrame.Position = UDim2.new(0, 0, 0, -11)
 viewportFrame.BackgroundColor3 = Color3.new(0, 0, 0)
 viewportFrame.BorderSizePixel = 0
 viewportFrame.Parent = framec
