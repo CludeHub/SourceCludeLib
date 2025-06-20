@@ -414,29 +414,11 @@ framec.Size = UDim2.new(0.0001, 230, 0.000001, 420)
 framec.Position = UDim2.new(0.5, 224, 0.000001, 56) -- Center roughly
 framec.BackgroundColor3 = Color3.new(0, 0, 0)
 framec.Parent = ScreenGui
-framec.Visible = false
+framec.Visible = true
 
 local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(0, 7)
 corner.Parent = framec
-
-local image_ = Instance.new("ImageLabel")
-image_.Parent = ScreenGui
-image_.BackgroundTransparency = 1
-image_.Image = "rbxthumb://type=Asset&id=123767571876753&w=420&h=420"
-image_.Size = UDim2.new(0.00333334445639938383737474, 305, 0.1000004, 250)
-image_.Position = UDim2.new(0.728, -58, 0.13400005, 0)
-image_.Visible = false
-
-local UICorner_ = Instance.new("UICorner", image_)
-UICorner_.CornerRadius = UDim.new(0, 5)
-
-local button_ = Instance.new("TextButton", image_)
-button_.BackgroundTransparency = 1
-button_.Text = ""
-button_.Position = UDim2.new(1, -20, 0, 0)
-button_.Size = UDim2.new(0.09, 0, 0.079, 0)
-button_.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 -- Create ViewportFrame inside the frame
 local viewportFrame = Instance.new("ViewportFrame")
@@ -456,68 +438,6 @@ local cam = Instance.new("Camera")
 cam.Parent = viewportFrame
 viewportFrame.CurrentCamera = cam
 cam.CFrame = CFrame.new(0, 0, 0)
-
-local character = Instance.new("ImageButton")
-
-character.Parent = Frame
-character.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-character.BackgroundTransparency = 1.000
-character.BorderColor3 = Color3.fromRGB(0, 0, 0)
-character.BorderSizePixel = 0
-character.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
-character.Size = UDim2.new(0.0700000036, 0, 0.0700000036, 0)
-character.SizeConstraint = Enum.SizeConstraint.RelativeYY
-character.ZIndex = 4
-character.Image = "rbxassetid://123112467890707"
-character.ScaleType = Enum.ScaleType.Fit
-
-local setting = Instance.new("ImageButton")
-
-setting.Parent = Frame
-setting.Name = "SettingsButton"
-setting.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-setting.BackgroundTransparency = 1.000
-setting.BorderColor3 = Color3.fromRGB(0, 0, 0)
-setting.BorderSizePixel = 0
-setting.Position = UDim2.new(0.908723712, -50, 0.0239103697, 0)
-setting.Size = UDim2.new(0.0700000036, 0, 0.0700000036, 0)
-setting.SizeConstraint = Enum.SizeConstraint.RelativeYY
-setting.ZIndex = 4
-setting.Image = "rbxassetid://134488580093972"
-setting.ScaleType = Enum.ScaleType.Fit
-
-local function hideAllPanels()
-	image_.Visible = false
-	framec.Visible = false
-	-- Add more panels here if needed
-end
-
-local function showOnly(panel)
-	hideAllPanels()
-	if panel then
-		panel.Visible = true
-	end
-end
-
-setting.MouseButton1Click:Connect(function()
-	showOnly(image_)
-	setting.Visible = false
-	character.Visible = false
-end)
-
-button_.MouseButton1Click:Connect(function()
-	hideAllPanels()
-	setting.Visible = true
-	character.Visible = true
-end)
-
-character.MouseButton1Click:Connect(function()
-	local show = not framec.Visible
-	hideAllPanels()
-	if show then
-		framec.Visible = true
-	end
-end)
 	
 -- Wait until player character is loaded
 local char = player.Character or player.CharacterAdded:Wait()
@@ -722,12 +642,10 @@ ob.MouseButton1Click:Connect(function()
     outlo_2.Visible = isOpen
     outlo_3.Visible = isOpen
     UserData.Visible = isOpen
-
-    setting.Visible = isOpen        -- This will now correctly restore
+    -- This will now correctly restore
     character.Visible = isOpen      -- Always restored properly
 
     framec.Visible = false          -- Always hidden
-    image_.Visible = false
 end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
