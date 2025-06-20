@@ -629,24 +629,17 @@ ob.ZIndex = 5000
 	local obcorner = Instance.new("UICorner")
 	obcorner.CornerRadius = UDim.new(0, 8)
 	obcorner.Parent = ob
-
-local isOpen = false  -- Track state manually
-
+	
 ob.MouseButton1Click:Connect(function()
-    isOpen = not isOpen  -- Flip open/close state
-
-    Frame.Visible = isOpen
-    Frame_2.Visible = isOpen
-    Frame_3.Visible = isOpen
-    TabHose.Visible = isOpen
-    outlo.Visible = isOpen
-    outlo_2.Visible = isOpen
-    outlo_3.Visible = isOpen
-    UserData.Visible = isOpen
-    -- This will now correctly restore
-    character.Visible = isOpen      -- Always restored properly
-
-    framec.Visible = false          -- Always hidden
+    Frame.Visible = not Frame.Visible
+    Frame_2.Visible = not Frame_2.Visible
+    Frame_3.Visible = not Frame_3.Visible
+    TabHose.Visible = not TabHose.Visible
+    outlo.Visible = not outlo.Visible
+    outlo_2.Visible = not outlo_2.Visible
+    outlo_3.Visible = not outlo_3.Visible
+    UserData.Visible = not UserData.Visible
+    framec.Visible = not framec.Visible
 end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
