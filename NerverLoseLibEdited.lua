@@ -2077,7 +2077,7 @@ function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	UICorner_5.CornerRadius = UDim.new(0, 3)
 	UICorner_5.Parent = Submit
 
-	TweenService:Create(Frame,TweenInfo.new(0.4,Enum.EasingStyle.Quint),{Size=UDim2.new(0.25, 0, 0.25, 0)}):Play()
+	TweenService:Create(Frame,TweenInfo.new(0.4,Enum.EasingStyle.Quint),{Size=UDim2.new(0.35, 0, 0.35, 0)}):Play()
 
 	CopyKey.MouseButton1Click:Connect(function()
 		pcall(function()
