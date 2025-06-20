@@ -105,12 +105,14 @@ local function GetImageData(name:string,image:ImageLabel)
 		local Players = game:GetService("Players")
 		local ScreenGui = Instance.new("ScreenGui")
 		ScreenGui.Parent = game.CoreGui
+		ScreenGui.Name = "View"
 local player = Players.LocalPlayer
 local userId = player.UserId
 	
 -- Create main frame
 local framec = Instance.new("Frame")
 framec.Size = UDim2.new(0.0001, 230, 0.000001, 420)
+framec.Name = "framec"
 framec.Position = UDim2.new(0.5, 224, 0.000001, 56) -- Center roughly
 framec.BackgroundColor3 = Color3.new(0, 0, 0)
 framec.Parent = ScreenGui
