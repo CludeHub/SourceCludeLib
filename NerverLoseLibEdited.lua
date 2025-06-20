@@ -257,7 +257,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 			TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0.243000001, 0, 0.0250000004, 0)
-			TextLabel.Size = UDim2.new(0.606889787, 0, 0.0627818182, 0)
+			TextLabel.Size = UDim2.new(0.606889787, 0, 0.0627818182, -9)
 			TextLabel.ZIndex = 5
 			TextLabel.Font = Enum.Font.SourceSansBold
 			TextLabel.Text = Text or"NEVERLOSE UI"
@@ -727,7 +727,7 @@ end)
 		Tab.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Tab.BorderSizePixel = 0
 		Tab.ClipsDescendants = true
-		Tab.Position = UDim2.new(0.5, 0, 0.5, 0)
+		Tab.Position = UDim2.new(0.5, 0, 0.5, -27)
 		Tab.Size = UDim2.new(0.99000001, 0, 0.99000001, 0)
 		Tab.ZIndex = 6
 
