@@ -118,16 +118,21 @@ Guide: Adds a dropdown menu with values {1, 2, 3}, and an initial selection of 2
 
 ---
 
-# Create Right Section in Example Tab
+# Key System
 ```lua
-local Test = ExampleTab:AddSection('Test',"right")
+local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
 
-Test:AddToggle('Example',true,function(val)
-    if val then
-        Example:Show()
-    else
-        Example:Hide()
-    end
+local function Start(Key)
+	local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE")
+end
+
+local KeySystem = NEVERLOSE:KeySystem("Key System","https://example",function(key)
+	if key=='1234' then
+		return true
+	end
+	return false
 end)
+
+KeySystem:Callback(Start)
 ```
-Guide: Adds a toggle in the right section of the "Example Tab." If toggled on, it shows the "Example" section; if toggled off, it hides the section.
+---
