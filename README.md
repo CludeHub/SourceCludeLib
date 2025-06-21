@@ -44,7 +44,7 @@ Guide: This adds a label to the window, marking the first tab as "Home."
 local ExampleTab = Window:AddTab('Example Tab','ads')
 ```
 
-Guide: Adds tabs to the window. The tabs can be customized with icons (like earth,ads,locked,home,folder,list,code,gun,sword,farm,shop,sun,user,mouse,gear,cosmetics)
+Guide: Adds tabs to the window. The tabs can be customized with icons (like earth,ads,locked,home,folder,list,code,gun,sword,farm,shop,sun,user,mouse,gear,cosmetics,grenade,retry,crosshair)
 
 
 ---
