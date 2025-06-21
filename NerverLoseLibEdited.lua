@@ -485,7 +485,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	TabButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabButtons.BorderSizePixel = 0
 	TabButtons.Position = UDim2.new(0.00760957832, 0, 0.143462211, -27)
-	TabButtons.Size = UDim2.new(0.20784913, 0, 0.753122032, 0)
+	TabButtons.Size = UDim2.new(0.20784913, 0, 0.753122032, 27)
 	TabButtons.ZIndex = 5
 	TabButtons.CanvasSize = UDim2.new(0, 0, 0, 0)
 	TabButtons.ScrollBarThickness = 1
