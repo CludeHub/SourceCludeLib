@@ -187,44 +187,6 @@ local NEVERLOSE = {
 	_Version="69.C",
 	_Name="NEVERLOSE"
 }
-function NEVERLOSE:Theme(name)
-	name = tostring(name or "dark"):lower()
-	if name == "original" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(0, 0, 0)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(25, 25, 25)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 172, 247)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(64, 65, 67)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(10, 11, 13)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
-	end
-
-	if name == "nightly" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(37, 37, 37)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(25, 25, 25)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 172, 247)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(64, 65, 67)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(10, 11, 13)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
-	end
-
-	if name == "dark" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(22, 22, 22)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(25, 25, 25)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 172, 247)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(64, 65, 67)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(10, 11, 13)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
-	end
-end
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
@@ -518,6 +480,32 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	outlo.Position = UDim2.new(1, 0, 0.136999995, 0)
 	outlo.Size = UDim2.new(0.774999976, 0, 0, 1)
 	outlo.ZIndex = 4
+
+	local ImageButton = Instance.new("ImageButton")
+
+		ImageButton.Parent = Frame
+		ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ImageButton.BackgroundTransparency = 1.000
+		ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ImageButton.BorderSizePixel = 0
+		ImageButton.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
+		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
+		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
+		ImageButton.ZIndex = 4
+		ImageButton.Image = "rbxassetid://"
+		ImageButton.ScaleType = Enum.ScaleType.Fit
+
+	ImageButton.MouseButton1Click:Connect(function()
+		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
+		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
+		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
+		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(0, 34, 44)
+		NEVERLOSE.Themes.MainColor = Color3.fromRGB(19, 176, 243)
+		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
+		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
+		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
+		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
+		end)
 
 	UICorner_4.CornerRadius = UDim.new(0, 4)
 	UICorner_4.Parent = outlo
