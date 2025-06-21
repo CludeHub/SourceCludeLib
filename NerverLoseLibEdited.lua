@@ -188,37 +188,6 @@ local NEVERLOSE = {
 	_Name = "NEVERLOSE"
 }
 
--- Current theme state
-local isDark = true
-
--- Theme switcher function
-local function ToggleTheme()
-	if isDark then
-		-- Switch to Orange Theme
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(43, 43, 43)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(16, 16, 16)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(47, 47, 47)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(100, 100, 100)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(255, 140, 0)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(65, 54, 31)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(26, 26, 26)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(50, 50, 50)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
-	else
-		-- Switch back to Dark Theme
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(22, 22, 22)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(25, 25, 25)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 172, 247)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(64, 65, 67)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(10, 11, 13)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
-	end
-	isDark = not isDark
-end
-
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
 	local ToggleUI=false
@@ -414,21 +383,6 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
 	UICorner.Parent = Frame
-
-	local ImageButton = Instance.new("ImageButton")
-ImageButton.Parent = Frame
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BackgroundTransparency = 1.000
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
-ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
-ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
-ImageButton.ZIndex = 5
-ImageButton.Image = "rbxassetid://10002398990"
-ImageButton.ScaleType = Enum.ScaleType.Fit
-
--- On click: toggle theme
-ImageButton.MouseButton1Click:Connect(ToggleTheme)
 	
 	Frame_2.Parent = Frame
 	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
