@@ -505,7 +505,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	TabHose.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabHose.BorderSizePixel = 0
 	TabHose.Position = UDim2.new(0.223214373, 0, 0.143462211, 0)
-	TabHose.Size = UDim2.new(0.774635077, 0, 0.856537759, 0)
+	TabHose.Size = UDim2.new(0.774635077, 0, 0.856537759, 47)
 	TabHose.ZIndex = 5
 
 	outlo.Name = "outlo"
