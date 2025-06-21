@@ -395,6 +395,15 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		ImageButton.ScaleType = Enum.ScaleType.Fit
 	
 	ImageButton.MouseButton1Click:Connect(function()
+			NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(43, 43, 43)
+		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(16, 16, 16)
+		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(47, 47, 47)
+		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(100, 100, 100)
+		NEVERLOSE.Themes.MainColor = Color3.fromRGB(255, 140, 0)
+		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(65, 54, 31)
+		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(26, 26, 26)
+		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(50, 50, 50)
+		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 		end)
 
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
