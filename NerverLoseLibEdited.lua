@@ -219,22 +219,6 @@ local function ToggleTheme()
 	isDark = not isDark
 end
 
--- Create toggle button
-local ImageButton = Instance.new("ImageButton")
-ImageButton.Parent = Frame
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BackgroundTransparency = 1.000
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
-ImageButton.Size = UDim2.new(0.0700000036, 0, 0.0700000036, 0)
-ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
-ImageButton.ZIndex = 4
-ImageButton.Image = "rbxassetid://10002398990"
-ImageButton.ScaleType = Enum.ScaleType.Fit
-
--- On click: toggle theme
-ImageButton.MouseButton1Click:Connect(ToggleTheme)
-
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
 	local ToggleUI=false
@@ -430,6 +414,21 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
 	UICorner.Parent = Frame
+
+	local ImageButton = Instance.new("ImageButton")
+ImageButton.Parent = Frame
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
+ImageButton.Size = UDim2.new(0.0700000036, 0, 0.0700000036, 0)
+ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
+ImageButton.ZIndex = 4
+ImageButton.Image = "rbxassetid://10002398990"
+ImageButton.ScaleType = Enum.ScaleType.Fit
+
+-- On click: toggle theme
+ImageButton.MouseButton1Click:Connect(ToggleTheme)
 	
 	Frame_2.Parent = Frame
 	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
