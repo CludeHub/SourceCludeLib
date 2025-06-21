@@ -184,36 +184,28 @@ local NEVERLOSE = {
 		StrokeColor = Color3.fromRGB(28, 28, 28),
 		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
 	},
-	_Version="69.C",
-	_Name="NEVERLOSE"
+	_Version = "69.C",
+	_Name = "NEVERLOSE"
 }
-function NEVERLOSE:Theme(name)
-	name = tostring(name or "dark"):lower()
-	if name == "original" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(0, 0, 0)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(25, 25, 25)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 172, 247)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(64, 65, 67)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(10, 11, 13)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
-	end
 
-	if name == "nightly" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(37, 37, 37)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8, 8, 8)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(25, 25, 25)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 172, 247)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(64, 65, 67)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(10, 11, 13)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
-	end
+-- Current theme state
+local isDark = true
 
-	if name == "dark" then
+-- Theme switcher function
+local function ToggleTheme()
+	if isDark then
+		-- Switch to Orange Theme
+		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(43, 43, 43)
+		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(16, 16, 16)
+		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(47, 47, 47)
+		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(100, 100, 100)
+		NEVERLOSE.Themes.MainColor = Color3.fromRGB(255, 140, 0)
+		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(65, 54, 31)
+		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(26, 26, 26)
+		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(50, 50, 50)
+		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
+	else
+		-- Switch back to Dark Theme
 		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(22, 22, 22)
 		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8, 8, 8)
 		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8, 8, 8)
@@ -224,7 +216,24 @@ function NEVERLOSE:Theme(name)
 		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
 	end
+	isDark = not isDark
 end
+
+-- Create toggle button
+local ImageButton = Instance.new("ImageButton")
+ImageButton.Parent = Frame
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
+ImageButton.Size = UDim2.new(0.0700000036, 0, 0.0700000036, 0)
+ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
+ImageButton.ZIndex = 4
+ImageButton.Image = "rbxassetid://10002398990"
+ImageButton.ScaleType = Enum.ScaleType.Fit
+
+-- On click: toggle theme
+ImageButton.MouseButton1Click:Connect(ToggleTheme)
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
