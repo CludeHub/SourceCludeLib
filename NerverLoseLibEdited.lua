@@ -1,3 +1,4 @@
+-- always updating
 local LocalPlayer = game:GetService('Players').LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 local InputService = game:GetService('UserInputService');
@@ -216,14 +217,6 @@ function NEVERLOSE:Theme(name)
 	end
 end
 
-ImageButton.MouseButton1Click:Connect(function()
-	NEVERLOSE.auto_function.NightlyTheme = not NEVERLOSE.auto_function.NightlyTheme
-	if NEVERLOSE.auto_function.NightlyTheme then
-		NEVERLOSE:Theme("nightly") 
-	else
-		NEVERLOSE:Theme("default") 
-	end
-end)
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
@@ -340,29 +333,26 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 
 	task.spawn(function()
 		local ImageButton = Instance.new("ImageButton")
+			ImageButton.Parent = Frame
+		ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ImageButton.BackgroundTransparency = 1.000
+		ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ImageButton.BorderSizePixel = 0
+		ImageButton.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
+		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
+		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
+		ImageButton.ZIndex = 4
+		ImageButton.Image = "rbxassetid://10002398990"
+		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
-			toggle_valu=not toggle_valu
-
-			if toggle_valu then
-				oldPositionClose = Frame.Position
-				TweenService:Create(ImageButton,TweenInfo.new(0.5),{
-					Size=UDim2.new(0.0900000036, 0, 0.0900000036, 0),
-					Position=UDim2.new(0.908723712, 0, 0.0239103697, 0),
-					AnchorPoint=Vector2.new(0,0)
-				}):Play()
-			else
-				TweenService:Create(ImageButton,TweenInfo.new(0.5),{
-					Size=UDim2.new(0.3, 0,0.3, 0),
-					Position=UDim2.new(1,0,-0.009,0),
-					AnchorPoint=Vector2.new(1,0)
-				}):Play()
-			end
-
-			ui_toggleong(toggle_valu)
-		end)
-	end)
-
+	        NEVERLOSE.auto_function.NightlyTheme = not NEVERLOSE.auto_function.NightlyTheme
+           	        if NEVERLOSE.auto_function.NightlyTheme then
+	        	NEVERLOSE:Theme("nightly") 
+	                       else
+		        NEVERLOSE:Theme("default") 
+	            end
+             end)
 	task.spawn(function()
 		local dragToggle = nil
 		local dragSpeed = 0.14
