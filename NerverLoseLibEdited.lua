@@ -3,7 +3,7 @@ local Mouse = LocalPlayer:GetMouse();
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local TweenService = game:GetService('TweenService');
-local CoreGui = game.Players.LocalPlayer.PlayerGui;
+local CoreGui = game.Players.LocalPlayer.PlayerGui
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
