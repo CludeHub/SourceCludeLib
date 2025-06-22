@@ -178,7 +178,9 @@ local function GetImageData(name:string,image:ImageLabel)
 end
 
 local NEVERLOSE = {
-	auto_function = {},
+	auto_function = {
+		NightlyTheme = false
+	},
 	Themes = {
 		BlackgroundColor = Color3.fromRGB(22, 22, 22),
 		BlackColor = Color3.fromRGB(8, 8, 8),
@@ -190,23 +192,38 @@ local NEVERLOSE = {
 		StrokeColor = Color3.fromRGB(28, 28, 28),
 		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
 	},
-	_Version="69.C",
-	_Name="NEVERLOSE"
+	_Version = "69.C",
+	_Name = "NEVERLOSE"
 }
 
+local OriginalTheme = table.clone(NEVERLOSE.Themes)
+
 function NEVERLOSE:Theme(name)
-    if name == "nightly" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(0, 34, 44)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(19, 176, 243)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
-    end
+	if name == "nightly" then
+		self.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
+		self.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
+		self.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
+		self.Themes.TraceColor = Color3.fromRGB(0, 34, 44)
+		self.Themes.MainColor = Color3.fromRGB(19, 176, 243)
+		self.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
+		self.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
+		self.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
+		self.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
+	else
+		for k, v in pairs(OriginalTheme) do
+			self.Themes[k] = v
+		end
+	end
 end
+
+ImageButton.MouseButton1Click:Connect(function()
+	NEVERLOSE.auto_function.NightlyTheme = not NEVERLOSE.auto_function.NightlyTheme
+	if NEVERLOSE.auto_function.NightlyTheme then
+		NEVERLOSE:Theme("nightly") 
+	else
+		NEVERLOSE:Theme("default") 
+	end
+end)
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
@@ -381,7 +398,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		end)
 	end)
 
-	ScreenGui.Parent = CoreGui
+	ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
 	ScreenGui.Name = "NEVERLOSE"
 	ScreenGui.ResetOnSpawn = false
 	ScreenGui.IgnoreGuiInset = true
