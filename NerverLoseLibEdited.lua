@@ -1,4 +1,3 @@
--- always updating
 local LocalPlayer = game:GetService('Players').LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 local InputService = game:GetService('UserInputService');
@@ -179,9 +178,7 @@ local function GetImageData(name:string,image:ImageLabel)
 end
 
 local NEVERLOSE = {
-	auto_function = {
-		NightlyTheme = false
-	},
+	auto_function = {},
 	Themes = {
 		BlackgroundColor = Color3.fromRGB(22, 22, 22),
 		BlackColor = Color3.fromRGB(8, 8, 8),
@@ -193,30 +190,23 @@ local NEVERLOSE = {
 		StrokeColor = Color3.fromRGB(28, 28, 28),
 		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
 	},
-	_Version = "69.C",
-	_Name = "NEVERLOSE"
+	_Version="69.C",
+	_Name="NEVERLOSE"
 }
 
-local OriginalTheme = table.clone(NEVERLOSE.Themes)
-
 function NEVERLOSE:Theme(name)
-	if name == "nightly" then
-		self.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
-		self.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
-		self.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
-		self.Themes.TraceColor = Color3.fromRGB(0, 34, 44)
-		self.Themes.MainColor = Color3.fromRGB(19, 176, 243)
-		self.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
-		self.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
-		self.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
-		self.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
-	else
-		for k, v in pairs(OriginalTheme) do
-			self.Themes[k] = v
-		end
-	end
+    if name == "nightly" then
+		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
+		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
+		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
+		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(0, 34, 44)
+		NEVERLOSE.Themes.MainColor = Color3.fromRGB(19, 176, 243)
+		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
+		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
+		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
+		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
+    end
 end
-
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
@@ -333,26 +323,29 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 
 	task.spawn(function()
 		local ImageButton = Instance.new("ImageButton")
-			ImageButton.Parent = Frame
-		ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		ImageButton.BackgroundTransparency = 1.000
-		ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		ImageButton.BorderSizePixel = 0
-		ImageButton.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
-		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
-		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
-		ImageButton.ZIndex = 4
-		ImageButton.Image = "rbxassetid://10002398990"
-		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
-	        NEVERLOSE.auto_function.NightlyTheme = not NEVERLOSE.auto_function.NightlyTheme
-           	        if NEVERLOSE.auto_function.NightlyTheme then
-	        	NEVERLOSE:Theme("nightly") 
-	                       else
-		        NEVERLOSE:Theme("default") 
-	            end
-             end)
+			toggle_valu=not toggle_valu
+
+			if toggle_valu then
+				oldPositionClose = Frame.Position
+				TweenService:Create(ImageButton,TweenInfo.new(0.5),{
+					Size=UDim2.new(0.0900000036, 0, 0.0900000036, 0),
+					Position=UDim2.new(0.908723712, 0, 0.0239103697, 0),
+					AnchorPoint=Vector2.new(0,0)
+				}):Play()
+			else
+				TweenService:Create(ImageButton,TweenInfo.new(0.5),{
+					Size=UDim2.new(0.3, 0,0.3, 0),
+					Position=UDim2.new(1,0,-0.009,0),
+					AnchorPoint=Vector2.new(1,0)
+				}):Play()
+			end
+
+			ui_toggleong(toggle_valu)
+		end)
+	end)
+
 	task.spawn(function()
 		local dragToggle = nil
 		local dragSpeed = 0.14
@@ -388,7 +381,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		end)
 	end)
 
-	ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+	ScreenGui.Parent = CoreGui
 	ScreenGui.Name = "NEVERLOSE"
 	ScreenGui.ResetOnSpawn = false
 	ScreenGui.IgnoreGuiInset = true
