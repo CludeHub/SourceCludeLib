@@ -3,7 +3,7 @@ local Mouse = LocalPlayer:GetMouse();
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local TweenService = game:GetService('TweenService');
-local CoreGui = game.Players.LocalPlayer.PlayerGui
+local CoreGui = game:FindFirstChild('CoreGui') or LocalPlayer.PlayerGui;
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
@@ -403,25 +403,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
 	UICorner.Parent = Frame
-
-local button = Instance.new("TextButton")
-button.Size = UDim2.new(0, 30, 0, 30)      -- Size
-button.Position = UDim2.new(1, -29, 0, 2)  -- Position
-button.BackgroundColor3 = Color3.fromRGB(57, 255, 20) -- Neon green color
-button.Text = ""                           -- No text
-button.Parent = Frame
-
--- Make it a Circle
-button.AutoButtonColor = false
-button.ClipsDescendants = true
-local corner = Instance.new("UICorner")
-corner.CornerRadius = UDim.new(1, 0)       -- Circle
-corner.Parent = button
-
-	button.MouseButton1Click:Connect(function()
-		 NEVERLOSE:Theme("nightly")
-		end)
----------------------------------
+	
 	Frame_2.Parent = Frame
 	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
