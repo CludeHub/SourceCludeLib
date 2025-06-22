@@ -323,6 +323,23 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 
 	task.spawn(function()
 		local ImageButton = Instance.new("ImageButton")
+				local ImageButton2 = Instance.new("ImageButton")
+
+		ImageButton2.Parent = Frame
+		ImageButton2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ImageButton2.BackgroundTransparency = 1.000
+		ImageButton2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ImageButton2.BorderSizePixel = 0
+		ImageButton2.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
+		ImageButton2.Size = UDim2.new(0.0800000036, 0, 0.0800000036, 0)
+		ImageButton2.SizeConstraint = Enum.SizeConstraint.RelativeYY
+		ImageButton2.ZIndex = 4
+		ImageButton2.Image = "rbxassetid://10002398990"
+		ImageButton2.ScaleType = Enum.ScaleType.Fit
+
+		ImageButton2.MouseButton1Click:Connect(function()
+					NEVERLOSE:Theme("nightly") 
+				end)
 
 		ImageButton.MouseButton1Click:Connect(function()
 			toggle_valu=not toggle_valu
