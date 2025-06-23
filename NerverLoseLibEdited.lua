@@ -1935,6 +1935,76 @@ end)
 	return WindowFunctinos
 end
 
+-- ThemeSelection function
+local function ThemeSelection(darkLabel, neonLabel, callback)
+    -- Create ScreenGui
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Name = "ThemeSelectionUI"
+    screenGui.ResetOnSpawn = false
+    screenGui.IgnoreGuiInset = true
+    screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+    -- Main Frame
+    local mainFrame = Instance.new("Frame")
+    mainFrame.Size = UDim2.new(0, 0, 0, 0)
+    mainFrame.Position = UDim2.new(0.25, 0, 0.375, 0)
+    mainFrame.BackgroundColor3 = Color3.fromRGB(5, 5, 15) -- Dark Blue
+    mainFrame.ClipsDescendants = true
+    mainFrame.Visible = true
+    mainFrame.Parent = screenGui
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 5)
+    corner.Parent = mainFrame
+
+    local mainStroke = Instance.new("UIStroke")
+    mainStroke.Color = Color3.fromRGB(0, 180, 255) -- Neon Blue
+    mainStroke.Thickness = 2
+    mainStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+    mainStroke.Parent = mainFrame
+
+    local function createButton(text, positionXScale)
+        local btn = Instance.new("TextButton")
+        btn.Size = UDim2.new(0.4, 0, 0.4, 0) 
+        btn.Position = UDim2.new(positionXScale, 0, 0.3, 0) 
+        btn.BackgroundColor3 = Color3.fromRGB(10, 10, 20)
+        btn.Text = text
+        btn.Font = Enum.Font.SourceSansBold
+        btn.TextSize = 18
+        btn.TextColor3 = Color3.fromRGB(0, 180, 255) -- Neon Blue Text
+        btn.Parent = mainFrame
+
+        local btnCorner = Instance.new("UICorner")
+        btnCorner.CornerRadius = UDim.new(0, 5)
+        btnCorner.Parent = btn
+
+        local btnStroke = Instance.new("UIStroke")
+        btnStroke.Color = Color3.fromRGB(0, 180, 255) -- Neon Blue Stroke
+        btnStroke.Thickness = 1
+        btnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+        btnStroke.Parent = btn
+
+        return btn
+    end
+
+    local darkButton = createButton(darkLabel, 0.07)
+    local neonButton = createButton(neonLabel, 0.53)
+
+    -- Animate open
+    mainFrame:TweenSize(UDim2.new(0.5, 0, 0.25, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.5, true)
+
+    -- Button click handlers
+    darkButton.MouseButton1Click:Connect(function()
+        screenGui:Destroy()
+        callback(darkLabel)
+    end)
+
+    neonButton.MouseButton1Click:Connect(function()
+        screenGui:Destroy()
+        callback(neonLabel)
+    end)
+end
+
 function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	local Functions = {}
 
