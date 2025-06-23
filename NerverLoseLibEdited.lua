@@ -195,7 +195,7 @@ local NEVERLOSE = {
 }
 
 function NEVERLOSE:Theme(name)
-    if name == "nightly" then
+    if name == "neon" then
 		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
 		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
 		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
