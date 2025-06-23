@@ -407,13 +407,13 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	-- Create the Dark Button
 local darkButton = Instance.new("TextButton")
 darkButton.Size = UDim2.new(0, 40, 0, 40)
-darkButton.Position = UDim2.new(0, 10, 0, 10)
+darkButton.Position = UDim2.new(1, -38, 0, 0)
 darkButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 darkButton.Text = "D"
 darkButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 darkButton.Font = Enum.Font.SourceSansBold
 darkButton.TextSize = 18
-darkButton.Parent = mainFrame
+darkButton.Parent = Frame
 local darkCorner = Instance.new("UICorner")
 darkCorner.CornerRadius = UDim.new(1, 0) -- Circle
 darkCorner.Parent = darkButton
@@ -426,13 +426,13 @@ darkStroke.Parent = darkButton
 -- Create the Neon Button
 local neonButton = Instance.new("TextButton")
 neonButton.Size = UDim2.new(0, 40, 0, 40)
-neonButton.Position = UDim2.new(0, 60, 0, 10)
+neonButton.Position = UDim2.new(1, -20, 0, 0)
 neonButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 neonButton.Text = "N"
 neonButton.TextColor3 = Color3.fromRGB(57, 255, 20) -- Neon
 neonButton.Font = Enum.Font.SourceSansBold
 neonButton.TextSize = 18
-neonButton.Parent = mainFrame
+neonButton.Parent = Frame
 local neonCorner = Instance.new("UICorner")
 neonCorner.CornerRadius = UDim.new(1, 0) -- Circle
 neonCorner.Parent = neonButton
