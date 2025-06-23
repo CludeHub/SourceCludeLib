@@ -211,15 +211,14 @@ end
 -- Create ScreenGui
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "NeverloseTheme"
-screenGui.ResetOnSpawn = false
 screenGui.IgnoreGuiInset = true
 screenGui.Parent = CoreGui
 
 -- Main Frame
 local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(0, 0, 0, 0) -- Start hidden
-mainFrame.Position = UDim2.new(0.25, 0, 0.375, 0)
-mainFrame.BackgroundColor3 = Color3.fromRGB(8, 8, 8) -- Very Dark
+mainFrame.Position = UDim2.new(0.25, 0, 0.2, 0)
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Very Dark
 mainFrame.ClipsDescendants = true
 mainFrame.Visible = true
 mainFrame.Parent = screenGui
@@ -648,6 +647,7 @@ end)
 
 	Frame.Visible = false
 	ob.Visible = false
+	
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
 	UserData.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
