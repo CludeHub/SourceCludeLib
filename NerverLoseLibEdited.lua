@@ -404,6 +404,63 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 
 	UICorner.Parent = Frame
 
+	-- Create the Dark Button
+local darkButton = Instance.new("TextButton")
+darkButton.Size = UDim2.new(0, 40, 0, 40)
+darkButton.Position = UDim2.new(0, 10, 0, 10)
+darkButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+darkButton.Text = "D"
+darkButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+darkButton.Font = Enum.Font.SourceSansBold
+darkButton.TextSize = 18
+darkButton.Parent = mainFrame
+local darkCorner = Instance.new("UICorner")
+darkCorner.CornerRadius = UDim.new(1, 0) -- Circle
+darkCorner.Parent = darkButton
+local darkStroke = Instance.new("UIStroke")
+darkStroke.Color = Color3.fromRGB(57, 255, 20) -- Neon
+darkStroke.Thickness = 2
+darkStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+darkStroke.Parent = darkButton
+
+-- Create the Neon Button
+local neonButton = Instance.new("TextButton")
+neonButton.Size = UDim2.new(0, 40, 0, 40)
+neonButton.Position = UDim2.new(0, 60, 0, 10)
+neonButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+neonButton.Text = "N"
+neonButton.TextColor3 = Color3.fromRGB(57, 255, 20) -- Neon
+neonButton.Font = Enum.Font.SourceSansBold
+neonButton.TextSize = 18
+neonButton.Parent = mainFrame
+local neonCorner = Instance.new("UICorner")
+neonCorner.CornerRadius = UDim.new(1, 0) -- Circle
+neonCorner.Parent = neonButton
+local neonStroke = Instance.new("UIStroke")
+neonStroke.Color = Color3.fromRGB(57, 255, 20) -- Neon
+neonStroke.Thickness = 2
+neonStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+neonStroke.Parent = neonButton
+
+-- Button click connections
+darkButton.MouseButton1Click:Connect(function()
+    -- Call your auto-style or dark theme function here
+    -- Replace the below lines with your actual dark theme implementation
+    NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(22,22,22)
+    NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8,8,8)
+    NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8,8,8)
+    NEVERLOSE.Themes.TraceColor = Color3.fromRGB(25,25,25)
+    NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 172, 247)
+    NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(64,65,67)
+    NEVERLOSE.Themes.SectionColor = Color3.fromRGB(10,11,13)
+    NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28,28,28)
+    NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13,13,13)
+end)
+
+neonButton.MouseButton1Click:Connect(function()
+    NEVERLOSE:Theme("nightly") -- Enables the neon "nightly" theme
+end)
+
 	Frame_2.Parent = Frame
 	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
