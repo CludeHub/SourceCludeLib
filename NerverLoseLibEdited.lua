@@ -208,93 +208,6 @@ function NEVERLOSE:Theme(name)
     end
 end
 
--- Create ScreenGui
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "NeverloseTheme"
-screenGui.IgnoreGuiInset = true
-screenGui.Parent = CoreGui
-
--- Main Frame
-local mainFrame = Instance.new("Frame")
-mainFrame.Size = UDim2.new(0, 0, 0, 0) -- Start hidden
-mainFrame.Position = UDim2.new(0.25, 0, 0.2, 0)
-mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Very Dark
-mainFrame.ClipsDescendants = true
-mainFrame.Visible = true
-mainFrame.Parent = screenGui
-
-local corner = Instance.new("UICorner")
-corner.CornerRadius = UDim.new(0, 5)
-corner.Parent = mainFrame
-
-local mainStroke = Instance.new("UIStroke")
-mainStroke.Color = Color3.fromRGB(57, 255, 20) -- Neon Green
-mainStroke.Thickness = 2
-mainStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-mainStroke.Parent = mainFrame
-
--- Button Creation
-local function createButton(text, positionXScale)
-    local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(0.4, 0, 0.4, 0) 
-    btn.Position = UDim2.new(positionXScale, 0, 0.3, 0) 
-    btn.BackgroundColor3 = Color3.fromRGB(15, 15, 15) -- Dark Gray
-    btn.Text = text
-    btn.Font = Enum.Font.SourceSansBold
-    btn.TextSize = 18
-    btn.TextColor3 = Color3.fromRGB(57, 255, 20) -- Neon Text
-    btn.Parent = mainFrame
-
-    local btnCorner = Instance.new("UICorner")
-    btnCorner.CornerRadius = UDim.new(0, 5)
-    btnCorner.Parent = btn
-
-    local btnStroke = Instance.new("UIStroke")
-    btnStroke.Color = Color3.fromRGB(57, 255, 20) -- Neon Stroke
-    btnStroke.Thickness = 1
-    btnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    btnStroke.Parent = btn
-
-    return btn
-end
-
-local darkButton = createButton("Dark", 0.07)
-local neonButton = createButton("Neon", 0.53)
-
--- Open Animation
-mainFrame:TweenSize(UDim2.new(0.5, 0, 0.25, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.5, true)
-
--- Button Scripts
-darkButton.MouseButton1Click:Connect(function()
-    mainFrame:Destroy()
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(0, 34, 44)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(19, 176, 243)
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
-		game.CoreGui.NEVERLOSE.Frame.Visible = true
-		game.CoreGui.NEVERLOSE.ob.Visible = true
-end)
-
-neonButton.MouseButton1Click:Connect(function()
-    mainFrame:Destroy()
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(22, 22, 22),
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(8, 8, 8),
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(8, 8, 8),
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(25, 25, 25),
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 172, 247),
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(64, 65, 67),
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(10, 11, 13),
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28),
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
-		game.CoreGui.NEVERLOSE.Frame.Visible = true
-		game.CoreGui.NEVERLOSE.ob.Visible = true
-end)
-
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local WindowFunctinos={}
 	local ToggleUI=false
@@ -490,7 +403,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
 	UICorner.Parent = Frame
-	
+
 	Frame_2.Parent = Frame
 	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -644,10 +557,6 @@ ob.MouseButton1Click:Connect(function()
     outlo_3.Visible = not outlo_3.Visible
     UserData.Visible = not UserData.Visible
 end)
-
-	Frame.Visible = false
-	ob.Visible = false
-	
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
 	UserData.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
