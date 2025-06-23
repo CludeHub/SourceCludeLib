@@ -10,18 +10,13 @@
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
 ```
 
-# Theme
-```lua
-NEVERLOSE:Theme("neon")
-```
-
 Guide: This loads the NEVERLOSE UI library from the GitHub repository.
 
 ---
 
 # Create Main Window and Notification System
 ```lua
-local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE")
+local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE",'neon')
 ```
 ```lua
 local Notification = NEVERLOSE:Notification()
