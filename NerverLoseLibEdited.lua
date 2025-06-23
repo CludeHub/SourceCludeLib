@@ -1935,8 +1935,6 @@ end)
 	return WindowFunctinos
 end
 
-return NEVERLOSE
-
 function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	local Functions = {}
 
