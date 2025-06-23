@@ -10,6 +10,11 @@
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
 ```
 
+# Theme
+```lua
+NEVERLOSE:Theme("neon")
+```
+
 Guide: This loads the NEVERLOSE UI library from the GitHub repository.
 
 ---
