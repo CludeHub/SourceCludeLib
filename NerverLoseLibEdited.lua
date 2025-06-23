@@ -1935,6 +1935,59 @@ end)
 	return WindowFunctinos
 end
 
+function NEVERLOSE:SelectionTheme(left, right, callback)
+	local screenGui = Instance.new("ScreenGui")
+	screenGui.Name = "NeverloseThemeUI"
+	screenGui.ResetOnSpawn = false
+	screenGui.IgnoreGuiInset = true
+	screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	local mainFrame = Instance.new("Frame")
+	mainFrame.Size = UDim2.new(0.3, 0, 0.3, 0)
+	mainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	mainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+	mainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 30)
+	mainFrame.Parent = screenGui
+	local frameCorner = Instance.new("UICorner")
+	frameCorner.CornerRadius = UDim.new(0, 3)
+	frameCorner.Parent = mainFrame
+
+	local function createButton(text, positionX)
+		local button = Instance.new("TextButton")
+		button.Size = UDim2.new(0.4, 0, 0.25, 0)
+		button.Position = positionX
+		button.BackgroundColor3 = Color3.fromRGB(25, 25, 55)
+		button.Text = text
+		button.Font = Enum.Font.SourceSansBold
+		button.TextColor3 = Color3.fromRGB(255, 255, 255)
+		button.TextSize = 18
+		button.Parent = mainFrame
+		local corner = Instance.new("UICorner")
+		corner.CornerRadius = UDim.new(0, 3)
+		corner.Parent = button
+		local stroke = Instance.new("UIStroke")
+		stroke.Color = Color3.fromRGB(0, 100, 255)
+		stroke.Thickness = 2
+		stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		stroke.Parent = button
+		return button
+	end
+
+	local leftButton = createButton(left, UDim2.new(0.07, 0, 0.55, 0))
+	leftButton.MouseButton1Click:Connect(function()
+		if callback then callback(left) end
+		screenGui:Destroy()
+	end)
+
+	local rightButton = createButton(right, UDim2.new(0.53, 0, 0.55, 0))
+	rightButton.MouseButton1Click:Connect(function()
+		if callback then callback(right) end
+		screenGui:Destroy()
+	end)
+end
+
+return NEVERLOSE
+
 function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	local Functions = {}
 
