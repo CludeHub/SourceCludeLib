@@ -132,10 +132,8 @@ Guide: Adds a dropdown menu with values {1, 2, 3}, and an initial selection of 2
 
 # Key System
 ```lua
-local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
-
 local function Start(Key)
-	local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE")
+	-- script here
 end
 
 local KeySystem = NEVERLOSE:KeySystem("Key System","https://example",function(key)
