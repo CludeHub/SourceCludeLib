@@ -1,7 +1,8 @@
 
 ---
 
-# NEVERLOSE UI PC, TABLET
+# ONLY FOR A PERSON THAT KNOWS HOW TO USE THIS AND FIX THIS THIS IS MY SCRIPTER TRAINER
+(sorry for my bad english)
 # By: **C-A-T-S-U-S*
 # Edited by: **CludeHub*
 
