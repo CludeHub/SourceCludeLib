@@ -1,17 +1,12 @@
 
 ---
 
-# ONLY FOR A PERSON THAT KNOWS HOW TO USE THIS AND FIX THIS, THIS IS MY SCRIPTER TRAINER
-(sorry for my bad english)
 # By: **C-A-T-S-U-S*
 # Edited by: **CludeHub*
 
-# Tip:
-**Do not add script bottom of window end)*
 ## # Load NEVERLOSE UI Library
 ```lua
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
-local example= loadstring(game:HttpGet("https://pastebin.com/raw/M0zD1gsv"))()
 ```
 
 Guide: This loads the NEVERLOSE UI library from the GitHub repository.
@@ -20,21 +15,12 @@ Guide: This loads the NEVERLOSE UI library from the GitHub repository.
 
 # Create Theme Selection and Main Window and Notification System
 ```lua
-example:SelectionTheme("Dark", "Neon", function(theme)
-	if theme == "Dark" then
-		print("Applying Dark Theme...")
-local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE")
-	elseif theme == "Neon" then
-		print("Applying Neon Theme...")
-local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE",'neon')
-	end
-end)
+local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE",'dark') -- dark, neon
 ```
 ```lua
 local Notification = NEVERLOSE:Notification()
 Notification.MaxNotifications = 6
 Notification:Notify("info","Notification","Test Notification")
-    Notification:Notify("warning","Notification","Don't Spam",4)
 ```
 
 Guide: This code creates the main window and initializes the notification system. You can set the number of max notifications here.
