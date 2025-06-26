@@ -209,7 +209,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0.600000298, -67, 0.900004804, 4)
+	local ooldsize=UICustomSize or UDim2.new(0.700000298, 0, 0.800004804, 0)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -255,7 +255,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 			TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0.243000001, 0, 0.0250000004, 0)
-			TextLabel.Size = UDim2.new(0.606889787, 0, 0.0627818182, -9)
+			TextLabel.Size = UDim2.new(0.606889787, 0, 0.0627818182, -13)
 			TextLabel.ZIndex = 5
 			TextLabel.Font = Enum.Font.SourceSansBold
 			TextLabel.Text = Text or"NEVERLOSE UI"
