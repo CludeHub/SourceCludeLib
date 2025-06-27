@@ -446,7 +446,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	HeadName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	HeadName.BorderSizePixel = 0
 	HeadName.Position = UDim2.new(0.0100000342, 0, 0.010000146, -17)
-	HeadName.Size = UDim2.new(0.205458686, 0, 0.133462012, 0)
+	HeadName.Size = UDim2.new(0.205458686, 0, 0.133462012, -10)
 	HeadName.ZIndex = 4
 	HeadName.Font = Enum.Font.SourceSansBold
 	HeadName.Text = NameScriptHub or "NEVERLOSE"
@@ -465,7 +465,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	TabButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabButtons.BorderSizePixel = 0
 	TabButtons.Position = UDim2.new(0.00760957832, 0, 0.143462211, -27)
-	TabButtons.Size = UDim2.new(0.20784913, 0, 0.753122032, 27)
+	TabButtons.Size = UDim2.new(0.20784913, 0, 0.86512202, 0)
 	TabButtons.ZIndex = 5
 	TabButtons.CanvasSize = UDim2.new(0, 0, 0, 0)
 	TabButtons.ScrollBarThickness = 1
