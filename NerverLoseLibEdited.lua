@@ -576,7 +576,7 @@ end)
 	UserImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserImage.BorderSizePixel = 0
 	UserImage.Position = UDim2.new(0.150000006, 0, 0.5, 0)
-	UserImage.Size = UDim2.new(0.949999988, 0, 0.949999988, 0)
+	UserImage.Size = UDim2.new(0.949999988, 0, 0.949999988, -2)
 	UserImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
 	UserImage.ZIndex = 5
 	UserImage.Image = game:GetService('Players'):GetUserThumbnailAsync(LocalPlayer.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size150x150)
@@ -592,7 +592,7 @@ end)
 	UserName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserName.BorderSizePixel = 0
 	UserName.Position = UDim2.new(0.31400001, 0, 0.5, 0)
-	UserName.Size = UDim2.new(0.717000008, 0, 0.649999976, 0)
+	UserName.Size = UDim2.new(0.717000008, 0, 0.649999976, -2)
 	UserName.ZIndex = 5
 	UserName.Font = Enum.Font.SourceSansSemibold
 	UserName.Text = LocalPlayer.DisplayName or "https://httpbin.org/get"
@@ -612,7 +612,7 @@ end)
 		TabTitle.BackgroundTransparency = 1.000
 		TabTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabTitle.BorderSizePixel = 0
-		TabTitle.Size = UDim2.new(0.949999988, -5, 0.5, -5)
+		TabTitle.Size = UDim2.new(0.949999988, -5, 0.5, -7)
 		TabTitle.ZIndex = 5
 		TabTitle.Font = Enum.Font.SourceSansSemibold
 		TabTitle.Text = Label or "Home"
