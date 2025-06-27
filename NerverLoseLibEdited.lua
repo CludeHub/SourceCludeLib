@@ -561,8 +561,8 @@ end)
 	UserData.BackgroundTransparency = 1.000
 	UserData.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserData.BorderSizePixel = 0
-	UserData.Position = UDim2.new(-0.000179085735, 0, 0.926525652, 0)
-	UserData.Size = UDim2.new(0.225179195, 0, 0.0718210712, 0)
+	UserData.Position = UDim2.new(-0.000179085735, 0, 0.946525633, 0)
+	UserData.Size = UDim2.new(0.225179195, 0, 0.0718210712, -10)
 	UserData.ZIndex = 5
 
 	UICorner_7.CornerRadius = UDim.new(0, 2)
@@ -591,7 +591,7 @@ end)
 	UserName.BackgroundTransparency = 1.000
 	UserName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserName.BorderSizePixel = 0
-	UserName.Position = UDim2.new(0.31400001, 0, 0.5, 0)
+	UserName.Position = UDim2.new(0.31400001, 0, 0.583999991, 0)
 	UserName.Size = UDim2.new(0.717000008, 0, 0.649999976, -2)
 	UserName.ZIndex = 5
 	UserName.Font = Enum.Font.SourceSansSemibold
