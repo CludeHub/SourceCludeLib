@@ -639,7 +639,7 @@ end)
 			ImageButton3.MouseButton1Click:Connect(function()
 					Frame3401.Visible = true
 				end)
-		ImageButton3.MouseButton1Click:Connect(function()
+		ImageButton.MouseButton1Click:Connect(function()
 			toggle_valu=not toggle_valu
 
 			if toggle_valu then
