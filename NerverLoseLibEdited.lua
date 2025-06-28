@@ -320,10 +320,10 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	end
 
 	task.spawn(function()
-local LuaEditor7172 = Instance.new("ScreenGui")
-LuaEditor7172.Name = "Lua_Editor"
-LuaEditor7172.IgnoreGuiInset = true
-LuaEditor7172.Parent = game.CoreGui
+local Lua_Editor = Instance.new("ScreenGui")
+Lua_Editor.Name = "Lua_Editor"
+Lua_Editor.IgnoreGuiInset = true
+Lua_Editor.Parent = game.CoreGui
 
 -- Initial opening animation
 local Frame3401 = Instance.new("Frame")
@@ -337,7 +337,7 @@ Frame3401.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 Frame3401.BorderSizePixel = 1
 Frame3401.Position = UDim2.new(0.2, 0, 0.1, 0)
 Frame3401.Size = UDim2.new(0.435, -10, 0.8, -10)
-Frame3401.Parent = LuaEditor7172
+Frame3401.Parent = Lua_Editor
 Frame3401.Active = true
 Frame3401.Draggable = true
 Frame3401.Visible = false
