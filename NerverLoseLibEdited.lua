@@ -321,8 +321,193 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 
 	task.spawn(function()
 
+	task.spawn(function()
+		local dragToggle = nil
+		local dragSpeed = 0.14
+		local dragStart = nil
+		local startPos = nil
+
+		local function updateInput(input)
+			local delta = input.Position - dragStart
+			local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+				startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			game:GetService('TweenService'):Create(Frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+		end
+
+		Frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and not toggle_valu then 
+				dragToggle = true
+				dragStart = input.Position
+				startPos = Frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+
+		InputService.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				if dragToggle and not toggle_valu then
+					updateInput(input)
+				end
+			end
+		end)
+	end)
+
+	ScreenGui.Parent = CoreGui
+	ScreenGui.Name = "NEVERLOSE"
+	ScreenGui.ResetOnSpawn = false
+	ScreenGui.IgnoreGuiInset = true
+	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+	ProtectGui(ScreenGui)
+
+	Frame.Parent = ScreenGui
+	Frame.Active = true
+	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
+	Frame.BackgroundTransparency = 0.200
+	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BorderSizePixel = 0
+	Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Frame.Size = UDim2.new(0,0,0,0)
+	Frame.ZIndex = 2
+	Frame.ClipsDescendants=true
+
+	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
+
+	UICorner.Parent = Frame
+
+	Frame_2.Parent = Frame
+	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
+	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_2.BorderSizePixel = 0
+	Frame_2.Position = UDim2.new(0.223214373, 0, 0, 0)
+	Frame_2.Size = UDim2.new(0.774634778, 0, 1, 0)
+	Frame_2.ZIndex = 2
+
+	UICorner_2.CornerRadius = UDim.new(0, 4)
+	UICorner_2.Parent = Frame_2
+
+	Frame_3.Parent = Frame
+	Frame_3.BackgroundColor3 = NEVERLOSE.Themes.HeaderColor
+	Frame_3.BackgroundTransparency = 0.900
+	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_3.BorderSizePixel = 0
+	Frame_3.Position = UDim2.new(0.223214373, 0, 0, 0)
+	Frame_3.Size = UDim2.new(0.774999976, 0, 0.140000001, 0)
+	Frame_3.ZIndex = 4
+
+	UICorner_3.CornerRadius = UDim.new(0, 4)
+	UICorner_3.Parent = Frame_3
+
+	DropShadow.Name = "DropShadow"
+	DropShadow.Parent = Frame
+	DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	DropShadow.BackgroundTransparency = 1.000
+	DropShadow.BorderSizePixel = 0
+	DropShadow.Position = UDim2.new(0.963742971, 0, 0.5, 0)
+	DropShadow.Size = UDim2.new(-0.0510042384, 47, 0.839458942, 47)
+	DropShadow.ZIndex = 3
+	DropShadow.Image = "rbxassetid://6014261993"
+	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	DropShadow.ImageTransparency = 0.860
+	DropShadow.ScaleType = Enum.ScaleType.Slice
+	DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
+
+	HeadName.Name = "HeadName"
+	HeadName.Parent = Frame
+	HeadName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	HeadName.BackgroundTransparency = 1.000
+	HeadName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	HeadName.BorderSizePixel = 0
+	HeadName.Position = UDim2.new(0.0100000342, 0, 0.010000146, -17)
+	HeadName.Size = UDim2.new(0.205458686, 0, 0.133462012, -10)
+	HeadName.ZIndex = 4
+	HeadName.Font = Enum.Font.SourceSansBold
+	HeadName.Text = NameScriptHub or "NEVERLOSE"
+	HeadName.TextColor3 = Color3.fromRGB(255, 255, 255)
+	HeadName.TextScaled = true
+	HeadName.TextSize = 14.000
+	HeadName.TextStrokeColor3 = Color3.fromRGB(0, 251, 255)
+	HeadName.TextStrokeTransparency = 0.720
+	HeadName.TextWrapped = true
+
+	TabButtons.Name = "TabButtons"
+	TabButtons.Parent = Frame
+	TabButtons.Active = true
+	TabButtons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TabButtons.BackgroundTransparency = 1.000
+	TabButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TabButtons.BorderSizePixel = 0
+	TabButtons.Position = UDim2.new(0.00760957832, 0, 0.143462211, -27)
+	TabButtons.Size = UDim2.new(0.20784913, 0, 0.86512202, 0)
+	TabButtons.ZIndex = 5
+	TabButtons.CanvasSize = UDim2.new(0, 0, 0, 0)
+	TabButtons.ScrollBarThickness = 1
+
+
+	UIListLayout.Parent = TabButtons
+	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.Padding = UDim.new(0, 3)
+
+	scrolling_connect(TabButtons)
+
+	TabHose.Name = "TabHose"
+	TabHose.Parent = Frame
+	TabHose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TabHose.BackgroundTransparency = 1.000
+	TabHose.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TabHose.BorderSizePixel = 0
+	TabHose.Position = UDim2.new(0.223214373, 0, 0.143462211, 0)
+	TabHose.Size = UDim2.new(0.774635077, 0, 0.856537759, 47)
+	TabHose.ZIndex = 5
+
+	outlo.Name = "outlo"
+	outlo.Parent = Frame
+	outlo.AnchorPoint = Vector2.new(1, 0)
+	outlo.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
+	outlo.BackgroundTransparency = 0.700
+	outlo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	outlo.BorderSizePixel = 0
+	outlo.Position = UDim2.new(1, 0, 0.136999995, 0)
+	outlo.Size = UDim2.new(0.774999976, 0, 0, 1)
+	outlo.ZIndex = 4
+
+	UICorner_4.CornerRadius = UDim.new(0, 4)
+	UICorner_4.Parent = outlo
+
+	outlo_2.Name = "outlo"
+	outlo_2.Parent = Frame
+	outlo_2.AnchorPoint = Vector2.new(1, 0.5)
+	outlo_2.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
+	outlo_2.BackgroundTransparency = 0.700
+	outlo_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	outlo_2.BorderSizePixel = 0
+	outlo_2.Position = UDim2.new(0.223908007, 0, 0.5, 0)
+	outlo_2.Size = UDim2.new(0, 1, 1, 0)
+	outlo_2.ZIndex = 4
+
+	UICorner_5.CornerRadius = UDim.new(0, 4)
+	UICorner_5.Parent = outlo_2
+
+	outlo_3.Name = "outlo"
+	outlo_3.Parent = Frame
+	outlo_3.AnchorPoint = Vector2.new(1, 0)
+	outlo_3.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
+	outlo_3.BackgroundTransparency = 0.700
+	outlo_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	outlo_3.BorderSizePixel = 0
+	outlo_3.Position = UDim2.new(0.223908007, 0, 0.923109949, 0)
+	outlo_3.Size = UDim2.new(0.223908007, 0, 0, 1)
+	outlo_3.ZIndex = 4
+
+	UICorner_6.CornerRadius = UDim.new(0, 4)
+	UICorner_6.Parent = outlo_3
+
 local Frame3401 = Instance.new("Frame")
-Frame3401.Name = "Framec"
 Frame3401.Visible = true
 Frame3401.ZIndex = 50
 Frame3401.ClipsDescendants = false
@@ -622,6 +807,7 @@ textbox:GetPropertyChangedSignal("Text"):Connect(function()
 		textbox.CursorPosition = #textbox.Text + 1
 	end
 end)
+
 		local ImageButton3 = Instance.new("ImageButton")
 
 		ImageButton3.Parent = Frame
@@ -637,195 +823,9 @@ end)
 		ImageButton3.ScaleType = Enum.ScaleType.Fit
 
 			ImageButton3.MouseButton1Click:Connect(function()
-					game.CoreGui.NEVERLOSE.Framec.Visible = true
+					Frame3401.Visible = true
 				end)
-
-	task.spawn(function()
-		local dragToggle = nil
-		local dragSpeed = 0.14
-		local dragStart = nil
-		local startPos = nil
-
-		local function updateInput(input)
-			local delta = input.Position - dragStart
-			local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-				startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-			game:GetService('TweenService'):Create(Frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-		end
-
-		Frame.InputBegan:Connect(function(input)
-			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and not toggle_valu then 
-				dragToggle = true
-				dragStart = input.Position
-				startPos = Frame.Position
-				input.Changed:Connect(function()
-					if input.UserInputState == Enum.UserInputState.End then
-						dragToggle = false
-					end
-				end)
-			end
-		end)
-
-		InputService.InputChanged:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-				if dragToggle and not toggle_valu then
-					updateInput(input)
-				end
-			end
-		end)
-	end)
-
-	ScreenGui.Parent = CoreGui
-	ScreenGui.Name = "NEVERLOSE"
-	ScreenGui.ResetOnSpawn = false
-	ScreenGui.IgnoreGuiInset = true
-	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
-	ProtectGui(ScreenGui)
-
-	Frame.Parent = ScreenGui
-	Frame.Active = true
-	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
-	Frame.BackgroundTransparency = 0.200
-	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Frame.Size = UDim2.new(0,0,0,0)
-	Frame.ZIndex = 2
-	Frame.ClipsDescendants=true
-
-	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
-
-	UICorner.Parent = Frame
-
-	Frame_2.Parent = Frame
-	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
-	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_2.BorderSizePixel = 0
-	Frame_2.Position = UDim2.new(0.223214373, 0, 0, 0)
-	Frame_2.Size = UDim2.new(0.774634778, 0, 1, 0)
-	Frame_2.ZIndex = 2
-
-	UICorner_2.CornerRadius = UDim.new(0, 4)
-	UICorner_2.Parent = Frame_2
-
-	Frame_3.Parent = Frame
-	Frame_3.BackgroundColor3 = NEVERLOSE.Themes.HeaderColor
-	Frame_3.BackgroundTransparency = 0.900
-	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame_3.BorderSizePixel = 0
-	Frame_3.Position = UDim2.new(0.223214373, 0, 0, 0)
-	Frame_3.Size = UDim2.new(0.774999976, 0, 0.140000001, 0)
-	Frame_3.ZIndex = 4
-
-	UICorner_3.CornerRadius = UDim.new(0, 4)
-	UICorner_3.Parent = Frame_3
-
-	DropShadow.Name = "DropShadow"
-	DropShadow.Parent = Frame
-	DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
-	DropShadow.BackgroundTransparency = 1.000
-	DropShadow.BorderSizePixel = 0
-	DropShadow.Position = UDim2.new(0.963742971, 0, 0.5, 0)
-	DropShadow.Size = UDim2.new(-0.0510042384, 47, 0.839458942, 47)
-	DropShadow.ZIndex = 3
-	DropShadow.Image = "rbxassetid://6014261993"
-	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
-	DropShadow.ImageTransparency = 0.860
-	DropShadow.ScaleType = Enum.ScaleType.Slice
-	DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
-
-	HeadName.Name = "HeadName"
-	HeadName.Parent = Frame
-	HeadName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	HeadName.BackgroundTransparency = 1.000
-	HeadName.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	HeadName.BorderSizePixel = 0
-	HeadName.Position = UDim2.new(0.0100000342, 0, 0.010000146, -17)
-	HeadName.Size = UDim2.new(0.205458686, 0, 0.133462012, -10)
-	HeadName.ZIndex = 4
-	HeadName.Font = Enum.Font.SourceSansBold
-	HeadName.Text = NameScriptHub or "NEVERLOSE"
-	HeadName.TextColor3 = Color3.fromRGB(255, 255, 255)
-	HeadName.TextScaled = true
-	HeadName.TextSize = 14.000
-	HeadName.TextStrokeColor3 = Color3.fromRGB(0, 251, 255)
-	HeadName.TextStrokeTransparency = 0.720
-	HeadName.TextWrapped = true
-
-	TabButtons.Name = "TabButtons"
-	TabButtons.Parent = Frame
-	TabButtons.Active = true
-	TabButtons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TabButtons.BackgroundTransparency = 1.000
-	TabButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TabButtons.BorderSizePixel = 0
-	TabButtons.Position = UDim2.new(0.00760957832, 0, 0.143462211, -27)
-	TabButtons.Size = UDim2.new(0.20784913, 0, 0.86512202, 0)
-	TabButtons.ZIndex = 5
-	TabButtons.CanvasSize = UDim2.new(0, 0, 0, 0)
-	TabButtons.ScrollBarThickness = 1
-
-
-	UIListLayout.Parent = TabButtons
-	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0, 3)
-
-	scrolling_connect(TabButtons)
-
-	TabHose.Name = "TabHose"
-	TabHose.Parent = Frame
-	TabHose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TabHose.BackgroundTransparency = 1.000
-	TabHose.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TabHose.BorderSizePixel = 0
-	TabHose.Position = UDim2.new(0.223214373, 0, 0.143462211, 0)
-	TabHose.Size = UDim2.new(0.774635077, 0, 0.856537759, 47)
-	TabHose.ZIndex = 5
-
-	outlo.Name = "outlo"
-	outlo.Parent = Frame
-	outlo.AnchorPoint = Vector2.new(1, 0)
-	outlo.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo.BackgroundTransparency = 0.700
-	outlo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	outlo.BorderSizePixel = 0
-	outlo.Position = UDim2.new(1, 0, 0.136999995, 0)
-	outlo.Size = UDim2.new(0.774999976, 0, 0, 1)
-	outlo.ZIndex = 4
-
-	UICorner_4.CornerRadius = UDim.new(0, 4)
-	UICorner_4.Parent = outlo
-
-	outlo_2.Name = "outlo"
-	outlo_2.Parent = Frame
-	outlo_2.AnchorPoint = Vector2.new(1, 0.5)
-	outlo_2.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo_2.BackgroundTransparency = 0.700
-	outlo_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	outlo_2.BorderSizePixel = 0
-	outlo_2.Position = UDim2.new(0.223908007, 0, 0.5, 0)
-	outlo_2.Size = UDim2.new(0, 1, 1, 0)
-	outlo_2.ZIndex = 4
-
-	UICorner_5.CornerRadius = UDim.new(0, 4)
-	UICorner_5.Parent = outlo_2
-
-	outlo_3.Name = "outlo"
-	outlo_3.Parent = Frame
-	outlo_3.AnchorPoint = Vector2.new(1, 0)
-	outlo_3.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo_3.BackgroundTransparency = 0.700
-	outlo_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	outlo_3.BorderSizePixel = 0
-	outlo_3.Position = UDim2.new(0.223908007, 0, 0.923109949, 0)
-	outlo_3.Size = UDim2.new(0.223908007, 0, 0, 1)
-	outlo_3.ZIndex = 4
-
-	UICorner_6.CornerRadius = UDim.new(0, 4)
-	UICorner_6.Parent = outlo_3
-
+			
 	local ob = Instance.new("ImageButton")
 ob.Name = "OpenButton"
 ob.Parent = ScreenGui
@@ -850,7 +850,7 @@ ob.MouseButton1Click:Connect(function()
     outlo_2.Visible = not outlo_2.Visible
     outlo_3.Visible = not outlo_3.Visible
     UserData.Visible = not UserData.Visible
-game.CoreGui.NEVERLOSE.Frame3401.Visible = false
+Frame3401.Visible = false
 end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
