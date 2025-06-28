@@ -637,7 +637,7 @@ end)
 		ImageButton3.ScaleType = Enum.ScaleType.Fit
 
 			ImageButton3.MouseButton1Click:Connect(function()
-					game.CoreGui.Lua_Editor.Frame.Visible = true
+					Frame3401.Visible = true
 				end)
 		ImageButton3.MouseButton1Click:Connect(function()
 			toggle_valu=not toggle_valu
@@ -871,7 +871,7 @@ ob.MouseButton1Click:Connect(function()
     outlo_2.Visible = not outlo_2.Visible
     outlo_3.Visible = not outlo_3.Visible
     UserData.Visible = not UserData.Visible
-			game.CoreGui.Lua_Editor.Frame.Visible = false
+			Frame3401.Visible = false
 end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
