@@ -638,7 +638,7 @@ end)
 		ImageButton3.Size = UDim2.new(0.0700000036, 0, 0.0700000036, 0)
 		ImageButton3.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton3.ZIndex = 5
-		ImageButton3.Image = "rbxassetid://123075914927646"
+		ImageButton3.Image = "rbxassetid://87840530816817"
 		ImageButton3.ScaleType = Enum.ScaleType.Fit
 
 			ImageButton3.MouseButton1Click:Connect(function()
