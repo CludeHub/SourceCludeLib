@@ -945,7 +945,7 @@ end)
 
 			local sectionfunc = {}
 
-			function sectionfunc:AddButton(ButtonName,Editor,callback)
+			function sectionfunc:AddButton(ButtonName,passed,callback)
 				callback=callback or function()
 
 				end
@@ -996,7 +996,7 @@ end)
 				UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 				UIStroke.Parent = Button
 
-				if Editor then
+				if passed == Editor then
 					Button.MouseButton1Click:Connect(function()
 							print("1"+1)
 						end)
