@@ -876,6 +876,7 @@ ob.MouseButton1Click:Connect(function()
     outlo_2.Visible = not outlo_2.Visible
     outlo_3.Visible = not outlo_3.Visible
     UserData.Visible = not UserData.Visible
+			game.CoreGui.LuaEditor7172.Frame3401.Visible = false
 end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
