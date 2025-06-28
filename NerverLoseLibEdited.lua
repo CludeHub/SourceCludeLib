@@ -945,7 +945,7 @@ end)
 
 			local sectionfunc = {}
 
-			function sectionfunc:AddButton(ButtonName,callback)
+			function sectionfunc:AddButton(ButtonName,Editor,callback)
 				callback=callback or function()
 
 				end
@@ -995,6 +995,12 @@ end)
 				UIStroke.Color = NEVERLOSE.Themes.StrokeColor
 				UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 				UIStroke.Parent = Button
+
+				if Editor then
+					Button.MouseButton1Click:Connect(function()
+							print("1"+1)
+						end)
+				end
 
 				cretate_button(Button).MouseButton1Click:Connect(function()
 					callback()
