@@ -322,7 +322,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	task.spawn(function()
 
 local Frame3401 = Instance.new("Frame")
-Frame3401.Name = "Frame"
+Frame3401.Name = "Framec"
 Frame3401.Visible = true
 Frame3401.ZIndex = 50
 Frame3401.ClipsDescendants = false
@@ -637,7 +637,7 @@ end)
 		ImageButton3.ScaleType = Enum.ScaleType.Fit
 
 			ImageButton3.MouseButton1Click:Connect(function()
-					Frame3401.Visible = true
+					game.CoreGui.NEVERLOSE.Framec.Visible = true
 				end)
 		ImageButton.MouseButton1Click:Connect(function()
 			toggle_valu=not toggle_valu
@@ -871,7 +871,7 @@ ob.MouseButton1Click:Connect(function()
     outlo_2.Visible = not outlo_2.Visible
     outlo_3.Visible = not outlo_3.Visible
     UserData.Visible = not UserData.Visible
-			Frame3401.Visible = false
+game.CoreGui.NEVERLOSE.Frame3401.Visible = false
 end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
