@@ -327,7 +327,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		ImageButton3.BackgroundTransparency = 1.000
 		ImageButton3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButton3.BorderSizePixel = 0
-		ImageButton3.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
+		ImageButton3.Position = UDim2.new(0.933723748, 0, 0.0139103699, 0)
 		ImageButton3.Size = UDim2.new(0.0700000036, 0, 0.0700000036, 0)
 		ImageButton3.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton3.ZIndex = 5
@@ -336,7 +336,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 
 			ImageButton3.MouseButton1Click:Connect(function()
 				end)
-		ImageButton.MouseButton1Click:Connect(function()
+		ImageButton3.MouseButton1Click:Connect(function()
 			toggle_valu=not toggle_valu
 
 			if toggle_valu then
