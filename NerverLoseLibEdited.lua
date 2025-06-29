@@ -146,6 +146,34 @@ local function GetImageData(name:string,image:ImageLabel)
 		image.ImageRectSize = Vector2.new(1200,1200)
 	end
 
+	
+
+	if name == "bio" then
+		image.Image = "rbxassetid://78652086695674"
+		image.ImageRectOffset = Vector2.new(1, 1)
+		image.ImageRectSize = Vector2.new(1200,1200)
+	end
+
+	if name == "car" then
+		image.Image = "rbxassetid://116283987324457"
+		image.ImageRectOffset = Vector2.new(1, 1)
+		image.ImageRectSize = Vector2.new(1200,1200)
+	end
+
+	if name == "carcolor" then
+		image.Image = "rbxassetid://135983067514338"
+		image.ImageRectOffset = Vector2.new(1, 1)
+		image.ImageRectSize = Vector2.new(1200,1200)
+	end
+
+	if name == "avacolor" then
+		image.Image = "rbxassetid://88738565686900"
+		image.ImageRectOffset = Vector2.new(1, 1)
+		image.ImageRectSize = Vector2.new(1200,1200)
+	end
+
+	
+
        	if name == "retry" then
 		image.Image = "rbxassetid://85334730366974"
 		image.ImageRectOffset = Vector2.new(1, 1)
