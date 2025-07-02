@@ -286,7 +286,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 			TextLabel.Size = UDim2.new(0.606889787, 0, 0.0627818182, -13)
 			TextLabel.ZIndex = 5
 			TextLabel.Font = Enum.Font.SourceSansBold
-			TextLabel.Text = Text or"NEVERLOSE UI"
+			TextLabel.Text = Text or "NEVERLOSE UI"
 			TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 			TextLabel.TextScaled = true
 			TextLabel.TextSize = 14.000
@@ -557,6 +557,49 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 
 	UICorner_6.CornerRadius = UDim.new(0, 4)
 	UICorner_6.Parent = outlo_3
+	
+local mainFrame_2b = Instance.new("Frame")
+local saveButton_3c = Instance.new("TextButton")
+local stroke_4d = Instance.new("UIStroke")
+local corner_5e = Instance.new("UICorner")
+local imageLabel_6f = Instance.new("ImageLabel")
+
+mainFrame_2b.Name = "MainFrame"
+mainFrame_2b.Parent = screenGui_1a
+mainFrame_2b.BackgroundTransparency = 1
+mainFrame_2b.Position = UDim2.new(0.243, 0, 0.025, 0)
+mainFrame_2b.Size = UDim2.new(0.606889784, 0, 0.0627818182, -13)
+
+-- Save Button (parented to Frame)
+saveButton_3c.Name = "SaveB"
+saveButton_3c.Parent = mainFrame_2b
+saveButton_3c.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+saveButton_3c.Position = UDim2.new(0, 0, 0, 0)
+saveButton_3c.Size = UDim2.new(0.199998885, 0, 1, 0)
+saveButton_3c.ZIndex = 5
+saveButton_3c.Text = "Save"
+saveButton_3c.TextColor3 = Color3.fromRGB(94, 97, 106)
+saveButton_3c.TextXAlignment = Enum.TextXAlignment.Left
+saveButton_3c.TextSize = 8
+
+-- Stroke (parented to Save Button)
+stroke_4d.Name = "Stroke"
+stroke_4d.Parent = saveButton_3c
+stroke_4d.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+stroke_4d.Color = Color3.fromRGB(24, 24, 24)
+stroke_4d.Thickness = 0.6
+
+-- Corner (parented to Save Button)
+corner_5e.Parent = saveButton_3c
+corner_5e.CornerRadius = UDim.new(0, 2)
+
+-- ImageLabel (parented to Save Button)
+imageLabel_6f.Name = "ImageIcon"
+imageLabel_6f.Parent = saveButton_3c
+imageLabel_6f.BackgroundTransparency = 1
+imageLabel_6f.Position = UDim2.new(0.1, 0, 0.1, 0)
+imageLabel_6f.Size = UDim2.new(0.2, 0, 0.8, 0)
+imageLabel_6f.ZIndex = 6
 
 	local ob = Instance.new("ImageButton")
 ob.Name = "OpenButton"
