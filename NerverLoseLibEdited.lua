@@ -554,7 +554,8 @@ saveButton_3c.Position = UDim2.new(0, 0, 0, 0)
 saveButton_3c.Size = UDim2.new(0.199998885, 0, 1, 0)
 saveButton_3c.ZIndex = 5
 saveButton_3c.Text = "Save"
-saveButton_3c.TextColor3 = Color3.fromRGB(94, 97, 106)
+saveButton_3c.TextColor3 = Color3.fromRGB(255, 255, 255)
+saveButton_3c.TextTransparency = 0.300
 saveButton_3c.TextSize = 8
 saveButton_3c.AutoButtonColor = false
 
@@ -562,7 +563,7 @@ saveButton_3c.AutoButtonColor = false
 stroke_4d.Name = "Stroke"
 stroke_4d.Parent = saveButton_3c
 stroke_4d.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-stroke_4d.Color = Color3.fromRGB(24, 24, 24)
+stroke_4d.Color = Color3.fromRGB(28, 28, 28)
 stroke_4d.Thickness = 0.6
 
 -- Corner (parented to Save Button)
