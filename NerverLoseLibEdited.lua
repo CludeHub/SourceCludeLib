@@ -276,47 +276,6 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	task.spawn(function()
 		if Text then
 			local TextLabel = Instance.new("TextLabel")
-				local (Frame)abfrme = Instance.new("Frame")
-				local (TextButton)savebhs = Instance.new("TextButton")
-				local (UIStroke)strohj = Instance.new("UIStroke")
-				local (UICorner)cornui = Instance.new("UICorner")
-				local (ImageLabel)imglabq = Instance.new("ImageLabel")
-(Frame)abfrme.Name = "MainFrame"
-(Frame)abfrme.Parent = Frame
-(Frame)abfrme.BackgroundTransparency = 1
-(Frame)abfrme.Position = UDim2.new(0.243, 0, 0.025, 0)
-(Frame)abfrme.Size = UDim2.new(0.606889784, 0, 0.0627818182, -13)
-
--- TextButton (parented to Frame)
-(TextButton)savebhs.Name = "SaveB"
-(TextButton)savebhs.Parent = (Frame)abfrme
-(TextButton)savebhs.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
-(TextButton)savebhs.Position = UDim2.new(0, 0, 0, 0)
-(TextButton)savebhs.Size = UDim2.new(0.199998885, 0, 1, 0)
-(TextButton)savebhs.ZIndex = 5
-(TextButton)savebhs.Text = "Save"
-(TextButton)savebhs.TextColor3 = Color3.fromRGB(94, 97, 106)
-(TextButton)savebhs.TextXAlignment = Enum.TextXAlignment.Left
-(TextButton)savebhs.TextSize = 8
-
--- UIStroke (parented to TextButton)
-(UIStroke)strohj.Name = "Stroke"
-(UIStroke)strohj.Parent = (TextButton)savebhs
-(UIStroke)strohj.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-(UIStroke)strohj.Color = Color3.fromRGB(24, 24, 24)
-(UIStroke)strohj.Thickness = 0.6
-
--- UICorner (parented to TextButton)
-(UICorner)cornui.Parent = (TextButton)savebhs
-(UICorner)cornui.CornerRadius = UDim.new(0, 2)
-
--- ImageLabel (also parented to TextButton)
-(ImageLabel)imglabq.Name = "ImageIcon"
-(ImageLabel)imglabq.Parent = (TextButton)savebhs
-(ImageLabel)imglabq.BackgroundTransparency = 1
-(ImageLabel)imglabq.Position = UDim2.new(0.1, 0, 0.1, 0)
-(ImageLabel)imglabq.Size = UDim2.new(0.2, 0, 0.8, 0)
-(ImageLabel)imglabq.ZIndex = 6
 
 			headd2text=TextLabel
 		end
@@ -605,6 +564,49 @@ ob.MouseButton1Click:Connect(function()
     outlo_3.Visible = not outlo_3.Visible
     UserData.Visible = not UserData.Visible
 end)
+
+	local (Frame)abfrme = Instance.new("Frame")
+	local (TextButton)savebhs = Instance.new("TextButton")
+	local (UIStroke)strohj = Instance.new("UIStroke")
+	local (UICorner)cornui = Instance.new("UICorner")
+	local (ImageLabel)imglabq = Instance.new("ImageLabel")
+(Frame)abfrme.Name = "MainFrame"
+(Frame)abfrme.Parent = Frame
+(Frame)abfrme.BackgroundTransparency = 1
+(Frame)abfrme.Position = UDim2.new(0.243, 0, 0.025, 0)
+(Frame)abfrme.Size = UDim2.new(0.606889784, 0, 0.0627818182, -13)
+
+-- TextButton (parented to Frame)
+(TextButton)savebhs.Name = "SaveB"
+(TextButton)savebhs.Parent = (Frame)abfrme
+(TextButton)savebhs.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+(TextButton)savebhs.Position = UDim2.new(0, 0, 0, 0)
+(TextButton)savebhs.Size = UDim2.new(0.199998885, 0, 1, 0)
+(TextButton)savebhs.ZIndex = 5
+(TextButton)savebhs.Text = "Save"
+(TextButton)savebhs.TextColor3 = Color3.fromRGB(94, 97, 106)
+(TextButton)savebhs.TextXAlignment = Enum.TextXAlignment.Left
+(TextButton)savebhs.TextSize = 8
+
+-- UIStroke (parented to TextButton)
+(UIStroke)strohj.Name = "Stroke"
+(UIStroke)strohj.Parent = (TextButton)savebhs
+(UIStroke)strohj.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+(UIStroke)strohj.Color = Color3.fromRGB(24, 24, 24)
+(UIStroke)strohj.Thickness = 0.6
+
+-- UICorner (parented to TextButton)
+(UICorner)cornui.Parent = (TextButton)savebhs
+(UICorner)cornui.CornerRadius = UDim.new(0, 2)
+
+-- ImageLabel (also parented to TextButton)
+(ImageLabel)imglabq.Name = "ImageIcon"
+(ImageLabel)imglabq.Parent = (TextButton)savebhs
+(ImageLabel)imglabq.BackgroundTransparency = 1
+(ImageLabel)imglabq.Position = UDim2.new(0.1, 0, 0.1, 0)
+(ImageLabel)imglabq.Size = UDim2.new(0.2, 0, 0.8, 0)
+(ImageLabel)imglabq.ZIndex = 6
+	
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
 	UserData.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
