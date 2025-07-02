@@ -276,6 +276,10 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	task.spawn(function()
 		if Text then
 			local TextLabel = Instance.new("TextLabel")
+				local (Frame)abfrme.Name = Instance.new("Frame")
+				local (TextButton)savebhs = Instance.new("TextButton")
+				local (UIStroke)strohj = Instance.new("UIStroke")
+				local (ImageLabel)imglabq = Instance.new("ImageLabel")
 (Frame)abfrme.Name = "MainFrame"
 (Frame)abfrme.Parent = Frame
 (Frame)abfrme.BackgroundTransparency = 1
