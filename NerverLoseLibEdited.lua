@@ -273,32 +273,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		end
 	end)
 	
-	task.spawn(function()
-		if Text then
-			local TextLabel = Instance.new("TextLabel")
-
-			TextLabel.Parent = Frame
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			TextLabel.BackgroundTransparency = 1.000
-			TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			TextLabel.BorderSizePixel = 0
-			TextLabel.Position = UDim2.new(0.243000001, 0, 0.0250000004, 0)
-			TextLabel.Size = UDim2.new(0.606889787, 0, 0.0627818182, -13)
-			TextLabel.ZIndex = 5
-			TextLabel.Font = Enum.Font.SourceSansBold
-			TextLabel.Text = Text or "NEVERLOSE UI"
-			TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-			TextLabel.TextScaled = true
-			TextLabel.TextSize = 14.000
-			TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 255, 255)
-			TextLabel.TextStrokeTransparency = 0.900
-			TextLabel.TextWrapped = true
-			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-			TextLabel.RichText=true
-
-			headd2text=TextLabel
-		end
-	end)
+print(name)
 
 	local toggle_valu = true
 
@@ -579,7 +554,6 @@ saveButton_3c.Size = UDim2.new(0.199998885, 0, 1, 0)
 saveButton_3c.ZIndex = 5
 saveButton_3c.Text = "Save"
 saveButton_3c.TextColor3 = Color3.fromRGB(94, 97, 106)
-saveButton_3c.TextXAlignment = Enum.TextXAlignment.Left
 saveButton_3c.TextSize = 8
 
 -- Stroke (parented to Save Button)
