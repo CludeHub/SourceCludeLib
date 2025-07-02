@@ -469,7 +469,7 @@ print(Text .. " is Running")
 	TabButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabButtons.BorderSizePixel = 0
 	TabButtons.Position = UDim2.new(0.00760957832, 0, 0.143462211, -27)
-	TabButtons.Size = UDim2.new(0.20784913, 0, 0.86512202, 0)
+	TabButtons.Size = UDim2.new(0.20784913, 0, 0.85712202, 0)
 	TabButtons.ZIndex = 5
 	TabButtons.CanvasSize = UDim2.new(0, 0, 0, 0)
 	TabButtons.ScrollBarThickness = 1
@@ -572,6 +572,7 @@ corner_5e.CornerRadius = UDim.new(0, 2)
 imageLabel_6f.Name = "ImageIcon"
 imageLabel_6f.Parent = saveButton_3c
 imageLabel_6f.Image = "rbxassetid://124285067552436"
+imageLabel_6f.ImageColor3 = Color3.fromRGB(94, 97, 106)
 imageLabel_6f.BackgroundTransparency = 1
 imageLabel_6f.Position = UDim2.new(0.1, 0, 0.1, 0)
 imageLabel_6f.Size = UDim2.new(0.2, 0, 0.8, 0)
