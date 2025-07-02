@@ -279,6 +279,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 				local (Frame)abfrme = Instance.new("Frame")
 				local (TextButton)savebhs = Instance.new("TextButton")
 				local (UIStroke)strohj = Instance.new("UIStroke")
+				local (UICorner)cornui = Instance.new("UICorner")
 				local (ImageLabel)imglabq = Instance.new("ImageLabel")
 (Frame)abfrme.Name = "MainFrame"
 (Frame)abfrme.Parent = Frame
