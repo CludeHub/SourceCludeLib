@@ -557,6 +557,7 @@ saveButton_3c.Text = "Save"
 saveButton_3c.TextColor3 = Color3.fromRGB(255, 255, 255)
 saveButton_3c.TextTransparency = 0.300
 saveButton_3c.TextSize = 8
+saveButton_3c.Font = Enum.Font.GothamBold
 saveButton_3c.AutoButtonColor = false
 
 -- Stroke (parented to Save Button)
