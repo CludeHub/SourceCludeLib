@@ -565,7 +565,7 @@ local corner_5e = Instance.new("UICorner")
 local imageLabel_6f = Instance.new("ImageLabel")
 
 mainFrame_2b.Name = "MainFrame"
-mainFrame_2b.Parent = screenGui_1a
+mainFrame_2b.Parent = Frame
 mainFrame_2b.BackgroundTransparency = 1
 mainFrame_2b.Position = UDim2.new(0.243, 0, 0.025, 0)
 mainFrame_2b.Size = UDim2.new(0.606889784, 0, 0.0627818182, -13)
