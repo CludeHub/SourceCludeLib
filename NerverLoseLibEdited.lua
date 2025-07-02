@@ -273,7 +273,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		end
 	end)
 	
-print(name)
+print(Text)
 
 	local toggle_valu = true
 
