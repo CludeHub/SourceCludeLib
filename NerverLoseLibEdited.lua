@@ -222,57 +222,6 @@ local NEVERLOSE = {
 	_Name="NEVERLOSE"
 }
 
-function NEVERLOSE:AddSong(songName, volume)
-    local songDatabase = {
-        ["Umaasa"] = "rbxassetid://133056860461685",
-        ["Multo"] = "rbxassetid://125232677810449",
-        ["Tibok"] = "rbxassetid://128050310117412",
-        ["Panaginip"] = "rbxassetid://135649591889771",
-        ["Bulong"] = "rbxassetid://88313946848204",
-        ["Blue"] = "rbxassetid://79517207686810",
-        ["My Day"] = "rbxassetid://86536016834400",
-        ["Marilag"] = "rbxassetid://95971648640945",
-        ["Pwede Bang?"] = "rbxassetid://90605731153737",
-        ["Palagi"] = "rbxassetid://111987546607625",
-        ["Sa Bawat Sandali"] = "rbxassetid://108751156364245",
-        ["Mundo"] = "rbxassetid://104299448708404",
-        ["Misteryoso"] = "rbxassetid://95089973471436",
-        ["Tingin"] = "rbxassetid://80153772145096",
-        ["Silipin Ang Mundo"] = "rbxassetid://120143169868839",
-        ["MAPA"] = "rbxassetid://127380416183917",
-        ["Welcome To The Philippines"] = "rbxassetid://73918220712912",
-        ["Kung Siya Man"] = "rbxassetid://94677884359643",
-        ["7/11"] = "rbxassetid://106096002385879",
-        ["Bawat Piyesa"] = "rbxassetid://113067396499389",
-        ["Fallen"] = "rbxassetid://114573601339963",
-        ["I Wanna Be Yours"] = "rbxassetid://116353757832759",
-        ["Party Anthem"] = "rbxassetid://83076675736851",
-        ["Bara-Bara"] = "rbxassetid://91123606053737",
-        ["Burnout"] = "rbxassetid://134281918842231",
-        ["Ikaw Lamang"] = "rbxassetid://121287724170194",
-        ["Tadhana"] = "rbxassetid://135176263721324",
-        ["Oras"] = "rbxassetid://130129969300605"
-    }
-
-    local id = songDatabase[songName]
-    if not id then
-        warn("Song not found:", songName)
-        return
-    end
-
-    local song = {
-        Name = songName,
-        Id = id,
-        Volume = volume or 1
-    }
-
-    -- Add song to internal list
-    if not self.Songs then
-        self.Songs = {}
-    end
-    table.insert(self.Songs, song)
-end
-
 function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	    if name == "neon" then
 		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
