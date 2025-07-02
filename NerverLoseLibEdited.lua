@@ -556,6 +556,7 @@ saveButton_3c.ZIndex = 5
 saveButton_3c.Text = "Save"
 saveButton_3c.TextColor3 = Color3.fromRGB(94, 97, 106)
 saveButton_3c.TextSize = 8
+saveButton_3c.AutoButtonColor = false
 
 -- Stroke (parented to Save Button)
 stroke_4d.Name = "Stroke"
