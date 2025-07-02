@@ -499,7 +499,7 @@ print(Text .. " is Running")
 	outlo.BackgroundTransparency = 0.700
 	outlo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo.BorderSizePixel = 0
-	outlo.Position = UDim2.new(1, 0, 0.86999995, 0)
+	outlo.Position = UDim2.new(1, 0, 0.086999995, 0)
 	outlo.Size = UDim2.new(0.774999976, 0, 0, 1)
 	outlo.ZIndex = 4
 
@@ -556,7 +556,7 @@ saveButton_3c.ZIndex = 5
 saveButton_3c.Text = "Save"
 saveButton_3c.TextColor3 = Color3.fromRGB(255, 255, 255)
 saveButton_3c.TextTransparency = 0.300
-saveButton_3c.TextSize = 8
+saveButton_3c.TextSize = 11
 saveButton_3c.Font = Enum.Font.GothamBold
 saveButton_3c.AutoButtonColor = false
 
