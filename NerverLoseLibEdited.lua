@@ -273,7 +273,8 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		end
 	end)
 	
-print(Text)
+print(Text .. " Executed")
+print(Text .. " is Running")
 
 	local toggle_valu = true
 
