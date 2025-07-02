@@ -499,7 +499,7 @@ print(Text .. " is Running")
 	outlo.BackgroundTransparency = 0.700
 	outlo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo.BorderSizePixel = 0
-	outlo.Position = UDim2.new(1, 0, 0.136999995, 0)
+	outlo.Position = UDim2.new(1, 0, 0.86999995, 0)
 	outlo.Size = UDim2.new(0.774999976, 0, 0, 1)
 	outlo.ZIndex = 4
 
