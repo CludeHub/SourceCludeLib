@@ -574,11 +574,22 @@ corner_5e.CornerRadius = UDim.new(0, 2)
 imageLabel_6f.Name = "ImageIcon"
 imageLabel_6f.Parent = saveButton_3c
 imageLabel_6f.Image = "rbxassetid://124285067552436"
-imageLabel_6f.ImageColor3 = Color3.fromRGB(94, 97, 106)
+imageLabel_6f.ImageColor3 = Color3.fromRGB(255, 255, 255)
+imageLabel_6f.ImageTransparency = 0.300
 imageLabel_6f.BackgroundTransparency = 1
 imageLabel_6f.Position = UDim2.new(0.1, 0, 0.1, 0)
 imageLabel_6f.Size = UDim2.new(0.2, 0, 0.8, 0)
 imageLabel_6f.ZIndex = 6
+
+saveButton_3c.MouseEnter:Connect(function()
+	saveButton_3c.TextTransparency = 0
+	imageLabel_6f.ImageTransparency = 0			
+end)
+
+saveButton_3c.MouseLeave:Connect(function()
+	saveButton_3c.TextTransparency = 0.3
+	imageLabel_6f.ImageTransparency = 0.3
+end)
 
 	local ob = Instance.new("ImageButton")
 ob.Name = "OpenButton"
