@@ -33,7 +33,7 @@ LabelText.ZIndex = 6
 LabelText.Font = Enum.Font.SourceSansSemibold
 LabelText.Text = toggleName
 LabelText.TextColor3 = Color3.fromRGB(255, 255, 255)
-LabelText.TextTransparency = 0.300
+LabelText.TextTransparency = 0.5
 LabelText.TextScaled = true
 LabelText.TextWrapped = true
 LabelText.TextXAlignment = Enum.TextXAlignment.Left
@@ -73,7 +73,7 @@ local function toggleval(val, timea)
 		}):Play()
 		Effect.BackgroundColor3 = Color3.fromRGB(12, 18, 50)
 	else
-		TweenService:Create(LabelText, TweenInfo.new(timea), {TextTransparency = 0.3}):Play()
+		TweenService:Create(LabelText, TweenInfo.new(timea), {TextTransparency = 0.5}):Play()
 		TweenService:Create(Icon, TweenInfo.new(timea), {
 			Position = UDim2.new(0.25, 0, 0.5, 0),
 			BackgroundColor3 = Color3.fromRGB(95, 95, 95)
