@@ -535,12 +535,12 @@ dpiDropdown.AutoButtonColor = false
 
 dpiDropdown.MouseEnter:Connect(function()
    dpiLabel.TextTransparency = 0
-   dpiDropdown.TextTransparenct = 0
+   dpiDropdown.TextTransparency = 0
 		end)
 
 dpiDropdown.MouseLeave:Connect(function()
    dpiLabel.TextTransparency = 0.300
-   dpiDropdown.TextTransparenct = 0.300
+   dpiDropdown.TextTransparency = 0.300
 		end)
 	
 local corn = Instance.new("UICorner", dpiDropdown)
