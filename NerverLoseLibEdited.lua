@@ -513,7 +513,8 @@ local dpiLabel = Instance.new("TextLabel", aboutFrame)
 dpiLabel.Text = "Dpi Scale"
 dpiLabel.Font = Enum.Font.Gotham
 dpiLabel.TextSize = 14
-dpiLabel.TextColor3 = Color3.new(1, 1, 1)
+dpiLabel.TextColor3 = Color3.new(255, 255, 255)
+dpiLabel.TextTransparency = 0.300
 dpiLabel.BackgroundTransparency = 1
 dpiLabel.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiLabel.Position = UDim2.new(0.05, 0, 0.64, 0)
@@ -525,10 +526,22 @@ dpiDropdown.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiDropdown.Position = UDim2.new(0.55, 0, 0.64, 0)
 dpiDropdown.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 dpiDropdown.Text = "100%"
-dpiDropdown.TextColor3 = Color3.new(1, 1, 1)
+dpiDropdown.TextColor3 = Color3.new(255, 255, 255)
+dpiDropdown.TextTransparency = 0.300
 dpiDropdown.Font = Enum.Font.Gotham
 dpiDropdown.TextSize = 14
 dpiDropdown.BorderSizePixel = 0
+dpiDropdown.AutoButtonColor = false
+
+dpiDropdown.MouseEnter:Connect(function()
+   dpiLabel.TextTransparency = 0
+   dpiDropdown.TextTransparenct = 0
+		end)
+
+dpiDropdown.MouseLeave:Connect(function()
+   dpiLabel.TextTransparency = 0.300
+   dpiDropdown.TextTransparenct = 0.300
+		end)
 	
 local corn = Instance.new("UICorner", dpiDropdown)
 	corn.CornerRadius = UDim.new(0, 3)
