@@ -429,23 +429,6 @@ print(Text .. " is Running")
 	UICorner_3.CornerRadius = UDim.new(0, 4)
 	UICorner_3.Parent = Frame_3
 
-local imageButton1 = Instance.new("ImageButton")
-imageButton1.Name = "ImageButton1"
-imageButton1.BackgroundTransparency = 1
-imageButton1.Position = UDim2.new(0.920000076, 0, 0.0500000007, 0)
-imageButton1.Size = UDim2.new(0.0700000003, 0, 0.450390428, 0)
-imageButton1.ZIndex = 8
-imageButton1.Parent = Frame_3
-
-local imageButton2 = Instance.new("ImageButton")
-imageButton2.Name = "ImageButton2"
-imageButton2.BackgroundTransparency = 1
-imageButton2.Position = UDim2.new(0.850000501, 0, 0.0500000007, 0)
-imageButton2.Size = imageButton1.Size
-imageButton2.Image = "rbxassetid://134488580093972"
-imageButton2.ZIndex = 8
-imageButton2.Parent = Frame_3
-
 	DropShadow.Name = "DropShadow"
 	DropShadow.Parent = Frame
 	DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
