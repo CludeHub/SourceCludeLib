@@ -1,6 +1,5 @@
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
-local RunService = game:GetService("RunService")
 
 local toggleName = "Draggable"
 local defaultValue = false
@@ -34,6 +33,7 @@ LabelText.ZIndex = 6
 LabelText.Font = Enum.Font.SourceSansSemibold
 LabelText.Text = toggleName
 LabelText.TextColor3 = Color3.fromRGB(255, 255, 255)
+LabelText.TextTransparency = 0.300
 LabelText.TextScaled = true
 LabelText.TextWrapped = true
 LabelText.TextXAlignment = Enum.TextXAlignment.Left
@@ -82,9 +82,10 @@ local function toggleval(val, timea)
 	end
 end
 
--- Drag logic
+-- Drag system
 local dragging = false
 local dragStart, frameStartPos, aboutStartPos
+local inputConn, moveConn
 
 local function updateDrag(input)
 	if not dragging then return end
@@ -97,7 +98,6 @@ local function updateDrag(input)
 		frameStartPos.Y.Offset + delta.Y
 	)
 
-	-- Just add same delta to AboutFrame to move it visually, no layout reset
 	AboutFrame.Position = UDim2.new(
 		aboutStartPos.X.Scale,
 		aboutStartPos.X.Offset + delta.X,
@@ -107,43 +107,47 @@ local function updateDrag(input)
 end
 
 local function enableDragging(enabled)
-	if not enabled then return end
+	-- Disconnect old connections
+	if inputConn then inputConn:Disconnect() inputConn = nil end
+	if moveConn then moveConn:Disconnect() moveConn = nil end
 
-	Frame.InputBegan:Connect(function(input)
+	if not enabled then
+		dragging = false
+		return
+	end
+
+	inputConn = Frame.InputBegan:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 			dragging = true
 			dragStart = input.Position
 			frameStartPos = Frame.Position
 			aboutStartPos = AboutFrame.Position
 
-			input.Changed:Connect(function()
+			local ended
+			ended = input.Changed:Connect(function()
 				if input.UserInputState == Enum.UserInputState.End then
 					dragging = false
+					ended:Disconnect()
 				end
 			end)
 		end
 	end)
 
-	UserInputService.InputChanged:Connect(function(input)
+	moveConn = UserInputService.InputChanged:Connect(function(input)
 		if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
 			updateDrag(input)
 		end
 	end)
 end
 
--- Init toggle
+-- Init toggle state
 local ToggleValue = defaultValue
 toggleval(ToggleValue, 0)
+enableDragging(ToggleValue)
 
 Clicker.MouseButton1Click:Connect(function()
 	ToggleValue = not ToggleValue
 	toggleval(ToggleValue, 0.1)
-
-	if ToggleValue then
-		enableDragging(true)
-	else
-		dragging = false
-	end
-
+	enableDragging(ToggleValue)
 	print("Toggle:", ToggleValue)
 end)
