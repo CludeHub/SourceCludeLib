@@ -422,6 +422,15 @@ local top = Instance.new("Frame", aboutFrame)
 top.Size = UDim2.new(1, 0, 0.1, 0)
 top.BackgroundTransparency = 1
 
+-- Icon
+local icon = Instance.new("ImageLabel", top)
+icon.Size = UDim2.new(0, 16, 0, 16)
+icon.Position = UDim2.new(0.05, 0, 0.5, 0)
+icon.AnchorPoint = Vector2.new(0, 0.5)
+icon.BackgroundTransparency = 1
+icon.Image = "rbxassetid://134488580093972"
+icon.ImageColor3 = Color3.new(0, 222, 255)
+
 local topTitle = Instance.new("TextLabel", top)
 topTitle.Text = "About Neverlose"
 topTitle.Font = Enum.Font.Gotham
@@ -429,8 +438,7 @@ topTitle.TextSize = 14
 topTitle.TextColor3 = Color3.new(1, 1, 1)
 topTitle.TextStrokeTransparency = 0.8
 topTitle.BackgroundTransparency = 1
-topTitle.Size = UDim2.new(0.8, 0, 1, 0)
-topTitle.Position = UDim2.new(0.05, 0, 0, 0)
+topTitle.Position = UDim2.new(0.05, 20, 0, 0) 
 topTitle.TextXAlignment = Enum.TextXAlignment.Left
 	
 -- Divider
