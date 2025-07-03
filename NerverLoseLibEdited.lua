@@ -406,6 +406,23 @@ print(Text .. " is Running")
 
 	UICorner.Parent = Frame
 
+			local ImageButtons = Instance.new("ImageButton")
+
+		ImageButtons.Parent = Frame
+		ImageButtons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ImageButtons.BackgroundTransparency = 1.000
+		ImageButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ImageButtons.BorderSizePixel = 0
+		ImageButtons.Position = UDim2.new(0.908723712, 0, 0.0239103697, 0)
+		ImageButtons.Size = UDim2.new(0.0800000036, 0, 0.0800000036, 0)
+		ImageButtons.SizeConstraint = Enum.SizeConstraint.RelativeYY
+		ImageButtons.ZIndex = 4
+		ImageButtons.Image = "rbxassetid://134488580093972"
+		ImageButtons.ScaleType = Enum.ScaleType.Fit
+
+		ImageButtons.MouseButton1Click:Connect(function()
+		end)
+
 	Frame_2.Parent = Frame
 	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
