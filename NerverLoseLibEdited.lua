@@ -406,6 +406,162 @@ print(Text .. " is Running")
 
 	UICorner.Parent = Frame
 
+	-- About Frame
+local aboutFrame = Instance.new("Frame", ScreenGui)
+aboutFrame.Name = "AboutFrame"
+aboutFrame.Size = UDim2.new(0.24, 0, 0.6, 0)
+aboutFrame.Position = UDim2.new(0.7, 0, 0.2, 0)
+aboutFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+aboutFrame.BackgroundTransparency = 0.2
+aboutFrame.BorderSizePixel = 0
+aboutFrame.Visible = false
+Instance.new("UICorner", aboutFrame).CornerRadius = UDim.new(0, 3)
+
+-- Topbar
+local top = Instance.new("Frame", aboutFrame)
+top.Size = UDim2.new(1, 0, 0.1, 0)
+top.BackgroundTransparency = 1
+
+local topTitle = Instance.new("TextLabel", top)
+topTitle.Text = "About Neverlose"
+topTitle.Font = Enum.Font.Gotham
+topTitle.TextSize = 14
+topTitle.TextColor3 = Color3.new(1, 1, 1)
+topTitle.TextStrokeTransparency = 0.8
+topTitle.BackgroundTransparency = 1
+topTitle.Size = UDim2.new(0.8, 0, 1, 0)
+topTitle.Position = UDim2.new(0.05, 0, 0, 0)
+topTitle.TextXAlignment = Enum.TextXAlignment.Left
+	
+-- Divider
+local divider = Instance.new("Frame", aboutFrame)
+divider.Size = UDim2.new(1, 0, 0.002, 0)
+divider.Position = UDim2.new(0, 0, 0.1, 0)
+divider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+divider.BackgroundTransparency = 0.85
+divider.BorderSizePixel = 0
+
+-- Title
+local title = Instance.new("TextLabel", aboutFrame)
+title.Text = "NEVERLOSE.CC"
+title.Font = Enum.Font.GothamBlack
+title.TextSize = 28
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextStrokeTransparency = 0.7
+title.TextStrokeColor3 = Color3.fromRGB(0, 222, 255)
+title.BackgroundTransparency = 1
+title.Size = UDim2.new(1, 0, 0.12, 0)
+title.Position = UDim2.new(0, 0, 0.12, 0)
+title.TextXAlignment = Enum.TextXAlignment.Center
+
+-- Info Rows
+local function AddInfo(label, value, index, isBlue)
+local labelText = Instance.new("TextLabel", aboutFrame)
+labelText.Text = label
+labelText.Font = Enum.Font.Gotham
+labelText.TextSize = 14
+labelText.TextColor3 = Color3.new(1, 1, 1)
+labelText.BackgroundTransparency = 1
+labelText.Size = UDim2.new(0.45, 0, 0.05, 0)
+labelText.Position = UDim2.new(0.05, 0, 0.25 + index * 0.05, 0)
+labelText.TextXAlignment = Enum.TextXAlignment.Left
+
+local valueText = Instance.new("TextLabel", aboutFrame)  
+valueText.Text = value  
+valueText.Font = Enum.Font.Gotham  
+valueText.TextSize = 14  
+valueText.TextColor3 = isBlue and Color3.fromRGB(0, 222, 255) or Color3.new(1, 1, 1)  
+valueText.BackgroundTransparency = 1  
+valueText.Size = UDim2.new(0.45, 0, 0.05, 0)  
+valueText.Position = UDim2.new(0.5, 0, 0.25 + index * 0.05, 0)  
+valueText.TextXAlignment = Enum.TextXAlignment.Left
+
+end
+
+AddInfo("Version:", "2.0.0", 0, true)
+AddInfo("Build date:", "Dec 30 2020", 1, true)
+AddInfo("Build type:", "Release", 2, true)
+AddInfo("Registered to:", "Anon_z2", 3, true)
+AddInfo("Subscription till:", "01.01.2021 21:07", 4, true)
+
+-- Footer
+local copyright = Instance.new("TextLabel", aboutFrame)
+copyright.Text = "neverlose.cc © 2020"
+copyright.Font = Enum.Font.Gotham
+copyright.TextSize = 12
+copyright.TextColor3 = Color3.new(1, 1, 1)
+copyright.BackgroundTransparency = 1
+copyright.Size = UDim2.new(1, 0, 0.04, 0)
+copyright.Position = UDim2.new(0, 0, 0.51, 0)
+copyright.TextXAlignment = Enum.TextXAlignment.Center
+
+-- Divider 2
+local divider2 = divider:Clone()
+divider2.Position = UDim2.new(0, 0, 0.56, 0)
+divider2.Parent = aboutFrame
+
+-- DPI Label
+local dpiLabel = Instance.new("TextLabel", aboutFrame)
+dpiLabel.Text = "Dpi Scale"
+dpiLabel.Font = Enum.Font.Gotham
+dpiLabel.TextSize = 14
+dpiLabel.TextColor3 = Color3.new(1, 1, 1)
+dpiLabel.BackgroundTransparency = 1
+dpiLabel.Size = UDim2.new(0.4, 0, 0.05, 0)
+dpiLabel.Position = UDim2.new(0.05, 0, 0.64, 0)
+dpiLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+-- DPI Button
+local dpiDropdown = Instance.new("TextButton", aboutFrame)
+dpiDropdown.Size = UDim2.new(0.4, 0, 0.05, 0)
+dpiDropdown.Position = UDim2.new(0.55, 0, 0.64, 0)
+dpiDropdown.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+dpiDropdown.Text = "100%"
+dpiDropdown.TextColor3 = Color3.new(1, 1, 1)
+dpiDropdown.Font = Enum.Font.Gotham
+dpiDropdown.TextSize = 14
+dpiDropdown.BorderSizePixel = 0
+Instance.new("UICorner", dpiDropdown)
+
+-- DPI Logic
+local dpiSizes = {
+["100%"] = {
+NEVERLOSE = UDim2.new(0.53, 0, 0.89, 0),
+ABOUT = UDim2.new(0.24, 0, 0.6, 0)
+},
+["90%"] = {
+NEVERLOSE = UDim2.new(0.477, 0, 0.801, 0),
+ABOUT = UDim2.new(0.216, 0, 0.54, 0)
+}
+}
+
+local dpiOptions = { "100%", "90%" }
+local dpiIndex = 1
+
+local function updateDPI()
+local scaleKey = dpiOptions[dpiIndex]
+dpiDropdown.Text = scaleKey
+local sizeInfo = dpiSizes[scaleKey]
+
+-- Resize About Frame  
+aboutFrame.Size = sizeInfo.ABOUT  
+
+-- Resize main NEVERLOSE.Frame if exists  
+local mainGui = CoreGui:FindFirstChild("NEVERLOSE")  
+if mainGui and mainGui:FindFirstChild("Frame") then  
+	mainGui.Frame.Size = sizeInfo.NEVERLOSE  
+end
+
+end
+
+dpiDropdown.MouseButton1Click:Connect(function()
+dpiIndex = dpiIndex % #dpiOptions + 1
+updateDPI()
+end)
+
+-- Initial DPI set
+updateDPI()
+
 			local ImageButtons = Instance.new("ImageButton")
 
 		ImageButtons.Parent = Frame
@@ -421,6 +577,7 @@ print(Text .. " is Running")
 		ImageButtons.ScaleType = Enum.ScaleType.Fit
 
 		ImageButtons.MouseButton1Click:Connect(function()
+			aboutFrame.Visible = not aboutFrame.Visible
 		end)
 
 	Frame_2.Parent = Frame
