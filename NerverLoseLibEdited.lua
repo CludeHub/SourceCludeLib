@@ -529,7 +529,14 @@ dpiDropdown.TextColor3 = Color3.new(1, 1, 1)
 dpiDropdown.Font = Enum.Font.Gotham
 dpiDropdown.TextSize = 14
 dpiDropdown.BorderSizePixel = 0
-Instance.new("UICorner", dpiDropdown)
+	
+local corn = Instance.new("UICorner", dpiDropdown)
+	corn.CornerRadius = UDim.new(0, 3)
+
+local stroc = Instance.new("UIStroke", dpiDropdown)
+stroc.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+stroc.Color = Color3.fromRGB(28, 28, 28)
+stroc.Thickness = 0.6
 
 -- DPI Logic
 local dpiSizes = {
