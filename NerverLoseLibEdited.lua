@@ -794,6 +794,10 @@ saveButton_3c.MouseLeave:Connect(function()
 	imageLabel_6f.ImageTransparency = 0.3
 end)
 
+------- drag toggle setting
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/DragToggleSetting.lua"))()
+----
+
 	local ob = Instance.new("ImageButton")
 ob.Name = "OpenButton"
 ob.Parent = ScreenGui
