@@ -438,7 +438,7 @@ topTitle.TextSize = 14
 topTitle.TextColor3 = Color3.new(1, 1, 1)
 topTitle.TextStrokeTransparency = 0.8
 topTitle.BackgroundTransparency = 1
-topTitle.Position = UDim2.new(0.05, 20, 0, 0) 
+topTitle.Position = UDim2.new(0.11, 0, 0.5, 0) 
 topTitle.TextXAlignment = Enum.TextXAlignment.Left
 	
 -- Divider
