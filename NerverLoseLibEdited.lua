@@ -2586,6 +2586,16 @@ function NEVERLOSE:Notification()
 
 		local currenttime = 0.3
 		local function start_vu()
+			local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://5153734608"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 			TweenService:Create(Notify,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quint),{Size=UDim2.new(0.99,0,0.75,0)}):Play()
 			TweenService:Create(UIStroke,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{Transparency=0}):Play()
 			TweenService:Create(HeadTitle,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{TextTransparency=0}):Play()
