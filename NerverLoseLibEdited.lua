@@ -1108,7 +1108,7 @@ end)
 				local Sound2 = Instance.new("Sound")
 Sound2.SoundId = "rbxassetid://77120543307812"
 Sound2.Looped = false
-Sound2.Volume = 1
+Sound2.Volume = 0.9
 Sound2.Parent = game:GetService("SoundService")
 Sound2:Play()
 
@@ -1298,6 +1298,16 @@ Sound2.Ended:Connect(function()
 				UIStroke.Parent = Button
 
 				cretate_button(Button).MouseButton1Click:Connect(function()
+						local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://6895079853"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 					callback()
 				end)
 
@@ -1483,6 +1493,16 @@ Sound2.Ended:Connect(function()
 				toggleval(Default,0)
 
 				cretate_button(Toggle).MouseButton1Click:Connect(function()
+						local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://6895079853"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 					Default=not Default
 					toggleval(Default,0.1)
 					callback(Default)
@@ -1623,6 +1643,16 @@ Sound2.Ended:Connect(function()
 
 				local Binding = false
 				cretate_button(Keybind).MouseButton1Click:Connect(function()
+						local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://77120543307812"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 					if Binding then
 						return
 					end
@@ -2092,6 +2122,16 @@ Sound2.Ended:Connect(function()
 				DropdownToggleEffect(DropdownToggle)
 
 				cretate_button(Dropdown).MouseButton1Click:Connect(function()
+						local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://6895079853"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 					DropdownToggle=not DropdownToggle
 					DropdownToggleEffect(DropdownToggle)
 				end)
@@ -2379,6 +2419,16 @@ function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	TweenService:Create(Frame,TweenInfo.new(0.4,Enum.EasingStyle.Quint),{Size=UDim2.new(0.35, 0, 0.35, 0)}):Play()
 
 	CopyKey.MouseButton1Click:Connect(function()
+			local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://6895079853"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 		pcall(function()
 			setclipboard(tostring(LinkKey))
 		end)
@@ -2393,6 +2443,16 @@ function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	local function_call
 
 	Submit.MouseButton1Click:Connect(function()
+			local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://6895079853"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 		if asd then
 			return
 		end
