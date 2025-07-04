@@ -17,7 +17,7 @@ Toggle.Name = "Toggle"
 Toggle.Parent = AboutFrame
 Toggle.BackgroundTransparency = 1
 Toggle.Position = UDim2.new(0.037, 0, 0.7, 0)
-Toggle.Size = UDim2.new(0.8, 0, 0.3, 0)
+Toggle.Size = UDim2.new(0.800000012, 0, 0.0772999972, 0)
 Toggle.ZIndex = 5
 
 Instance.new("UIAspectRatioConstraint", Toggle).AspectRatio = 7
@@ -42,7 +42,7 @@ local Effect = Instance.new("Frame", Toggle)
 Effect.Name = "Effect"
 Effect.AnchorPoint = Vector2.new(0, 0.5)
 Effect.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
-Effect.Position = UDim2.new(0.95, 0, 0.5, 0)
+Effect.Position = UDim2.new(1.28900003, 0, 0.5, 0)
 Effect.Size = UDim2.new(0.15, 0, 0.5, 0)
 Effect.ZIndex = 6
 Instance.new("UICorner", Effect).CornerRadius = UDim.new(0.5, 0)
@@ -59,7 +59,7 @@ Instance.new("UICorner", Icon).CornerRadius = UDim.new(1, 0)
 
 local Clicker = Instance.new("TextButton", Toggle)
 Clicker.BackgroundTransparency = 1
-Clicker.Size = UDim2.new(1.1, 0, 1, 0)
+Clicker.Size = UDim2.new(1.3, 0, 1, 0)
 Clicker.Text = ""
 Clicker.ZIndex = 10
 
