@@ -154,7 +154,7 @@ Sound2.Parent = game:GetService("SoundService")
 Sound2:Play()
 
 Sound2.Ended:Connect(function()
-	Sound:Destroy()
+	Sound2:Destroy()
      end)
 	ToggleValue = not ToggleValue
 	toggleval(ToggleValue, 0.1)
