@@ -789,11 +789,31 @@ imageLabel_6f.Size = UDim2.new(0.2, 0, 0.8, 0)
 imageLabel_6f.ZIndex = 6
 
 saveButton_3c.MouseEnter:Connect(function()
+			local Sound = Instance.new("Sound")
+Sound.SoundId = clicksound
+Sound.Looped = false
+Sound.Volume = 1
+Sound.Parent = game:GetService("SoundService")
+Sound:Play()
+
+Sound.Ended:Connect(function()
+	Sound:Destroy()
+end)
 	saveButton_3c.TextTransparency = 0
 	imageLabel_6f.ImageTransparency = 0			
 end)
 
 saveButton_3c.MouseLeave:Connect(function()
+			local Sound2 = Instance.new("Sound")
+Sound2.SoundId = clicksound
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound:Destroy()
+end)
 	saveButton_3c.TextTransparency = 0.3
 	imageLabel_6f.ImageTransparency = 0.3
 end)
