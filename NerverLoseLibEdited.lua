@@ -583,17 +583,6 @@ end
 end
 
 dpiDropdown.MouseButton1Click:Connect(function()
-			local Sound4 = Instance.new("Sound")
-Sound4.SoundId = "rbxassetid://6895079853"
-Sound4.Looped = false
-Sound4.Volume = 1
-Sound4.Parent = game:GetService("SoundService")
-Sound4:Play()
-
-Sound4.Ended:Connect(function()
-	Sound:Destroy()
-     end)
-end)
 dpiIndex = dpiIndex % #dpiOptions + 1
 updateDPI()
 end)
@@ -616,17 +605,6 @@ updateDPI()
 		ImageButtons.ScaleType = Enum.ScaleType.Fit
 
 		ImageButtons.MouseButton1Click:Connect(function()
-			local Sound3 = Instance.new("Sound")
-Sound3.SoundId = "rbxassetid://6895079853"
-Sound3.Looped = false
-Sound3.Volume = 1
-Sound3.Parent = game:GetService("SoundService")
-Sound3:Play()
-
-Sound3.Ended:Connect(function()
-	Sound:Destroy()
-     end)
-end)
 			aboutFrame.Visible = not aboutFrame.Visible
 		end)
 
