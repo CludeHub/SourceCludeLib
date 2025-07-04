@@ -615,6 +615,16 @@ updateDPI()
 		ImageButtons.ScaleType = Enum.ScaleType.Fit
 
 		ImageButtons.MouseButton1Click:Connect(function()
+			local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://6895079853"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 			aboutFrame.Visible = not aboutFrame.Visible
 		end)
 
