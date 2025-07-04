@@ -29,6 +29,7 @@ LabelText.AnchorPoint = Vector2.new(0.5, 0.5)
 LabelText.BackgroundTransparency = 1
 LabelText.Position = UDim2.new(0.385, 0, 0.5, 0)
 LabelText.Size = UDim2.new(0.77, -10, 0.75, -7)
+LabelText.Font = Enum.Font.Gotham
 LabelText.ZIndex = 6
 LabelText.Text = toggleName
 LabelText.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -58,7 +59,7 @@ Instance.new("UICorner", Icon).CornerRadius = UDim.new(1, 0)
 
 local Clicker = Instance.new("TextButton", Toggle)
 Clicker.BackgroundTransparency = 1
-Clicker.Size = UDim2.new(1, 0, 1, 0)
+Clicker.Size = UDim2.new(1.1, 0, 1, 0)
 Clicker.Text = ""
 Clicker.ZIndex = 10
 
