@@ -1105,6 +1105,16 @@ end)
 		table.insert(Tabs,{Tab,tabcall})
 
 		cretate_button(TabButton).MouseButton1Click:Connect(function()
+				local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://77120543307812"
+Sound2.Looped = false
+Sound2.Volume = 1
+Sound2.Parent = game:GetService("SoundService")
+Sound2:Play()
+
+Sound2.Ended:Connect(function()
+	Sound2:Destroy()
+     end)
 			for i,v in ipairs(Tabs) do
 				if v[1]==Tab then
 					v[2](true,0.4)
