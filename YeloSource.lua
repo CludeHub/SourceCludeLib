@@ -16,18 +16,16 @@ local function CreateYeloLibra()
         MainFrame.Draggable = true
         MainFrame.Parent = ScreenGui
 
-        local UIScale = Instance.new("UIScale")
+        local UIScale = Instance.new("UIScale", MainFrame)
         UIScale.Scale = 0.7
-        UIScale.Parent = MainFrame
 
         -- SIDEBAR
         local Sidebar = Instance.new("Frame")
         Sidebar.Name = "Sidebar"
         Sidebar.Size = UDim2.new(0.18, 0, 1, 0)
-        Sidebar.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
         Sidebar.Position = UDim2.new(0, 0, 0, 0)
+        Sidebar.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
         Sidebar.Parent = MainFrame
-
         Instance.new("UICorner", Sidebar).CornerRadius = UDim.new(0, 4)
 
         local Title = Instance.new("TextLabel")
@@ -63,25 +61,42 @@ local function CreateYeloLibra()
         PageTitle.Position = UDim2.new(0, 20, 0, 0)
         PageTitle.Parent = TopBar
 
-        -- HEADERTABS
+        -- HEADERTABS (wrapped layout)
         local HeaderTabs = Instance.new("Frame")
         HeaderTabs.Name = "HeaderTabs"
-        HeaderTabs.Size = UDim2.new(0.82, 0, 0.055, 0)
+        HeaderTabs.Size = UDim2.new(0.82, 0, 0, 60)
         HeaderTabs.Position = UDim2.new(0.18, 0, 0.07, 0)
         HeaderTabs.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+        HeaderTabs.AutomaticSize = Enum.AutomaticSize.Y
         HeaderTabs.Parent = MainFrame
         Instance.new("UICorner", HeaderTabs).CornerRadius = UDim.new(0, 4)
+
+        local Padding = Instance.new("UIPadding", HeaderTabs)
+        Padding.PaddingTop = UDim.new(0, 6)
+        Padding.PaddingLeft = UDim.new(0, 8)
+        Padding.PaddingRight = UDim.new(0, 8)
+        Padding.PaddingBottom = UDim.new(0, 6)
+
+        local Layout = Instance.new("UIGridLayout", HeaderTabs)
+        Layout.CellSize = UDim2.new(0, 150, 0, 30)
+        Layout.CellPadding = UDim2.new(0, 10, 0, 8)
+        Layout.FillDirectionMaxCells = 4
+        Layout.FillDirection = Enum.FillDirection.Horizontal
+        Layout.StartCorner = Enum.StartCorner.TopLeft
+        Layout.SortOrder = Enum.SortOrder.LayoutOrder
+        Layout.HorizontalAlignment = Enum.HorizontalAlignment.Left
+        Layout.VerticalAlignment = Enum.VerticalAlignment.Top
 
         -- CONTENT
         local ContentFrame = Instance.new("Frame")
         ContentFrame.Name = "ContentFrame"
-        ContentFrame.Size = UDim2.new(0.82, 0, 0.875, 0)
-        ContentFrame.Position = UDim2.new(0.18, 0, 0.125, 0)
+        ContentFrame.Size = UDim2.new(0.82, 0, 0.8, 0)
+        ContentFrame.Position = UDim2.new(0.18, 0, 0.14, 0)
         ContentFrame.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
         ContentFrame.Parent = MainFrame
         Instance.new("UICorner", ContentFrame).CornerRadius = UDim.new(0, 4)
 
-        -- Methods
+        -- METHODS
         local Window = {}
 
         function Window:SetPageTitle(text)
@@ -104,12 +119,10 @@ local function CreateYeloLibra()
             Button.Parent = Sidebar
 
             Instance.new("UICorner", Button).CornerRadius = UDim.new(0, 4)
-
-            local Stroke = Instance.new("UIStroke")
+            local Stroke = Instance.new("UIStroke", Button)
             Stroke.Color = Color3.fromRGB(40, 40, 40)
             Stroke.Thickness = 1
             Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            Stroke.Parent = Button
 
             if callback then
                 Button.MouseButton1Click:Connect(callback)
@@ -117,11 +130,9 @@ local function CreateYeloLibra()
         end
 
         function Window:AddHeaderTab(name, callback)
-            local index = #HeaderTabs:GetChildren()
             local TabBtn = Instance.new("TextButton")
             TabBtn.Name = name
-            TabBtn.Size = UDim2.new(0, 150, 1, 0)
-            TabBtn.Position = UDim2.new(0, (index - 1) * 160, 0, 0)
+            TabBtn.Size = UDim2.new(0, 150, 0, 30)
             TabBtn.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
             TabBtn.Text = name
             TabBtn.Font = Enum.Font.Gotham
@@ -131,12 +142,10 @@ local function CreateYeloLibra()
             TabBtn.Parent = HeaderTabs
 
             Instance.new("UICorner", TabBtn).CornerRadius = UDim.new(0, 4)
-
-            local Stroke = Instance.new("UIStroke")
+            local Stroke = Instance.new("UIStroke", TabBtn)
             Stroke.Color = Color3.fromRGB(40, 40, 40)
             Stroke.Thickness = 1
             Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            Stroke.Parent = TabBtn
 
             if callback then
                 TabBtn.MouseButton1Click:Connect(callback)
