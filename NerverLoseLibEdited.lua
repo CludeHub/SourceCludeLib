@@ -526,7 +526,7 @@ dpiLabel8.BackgroundTransparency = 1
 dpiLabel8.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiLabel8.Position = UDim2.new(0.05, 0, 0.64, 0)
 -- DPI Label
-local dpiLabel = Instance.new("TextLabel", aboutFrame)
+local dpiLabel = Instance.new("TextLabel", dpiLabel18)
 dpiLabel.Text = "Dpi Scale"
 dpiLabel.Font = Enum.Font.Gotham
 dpiLabel.TextSize = 14
