@@ -651,7 +651,7 @@ Sound2.Ended:Connect(function()
 		ImageButtons.BackgroundTransparency = 1.000
 		ImageButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons.BorderSizePixel = 0
-		ImageButtons.Position = UDim2.new(0.89770207, 0, 0.0139103699, 0)
+		ImageButtons.Position = UDim2.new(0.84570207, 0, 0.0139103699, 0)
 		ImageButtons.Size = UDim2.new(0.0500000036, 0, 0.0500000036, 0)
 		ImageButtons.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons.ZIndex = 4
