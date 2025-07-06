@@ -469,7 +469,7 @@ title.TextXAlignment = Enum.TextXAlignment.Center
 -- Info Rows
 local function AddInfo(label, value, index, isBlue)
 
-local labelTexts = Instance.new("Frame", aboutFram)
+local labelTexts = Instance.new("Frame", aboutFrame)
 labelTexts.BackgroundTransparency = 1
 labelTexts.Size = UDim2.new(0.45, 0, 0.05, 0)
 labelTexts.Position = UDim2.new(0.05, 0, 0.25 + index * 0.05, 0)
@@ -526,7 +526,7 @@ dpiLabel8.BackgroundTransparency = 1
 dpiLabel8.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiLabel8.Position = UDim2.new(0.05, 0, 0.64, 0)
 -- DPI Label
-local dpiLabel = Instance.new("TextLabel", dpiLabel18)
+local dpiLabel = Instance.new("TextLabel", dpiLabel8)
 dpiLabel.Text = "Dpi Scale"
 dpiLabel.Font = Enum.Font.Gotham
 dpiLabel.TextSize = 14
