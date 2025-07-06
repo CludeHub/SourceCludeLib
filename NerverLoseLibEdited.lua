@@ -655,7 +655,7 @@ Sound2.Ended:Connect(function()
 		ImageButtons.Size = UDim2.new(0.0600000036, 0, 0.0600000036, 0)
 		ImageButtons.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons.ZIndex = 4
-		ImageButtons.Image = "rbxassetid://134488580093972"
+		ImageButtons.Image = "http://www.roblox.com/asset/?id=6031280882"
 		ImageButtons.ScaleType = Enum.ScaleType.Fit
 
 		ImageButtons.MouseButton1Click:Connect(function()
