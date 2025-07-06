@@ -623,7 +623,7 @@ updateDPI()
 		ImageButtons2.BackgroundTransparency = 1.000
 		ImageButtons2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons2.BorderSizePixel = 0
-		ImageButtons2.Position = UDim2.new(0.87670207, 0, 0.0139103699, 0)
+		ImageButtons2.Position = UDim2.new(0.918723712, 0, 0.0139103697, 0)
 		ImageButtons2.Size = UDim2.new(0.0600000036, 0, 0.0600000036, 0)
 		ImageButtons2.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons2.ZIndex = 4
@@ -651,7 +651,7 @@ Sound2.Ended:Connect(function()
 		ImageButtons.BackgroundTransparency = 1.000
 		ImageButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons.BorderSizePixel = 0
-		ImageButtons.Position = UDim2.new(0.918723712, 0, 0.0139103697, 0)
+		ImageButtons.Position = UDim2.new(0.87670207, 0, 0.0139103699, 0)
 		ImageButtons.Size = UDim2.new(0.0600000036, 0, 0.0600000036, 0)
 		ImageButtons.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons.ZIndex = 4
