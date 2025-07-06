@@ -430,7 +430,7 @@ icon.AnchorPoint = Vector2.new(0, 0.5)
 icon.BackgroundTransparency = 1
 icon.Image = "rbxassetid://134488580093972"
 icon.ImageColor3 = NEVERLOSE.Themes.MainColor
-
+		
 local topTitle = Instance.new("TextLabel", top)
 topTitle.Text = "About Neverlose"
 topTitle.Font = Enum.Font.Gotham
@@ -449,8 +449,13 @@ divider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 divider.BackgroundTransparency = 0.85
 divider.BorderSizePixel = 0
 
+local titleh = Instance.new("Frame", aboutFrame)
+titleh.BackgroundTransparency = 1
+titleh.Size = UDim2.new(1, 0, 0.12, 0)
+titleh.Position = UDim2.new(0, 0, 0.12, 0)
+	
 -- Title
-local title = Instance.new("TextLabel", aboutFrame)
+local title = Instance.new("TextLabel", titleh)
 title.Text = "NEVERLOSE.CC"
 title.Font = Enum.Font.GothamBlack
 title.TextSize = 28
@@ -458,30 +463,38 @@ title.TextColor3 = Color3.new(255, 255, 255)
 title.TextStrokeTransparency = 0.7
 title.TextStrokeColor3 = NEVERLOSE.Themes.MainColor
 title.BackgroundTransparency = 1
-title.Size = UDim2.new(1, 0, 0.12, 0)
-title.Position = UDim2.new(0, 0, 0.12, 0)
+title.Size = UDim2.new(1, 0, 1, 0)
 title.TextXAlignment = Enum.TextXAlignment.Center
 
 -- Info Rows
 local function AddInfo(label, value, index, isBlue)
-local labelText = Instance.new("TextLabel", aboutFrame)
+
+local labelTexts = Instance.new("Frame", aboutFram)
+labelTexts.BackgroundTransparency = 1
+labelTexts.Size = UDim2.new(0.45, 0, 0.05, 0)
+labelTexts.Position = UDim2.new(0.05, 0, 0.25 + index * 0.05, 0)
+	
+local labelText = Instance.new("TextLabel", labelTexts)
 labelText.Text = label
 labelText.Font = Enum.Font.Gotham
 labelText.TextSize = 14
 labelText.TextColor3 = Color3.new(255, 255, 255)
 labelText.BackgroundTransparency = 1
-labelText.Size = UDim2.new(0.45, 0, 0.05, 0)
-labelText.Position = UDim2.new(0.05, 0, 0.25 + index * 0.05, 0)
+labelText.Size = UDim2.new(1, 0, 1, 0)
 labelText.TextXAlignment = Enum.TextXAlignment.Left
 
-local valueText = Instance.new("TextLabel", aboutFrame)  
+local valueText1 = Instance.new("Frame", aboutFrame)
+valueText1.BackgroundTransparency = 1  
+valueText1.Size = UDim2.new(0.45, 0, 0.05, 0)  
+valueText1.Position = UDim2.new(0.5, 0, 0.25 + index * 0.05, 0) 
+
+local valueText = Instance.new("TextLabel", valueText1)  
 valueText.Text = value  
 valueText.Font = Enum.Font.Gotham  
 valueText.TextSize = 14  
 valueText.TextColor3 = isBlue and NEVERLOSE.Themes.MainColor or Color3.new(255, 255, 255)  
 valueText.BackgroundTransparency = 1  
-valueText.Size = UDim2.new(0.45, 0, 0.05, 0)  
-valueText.Position = UDim2.new(0.5, 0, 0.25 + index * 0.05, 0)  
+valueText.Size = UDim2.new(1, 0, 1, 0)    
 valueText.TextXAlignment = Enum.TextXAlignment.Left
 
 end
@@ -508,6 +521,10 @@ local divider2 = divider:Clone()
 divider2.Position = UDim2.new(0, 0, 0.56, 0)
 divider2.Parent = aboutFrame
 
+local dpiLabel8 = Instance.new("Frame", aboutFrame)
+dpiLabel8.BackgroundTransparency = 1
+dpiLabel8.Size = UDim2.new(0.4, 0, 0.05, 0)
+dpiLabel8.Position = UDim2.new(0.05, 0, 0.64, 0)
 -- DPI Label
 local dpiLabel = Instance.new("TextLabel", aboutFrame)
 dpiLabel.Text = "Dpi Scale"
@@ -516,8 +533,7 @@ dpiLabel.TextSize = 14
 dpiLabel.TextColor3 = Color3.new(255, 255, 255)
 dpiLabel.TextTransparency = 0.300
 dpiLabel.BackgroundTransparency = 1
-dpiLabel.Size = UDim2.new(0.4, 0, 0.05, 0)
-dpiLabel.Position = UDim2.new(0.05, 0, 0.64, 0)
+dpiLabel.Size = UDim2.new(1, 0, 1, 0)
 dpiLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 -- DPI Button
