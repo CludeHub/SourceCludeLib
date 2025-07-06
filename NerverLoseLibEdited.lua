@@ -624,7 +624,8 @@ TextBox.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
 TextBox.BackgroundTransparency = 0.6
 TextBox.Position = UDim2.new(0.24000001, 0, 0.0200000014, 0)
 TextBox.Size = UDim2.new(0.600000024, 0, 0.0599999987, 0)
-TextBox.ZIndex = 23
+TextBox.ZIndex = 27
+TextBox.Text = ""
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextBox.PlaceholderText = "Search"
 TextBox.Font = Enum.Font.SourceSans
@@ -651,9 +652,9 @@ Icon.Name = "SearchIcon"
 Icon.Parent = TextBox
 Icon.BackgroundTransparency = 1
 Icon.Size = UDim2.new(0, 16, 0, 16)
-Icon.Position = UDim2.new(0, 5, 0.5, -8) -- Centered vertically
-Icon.Image = "http://www.roblox.com/asset/?id=6031154871" -- You can replace this with any icon you want
-Icon.ZIndex = 24
+Icon.Position = UDim2.new(-0.07, 0, 0.2, 0)
+Icon.Image = "http://www.roblox.com/asset/?id=6031154871"
+Icon.ZIndex = 29
 
 -- Padding so text doesn't overlap the icon
 local Padding = Instance.new("UIPadding")
@@ -667,7 +668,7 @@ Padding.PaddingLeft = UDim.new(0, 26)
 		ImageButtons2.BackgroundTransparency = 1.000
 		ImageButtons2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons2.BorderSizePixel = 0
-		ImageButtons2.Position = UDim2.new(0.947237024, 0, 0.0140369833, 0)
+		ImageButtons2.Position = UDim2.new(0.990237024, 0, 0.0140369833, 0)
 		ImageButtons2.Size = UDim2.new(0.0500000036, 0, 0.0500000036, 0)
 		ImageButtons2.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons2.ZIndex = 4
