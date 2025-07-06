@@ -627,7 +627,7 @@ updateDPI()
 		ImageButtons2.Size = UDim2.new(0.0600000036, 0, 0.0600000036, 0)
 		ImageButtons2.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons2.ZIndex = 4
-		ImageButtons2.Image = "rbxassetid://134488580093972"
+		ImageButtons2.Image = "http://www.roblox.com/asset/?id=6031154871"
 		ImageButtons2.ScaleType = Enum.ScaleType.Fit
 
 		ImageButtons2.MouseButton1Click:Connect(function()
