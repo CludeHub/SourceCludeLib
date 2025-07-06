@@ -623,7 +623,7 @@ updateDPI()
 		ImageButtons2.BackgroundTransparency = 1.000
 		ImageButtons2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons2.BorderSizePixel = 0
-		ImageButtons2.Position = UDim2.new(0.918723712, 0, 0.0139103697, 0)
+		ImageButtons2.Position = UDim2.new(0.937237024, 0, 0.0140369833, 0)
 		ImageButtons2.Size = UDim2.new(0.0600000036, 0, 0.0600000036, 0)
 		ImageButtons2.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons2.ZIndex = 4
