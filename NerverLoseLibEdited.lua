@@ -620,7 +620,7 @@ updateDPI()
 local TextBox = Instance.new("TextBox")
 TextBox.Name = "SearchBox"
 TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+TextBox.BackgroundColor3 = Color3.fromRGB(14, 14, 14)
 TextBox.BackgroundTransparency = 0
 TextBox.Position = UDim2.new(0.24000001, 0, 0.0200000014, 0)
 TextBox.Size = UDim2.new(0.600000024, 0, 0.0599999987, 0)
@@ -633,6 +633,7 @@ TextBox.Font = Enum.Font.SourceSansBold
 TextBox.TextSize = 17
 TextBox.TextXAlignment = Enum.TextXAlignment.Left
 TextBox.ClearTextOnFocus = false
+TextBox.Visible = false
 
 -- UICorner
 local UICornermm = Instance.new("UICorner")
