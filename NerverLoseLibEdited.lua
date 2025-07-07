@@ -673,7 +673,7 @@ Padding.PaddingLeft = UDim.new(0, 26)
 		ImageButtons2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons2.BorderSizePixel = 0
 		ImageButtons2.Position = UDim2.new(0.94737024, 0, 0.0140369833, 0)
-		ImageButtons2.Size = UDim2.new(0.0500000036, 0, 0.0500000036, 0)
+		ImageButtons2.Size = UDim2.new(0.0400000036, 0, 0.0400000036, 0)
 		ImageButtons2.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons2.ZIndex = 4
 		ImageButtons2.Image = "http://www.roblox.com/asset/?id=6031154871"
@@ -701,7 +701,7 @@ Sound2.Ended:Connect(function()
 		ImageButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons.BorderSizePixel = 0
 		ImageButtons.Position = UDim2.new(0.8970207, 0, 0.0139103699, 0)
-		ImageButtons.Size = UDim2.new(0.0500000036, 0, 0.0500000036, 0)
+		ImageButtons.Size = UDim2.new(0.0400000036, 0, 0.0400000036, 0)
 		ImageButtons.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons.ZIndex = 4
 		ImageButtons.Image = "http://www.roblox.com/asset/?id=6031280882"
