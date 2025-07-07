@@ -15,8 +15,9 @@ Guide: This loads the NEVERLOSE UI library from the GitHub repository.
 
 # Create Theme Selection and Main Window and Notification System
 ```lua
-local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE",'dark') -- dark, neon
+local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE",'original')
 ```
+select theme: dark, original - dark blue
 ```lua
 local Notification = NEVERLOSE:Notification()
 Notification.MaxNotifications = 6
