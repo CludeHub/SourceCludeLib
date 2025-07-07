@@ -924,8 +924,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeL
 ----
 
 local buttons = Instance.new("ImageButton")
-buttons.Size = UDim2.new(0, 80, 0, 80)
-buttons.Position = UDim2.new(0, 0, 0, 0)
+buttons.Size = UDim2.new(0, 70, 0, 70)
+buttons.Position = UDim2.new(0, 0, 0.137, 0)
 buttons.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 buttons.ImageColor3 = Color3.fromRGB(0, 209, 255)
 buttons.BackgroundTransparency = 0
@@ -934,6 +934,7 @@ buttons.Image = "rbxassetid://83059009378999"
 buttons.Draggable = true
 buttons.Active = true
 buttons.Selectable = true
+buttons.AutoButtonColor = false
 
 local uicornerb = Instance.new("UICorner")
 uicornerb.CornerRadius = UDim.new(1, 0)
