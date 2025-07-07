@@ -923,22 +923,25 @@ end)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/DragToggleSetting.lua"))()
 ----
 
-	local ob = Instance.new("ImageButton")
-ob.Name = "OpenButton"
-ob.Parent = ScreenGui
-ob.BackgroundTransparency = 1
-ob.Image = "rbxassetid://132926238025459"
-ob.Size = UDim2.new(0.1, -30, 0.12, 0)
-ob.Position = UDim2.new(0.01, 10, 0.14000000000, 0)
-ob.Active = true
-ob.Draggable = true
-ob.ZIndex = 5000
+local buttons = Instance.new("ImageButton")
+buttons.Size = UDim2.new(0, 100, 0, 100)
+buttons.Position = UDim2.new(0, 0, 0, 0)
+buttons.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+buttons.ImageColor3 = Color3.fromRGB(0, 172, 147)
+buttons.BackgroundTransparency = 0
+buttons.ZIndex = 699999999
+buttons.Image = "rbxassetid://83059009378999"
+buttons.Draggable = true
+buttons.Active = true
+buttons.Selectable = true
 
-	local obcorner = Instance.new("UICorner")
-	obcorner.CornerRadius = UDim.new(0, 8)
-	obcorner.Parent = ob
+local uicornerb = Instance.new("UICorner")
+uicornerb.CornerRadius = UDim.new(1, 0)
+uicornerb.Parent = buttons
+
+buttons.Parent = ScreenGui
 	
-ob.MouseButton1Click:Connect(function()
+buttons.MouseButton1Click:Connect(function()
     Frame.Visible = not Frame.Visible
     Frame_2.Visible = not Frame_2.Visible
     Frame_3.Visible = not Frame_3.Visible
