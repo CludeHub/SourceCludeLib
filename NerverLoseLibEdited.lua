@@ -216,7 +216,8 @@ local NEVERLOSE = {
 		MainColorDrop = Color3.fromRGB(64, 65, 67),
 		SectionColor = Color3.fromRGB(10, 11, 13),
 		StrokeColor = Color3.fromRGB(28, 28, 28),
-		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
+		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
+		SearchColor = Color3.fromRGB(14, 14, 14)
 	},
 	_Version="69.C",
 	_Name="NEVERLOSE"
@@ -233,6 +234,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
 		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
+		NEVERLOSE.Themes.SearchColor = Color3.fromRGB(0, 17, 35)
 	end
 	
 	local WindowFunctinos={}
@@ -620,7 +622,7 @@ updateDPI()
 local TextBox = Instance.new("TextBox")
 TextBox.Name = "SearchBox"
 TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(14, 14, 14)
+TextBox.BackgroundColor3 = NEVERLOSE.Themes.SearchColor
 TextBox.BackgroundTransparency = 0
 TextBox.Position = UDim2.new(0.24000001, 0, 0.0200000014, 0)
 TextBox.Size = UDim2.new(0.600000024, 0, 0.0599999987, 0)
