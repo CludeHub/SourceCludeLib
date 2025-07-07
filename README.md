@@ -115,20 +115,3 @@ Guide: Adds a dropdown menu with values {1, 2, 3}, and an initial selection of 2
 
 
 ---
-
-# Key System
-```lua
-local function Start(Key)
-	-- script here
-end
-
-local KeySystem = NEVERLOSE:KeySystem("Key System","https://example",function(key)
-	if key=='1234' then
-		return true
-	end
-	return false
-end)
-
-KeySystem:Callback(Start)
-```
----
