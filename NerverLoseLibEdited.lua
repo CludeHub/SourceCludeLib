@@ -224,7 +224,7 @@ local NEVERLOSE = {
 }
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
-	    if name == "neon" then
+	    if name == "neon" or name == "original" then
 		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
 		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
 		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
