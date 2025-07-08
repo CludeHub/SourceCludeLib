@@ -255,7 +255,7 @@ function NEVERLOSE:AddSelectTheme(text1, text2, config)
 	outline.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 	outline.BackgroundTransparency = 0.787
 	outline.BorderSizePixel = 0
-	outline.Parent = mainFrame
+	outline.Parent = mainFramea
 
 	local function createButton(name, label, posY, color, sourceUrl)
 		local buttonh = Instance.new("TextButton")
@@ -268,7 +268,7 @@ function NEVERLOSE:AddSelectTheme(text1, text2, config)
 		buttonh.Font = Enum.Font.SourceSansBold
 		buttonh.TextSize = 20
 		buttonh.AutoButtonColor = false
-		buttonh.Parent = mainFrame
+		buttonh.Parent = mainFramea
 
 		local strokeo = Instance.new("UIStroke")
 		strokeo.Color = Color3.fromRGB(200, 200, 200)
