@@ -211,7 +211,7 @@ local NEVERLOSE = {
 		BlackgroundColor = Color3.fromRGB(22, 22, 22),
 		BlackColor = Color3.fromRGB(8, 8, 8),
 		HeaderColor = Color3.fromRGB(8, 8, 8),
-		TraceColor = Color3.fromRGB(25, 25, 25),
+		TraceColor = Color3.fromRGB(115, 115, 115),
 		MainColor = Color3.fromRGB(0, 172, 247),
 		MainColorDrop = Color3.fromRGB(64, 65, 67),
 		SectionColor = Color3.fromRGB(10, 11, 13),
@@ -811,7 +811,7 @@ Sound2.Ended:Connect(function()
 	outlo.Parent = Frame
 	outlo.AnchorPoint = Vector2.new(1, 0)
 	outlo.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo.BackgroundTransparency = 0.700
+	outlo.BackgroundTransparency = 0.876
 	outlo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo.BorderSizePixel = 0
 	outlo.Position = UDim2.new(1, 0, 0.086999995, 0)
@@ -825,7 +825,7 @@ Sound2.Ended:Connect(function()
 	outlo_2.Parent = Frame
 	outlo_2.AnchorPoint = Vector2.new(1, 0.5)
 	outlo_2.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo_2.BackgroundTransparency = 0.700
+	outlo_2.BackgroundTransparency = 0.876
 	outlo_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo_2.BorderSizePixel = 0
 	outlo_2.Position = UDim2.new(0.223908007, 0, 0.5, 0)
@@ -839,7 +839,7 @@ Sound2.Ended:Connect(function()
 	outlo_3.Parent = Frame
 	outlo_3.AnchorPoint = Vector2.new(1, 0)
 	outlo_3.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo_3.BackgroundTransparency = 0.700
+	outlo_3.BackgroundTransparency = 0.876
 	outlo_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo_3.BorderSizePixel = 0
 	outlo_3.Position = UDim2.new(0.223908007, 0, 0.923109949, 0)
