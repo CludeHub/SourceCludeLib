@@ -248,7 +248,7 @@ function NEVERLOSE:AddSelectTheme(text1, text2, config)
 	title.TextColor3 = Color3.fromRGB(230, 230, 230)
 	title.Font = Enum.Font.SourceSansBold
 	title.TextSize = 22
-	title.Parent = mainFrame
+	title.Parent = mainFramea
 
 	local outline = Instance.new("Frame")
 	outline.Size = UDim2.new(1, 0, 0, 1)
@@ -302,7 +302,6 @@ function NEVERLOSE:AddSelectTheme(text1, text2, config)
 				loadstring(game:HttpGet(sourceUrl))()
 			end
 			gui:Destroy()
-			game.CoreGui.NEVERLOSE.Frame.Visible = true
 		end)
 	end
 
