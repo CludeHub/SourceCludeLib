@@ -224,7 +224,6 @@ local NEVERLOSE = {
 }
 
 function NEVERLOSE:AddSelectTheme(text1, text2, config)
-	game.CoreGui.NEVERLOSE.Frame.Visible = false
 	local gui = Instance.new("ScreenGui")
 	gui.Name = "ThemeUI"
 	gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
