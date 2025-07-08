@@ -217,7 +217,9 @@ local NEVERLOSE = {
 		SectionColor = Color3.fromRGB(10, 11, 13),
 		StrokeColor = Color3.fromRGB(28, 28, 28),
 		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
-		SearchColor = Color3.fromRGB(14, 14, 14)
+		SearchColor = Color3.fromRGB(14, 14, 14),
+		MewColor1 = Color3.fromRGB(8, 8, 8),
+		MewColor2 = Color3.fromRGB(8, 8, 8)
 	},
 	_Version="69.C",
 	_Name="NEVERLOSE"
@@ -228,6 +230,8 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
 		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
 		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
+		NEVERLOSE.Themes.MewColor1 = Color3.fromRGB(9, 9, 19)
+		NEVERLOSE.Themes.MewColor2 = Color3.fromRGB(7, 7, 17)
 		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(0, 76, 99)
 		NEVERLOSE.Themes.MainColor = Color3.fromRGB(19, 176, 243)
 		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
@@ -722,7 +726,8 @@ Sound2.Ended:Connect(function()
 		end)
 
 	Frame_2.Parent = Frame
-	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.BlackColor
+	Frame_2.Name = "Frame_2"
+	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.MewColor1
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_2.BorderSizePixel = 0
 	Frame_2.Position = UDim2.new(0.223214373, 0, 0, 0)
@@ -733,7 +738,8 @@ Sound2.Ended:Connect(function()
 	UICorner_2.Parent = Frame_2
 
 	Frame_3.Parent = Frame
-	Frame_3.BackgroundColor3 = NEVERLOSE.Themes.HeaderColor
+	Frame_3.Name = "Frame_3"
+	Frame_3.BackgroundColor3 = NEVERLOSE.Themes.MewColor2
 	Frame_3.BackgroundTransparency = 0.900
 	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_3.BorderSizePixel = 0
