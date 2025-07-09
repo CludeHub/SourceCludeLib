@@ -162,7 +162,6 @@ Sound2.Ended:Connect(function()
 	print("Toggle:", ToggleValue)
 end)
 
-local 
 local style = Instance.new("Frame")
 style.Name = "Style"
 style.Parent = AboutFrame
