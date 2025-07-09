@@ -243,7 +243,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0.530000031, 0, 0.890048087, 0)
+	local ooldsize=UICustomSize or UDim2.new(0, 500, 0, 400)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -444,6 +444,7 @@ topTitle.TextSize = 14
 topTitle.TextColor3 = Color3.new(255, 255, 255)
 topTitle.TextStrokeTransparency = 0.8
 topTitle.BackgroundTransparency = 1
+TopTitle.TextScaled = true
 topTitle.Position = UDim2.new(0.11, 0, 0.5, 0) 
 topTitle.TextXAlignment = Enum.TextXAlignment.Left
 	
@@ -469,6 +470,7 @@ title.TextColor3 = Color3.new(255, 255, 255)
 title.TextStrokeTransparency = 0.7
 title.TextStrokeColor3 = NEVERLOSE.Themes.MainColor
 title.BackgroundTransparency = 1
+title.TextScaled = true
 title.Size = UDim2.new(1, 0, 1, 0)
 title.TextXAlignment = Enum.TextXAlignment.Center
 
@@ -487,6 +489,7 @@ labelText.TextSize = 14
 labelText.TextColor3 = Color3.new(255, 255, 255)
 labelText.BackgroundTransparency = 1
 labelText.Size = UDim2.new(1, 0, 1, 0)
+labelText.TextScaled = true
 labelText.TextXAlignment = Enum.TextXAlignment.Left
 
 local valueText1 = Instance.new("Frame", aboutFrame)
@@ -500,7 +503,8 @@ valueText.Font = Enum.Font.Gotham
 valueText.TextSize = 14  
 valueText.TextColor3 = isBlue and NEVERLOSE.Themes.MainColor or Color3.new(255, 255, 255)  
 valueText.BackgroundTransparency = 1  
-valueText.Size = UDim2.new(1, 0, 1, 0)    
+valueText.Size = UDim2.new(1, 0, 1, 0) 
+valueText.TextScaled = true
 valueText.TextXAlignment = Enum.TextXAlignment.Left
 
 end
@@ -519,6 +523,7 @@ copyright.TextSize = 12
 copyright.TextColor3 = Color3.new(255, 255, 255)
 copyright.BackgroundTransparency = 1
 copyright.Size = UDim2.new(1, 0, 0.04, 0)
+copyright.TextScaled = true
 copyright.Position = UDim2.new(0, 0, 0.51, 0)
 copyright.TextXAlignment = Enum.TextXAlignment.Center
 
@@ -539,6 +544,7 @@ dpiLabel.TextSize = 14
 dpiLabel.TextColor3 = Color3.new(255, 255, 255)
 dpiLabel.TextTransparency = 0.300
 dpiLabel.BackgroundTransparency = 1
+dpiLabel.TextScaled = true
 dpiLabel.Size = UDim2.new(1, 0, 1, 0)
 dpiLabel.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -551,6 +557,7 @@ dpiDropdown.Text = "100%"
 dpiDropdown.TextColor3 = Color3.new(255, 255, 255)
 dpiDropdown.TextTransparency = 0.300
 dpiDropdown.Font = Enum.Font.Gotham
+dpiDropdown.TextScaled = true
 dpiDropdown.TextSize = 14
 dpiDropdown.BorderSizePixel = 0
 dpiDropdown.AutoButtonColor = false
@@ -576,7 +583,7 @@ stroc.Thickness = 0.6
 -- DPI Logic
 local dpiSizes = {
 ["100%"] = {
-NEVERLOSE = UDim2.new(0.53, 0, 0.89, 0),
+NEVERLOSE = UDim2.new(0, 500, 0, 400),
 ABOUT = UDim2.new(0.24, 0, 0.6, 0)
 },
 ["90%"] = {
