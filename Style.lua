@@ -17,7 +17,7 @@ textLabel.Text = "Style"
 textLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 local color = Instance.new("Frame")
-color.Name = "Color"
+color.Name = "ColorFrame"
 color.Position = UDim2.new(1.2, 0, 0, 0)
 color.Size = UDim2.new(0.7, 0, 1, 0)
 color.BackgroundTransparency = 1
