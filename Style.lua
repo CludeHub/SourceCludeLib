@@ -1,83 +1,181 @@
-local CoreGui = game:GetService("CoreGui")
+local style = Instance.new("Frame")
+style.Name = "Style"
+style.Position = UDim2.new(0.037, 0, 0, 0)
+style.Size = UDim2.new(0.5, 0, 0.077, 0)
+style.BackgroundTransparency = 1
+style.Parent = game.CoreGui.NEVERLOSE.AboutFrame
 
--- Style Frame
-local styleFrame = Instance.new("Frame")
-styleFrame.Name = "Style"
-styleFrame.Size = UDim2.new(0.5, 0, 0.077, 0)
-styleFrame.Position = UDim2.new(0.037, 0, 0, 0)
-styleFrame.BackgroundTransparency = 1
-styleFrame.Parent = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
+local textLabel = Instance.new("TextLabel", style)
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.Position = UDim2.new(0, 0, 0, 0)
+textLabel.BackgroundTransparency = 1
+textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+textLabel.Font = Enum.Font.SourceSansBold
+textLabel.TextScaled = true
+textLabel.TextTransparency = 0.4
+textLabel.Text = "Style"
+textLabel.TextXAlignment = Enum.TextXAlignment.Left
 
--- Color Frame
-local colorFrame = Instance.new("Frame")
-colorFrame.Name = "Color"
-colorFrame.BackgroundTransparency = 1
-colorFrame.Position = UDim2.new(1.2, 0, 0, 0)
-colorFrame.Size = UDim2.new(0.7, 0, 1, 0)
-colorFrame.Parent = styleFrame
+local color = Instance.new("Frame")
+color.Name = "Color"
+color.Position = UDim2.new(1.2, 0, 0, 0)
+color.Size = UDim2.new(0.7, 0, 1, 0)
+color.BackgroundTransparency = 1
+color.Parent = style
 
--- Button table for theme control
-local buttons = {}
+local darkButton = Instance.new("TextButton")
+darkButton.Name = "Dark"
+darkButton.Position = UDim2.new(0.7, 0, 0, 0)
+darkButton.Size = UDim2.new(0.27, 0, 1, 0)
+darkButton.AutoButtonColor = false
+darkButton.Text = ""
+darkButton.BackgroundColor3 = Color3.new(0, 0, 0)
+darkButton.Parent = color
 
--- Selection function to update stroke colors
-local function updateSelection(selectedName)
-	for name, data in pairs(buttons) do
-		if name == selectedName then
-			data.Stroke.Color = Color3.new(1, 1, 1)
-			data.Stroke.Transparency = 0
-		else
-			data.Stroke.Color = Color3.fromRGB(200, 200, 200)
-			data.Stroke.Transparency = 0.8
+local darkUICorner = Instance.new("UICorner")
+darkUICorner.CornerRadius = UDim.new(1, 0)
+darkUICorner.Parent = darkButton
+
+local darkUIStroke = Instance.new("UIStroke")
+darkUIStroke.Color = Color3.fromRGB(200, 200, 200)
+darkUIStroke.Transparency = 1
+darkUIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+darkUIStroke.Parent = darkButton
+
+local originalButton = Instance.new("TextButton")
+originalButton.Name = "Original"
+originalButton.Position = UDim2.new(0.4, 0, 0, 0)
+originalButton.Size = UDim2.new(0.27, 0, 1, 0)
+darkButton.AutoButtonColor = false
+darkButton.Text = ""
+originalButton.BackgroundColor3 = Color3.new(0, 84, 128)
+originalButton.Parent = color
+
+local originalUICorner = Instance.new("UICorner")
+originalUICorner.CornerRadius = UDim.new(1, 0)
+originalUICorner.Parent = originalButton
+
+local originalUIStroke = Instance.new("UIStroke")
+originalUIStroke.Color = Color3.fromRGB(200, 200, 200)
+originalUIStroke.Transparency = 1
+originalUIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+originalUIStroke.Parent = originalButton
+
+darkButton.MouseButton1Click:Connect(function()
+	originalUIStroke.Transparency = 0.8
+	darkUIStroke.Transparency = 1
+local theme = {
+	BlackgroundColor = Color3.fromRGB(22, 22, 22),
+	BlackColor = Color3.fromRGB(8, 8, 8),
+	HeaderColor = Color3.fromRGB(8, 8, 8),
+	TraceColor = Color3.fromRGB(115, 115, 115),
+	MainColor = Color3.fromRGB(0, 172, 247),
+	MainColorDrop = Color3.fromRGB(64, 65, 67),
+	SectionColor = Color3.fromRGB(10, 11, 13),
+	StrokeColor = Color3.fromRGB(28, 28, 28),
+	ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
+	SearchColor = Color3.fromRGB(14, 14, 14)
+}
+
+local core = game.CoreGui:FindFirstChild("NEVERLOSE")
+if not core then return end
+
+local roots = {}
+if core:FindFirstChild("Frame") then table.insert(roots, core.Frame) end
+if core:FindFirstChild("AboutFrame") then table.insert(roots, core.AboutFrame) end
+
+for _, root in ipairs(roots) do
+	if root:IsA("Frame") then
+		root.BackgroundColor3 = theme.BlackgroundColor
+	end
+
+	for _, obj in pairs(root:GetDescendants()) do
+		if obj:IsA("Frame") then
+			local name = obj.Name
+			if name:find("Section") then
+				obj.BackgroundColor3 = theme.SectionColor
+			elseif name:find("outlo") then
+				obj.BackgroundColor3 = theme.TraceColor
+			elseif name == "Frame_2" then
+				obj.BackgroundColor3 = theme.BlackColor
+			elseif name == "Frame_3" then
+				obj.BackgroundColor3 = theme.HeaderColor
+			elseif name == "Frame" and obj.Parent == root then
+				obj.BackgroundColor3 = theme.BlackgroundColor
+			elseif name:lower():find("button") then
+				obj.BackgroundColor3 = theme.ButtonBlackgroundColor
+			end
+
+		elseif obj:IsA("TextBox") and obj.Name:lower():find("search") then
+			obj.BackgroundColor3 = theme.SearchColor
+
+		elseif obj:IsA("UIStroke") then
+			obj.Color = theme.StrokeColor
+
+		elseif obj:IsA("TextLabel") and obj.Name:lower():find("title") then
+			obj.TextStrokeColor3 = theme.MainColor
+		end
+	end
+		end
+	end)
+
+originalButton.MouseButton1Click:Connect(function()
+	originalUIStroke.Transparency = 1
+	darkUIStroke.Transparency = 0.8
+local theme = {
+	BlackgroundColor = Color3.fromRGB(1, 17, 33),
+	BlackColor = Color3.fromRGB(9, 9, 19),
+	HeaderColor = Color3.fromRGB(7, 7, 17),
+	TraceColor = Color3.fromRGB(0, 76, 99),
+	MainColor = Color3.fromRGB(19, 176, 243),
+	MainColorDrop = Color3.fromRGB(3, 6, 25),
+	SectionColor = Color3.fromRGB(0, 17, 35),
+	StrokeColor = Color3.fromRGB(3, 35, 50),
+	ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22),
+	SearchColor = Color3.fromRGB(0, 17, 35)
+}
+
+local core = game.CoreGui:FindFirstChild("NEVERLOSE")
+if not core then return end
+
+-- Add both main frame and about frame to apply theme on
+local roots = {}
+if core:FindFirstChild("Frame") then table.insert(roots, core.Frame) end
+if core:FindFirstChild("AboutFrame") then table.insert(roots, core.AboutFrame) end
+
+for _, root in ipairs(roots) do
+	-- Set root background
+	if root:IsA("Frame") then
+		root.BackgroundColor3 = theme.BlackgroundColor
+	end
+
+	-- Loop through all UI descendants
+	for _, obj in pairs(root:GetDescendants()) do
+		if obj:IsA("Frame") then
+			local name = obj.Name
+			if name:find("Section") then
+				obj.BackgroundColor3 = theme.SectionColor
+			elseif name:find("outlo") then
+				obj.BackgroundColor3 = theme.TraceColor
+			elseif name == "Frame_2" then
+				obj.BackgroundColor3 = theme.BlackColor
+			elseif name == "Frame_3" then
+				obj.BackgroundColor3 = theme.HeaderColor
+			elseif name == "Frame" and obj.Parent == root then
+				obj.BackgroundColor3 = theme.BlackgroundColor
+			elseif name:lower():find("button") then
+				obj.BackgroundColor3 = theme.ButtonBlackgroundColor
+			end
+
+		elseif obj:IsA("TextBox") and obj.Name:lower():find("search") then
+			obj.BackgroundColor3 = theme.SearchColor
+
+		elseif obj:IsA("UIStroke") then
+			obj.Color = theme.StrokeColor
+
+		elseif obj:IsA("TextLabel") and obj.Name:lower():find("title") then
+			obj.TextStrokeColor3 = theme.MainColor
 		end
 	end
 end
-
--- Button creation function
-local function createButton(name, positionX, callback)
-	local button = Instance.new("TextButton")
-	button.Name = name
-	button.Text = name
-	button.BackgroundColor3 = Color3.new(0, 0, 0)
-	button.Position = UDim2.new(positionX, 0, 0, 0)
-	button.Size = UDim2.new(0.27, 0, 1, 0)
-	button.TextColor3 = Color3.new(1, 1, 1)
-	button.Font = Enum.Font.SourceSans
-	button.TextScaled = true
-	button.AutoButtonColor = false
-	button.Parent = colorFrame
-
-	local corner = Instance.new("UICorner")
-	corner.CornerRadius = UDim.new(1, 0)
-	corner.Parent = button
-
-	local stroke = Instance.new("UIStroke")
-	stroke.Color = Color3.fromRGB(200, 200, 200)
-	stroke.Transparency = 0.8
-	stroke.Parent = button
-
-	-- Save reference for selection update
-	buttons[name] = {Button = button, Stroke = stroke}
-
-	button.MouseButton1Click:Connect(function()
-		updateSelection(name)
-		if callback then callback() end
 	end)
-end
-
--- Theme functions
-local function applyDarkTheme()
-	print("Dark theme applied.")
-	-- Add dark theme logic here
-end
-
-local function applyOriginalTheme()
-	print("Original theme applied.")
-	-- Add original theme logic here
-end
-
--- Create Buttons
-createButton("Dark", 0.7, applyDarkTheme)
-createButton("Original", 0.4, applyOriginalTheme)
-
--- Default to "Original" selected
-updateSelection("Original")
