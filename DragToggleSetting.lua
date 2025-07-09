@@ -161,3 +161,27 @@ Sound2.Ended:Connect(function()
 	enableDragging(ToggleValue)
 	print("Toggle:", ToggleValue)
 end)
+
+local 
+local style = Instance.new("Frame")
+style.Name = "Style"
+style.Parent = AboutFrame
+style.BackgroundTransparency = 1
+style.Position = UDim2.new(0.037, 0, 0.8, 0)
+style.Size = UDim2.new(0.800000012, 0, 0.0772999972, 0)
+style.ZIndex = 6
+
+local LabelTexts = Instance.new("TextLabel", style)
+LabelTexts.Name = "LabelText"
+LabelTexts.AnchorPoint = Vector2.new(0.5, 0.5)
+LabelTexts.BackgroundTransparency = 1
+LabelTexta.Position = UDim2.new(0.385, 0, 0.5, 0)
+LabelTexts.Size = UDim2.new(0.77, -10, 0.75, -7)
+LabelTexts.Font = Enum.Font.Gotham
+LabelTexts.ZIndex = 6
+LabelTexts.Text = "Style"
+LabelTexts.TextColor3 = Color3.fromRGB(255, 255, 255)
+LabelTexts.TextTransparency = 0.3
+LabelTexts.TextScaled = true
+LabelTexts.TextWrapped = true
+LabelTexts.TextXAlignment = Enum.TextXAlignment.Left
