@@ -451,8 +451,8 @@ topTitle.TextXAlignment = Enum.TextXAlignment.Left
 local divider = Instance.new("Frame", aboutFrame)
 divider.Size = UDim2.new(1, 0, 0.002, 0)
 divider.Position = UDim2.new(0, 0, 0.1, 0)
-divider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-divider.BackgroundTransparency = 0.85
+divider.BackgroundColor3 = NEVERLOSE.Themes.StrokeColor
+divider.BackgroundTransparency = 0
 divider.BorderSizePixel = 0
 
 local titleh = Instance.new("Frame", aboutFrame)
