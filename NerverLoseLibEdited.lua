@@ -928,8 +928,6 @@ end)
 
 -- style
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
-	wait(1)
-	game.CoreGui.NEVERLOSE.AboutFrame.Style.ColorFrame.Original.BackgroundColor3 = Color3.fromRGB(0, 69, 104)
 --
 
 -- DraggingToggle
