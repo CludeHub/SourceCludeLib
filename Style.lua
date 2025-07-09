@@ -102,6 +102,8 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name:find("lay") then
 				obj.BackgroundColor3 = theme.StrokeColor
+			elseif name:find("dpiDropdown") then
+				obj.BackgroundColor3 = theme.BlackgroundColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
 			elseif name == "Frame_3" then
@@ -169,6 +171,8 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name:find("lay") then
 				obj.BackgroundColor3 = theme.StrokeColor
+			elseif name:find("dpiDropdown") then
+				obj.BackgroundColor3 = theme.BlackgroundColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
 			elseif name == "Frame_3" then
