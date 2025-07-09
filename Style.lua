@@ -1,7 +1,7 @@
 local style = Instance.new("Frame")
 style.Name = "Style"
 style.Position = UDim2.new(0.037, 0, 0.9, 0)
-style.Size = UDim2.new(0.5, 0, 0.077, 0)
+style.Size = UDim2.new(0.5, 0, 0.05, 0)
 style.BackgroundTransparency = 1
 style.Parent = game.CoreGui.NEVERLOSE.AboutFrame
 
@@ -10,7 +10,7 @@ textLabel.Size = UDim2.new(1, 0, 1, 0)
 textLabel.Position = UDim2.new(0, 0, 0, 0)
 textLabel.BackgroundTransparency = 1
 textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-textLabel.Font = Enum.Font.SourceSansBold
+textLabel.Font = Enum.Font.Gotham
 textLabel.TextScaled = true
 textLabel.TextTransparency = 0.4
 textLabel.Text = "Style"
@@ -101,7 +101,7 @@ for _, root in ipairs(roots) do
 			elseif name:find("outlo_3") then
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name:find("lay") then
-				obj.BackgroundColor3 = theme.TraceColor
+				obj.BackgroundColor3 = theme.StrokeColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
 			elseif name == "Frame_3" then
@@ -168,7 +168,7 @@ for _, root in ipairs(roots) do
 			elseif name:find("outlo_3") then
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name:find("lay") then
-				obj.BackgroundColor3 = theme.TraceColor
+				obj.BackgroundColor3 = theme.StrokeColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
 			elseif name == "Frame_3" then
