@@ -415,7 +415,7 @@ print(Text .. " is Running")
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
-aboutFrame.Size = UDim2.new(0.24, 0, 0.6, 0)
+aboutFrame.Size = UDim2.new(0, 200, 0, 200, 0)
 aboutFrame.Position = UDim2.new(0.7, 0, 0.2, 0)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
 aboutFrame.BackgroundTransparency = 0.2
@@ -444,8 +444,9 @@ topTitle.TextColor3 = Color3.new(255, 255, 255)
 topTitle.TextStrokeTransparency = 0.8
 topTitle.BackgroundTransparency = 1
 topTitle.TextScaled = true
-topTitle.Position = UDim2.new(0.11, 0, 0.5, 0) 
+topTitle.Position = UDim2.new(0.8, 0, 0.2, 0) 
 topTitle.TextXAlignment = Enum.TextXAlignment.Left
+topTitle.Size = UDim2.new(1, 0, 0.5, 0)
 	
 -- Divider
 local divider = Instance.new("Frame", aboutFrame)
@@ -469,10 +470,10 @@ title.TextColor3 = Color3.new(255, 255, 255)
 title.TextStrokeTransparency = 0.7
 title.TextStrokeColor3 = NEVERLOSE.Themes.MainColor
 title.BackgroundTransparency = 1
-title.TextScaled = true
 title.Size = UDim2.new(1, 0, 1, 0)
 title.TextXAlignment = Enum.TextXAlignment.Center
-
+title.TextScaled = true
+	
 -- Info Rows
 local function AddInfo(label, value, index, isBlue)
 
