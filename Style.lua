@@ -1,6 +1,6 @@
 local style = Instance.new("Frame")
 style.Name = "Style"
-style.Position = UDim2.new(0.037, 0, 0, 0)
+style.Position = UDim2.new(0.037, 0, 0.9, 0)
 style.Size = UDim2.new(0.5, 0, 0.077, 0)
 style.BackgroundTransparency = 1
 style.Parent = game.CoreGui.NEVERLOSE.AboutFrame
@@ -96,6 +96,10 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.SectionColor
 			elseif name:find("outlo") then
 				obj.BackgroundColor3 = theme.TraceColor
+			elseif name:find("outlo_2") then
+				obj.BackgroundColor3 = theme.TraceColor
+			elseif name:find("outlo_3") then
+				obj.BackgroundColor3 = theme.TraceColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
 			elseif name == "Frame_3" then
@@ -156,6 +160,10 @@ for _, root in ipairs(roots) do
 			if name:find("Section") then
 				obj.BackgroundColor3 = theme.SectionColor
 			elseif name:find("outlo") then
+				obj.BackgroundColor3 = theme.TraceColor
+			elseif name:find("outlo_2") then
+				obj.BackgroundColor3 = theme.TraceColor
+			elseif name:find("outlo_3") then
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
