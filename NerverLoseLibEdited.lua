@@ -440,7 +440,6 @@ icon.ImageColor3 = NEVERLOSE.Themes.MainColor
 local topTitle = Instance.new("TextLabel", top)
 topTitle.Text = "About Neverlose"
 topTitle.Font = Enum.Font.Gotham
-topTitle.TextSize = 14
 topTitle.TextColor3 = Color3.new(255, 255, 255)
 topTitle.TextStrokeTransparency = 0.8
 topTitle.BackgroundTransparency = 1
