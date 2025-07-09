@@ -173,6 +173,10 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.StrokeColor
 			elseif name:find("dpiDropdown") then
 				obj.BackgroundColor3 = theme.BlackgroundColor
+                        elseif name:find("divider") then
+				obj.BackgroundColor3 = theme.StrokeColor
+			elseif name:find("divider2") then
+				obj.BackgroundColor3 = theme.StrokeColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
 			elseif name == "Frame_3" then
