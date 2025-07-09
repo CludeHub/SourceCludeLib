@@ -46,8 +46,8 @@ local originalButton = Instance.new("TextButton")
 originalButton.Name = "Original"
 originalButton.Position = UDim2.new(0.4, 0, 0, 0)
 originalButton.Size = UDim2.new(0.27, 0, 1, 0)
-darkButton.AutoButtonColor = false
-darkButton.Text = ""
+originalButton.AutoButtonColor = false
+originalButton.Text = ""
 originalButton.BackgroundColor3 = Color3.new(0, 84, 128)
 originalButton.Parent = color
 
@@ -99,6 +99,8 @@ for _, root in ipairs(roots) do
 			elseif name:find("outlo_2") then
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name:find("outlo_3") then
+				obj.BackgroundColor3 = theme.TraceColor
+			elseif name:find("lay") then
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
@@ -164,6 +166,8 @@ for _, root in ipairs(roots) do
 			elseif name:find("outlo_2") then
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name:find("outlo_3") then
+				obj.BackgroundColor3 = theme.TraceColor
+			elseif name:find("lay") then
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
