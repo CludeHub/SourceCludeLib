@@ -587,7 +587,7 @@ NEVERLOSE = UDim2.new(0, 500, 0, 400),
 ABOUT = UDim2.new(0.24, 0, 0.6, 0)
 },
 ["90%"] = {
-NEVERLOSE = UDim2.new(0.477, 0, 0.801, 0),
+NEVERLOSE = UDim2.new(0, 470, 0, 380),
 ABOUT = UDim2.new(0.216, 0, 0.54, 0)
 }
 }
