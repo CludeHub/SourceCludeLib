@@ -553,7 +553,7 @@ local dpiDropdown = Instance.new("TextButton", aboutFrame)
 dpiDropdown.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiDropdown.Position = UDim2.new(0.55, 0, 0.64, 0)
 dpiDropdown.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-dpiDropdown.Text = "100%"
+dpiDropdown.Text = "90%"
 dpiDropdown.TextColor3 = Color3.new(255, 255, 255)
 dpiDropdown.TextTransparency = 0.300
 dpiDropdown.Font = Enum.Font.Gotham
@@ -582,17 +582,17 @@ stroc.Thickness = 0.6
 
 -- DPI Logic
 local dpiSizes = {
-["100%"] = {
-NEVERLOSE = UDim2.new(0, 500, 0, 400),
-ABOUT = UDim2.new(0.24, 0, 0.6, 0)
-},
 ["90%"] = {
-NEVERLOSE = UDim2.new(0, 470, 0, 380),
-ABOUT = UDim2.new(0.216, 0, 0.54, 0)
+NEVERLOSE = UDim2.new(0, 500, 0, 400),
+ABOUT = UDim2.new(0, 200, 0, 200)
+},
+["100%"] = {
+NEVERLOSE = UDim2.new(0, 600, 0, 500),
+ABOUT = UDim2.new(0, 260, 0, 300)
 }
 }
 
-local dpiOptions = { "100%", "90%" }
+local dpiOptions = { "90%", "100%" }
 local dpiIndex = 1
 
 local function updateDPI()
