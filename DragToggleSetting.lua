@@ -16,8 +16,8 @@ local Toggle = Instance.new("Frame")
 Toggle.Name = "Toggle"
 Toggle.Parent = AboutFrame
 Toggle.BackgroundTransparency = 1
-Toggle.Position = UDim2.new(0.400000006, 0, 0.0500000007, 0)
-Toggle.Size = UDim2.new(0.800000012, 0, 0.0772999972, 0)
+Toggle.Position = UDim2.new(0.0300059989, 0, 0.700000823, 0)
+Toggle.Size = UDim2.new(0.400000012, 0, 0.0772999972, 0)
 Toggle.ZIndex = 5
 
 Instance.new("UIAspectRatioConstraint", Toggle).AspectRatio = 7
