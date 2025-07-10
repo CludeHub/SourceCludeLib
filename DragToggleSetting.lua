@@ -16,7 +16,7 @@ local Toggle = Instance.new("Frame")
 Toggle.Name = "Toggle"
 Toggle.Parent = AboutFrame
 Toggle.BackgroundTransparency = 1
-Toggle.Position = UDim2.new(0.037, 0, 0.7, 0)
+Toggle.Position = UDim2.new(0.400000006, 0, 0.0500000007, 0)
 Toggle.Size = UDim2.new(0.800000012, 0, 0.0772999972, 0)
 Toggle.ZIndex = 5
 
@@ -27,8 +27,8 @@ local LabelText = Instance.new("TextLabel", Toggle)
 LabelText.Name = "LabelText"
 LabelText.AnchorPoint = Vector2.new(0.5, 0.5)
 LabelText.BackgroundTransparency = 1
-LabelText.Position = UDim2.new(0.385, 0, 0.5, 0)
-LabelText.Size = UDim2.new(0.77, -10, 0.75, -7)
+LabelText.Position = UDim2.new(0.528081894, 0, 0.5, 0)
+LabelText.Size = UDim2.new(1, 0, 1, 0)
 LabelText.Font = Enum.Font.Gotham
 LabelText.ZIndex = 6
 LabelText.Text = toggleName
@@ -42,8 +42,8 @@ local Effect = Instance.new("Frame", Toggle)
 Effect.Name = "Effect"
 Effect.AnchorPoint = Vector2.new(0, 0.5)
 Effect.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
-Effect.Position = UDim2.new(1.28900003, 0, 0.5, 0)
-Effect.Size = UDim2.new(0.15, 0, 0.5, 0)
+Effect.Position = UDim2.new(1.99900003, 0, 0.5, 0)
+Effect.Size = UDim2.new(0.16, 0, 0.7, 0)
 Effect.ZIndex = 6
 Instance.new("UICorner", Effect).CornerRadius = UDim.new(0.5, 0)
 
@@ -59,7 +59,7 @@ Instance.new("UICorner", Icon).CornerRadius = UDim.new(1, 0)
 
 local Clicker = Instance.new("TextButton", Toggle)
 Clicker.BackgroundTransparency = 1
-Clicker.Size = UDim2.new(1.3, 0, 1, 0)
+Clicker.Size = UDim2.new(1.6, 0, 1, 0)
 Clicker.Text = ""
 Clicker.ZIndex = 10
 
