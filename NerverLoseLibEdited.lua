@@ -1,3 +1,4 @@
+
 local LocalPlayer = game:GetService('Players').LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 local InputService = game:GetService('UserInputService');
@@ -243,7 +244,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0, 500, 0, 400)
+	local ooldsize=UICustomSize or UDim2.new(0, 600, 0, 500)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -415,7 +416,7 @@ print(Text .. " is Running")
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
-aboutFrame.Size = UDim2.new(0, 200, 0, 200, 0)
+aboutFrame.Size = UDim2.new(0, 260, 0, 300, 0)
 aboutFrame.Position = UDim2.new(0.7, 0, 0.2, 0)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
 aboutFrame.BackgroundTransparency = 0.2
@@ -583,12 +584,12 @@ stroc.Thickness = 0.6
 -- DPI Logic
 local dpiSizes = {
 ["90%"] = {
-NEVERLOSE = UDim2.new(0, 500, 0, 400),
-ABOUT = UDim2.new(0, 200, 0, 200)
-},
-["100%"] = {
 NEVERLOSE = UDim2.new(0, 600, 0, 500),
 ABOUT = UDim2.new(0, 260, 0, 300)
+},
+["100%"] = {
+NEVERLOSE = UDim2.new(0, 700, 0, 600),
+ABOUT = UDim2.new(0, 360, 0, 400)
 }
 }
 
