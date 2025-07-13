@@ -2279,7 +2279,7 @@ Sound2.Ended:Connect(function()
 					Dropdown.Text = "List"
 					Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
 					Dropdown.TextScaled = true
-					Dropdown.TextSize = 14.000
+					Dropdown.TextSize = 13.000
 					Dropdown.TextWrapped = true
 					TweenService:Create(Dropdown,TweenInfo.new(0.1),{TextTransparency=0.3}):Play()
 					Dropdown.ZIndex = 10000
