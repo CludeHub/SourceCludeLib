@@ -46,6 +46,7 @@ arrow.BackgroundTransparency = 1
 arrow.ZIndex = 5
 arrow.Text = "<"
 arrow.TextTransparency = 0.3
+arrow.TextSize = 12
 arrow.Rotation = -90
 arrow.TextColor3 = Color3.fromRGB(255, 255, 255)
 arrow.Font = Enum.Font.SourceSansBold
