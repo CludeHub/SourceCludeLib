@@ -2146,7 +2146,7 @@ Sound2.Ended:Connect(function()
 				DownBar.Parent = Dropdown
 				DownBar.Active = true
 				DownBar.AnchorPoint = Vector2.new(1, 0)
-				DownBar.BackgroundColor3 = Color3.fromRGB(82, 82, 82)
+				DownBar.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 				DownBar.BackgroundTransparency = 0
 				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				DownBar.BorderSizePixel = 0
@@ -2154,9 +2154,6 @@ Sound2.Ended:Connect(function()
 				DownBar.Size = UDim2.new(0.308999985, 0, 0, 0)
 				DownBar.Visible = false
 				DownBar.ZIndex = 10
-
-				UICorner_3.CornerRadius = UDim.new(0, 3)
-				UICorner_3.Parent = DownBar
 
 				UIStroke_2.Thickness = 0.500
 				UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
