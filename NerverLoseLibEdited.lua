@@ -1401,7 +1401,7 @@ Sound2.Ended:Connect(function()
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UICorner.CornerRadius = UDim.new(0, 3)
+				UICorner.CornerRadius = UDim.new(0, 2)
 				UICorner.Parent = Button
 
 				LabelText.Name = "LabelText"
@@ -1708,7 +1708,7 @@ Sound2.Ended:Connect(function()
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UICorner.CornerRadius = UDim.new(0, 3)
+				UICorner.CornerRadius = UDim.new(0, 2)
 				UICorner.Parent = Keybind
 
 				LabelText.Name = "LabelText"
@@ -1740,7 +1740,7 @@ Sound2.Ended:Connect(function()
 				BrindText.Size = UDim2.new(0.150000006, 0, 0.5, 0)
 				BrindText.ZIndex = 6
 
-				UICorner_2.CornerRadius = UDim.new(0, 3)
+				UICorner_2.CornerRadius = UDim.new(0, 2)
 				UICorner_2.Parent = BrindText
 
 				UIStroke.Thickness = 0.500
@@ -1951,7 +1951,7 @@ Sound2.Ended:Connect(function()
 				Inline.Size = UDim2.new((Default/Max), 0, 1, 0)
 				Inline.ZIndex = 5
 
-				UICorner_4.CornerRadius = UDim.new(0, 3)
+				UICorner_4.CornerRadius = UDim.new(0, 2)
 				UICorner_4.Parent = Inline
 
 				Cir.Name = "Cir"
@@ -2098,7 +2098,7 @@ Sound2.Ended:Connect(function()
 				TopBar.Size = UDim2.new(0.313529521, 0, 0.5, 0)
 				TopBar.ZIndex = 6
 
-				UICorner_2.CornerRadius = UDim.new(0, 3)
+				UICorner_2.CornerRadius = UDim.new(0, 2)
 				UICorner_2.Parent = TopBar
 
 				UIStroke.Thickness = 0.500
