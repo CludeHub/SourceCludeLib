@@ -59,7 +59,7 @@ Instance.new("UICorner", Icon).CornerRadius = UDim.new(1, 0)
 
 local Clicker = Instance.new("TextButton", Toggle)
 Clicker.BackgroundTransparency = 1
-Clicker.Size = UDim2.new(1.6, 0, 1, 0)
+Clicker.Size = UDim2.new(2.2, 0, 1, 0)
 Clicker.Text = ""
 Clicker.ZIndex = 10
 
