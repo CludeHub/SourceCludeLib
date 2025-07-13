@@ -431,7 +431,7 @@ top.BackgroundTransparency = 1
 
 -- Icon
 local icon = Instance.new("ImageLabel", top)
-icon.Size = UDim2.new(0, 16, 0, 16)
+icon.Size = UDim2.new(0.0816999972, 0, 0.689999998, 0)
 icon.Position = UDim2.new(0.05, 0, 0.5, 0)
 icon.AnchorPoint = Vector2.new(0, 0.5)
 icon.BackgroundTransparency = 1
