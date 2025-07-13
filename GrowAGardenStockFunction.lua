@@ -1,3 +1,4 @@
+if game.PlaceId == 126884695634066 then
 local CoreGui = game.CoreGui
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -145,3 +146,4 @@ local function toggleDropdown()
 end
 
 Stock.MouseButton1Click:Connect(toggleDropdown)
+end
