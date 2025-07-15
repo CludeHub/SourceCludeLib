@@ -20,3 +20,4 @@ SearchBox.FocusLost:Connect(function(enterPressed)
 end)
 
 game.CoreGui.NEVERLOSE.Frame.SearchBox.PlaceholderText = "Search Gloves"
+end
