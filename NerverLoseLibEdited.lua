@@ -409,8 +409,6 @@ print(Text .. " is Running")
 	Frame.ZIndex = 2
 	Frame.ClipsDescendants=true
 
--- slap
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/main/SearchGlovesFunction.lua"))()
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
 	UICorner.Parent = Frame
