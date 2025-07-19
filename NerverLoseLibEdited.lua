@@ -1,3 +1,14 @@
+local Player = game.Players.LocalPlayer
+local PlayerGui = Player:WaitForChild("PlayerGui")
+
+-- Unique name for your script instance
+local SCRIPT_TAG = "NEVERLOSE"
+
+-- Check if previous instance exists
+local existing = PlayerGui:FindFirstChild(SCRIPT_TAG)
+if existing then
+    existing:Destroy()
+end
 
 local LocalPlayer = game:GetService('Players').LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
@@ -391,7 +402,7 @@ print(Text .. " is Running")
 	end)
 
 	ScreenGui.Parent = CoreGui
-	ScreenGui.Name = "NEVERLOSE"
+	ScreenGui.Name = SCRIPT_TAG
 	ScreenGui.ResetOnSpawn = false
 	ScreenGui.IgnoreGuiInset = true
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
