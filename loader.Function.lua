@@ -7,8 +7,8 @@ local LocalPlayer = Players.LocalPlayer
 local imageUrl = Players:GetUserThumbnailAsync(LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size150x150)
 
 local NEVERLOSE_Loader_Service_2535 = Instance.new("ScreenGui")
-NEVERLOSE_Loader_Service_2535.Name = "NEVERLOSE_Loader_Service"
-NEVERLOSE_Loader_Service_2535.Parent = game.Players.LocalPlayer.PlayerGui
+NEVERLOSE_Loader_Service_2535.Name = "Loader_Service"
+NEVERLOSE_Loader_Service_2535.Parent = game.CoreGui
 
 local LOADERFrame_5373 = Instance.new("Frame")
 LOADERFrame_5373.Name = "LOADERFrame"
