@@ -36,12 +36,6 @@ local darkUICorner = Instance.new("UICorner")
 darkUICorner.CornerRadius = UDim.new(1, 0)
 darkUICorner.Parent = darkButton
 
-local darkUIStroke = Instance.new("UIStroke")
-darkUIStroke.Color = Color3.fromRGB(255, 255, 255)
-darkUIStroke.Transparency = 1
-darkUIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-darkUIStroke.Parent = darkButton
-
 local originalButton = Instance.new("TextButton")
 originalButton.Name = "Original"
 originalButton.Position = UDim2.new(0.4, 0, 0, 0)
@@ -55,15 +49,7 @@ local originalUICorner = Instance.new("UICorner")
 originalUICorner.CornerRadius = UDim.new(1, 0)
 originalUICorner.Parent = originalButton
 
-local originalUIStroke = Instance.new("UIStroke")
-originalUIStroke.Color = Color3.fromRGB(255, 255, 255)
-originalUIStroke.Transparency = 1
-originalUIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-originalUIStroke.Parent = originalButton
-
 darkButton.MouseButton1Click:Connect(function()
-	originalUIStroke.Transparency = 0.8
-	darkUIStroke.Transparency = 1
 local theme = {
 	BlackgroundColor = Color3.fromRGB(22, 22, 22),
 	BlackColor = Color3.fromRGB(8, 8, 8),
@@ -102,6 +88,8 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.TraceColor
 			elseif name:find("lay") then
 				obj.BackgroundColor3 = theme.StrokeColor
+			elseif name:find("Inline") then
+				obj.BackgroundColor3 = theme.MainColor
 			elseif name:find("dpiDropdown") then
 				obj.BackgroundColor3 = theme.BlackgroundColor
 			elseif name == "Frame_2" then
@@ -128,8 +116,6 @@ for _, root in ipairs(roots) do
 	end)
 
 originalButton.MouseButton1Click:Connect(function()
-	originalUIStroke.Transparency = 1
-	darkUIStroke.Transparency = 0.8
 local theme = {
 	BlackgroundColor = Color3.fromRGB(1, 17, 33),
 	BlackColor = Color3.fromRGB(9, 9, 19),
@@ -175,6 +161,8 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.BlackgroundColor
                         elseif name:find("divider") then
 				obj.BackgroundColor3 = theme.StrokeColor
+			elseif name:find("Inline") then
+				obj.BackgroundColor3 = theme.MainColor
 			elseif name:find("divider2") then
 				obj.BackgroundColor3 = theme.StrokeColor
 			elseif name == "Frame_2" then
