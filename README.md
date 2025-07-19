@@ -10,7 +10,9 @@
 # USAGE
 ```lua
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
+local LOADER = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/loader.Function.lua"))()
 
+LOADER:Add(function()
 local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE",'original')
 
 local Notification = NEVERLOSE:Notification()
@@ -43,5 +45,6 @@ end)
 
 Example:AddDropdown('Dropdown',{1,2,3},2,function(val)
     print("dropdown",val)
+end)
 end)
 ```
