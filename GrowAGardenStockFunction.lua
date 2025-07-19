@@ -147,4 +147,89 @@ local function toggleDropdown()
 end
 
 Stock.MouseButton1Click:Connect(toggleDropdown)
+
+
+local CoreGui = game.CoreGui
+local SearchBox = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame"):WaitForChild("SearchBox")
+CoreGui.NEVERLOSE.Frame.SearchBox.PlaceholderText = "Calculator, Example 1, 200 + Celestial + Shocked"
+local mutations = {
+    Gold = 20, Rainbow = 50, Wet = 2, Windstruck = 2, Moonlit = 2,
+    Clay = 3, Chilled = 2, Choc = 2, Pollinated = 3, Sandy = 3,
+    Bloodlit = 4, Twisted = 5, Drenched = 5, Cloudtouched = 5,
+    Frozen = 10, Aurora = 90, Shocked = 100, Celestial = 120,
+
+    Burnt = 4, Verdant = 4, Wiltproof = 4, Plasma = 5,
+    ["Honey Glazed"] = 5, Heavenly = 5, Fried = 8, Amber = 10,
+    Cooked = 25, OldAmber = 20, Zombified = 25, Molten = 25,
+    Ceramic = 30, AncientAmber = 50, Sundried = 85,
+    Paradisal = 100, Alienlike = 100, Galactic = 120,
+    Disco = 125, Meteoric = 125, Voidtouched = 135,
+    Dawnbound = 150, Starised = 230,
+
+    Tempestuous = 19, Chakra = 5, Tranquil = 20
+}
+
+local function isNumber(str)
+    str = str:gsub(",", "") -- remove commas
+    return tonumber(str) ~= nil
+end
+
+local function getMutationValue(word)
+    for k, v in pairs(mutations) do
+        if string.lower(word) == string.lower(k) then
+            return v
+        end
+    end
+    return nil
+end
+
+local function calculate(input)
+    local parts = {}
+    for word in string.gmatch(input, "([^%+]+)") do
+        word = string.gsub(word, "^%s*(.-)%s*$", "%1") -- Trim
+        table.insert(parts, word)
+    end
+
+    local total = 0
+    local numbers = {}
+    local mutationValues = {}
+
+    for _, word in pairs(parts) do
+        local num = tonumber((word:gsub(",", "")))
+        if num then
+            table.insert(numbers, num)
+        else
+            local val = getMutationValue(word)
+            if val then
+                table.insert(mutationValues, val)
+            end
+        end
+    end
+
+    if #numbers > 0 and #mutationValues > 0 then
+        local numSum = 0
+        for _, n in pairs(numbers) do numSum = numSum + n end
+
+        local multi = 1
+        for _, m in pairs(mutationValues) do multi = multi * m end
+
+        total = numSum * multi
+    elseif #mutationValues > 0 then
+        for _, m in pairs(mutationValues) do total = total + m end
+    elseif #numbers > 0 then
+        for _, n in pairs(numbers) do total = total + n end
+    else
+        total = 0
+    end
+
+    return total
+end
+
+SearchBox.FocusLost:Connect(function(enterPressed)
+    if enterPressed then
+        local input = SearchBox.Text
+        local result = calculate(input)
+        SearchBox.Text = tostring(result)
+    end
+end)
 end
