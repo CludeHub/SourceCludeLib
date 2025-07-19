@@ -151,7 +151,7 @@ Stock.MouseButton1Click:Connect(toggleDropdown)
 
 local CoreGui = game.CoreGui
 local SearchBox = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame"):WaitForChild("SearchBox")
-CoreGui.NEVERLOSE.Frame.SearchBox.PlaceholderText = "Calculator, Example 1, 200 + Celestial + Shocked"
+CoreGui.NEVERLOSE.Frame.SearchBox.PlaceholderText = "Example = 6999 + Celestial + Shocked"
 local mutations = {
     Gold = 20, Rainbow = 50, Wet = 2, Windstruck = 2, Moonlit = 2,
     Clay = 3, Chilled = 2, Choc = 2, Pollinated = 3, Sandy = 3,
