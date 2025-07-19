@@ -244,7 +244,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0, 600, 0, 500)
+	local ooldsize=UICustomSize or UDim2.new(0, 640, 0, 540)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -585,11 +585,11 @@ stroc.Thickness = 0.6
 -- DPI Logic
 local dpiSizes = {
 ["90%"] = {
-NEVERLOSE = UDim2.new(0, 600, 0, 500),
+NEVERLOSE = UDim2.new(0, 640, 0, 540),
 ABOUT = UDim2.new(0, 260, 0, 300)
 },
 ["100%"] = {
-NEVERLOSE = UDim2.new(0, 700, 0, 600),
+NEVERLOSE = UDim2.new(0, 740, 0, 640),
 ABOUT = UDim2.new(0, 360, 0, 400)
 }
 }
