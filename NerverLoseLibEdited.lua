@@ -412,6 +412,7 @@ print(Text .. " is Running")
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
 	UICorner.Parent = Frame
+	UICorner.CornerRadius = UDim.new(0, 3)
 
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
@@ -742,7 +743,7 @@ Sound2.Ended:Connect(function()
 	Frame_2.Size = UDim2.new(0.774634778, 0, 1, 0)
 	Frame_2.ZIndex = 2
 	
-	UICorner_2.CornerRadius = UDim.new(0, 4)
+	UICorner_2.CornerRadius = UDim.new(0, 2)
 	UICorner_2.Parent = Frame_2
 
 	Frame_3.Parent = Frame
@@ -755,7 +756,7 @@ Sound2.Ended:Connect(function()
 	Frame_3.Size = UDim2.new(0.774999976, 0, 0.140000001, 0)
 	Frame_3.ZIndex = 4
 
-	UICorner_3.CornerRadius = UDim.new(0, 4)
+	UICorner_3.CornerRadius = UDim.new(0, 2)
 	UICorner_3.Parent = Frame_3
 
 	DropShadow.Name = "DropShadow"
