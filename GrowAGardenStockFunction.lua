@@ -148,10 +148,9 @@ end
 
 Stock.MouseButton1Click:Connect(toggleDropdown)
 
-
 local CoreGui = game.CoreGui
 local SearchBox = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame"):WaitForChild("SearchBox")
-CoreGui.NEVERLOSE.Frame.SearchBox.PlaceholderText = "Example = 6999 + Celestial + Shocked"
+
 local mutations = {
     Gold = 20, Rainbow = 50, Wet = 2, Windstruck = 2, Moonlit = 2,
     Clay = 3, Chilled = 2, Choc = 2, Pollinated = 3, Sandy = 3,
@@ -169,67 +168,52 @@ local mutations = {
     Tempestuous = 19, Chakra = 5, Tranquil = 20
 }
 
-local function isNumber(str)
-    str = str:gsub(",", "") -- remove commas
-    return tonumber(str) ~= nil
-end
+local function parseInput(input)
+    local firstNumber = nil
+    local sum = 0
 
-local function getMutationValue(word)
-    for k, v in pairs(mutations) do
-        if string.lower(word) == string.lower(k) then
-            return v
-        end
-    end
-    return nil
-end
-
-local function calculate(input)
-    local parts = {}
-    for word in string.gmatch(input, "([^%+]+)") do
-        word = string.gsub(word, "^%s*(.-)%s*$", "%1") -- Trim
-        table.insert(parts, word)
+    -- Split by × or x
+    local multiParts = string.split(input, "×")
+    if #multiParts == 1 then
+        multiParts = string.split(input, "x")
     end
 
-    local total = 0
-    local numbers = {}
-    local mutationValues = {}
+    if #multiParts >= 2 then
+        firstNumber = tonumber((multiParts[1]:gsub(",", "")):match("%d+"))
+        input = multiParts[2]
+    else
+        -- Default multiplier is 1 if × not present
+        firstNumber = 1
+        input = multiParts[1]
+    end
 
-    for _, word in pairs(parts) do
+    for word in string.gmatch(input, "([^%+%-]+)") do
+        word = word:match("^%s*(.-)%s*$") -- trim
         local num = tonumber((word:gsub(",", "")))
         if num then
-            table.insert(numbers, num)
+            sum = sum + num
         else
-            local val = getMutationValue(word)
-            if val then
-                table.insert(mutationValues, val)
+            for k, v in pairs(mutations) do
+                if string.lower(word) == string.lower(k) then
+                    sum = sum + v
+                end
             end
         end
     end
 
-    if #numbers > 0 and #mutationValues > 0 then
-        local numSum = 0
-        for _, n in pairs(numbers) do numSum = numSum + n end
-
-        local multi = 1
-        for _, m in pairs(mutationValues) do multi = multi * m end
-
-        total = numSum * multi
-    elseif #mutationValues > 0 then
-        for _, m in pairs(mutationValues) do total = total + m end
-    elseif #numbers > 0 then
-        for _, n in pairs(numbers) do total = total + n end
-    else
-        total = 0
+    -- Handle minus manually
+    for minus in string.gmatch(input, "%- *([%d]+)") do
+        sum = sum - tonumber(minus)
     end
 
-    return total
+    return firstNumber * sum
 end
 
 SearchBox.FocusLost:Connect(function(enterPressed)
     if enterPressed then
-        local input = SearchBox.Text
-        local result = calculate(input)
+        local result = parseInput(SearchBox.Text)
         SearchBox.Text = tostring(result)
     end
 end)
+CoreGui.NEVERLOSE.Frame.SearchBox.PlaceholderText = "Example = 6999 + Celestial + Shocked"
 end
