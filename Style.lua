@@ -42,7 +42,7 @@ originalButton.Position = UDim2.new(0.4, 0, 0, 0)
 originalButton.Size = UDim2.new(0.2, 0, 1, 0)
 originalButton.AutoButtonColor = false
 originalButton.Text = ""
-originalButton.BackgroundColor3 = Color3.fromRGB(1, 17, 33)
+originalButton.BackgroundColor3 = Color3.fromRGB(4, 69, 135)
 originalButton.Parent = color
 
 local originalUICorner = Instance.new("UICorner")
