@@ -893,7 +893,7 @@ saveButton_3c.AutoButtonColor = false
 stroke_4d.Name = "Stroke"
 stroke_4d.Parent = saveButton_3c
 stroke_4d.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-stroke_4d.Color = NEVERLOSE.Themes.TraceColor
+stroke_4d.Color = NEVERLOSE.Themes.StrokeColor
 stroke_4d.Thickness = 1
 stroke_4d.Transparency = 0
 
