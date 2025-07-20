@@ -60,7 +60,8 @@ local theme = {
 	SectionColor = Color3.fromRGB(10, 11, 13),
 	StrokeColor = Color3.fromRGB(28, 28, 28),
 	ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
-	SearchColor = Color3.fromRGB(14, 14, 14)
+	SearchColor = Color3.fromRGB(14, 14, 14),
+	Save = Color3.fromRGB(28, 28, 28)
 }
 
 local core = game.CoreGui:FindFirstChild("NEVERLOSE")
@@ -94,6 +95,8 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.BlackgroundColor
 			elseif name:find("TabButton") then
 				obj.BackgroundColor3 = theme.BlackgroundColor
+			elseif name:find("Stroke") then
+				obj.BackgroundColor3 = theme.Save
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
 			elseif name == "Frame_3" then
@@ -128,7 +131,8 @@ local theme = {
 	SectionColor = Color3.fromRGB(0, 17, 35),
 	StrokeColor = Color3.fromRGB(3, 35, 50),
 	ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22),
-	SearchColor = Color3.fromRGB(0, 17, 35)
+	SearchColor = Color3.fromRGB(0, 17, 35),
+	Save = Color3.fromRGB(0, 76, 99)
 }
 
 local core = game.CoreGui:FindFirstChild("NEVERLOSE")
@@ -161,6 +165,8 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.StrokeColor
 			elseif name:find("dpiDropdown") then
 				obj.BackgroundColor3 = theme.BlackgroundColor
+			elseif name:find("Stroke") then
+				obj.BackgroundColor3 = theme.Save
 			elseif name:find("TabButton") then
 				obj.BackgroundColor3 = theme.BlackgroundColor
                         elseif name:find("divider") then
@@ -183,7 +189,7 @@ for _, root in ipairs(roots) do
 			obj.BackgroundColor3 = theme.SearchColor
 
 		elseif obj:IsA("UIStroke") then
-			obj.Color = Color3.fromRGB(0, 76, 99)
+			obj.Color = theme.StrokeColor
 
 		elseif obj:IsA("TextLabel") and obj.Name:lower():find("title") then
 			obj.TextStrokeColor3 = theme.MainColor
