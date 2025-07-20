@@ -183,7 +183,7 @@ for _, root in ipairs(roots) do
 			obj.BackgroundColor3 = theme.SearchColor
 
 		elseif obj:IsA("UIStroke") then
-			obj.Color = theme.StrokeColor
+			obj.Color = Color3.fromRGB(0, 76, 99)
 
 		elseif obj:IsA("TextLabel") and obj.Name:lower():find("title") then
 			obj.TextStrokeColor3 = theme.MainColor
