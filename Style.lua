@@ -1,4 +1,4 @@
-local thseme = Color3.fromRGB(10, 11, 13)
+local thseme = Color3.fromRGB(1, 17, 33)
 
 local style = Instance.new("Frame")
 style.Name = "Style"
