@@ -893,9 +893,9 @@ saveButton_3c.AutoButtonColor = false
 stroke_4d.Name = "Stroke"
 stroke_4d.Parent = saveButton_3c
 stroke_4d.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-stroke_4d.Color = Color3.fromRGB(0, 76, 99)
+stroke_4d.Color = NEVERLOSE.Themes.TraceColor
 stroke_4d.Thickness = 1
-stroke_4d.Transparency = 0.5872
+stroke_4d.Transparency = 0
 
 -- Corner (parented to Save Button)
 corner_5e.Parent = saveButton_3c
