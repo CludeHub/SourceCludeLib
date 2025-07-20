@@ -2,8 +2,8 @@
 # Edited by: **CludeHub**
 
 # NEVERLOSE.CC UI
-![CludeLib UI](https://github.com/CludeHub/SourceCludeLib/blob/6c169c972087db4ae67fd741bfa35c23363a34d1/Screenshot_20250720_161237_com.roblox.client.jpg)
-![Clude](https://github.com/CludeHub/SourceCludeLib/blob/6c169c972087db4ae67fd741bfa35c23363a34d1/Screenshot_20250720_161256_com.roblox.client.jpg)
+![CludeLib UI](https://forum.neverlose.cc/uploads/default/original/3X/e/9/e976a087e4ce36998318741ce77d28ec611a6a2a.png)
+![Clude](https://forum.neverlose.cc/uploads/default/original/3X/b/f/bfca45da0a0086cb167be4c180410d5920b26230.png)
 
 # USAGE
 ```lua
