@@ -1,3 +1,5 @@
+local thseme = Color3.fromRGB(10, 11, 13)
+
 local style = Instance.new("Frame")
 style.Name = "Style"
 style.Position = UDim2.new(0.037, 0, 0.9, 0)
@@ -42,7 +44,7 @@ originalButton.Position = UDim2.new(0.4, 0, 0, 0)
 originalButton.Size = UDim2.new(0.2, 0, 1, 0)
 originalButton.AutoButtonColor = false
 originalButton.Text = ""
-originalButton.BackgroundColor3 = Color3.new(10, 11, 13)
+originalButton.BackgroundColor3 = thseme
 originalButton.Parent = color
 
 local originalUICorner = Instance.new("UICorner")
@@ -91,6 +93,8 @@ for _, root in ipairs(roots) do
 			elseif name:find("MoveFrame") then
 				obj.BackgroundColor3 = theme.MainColorDrop
 			elseif name:find("dpiDropdown") then
+				obj.BackgroundColor3 = theme.BlackgroundColor
+			elseif name:find("TabButton") then
 				obj.BackgroundColor3 = theme.BlackgroundColor
 			elseif name == "Frame_2" then
 				obj.BackgroundColor3 = theme.BlackColor
@@ -158,6 +162,8 @@ for _, root in ipairs(roots) do
 			elseif name:find("lay") then
 				obj.BackgroundColor3 = theme.StrokeColor
 			elseif name:find("dpiDropdown") then
+				obj.BackgroundColor3 = theme.BlackgroundColor
+			elseif name:find("TabButton") then
 				obj.BackgroundColor3 = theme.BlackgroundColor
                         elseif name:find("divider") then
 				obj.BackgroundColor3 = theme.StrokeColor
