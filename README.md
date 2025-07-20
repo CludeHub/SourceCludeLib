@@ -47,7 +47,7 @@ end)
 end)
 ```
 
-# Exanple Source Script Counter Strike 2 Cheat
+# Example Source Script Counter Strike 2 Cheat
 ```lua
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
 local LOADER = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/loader.Function.lua"))()
