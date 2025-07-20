@@ -1,11 +1,10 @@
 # By: **C-A-T-S-U-S**
 # Edited by: **CludeHub**
 
-# counterstrike
-![CludeLib UI](https://raw.githubusercontent.com/CludeHub/SourceCludeLib/83409df25261506df7b536920ba09b3a2e51e9f6/IMG_20250719_015647.jpg)
+# NEVERLOSE.CC UI
+![CludeLib UI](https://github.com/CludeHub/SourceCludeLib/blob/6c169c972087db4ae67fd741bfa35c23363a34d1/Screenshot_20250720_161237_com.roblox.client.jpg)
 
-# slap battles
-![SlapBattles](https://github.com/CludeHub/SourceCludeLib/blob/3b5da287223e5ec4fed0ae2fb3507eb1bbd312f5/IMG_20250719_020044.jpg)
+![SlapBattles](https://github.com/CludeHub/SourceCludeLib/blob/3b5da287223e5ec4fed0ae2fb3507eb1bbd312f5/IMG_20250719_020044.jp)
 
 # USAGE
 ```lua
