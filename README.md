@@ -4,7 +4,7 @@
 # NEVERLOSE.CC UI
 ![CludeLib UI](https://github.com/CludeHub/SourceCludeLib/blob/6c169c972087db4ae67fd741bfa35c23363a34d1/Screenshot_20250720_161237_com.roblox.client.jpg)
 
-![SlapBattles](https://github.com/CludeHub/SourceCludeLib/blob/3b5da287223e5ec4fed0ae2fb3507eb1bbd312f5/IMG_20250719_020044.jp)
+![SlapBattles]([[hjjjjjjj](https://github.com/CludeHub/SourceCludeLib/blob/6c169c972087db4ae67fd741bfa35c23363a34d1/Screenshot_20250720_161256_com.roblox.client.jpg)]())
 
 # USAGE
 ```lua
