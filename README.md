@@ -127,7 +127,7 @@ local delay = LegitBot:AddSection('Delay', "right")
 local autofire = LegitBot:AddSection('Auto Fire', "right")
 
 
-local inventory = Inventory:AddSection('Inventory', "right")
+local inventory = Inventory:AddSection('Inventory', "left")
 local inventory2 = Inventory:AddSection('Inventory 2', "right")
 
 
