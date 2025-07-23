@@ -590,7 +590,7 @@ local dpiSizes = {
     ["100%"] = {
         NEVERLOSE = UDim2.new(0, 800, 0, 640),
         ABOUT = UDim2.new(0, 360, 0, 400),
-        ABOUT_POS = UDim2.new(0, 980, 0, 70)
+        ABOUT_POS = UDim2.new(0, 920, 0, 70)
     }
 }
 
@@ -602,14 +602,16 @@ local function updateDPI()
     dpiDropdown.Text = scaleKey
     local sizeInfo = dpiSizes[scaleKey]
 
-    -- Resize and reposition About Frame  
-    aboutFrame.Size = sizeInfo.ABOUT  
-    aboutFrame.Position = sizeInfo.ABOUT_POS  
+    -- Resize and reposition About Frame
+    aboutFrame.Size = sizeInfo.ABOUT
+    aboutFrame.Position = sizeInfo.ABOUT_POS
 
-    -- Resize main NEVERLOSE.Frame if exists  
-    local mainGui = CoreGui:FindFirstChild("NEVERLOSE")  
-    if mainGui and mainGui:FindFirstChild("Frame") then  
-        mainGui.Frame.Size = sizeInfo.NEVERLOSE  
+    -- Resize and fix position of main NEVERLOSE.Frame
+    local mainGui = CoreGui:FindFirstChild("NEVERLOSE")
+    if mainGui and mainGui:FindFirstChild("Frame") then
+        local frame = mainGui.Frame
+        frame.Size = sizeInfo.NEVERLOSE
+        frame.Position = UDim2.new(0, 170, 0, 6) -- Fixed position
     end
 end
 
