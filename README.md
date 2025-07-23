@@ -4,6 +4,7 @@
 This is how it's look like (real)
 ![CludeLib UI](https://github.com/CludeHub/SourceCludeLib/blob/c3bcda14e7e285ef43947c78405d26432a5faac9/e976a087e4ce36998318741ce77d28ec611a6a2a_2_1035x604.png)
 ![Clude](https://github.com/CludeHub/SourceCludeLib/blob/c3bcda14e7e285ef43947c78405d26432a5faac9/bfca45da0a0086cb167be4c180410d5920b26230.png)
+![the Ui](https://github.com/CludeHub/SourceCludeLib/blob/f4873eb6d51b643053667460594ac9b89f56ee64/Screenshot_20250724_022304_com.roblox.client.jpg)
 
 # USAGE
 ```lua
