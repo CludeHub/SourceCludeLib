@@ -417,7 +417,8 @@ print(Text .. " is Running")
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
 aboutFrame.Size = UDim2.new(0, 260, 0, 300, 0)
-aboutFrame.Position = UDim2.new(0.7, 0, 0.2, 0)
+aboutFrame.AnchorPoint = Vector2.new(1, 1)
+aboutFrame.Position = UDim2.new(0.920000017, 0, 0.600000024, 0)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
 aboutFrame.BackgroundTransparency = 0.2
 aboutFrame.BorderSizePixel = 0
