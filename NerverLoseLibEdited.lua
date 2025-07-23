@@ -398,12 +398,11 @@ print(Text .. " is Running")
 
 	Frame.Parent = ScreenGui
 	Frame.Active = true
-	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
 	Frame.BackgroundTransparency = 0.200
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0.41, 0, 0.5, 0)
+	Frame.Position = UDim2.new(0, 170, 0, 6)
 	Frame.Size = UDim2.new(0,0,0,0)
 	Frame.ZIndex = 2
 	Frame.ClipsDescendants=true
@@ -417,8 +416,7 @@ print(Text .. " is Running")
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
 aboutFrame.Size = UDim2.new(0, 260, 0, 300, 0)
-aboutFrame.AnchorPoint = Vector2.new(1, 1)
-aboutFrame.Position = UDim2.new(0.920000017, 0, 0.600000024, 0)
+aboutFrame.Position = UDim2.new(0, 840, 0, 70)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
 aboutFrame.BackgroundTransparency = 0.2
 aboutFrame.BorderSizePixel = 0
