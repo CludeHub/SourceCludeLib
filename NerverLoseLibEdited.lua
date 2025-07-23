@@ -590,7 +590,7 @@ local dpiSizes = {
     ["100%"] = {
         NEVERLOSE = UDim2.new(0, 800, 0, 640),
         ABOUT = UDim2.new(0, 360, 0, 400),
-        ABOUT_POS = UDim2.new(0, 920, 0, 70)
+        ABOUT_POS = UDim2.new(0, 980, 0, 70)
     }
 }
 
