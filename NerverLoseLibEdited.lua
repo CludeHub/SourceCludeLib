@@ -582,48 +582,51 @@ stroc.Thickness = 0.6
 
 -- DPI Logic
 local dpiSizes = {
-["90%"] = {
-NEVERLOSE = UDim2.new(0, 650, 0, 540),
-ABOUT = UDim2.new(0, 260, 0, 300)
-},
-["100%"] = {
-NEVERLOSE = UDim2.new(0, 800, 0, 640),
-ABOUT = UDim2.new(0, 360, 0, 400)
-}
+    ["90%"] = {
+        NEVERLOSE = UDim2.new(0, 650, 0, 540),
+        ABOUT = UDim2.new(0, 260, 0, 300),
+        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+    },
+    ["100%"] = {
+        NEVERLOSE = UDim2.new(0, 800, 0, 640),
+        ABOUT = UDim2.new(0, 360, 0, 400),
+        ABOUT_POS = UDim2.new(0, 920, 0, 70)
+    }
 }
 
 local dpiOptions = { "90%", "100%" }
 local dpiIndex = 1
 
 local function updateDPI()
-local scaleKey = dpiOptions[dpiIndex]
-dpiDropdown.Text = scaleKey
-local sizeInfo = dpiSizes[scaleKey]
+    local scaleKey = dpiOptions[dpiIndex]
+    dpiDropdown.Text = scaleKey
+    local sizeInfo = dpiSizes[scaleKey]
 
--- Resize About Frame  
-aboutFrame.Size = sizeInfo.ABOUT  
+    -- Resize and reposition About Frame  
+    aboutFrame.Size = sizeInfo.ABOUT  
+    aboutFrame.Position = sizeInfo.ABOUT_POS  
 
--- Resize main NEVERLOSE.Frame if exists  
-local mainGui = CoreGui:FindFirstChild("NEVERLOSE")  
-if mainGui and mainGui:FindFirstChild("Frame") then  
-	mainGui.Frame.Size = sizeInfo.NEVERLOSE  
-end
-
+    -- Resize main NEVERLOSE.Frame if exists  
+    local mainGui = CoreGui:FindFirstChild("NEVERLOSE")  
+    if mainGui and mainGui:FindFirstChild("Frame") then  
+        mainGui.Frame.Size = sizeInfo.NEVERLOSE  
+    end
 end
 
 dpiDropdown.MouseButton1Click:Connect(function()
-local Sound2 = Instance.new("Sound")
-Sound2.SoundId = "rbxassetid://6895079853"
-Sound2.Looped = false
-Sound2.Volume = 1
-Sound2.Parent = game:GetService("SoundService")
-Sound2:Play()
+    local Sound2 = Instance.new("Sound")
+    Sound2.SoundId = "rbxassetid://6895079853"
+    Sound2.Looped = false
+    Sound2.Volume = 1
+    Sound2.Parent = game:GetService("SoundService")
+    Sound2:Play()
 
-Sound2.Ended:Connect(function()
-	Sound2:Destroy()
-     end)
-dpiIndex = dpiIndex % #dpiOptions + 1
-updateDPI()
+    Sound2.Ended:Connect(function()
+        Sound2:Destroy()
+    end)
+
+    dpiIndex = dpiIndex % #dpiOptions + 1
+    updateDPI()
 end)
 
 -- Initial DPI set
