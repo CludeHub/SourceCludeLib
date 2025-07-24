@@ -785,7 +785,7 @@ Sound2.Ended:Connect(function()
 	HeadName.Position = UDim2.new(0.0100000342, 0, 0.010000146, -17)
 	HeadName.Size = UDim2.new(0.205458686, 0, 0.133462012, -10)
 	HeadName.ZIndex = 4
-	HeadName.Font = Enum.Font.SourceSansBold
+	HeadName.Font = Enum.Font.BuilderSansExtraBold
 	HeadName.Text = NameScriptHub or "NEVERLOSE"
 	HeadName.TextColor3 = Color3.fromRGB(255, 255, 255)
 	HeadName.TextScaled = true
