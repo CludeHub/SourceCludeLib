@@ -815,7 +815,7 @@ Sound2.Ended:Connect(function()
 	HeadName.TextScaled = true
 	HeadName.TextSize = 14.000
 	HeadName.TextStrokeColor3 = Color3.fromRGB(0, 251, 255)
-	HeadName.TextStrokeTransparency = 0.720
+	HeadName.TextStrokeTransparency = 0.790
 	HeadName.TextWrapped = true
 
 	TabButtons.Name = "TabButtons"
