@@ -172,6 +172,11 @@ local function GetImageData(name:string,image:ImageLabel)
 		image.ImageRectSize = Vector2.new(1200,1200)
 	end
 
+	if name == "Locker" then
+		image.Image = "rbxassetid://87534652127926"
+		image.ImageRectOffset = Vector2.new(1, 1)
+		image.ImageRectSize = Vector2.new(1200,1200)
+	end
 	
 
        	if name == "retry" then
