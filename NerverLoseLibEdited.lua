@@ -412,6 +412,30 @@ print(Text .. " is Running")
 	UICorner.Parent = Frame
 	UICorner.CornerRadius = UDim.new(0, 3)
 
+	if UserInputService == nil then
+    UserInputService = game:GetService("UserInputService")
+end
+
+-- Check if platform is PC
+if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
+    local CoreGui = game:GetService("CoreGui")
+    local NEVERLOSE = CoreGui:FindFirstChild("NEVERLOSE")
+    
+    if NEVERLOSE then
+        local Frame = NEVERLOSE:FindFirstChild("Frame")
+        local AboutFrame = NEVERLOSE:FindFirstChild("AboutFrame")
+
+        if Frame then
+            Frame.Size = UDim2.new(0, 800, 0, 700)
+        end
+
+        if AboutFrame then
+            AboutFrame.Size = UDim2.new(0, 360, 0, 450)
+	    AboutFrame.Position = UDim2.new(0, 980, 0, 70)
+        end
+    end
+	end
+	
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
