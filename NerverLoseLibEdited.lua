@@ -1142,8 +1142,8 @@ end)
 		Image.BackgroundTransparency = 1.000
 		Image.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Image.BorderSizePixel = 0
-		Image.Position = UDim2.new(0.0149999997, -4, 0.5, -7)
-		Image.Size = UDim2.new(0.850000024, 0, 0.800000012, 0)
+		Image.Position = UDim2.new(0.0149999997, -4, 0.5, 0)
+		Image.Size = UDim2.new(0.850000024, 0, 0.800000012, -9)
 		Image.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		Image.ZIndex = 5
 
@@ -1164,7 +1164,7 @@ end)
 		Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Label.BorderSizePixel = 0
 		Label.Position = UDim2.new(0.640507042, 0, 0.500000238, 0)
-		Label.Size = UDim2.new(0.718986034, -4, 0.600000024, -7)
+		Label.Size = UDim2.new(0.718986034, -4, 0.600000024, -6)
 		Label.ZIndex = 5
 		Label.Font = Enum.Font.SourceSansBold
 		Label.Text = TabNameString or "Index.json"
