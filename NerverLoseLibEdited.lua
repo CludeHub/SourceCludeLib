@@ -623,9 +623,9 @@ local dpiSizes = {
         ABOUT_POS = UDim2.new(0, 840, 0, 70)
     },
     ["100%"] = {
-        NEVERLOSE = UDim2.new(0, 830, 0, 700),
+        NEVERLOSE = UDim2.new(0, 840, 0, 700),
         ABOUT = UDim2.new(0, 360, 0, 450),
-        ABOUT_POS = UDim2.new(0, 1030, 0, 70)
+        ABOUT_POS = UDim2.new(0, 1040, 0, 70)
     }
 }
 
@@ -1142,7 +1142,7 @@ end)
 		Image.BackgroundTransparency = 1.000
 		Image.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Image.BorderSizePixel = 0
-		Image.Position = UDim2.new(0.0149999997, -4, 0.5, -4)
+		Image.Position = UDim2.new(0.0149999997, -4, 0.5, -7)
 		Image.Size = UDim2.new(0.850000024, 0, 0.800000012, 0)
 		Image.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		Image.ZIndex = 5
@@ -1164,7 +1164,7 @@ end)
 		Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Label.BorderSizePixel = 0
 		Label.Position = UDim2.new(0.640507042, 0, 0.500000238, 0)
-		Label.Size = UDim2.new(0.718986034, -4, 0.600000024, -4)
+		Label.Size = UDim2.new(0.718986034, -4, 0.600000024, -7)
 		Label.ZIndex = 5
 		Label.Font = Enum.Font.SourceSansBold
 		Label.Text = TabNameString or "Index.json"
@@ -1455,7 +1455,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.5, 0, 0.5, 0)
-				LabelText.Size = UDim2.new(0.899999976, -5, 0.75, -5)
+				LabelText.Size = UDim2.new(0.899999976, -7, 0.75, -7)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = ButtonName or"Kill all"
@@ -1614,7 +1614,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.38587454, 0, 0.499999583, 0)
-				LabelText.Size = UDim2.new(0.772000015, -10, 0.75, -10)
+				LabelText.Size = UDim2.new(0.772000015, -12, 0.75, -12)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = ToggleName or "Label-Test"
@@ -1631,7 +1631,7 @@ Sound2.Ended:Connect(function()
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
-				Effect.Size = UDim2.new(0.150000006, 0, 0.5, 0)
+				Effect.Size = UDim2.new(0.150000006, -2, 0.5, -2)
 				Effect.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0.5, 0)
@@ -1762,7 +1762,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296665907, 0, 0.499999106, 0)
-				LabelText.Size = UDim2.new(0.593582749, -10, 0.75, -10)
+				LabelText.Size = UDim2.new(0.593582749, -12, 0.75, -12)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = KeybindNameString or ''
@@ -1923,7 +1923,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.238462642, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.477176398, -10, 0.75, -10)
+				LabelText.Size = UDim2.new(0.477176398, -12, 0.75, -12)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = SliderNameString or "Control"
@@ -2119,7 +2119,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296666116, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.593582511, -10, 0.75, -10)
+				LabelText.Size = UDim2.new(0.593582511, -12, 0.75, -12)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = DropdownName or "Label-Test"
