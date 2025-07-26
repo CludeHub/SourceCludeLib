@@ -1143,7 +1143,7 @@ end)
 		Image.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Image.BorderSizePixel = 0
 		Image.Position = UDim2.new(0.0149999997, -4, 0.5, 0)
-		Image.Size = UDim2.new(0.850000024, 0, 0.800000012, -9)
+		Image.Size = UDim2.new(0.850000024, 0, 0.800000012, -5)
 		Image.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		Image.ZIndex = 5
 
@@ -1534,7 +1534,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.5, 0, 0.5, 0)
-				LabelText.Size = UDim2.new(1, -2, 0.649999976, -5)
+				LabelText.Size = UDim2.new(1, -2, 0.649999976, -8)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = LabelNameString or"Label"
@@ -2138,7 +2138,7 @@ Sound2.Ended:Connect(function()
 				TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				TopBar.BorderSizePixel = 0
 				TopBar.Position = UDim2.new(0.950000167, 0, 0.500000715, 0)
-				TopBar.Size = UDim2.new(0.313529521, 0, 0.5, 0)
+				TopBar.Size = UDim2.new(0.413529521, 0, 0.5, 0)
 				TopBar.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0, 2)
@@ -2159,6 +2159,7 @@ Sound2.Ended:Connect(function()
 				ValueText.Position = UDim2.new(0.358571023, 0, 0.500001013, 0)
 				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, 0)
 				ValueText.ZIndex = 6
+				ValueText.TextTransparency = 0.3
 				ValueText.Font = Enum.Font.SourceSansSemibold
 				ValueText.Text = tostring(Default)
 				ValueText.TextColor3 = Color3.fromRGB(255, 255, 255)
