@@ -400,6 +400,11 @@ print(Text .. " is Running")
 		end)
 	end)
 
+	local oldGui = game.CoreGui:FindFirstChild("NEVERLOSE")
+if oldGui then
+    oldGui:Destroy()
+	end
+
 	ScreenGui.Parent = CoreGui
 	ScreenGui.Name = "NEVERLOSE"
 	ScreenGui.ResetOnSpawn = false
