@@ -1143,7 +1143,7 @@ end)
 		Image.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Image.BorderSizePixel = 0
 		Image.Position = UDim2.new(0.0149999997, -4, 0.5, 0)
-		Image.Size = UDim2.new(0.850000024, 0, 0.800000012, -5)
+		Image.Size = UDim2.new(0.850000024, 0, 0.800000012, -3)
 		Image.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		Image.ZIndex = 5
 
