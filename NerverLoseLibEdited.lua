@@ -1353,7 +1353,7 @@ Sound2.Ended:Connect(function()
 			UIListLayout.Parent = Section
 			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			UIListLayout.Padding = UDim.new(0, 4)
+			UIListLayout.Padding = UDim.new(0, 7)
 
 			lay.Name = "lay"
 			lay.Parent = Section
@@ -2143,7 +2143,7 @@ Sound2.Ended:Connect(function()
 				TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				TopBar.BorderSizePixel = 0
 				TopBar.Position = UDim2.new(0.950000167, 0, 0.500000715, 0)
-				TopBar.Size = UDim2.new(0.393529521, 0, 0.5, 0)
+				TopBar.Size = UDim2.new(0.5, 0, 0.5, 0)
 				TopBar.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0, 2)
