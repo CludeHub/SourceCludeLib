@@ -2167,6 +2167,7 @@ Sound2.Ended:Connect(function()
 				ValueText.TextXAlignment = Enum.TextXAlignment.Left
 				ValueText.Font = Enum.Font.SourceSansSemibold
 				ValueText.Text = tostring(Default)
+				ValueText.TextTransparency = 0.3
 				ValueText.TextColor3 = Color3.fromRGB(255, 255, 255)
 				ValueText.TextScaled = true
 				ValueText.TextSize = 14.000
