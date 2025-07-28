@@ -2143,7 +2143,7 @@ Sound2.Ended:Connect(function()
 				TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				TopBar.BorderSizePixel = 0
 				TopBar.Position = UDim2.new(0.950000167, 0, 0.500000715, 0)
-				TopBar.Size = UDim2.new(0.313529521, 0, 0.5, 0)
+				TopBar.Size = UDim2.new(0.343529521, 0, 0.5, 0)
 				TopBar.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0, 2)
@@ -2164,6 +2164,7 @@ Sound2.Ended:Connect(function()
 				ValueText.Position = UDim2.new(0.358571023, 0, 0.500001013, 0)
 				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, 0)
 				ValueText.ZIndex = 6
+				ValueText.TextXAlignment = Enum.TextXAlignment.Left
 				ValueText.Font = Enum.Font.SourceSansSemibold
 				ValueText.Text = tostring(Default)
 				ValueText.TextColor3 = Color3.fromRGB(255, 255, 255)
