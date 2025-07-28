@@ -831,7 +831,7 @@ Sound2.Ended:Connect(function()
 	HeadName.TextScaled = true
 	HeadName.TextSize = 14.000
 	HeadName.TextStrokeColor3 = Color3.fromRGB(0, 251, 255)
-	HeadName.TextStrokeTransparency = 0.790
+	HeadName.TextStrokeTransparency = 0.81
 	HeadName.TextWrapped = true
 
 	TabButtons.Name = "TabButtons"
@@ -1081,7 +1081,7 @@ end)
 		TabTitle.BackgroundTransparency = 1.000
 		TabTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabTitle.BorderSizePixel = 0
-		TabTitle.Size = UDim2.new(0.949999988, -5, 0.5, -7)
+		TabTitle.Size = UDim2.new(0.949999988, -5, 0.5, -9)
 		TabTitle.ZIndex = 5
 		TabTitle.Font = Enum.Font.SourceSansSemibold
 		TabTitle.Text = Label or "Home"
@@ -1147,7 +1147,7 @@ end)
 		Image.BackgroundTransparency = 1.000
 		Image.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Image.BorderSizePixel = 0
-		Image.Position = UDim2.new(0.0149999997, -4, 0.5, -4)
+		Image.Position = UDim2.new(0.0149999997, -4, 0.5, 0)
 		Image.Size = UDim2.new(0.850000024, 0, 0.800000012, 0)
 		Image.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		Image.ZIndex = 5
