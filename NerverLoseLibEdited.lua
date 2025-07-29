@@ -1216,7 +1216,7 @@ end)
 		UIListLayout.Parent = Left
 		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout.Padding = UDim.new(0, 3)
+		UIListLayout.Padding = UDim.new(0, 7)
 
 		Right.Name = "Right"
 		Right.Parent = Tab
@@ -1235,7 +1235,7 @@ end)
 		UIListLayout_2.Parent = Right
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout_2.Padding = UDim.new(0, 3)
+		UIListLayout_2.Padding = UDim.new(0, 7)
 
 		scrolling_connect(Right)
 		scrolling_connect(Left)
