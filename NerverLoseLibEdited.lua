@@ -432,11 +432,6 @@ print(Text .. " is Running")
     UserInputService = game:GetService("UserInputService")
 end
 
-	local test = Instance.new("Frame")
-	test.Name = "Themes"
-	test.BackgroundTransparency = 1
-	test.Parent = ScreenGui
-
 -- Check if platform is PC
 if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
     local CoreGui = game:GetService("CoreGui")
@@ -1017,61 +1012,16 @@ uicornerb.Parent = buttons
 
 buttons.Parent = ScreenGui
 
-	local TweenService = game:GetService("TweenService")
-local CoreGui = game:GetService("CoreGui")
-
-local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
-local isVisible = true
-
-local tweenInfo = TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-
-local function fadeInstance(instance, fadeOut)
-	if instance:IsA("TextLabel") or instance:IsA("TextButton") or instance:IsA("TextBox") then
-		if not instance:GetAttribute("OriginalTextTransparency") then
-			instance:SetAttribute("OriginalTextTransparency", instance.TextTransparency)
-		end
-		if not instance:GetAttribute("OriginalBackgroundTransparency") then
-			instance:SetAttribute("OriginalBackgroundTransparency", instance.BackgroundTransparency)
-		end
-		TweenService:Create(instance, tweenInfo, {
-			TextTransparency = fadeOut and 1 or instance:GetAttribute("OriginalTextTransparency"),
-			BackgroundTransparency = fadeOut and 1 or instance:GetAttribute("OriginalBackgroundTransparency")
-		}):Play()
-
-	elseif instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
-		if not instance:GetAttribute("OriginalImageTransparency") then
-			instance:SetAttribute("OriginalImageTransparency", instance.ImageTransparency)
-		end
-		if not instance:GetAttribute("OriginalBackgroundTransparency") then
-			instance:SetAttribute("OriginalBackgroundTransparency", instance.BackgroundTransparency)
-		end
-		TweenService:Create(instance, tweenInfo, {
-			ImageTransparency = fadeOut and 1 or instance:GetAttribute("OriginalImageTransparency"),
-			BackgroundTransparency = fadeOut and 1 or instance:GetAttribute("OriginalBackgroundTransparency")
-		}):Play()
-
-	elseif instance:IsA("Frame") or instance:IsA("ScrollingFrame") then
-		if not instance:GetAttribute("OriginalBackgroundTransparency") then
-			instance:SetAttribute("OriginalBackgroundTransparency", instance.BackgroundTransparency)
-		end
-		TweenService:Create(instance, tweenInfo, {
-			BackgroundTransparency = fadeOut and 1 or instance:GetAttribute("OriginalBackgroundTransparency")
-		}):Play()
-	end
-end
-
-local function fadeUI(root, fadeOut)
-	for _, descendant in pairs(root:GetDescendants()) do
-		pcall(function()
-			fadeInstance(descendant, fadeOut)
-		end)
-	end
-end
-
--- Toggle button logic
-buttons.MouseButton1Click:Connect(function()
-	isVisible = not isVisible
-	fadeUI(NEVERLOSE, not isVisible)
+	buttons.MouseButton1Click:Connect(function()
+Frame.Visible = not Frame.Visible
+Frame_2.Visible = not Frame_2.Visible
+Frame_3.Visible = not Frame_3.Visible
+TabHose.Visible = not TabHose.Visible
+outlo.Visible = not outlo.Visible
+outlo_2.Visible = not outlo_2.Visible
+outlo_3.Visible = not outlo_3.Visible
+UserData.Visible = not UserData.Visible
+aboutFrame.Visible = false
 end)
 	
 	UserData.Name = "UserData"
