@@ -415,7 +415,7 @@ print(Text .. " is Running")
 	Frame.Parent = ScreenGui
 	Frame.Active = true
 	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
-	Frame.BackgroundTransparency = 0.200
+	Frame.BackgroundTransparency = 0.17
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
 	Frame.Position = UDim2.new(0, 170, 0, 6)
@@ -825,13 +825,13 @@ Sound2.Ended:Connect(function()
 	HeadName.Position = UDim2.new(0.0100000342, 0, 0.010000146, -17)
 	HeadName.Size = UDim2.new(0.205458686, 0, 0.133462012, -10)
 	HeadName.ZIndex = 4
-	HeadName.Font = Enum.Font.BuilderSansExtraBold
+	HeadName.Font = Enum.Font.GothamBlack
 	HeadName.Text = NameScriptHub or "NEVERLOSE"
 	HeadName.TextColor3 = Color3.fromRGB(255, 255, 255)
 	HeadName.TextScaled = true
 	HeadName.TextSize = 14.000
 	HeadName.TextStrokeColor3 = Color3.fromRGB(0, 251, 255)
-	HeadName.TextStrokeTransparency = 0.81
+	HeadName.TextStrokeTransparency = 1
 	HeadName.TextWrapped = true
 
 	TabButtons.Name = "TabButtons"
