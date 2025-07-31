@@ -199,26 +199,36 @@ end
 	end)
 
 
-local neverloseFrame = game.CoreGui:FindFirstChild("NEVERLOSE")
-if not neverloseFrame then return end
+local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
+if not NEVERLOSE then return end
 
-local frame = neverloseFrame:FindFirstChild("Frame")
-if not frame then return end
+local Frame = NEVERLOSE:FindFirstChild("Frame")
+if not Frame then return end
 
-local function updateTabButtonColors()
-    if frame.BackgroundColor3 == Color3.fromRGB(1, 17, 33) then
-        for _, descendant in ipairs(neverloseFrame:GetDescendants()) do
-            if descendant:IsA("Frame") and descendant.Name == "TabButton" then
-                descendant.BackgroundColor3 = Color3.fromRGB(19, 176, 243)
+local RunService = game:GetService("RunService")
+
+-- Store last applied tab color to avoid redundant changes
+local lastTabColor = nil
+
+RunService.RenderStepped:Connect(function()
+    local bg = Frame.BackgroundColor3
+    local newTabColor
+
+    if bg == Color3.fromRGB(1, 17, 33) then
+        newTabColor = Color3.fromRGB(19, 176, 243)
+    elseif bg == Color3.fromRGB(22, 22, 22) then
+        newTabColor = Color3.fromRGB(255, 255, 255)
+    else
+        return -- Not a color we care about
+    end
+
+    -- Only update if the color actually changed
+    if newTabColor ~= lastTabColor then
+        for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
+            if obj:IsA("Frame") and obj.Name == "TabButton" then
+                obj.BackgroundColor3 = newTabColor
             end
         end
+        lastTabColor = newTabColor
     end
-end
-
--- Initial check
-updateTabButtonColors()
-
--- Listen for color change
-frame:GetPropertyChangedSignal("BackgroundColor3"):Connect(function()
-    updateTabButtonColors()
 end)
