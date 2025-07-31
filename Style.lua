@@ -93,8 +93,6 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.MainColorDrop
 			elseif name:find("dpiDropdown") then
 				obj.BackgroundColor3 = theme.BlackgroundColor
-			elseif name:find("TabButton") then
-				obj.BackgroundColor3 = theme.BlackgroundColor
 			elseif name:find("Stroke") then
 				obj.BackgroundColor3 = theme.Save
 			elseif name == "Frame_2" then
@@ -167,8 +165,6 @@ for _, root in ipairs(roots) do
 				obj.BackgroundColor3 = theme.BlackgroundColor
 			elseif name:find("Stroke") then
 				obj.BackgroundColor3 = theme.Save
-			elseif name:find("TabButton") then
-				obj.BackgroundColor3 = theme.BlackgroundColor
                         elseif name:find("divider") then
 				obj.BackgroundColor3 = theme.StrokeColor
 			elseif name:find("MoveFrame") then
