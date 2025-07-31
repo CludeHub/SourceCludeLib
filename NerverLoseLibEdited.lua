@@ -415,7 +415,7 @@ print(Text .. " is Running")
 	Frame.Parent = ScreenGui
 	Frame.Active = true
 	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
-	Frame.BackgroundTransparency = 0.17
+	Frame.BackgroundTransparency = 0.12
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
 	Frame.Position = UDim2.new(0, 170, 0, 6)
@@ -2252,9 +2252,9 @@ Sound2.Ended:Connect(function()
 
 				local function auto_updatea()
 					if DropdownToggle then
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.4,0,0,get_list_v4())}):Play()
+						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.9,0,0,get_list_v4())}):Play()
 					else
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.4,0,0,0)}):Play()
+						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.9,0,0,0)}):Play()
 					end
 				end
 
