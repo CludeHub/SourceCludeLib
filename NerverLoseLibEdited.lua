@@ -552,7 +552,7 @@ end
 AddInfo("Version:", "2.0.0", 0, true)
 AddInfo("Build date:", "Dec 30 2020", 1, true)
 AddInfo("Build type:", "Release", 2, true)
-AddInfo("Registered to:", "Anon_z2", 3, true)
+AddInfo("Registered to:", LocalPlayer.DisplayName, 3, true)
 AddInfo("Subscription till:", "01.01.2021 21:07", 4, true)
 
 -- Footer
