@@ -2328,9 +2328,10 @@ Sound2.Ended:Connect(function()
 					Dropdown.Font = Enum.Font.SourceSansSemibold
 					Dropdown.Text = "List"
 					Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
-					Dropdown.TextScaled = true
+					Dropdown.TextScaled = false
 					Dropdown.TextSize = 13.000
 					Dropdown.TextWrapped = true
+					Dropdown.TextXAlignment = Enum.TextXAlignment.Left
 					TweenService:Create(Dropdown,TweenInfo.new(0.1),{TextTransparency=0.3}):Play()
 					Dropdown.ZIndex = 10000
 					UIAspectRatioConstraint.Parent = Dropdown
