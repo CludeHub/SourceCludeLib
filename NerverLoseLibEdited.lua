@@ -432,6 +432,11 @@ print(Text .. " is Running")
     UserInputService = game:GetService("UserInputService")
 end
 
+	local test = Instance.new("Frame")
+	test.Name = "Themes"
+	test.BackgroundTransparency = 1
+	test.Parent = ScreenGui
+
 -- Check if platform is PC
 if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
     local CoreGui = game:GetService("CoreGui")
