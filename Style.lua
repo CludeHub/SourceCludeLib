@@ -197,3 +197,28 @@ for _, root in ipairs(roots) do
 	end
 end
 	end)
+
+
+local neverloseFrame = game.CoreGui:FindFirstChild("NEVERLOSE")
+if not neverloseFrame then return end
+
+local frame = neverloseFrame:FindFirstChild("Frame")
+if not frame then return end
+
+local function updateTabButtonColors()
+    if frame.BackgroundColor3 == Color3.fromRGB(1, 17, 33) then
+        for _, descendant in ipairs(neverloseFrame:GetDescendants()) do
+            if descendant:IsA("Frame") and descendant.Name == "TabButton" then
+                descendant.BackgroundColor3 = Color3.fromRGB(19, 176, 243)
+            end
+        end
+    end
+end
+
+-- Initial check
+updateTabButtonColors()
+
+-- Listen for color change
+frame:GetPropertyChangedSignal("BackgroundColor3"):Connect(function()
+    updateTabButtonColors()
+end)
