@@ -978,7 +978,10 @@ saveButton_3c.MouseLeave:Connect(function()
 	saveButton_3c.TextTransparency = 0.3
 	imageLabel_6f.ImageTransparency = 0.3
 end)
-
+-- style
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
+--
+	
 -- DraggingToggle
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/DragToggleSetting.lua"))()
 ----
@@ -1009,57 +1012,45 @@ uicornerb.Parent = buttons
 
 buttons.Parent = ScreenGui
 
-	-- style
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
---
-
 	local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
-local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
 
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
 local isVisible = true
+
 local tweenInfo = TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 
--- Store original transparencies
-local originalTransparencies = {}
-
-local function recordOriginalTransparency(instance)
-	if not originalTransparencies[instance] then
-		if instance:IsA("TextLabel") or instance:IsA("TextButton") or instance:IsA("TextBox") then
-			originalTransparencies[instance] = {
-				TextTransparency = instance.TextTransparency,
-				BackgroundTransparency = instance.BackgroundTransparency
-			}
-		elseif instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
-			originalTransparencies[instance] = {
-				ImageTransparency = instance.ImageTransparency,
-				BackgroundTransparency = instance.BackgroundTransparency
-			}
-		elseif instance:IsA("Frame") or instance:IsA("ScrollingFrame") then
-			originalTransparencies[instance] = {
-				BackgroundTransparency = instance.BackgroundTransparency
-			}
-		end
-	end
-end
-
 local function fadeInstance(instance, fadeOut)
-	local original = originalTransparencies[instance]
-	if not original then return end
-
 	if instance:IsA("TextLabel") or instance:IsA("TextButton") or instance:IsA("TextBox") then
+		if not instance:GetAttribute("OriginalTextTransparency") then
+			instance:SetAttribute("OriginalTextTransparency", instance.TextTransparency)
+		end
+		if not instance:GetAttribute("OriginalBackgroundTransparency") then
+			instance:SetAttribute("OriginalBackgroundTransparency", instance.BackgroundTransparency)
+		end
 		TweenService:Create(instance, tweenInfo, {
-			TextTransparency = fadeOut and 1 or original.TextTransparency,
-			BackgroundTransparency = fadeOut and 1 or original.BackgroundTransparency
+			TextTransparency = fadeOut and 1 or instance:GetAttribute("OriginalTextTransparency"),
+			BackgroundTransparency = fadeOut and 1 or instance:GetAttribute("OriginalBackgroundTransparency")
 		}):Play()
+
 	elseif instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
+		if not instance:GetAttribute("OriginalImageTransparency") then
+			instance:SetAttribute("OriginalImageTransparency", instance.ImageTransparency)
+		end
+		if not instance:GetAttribute("OriginalBackgroundTransparency") then
+			instance:SetAttribute("OriginalBackgroundTransparency", instance.BackgroundTransparency)
+		end
 		TweenService:Create(instance, tweenInfo, {
-			ImageTransparency = fadeOut and 1 or original.ImageTransparency,
-			BackgroundTransparency = fadeOut and 1 or original.BackgroundTransparency
+			ImageTransparency = fadeOut and 1 or instance:GetAttribute("OriginalImageTransparency"),
+			BackgroundTransparency = fadeOut and 1 or instance:GetAttribute("OriginalBackgroundTransparency")
 		}):Play()
+
 	elseif instance:IsA("Frame") or instance:IsA("ScrollingFrame") then
+		if not instance:GetAttribute("OriginalBackgroundTransparency") then
+			instance:SetAttribute("OriginalBackgroundTransparency", instance.BackgroundTransparency)
+		end
 		TweenService:Create(instance, tweenInfo, {
-			BackgroundTransparency = fadeOut and 1 or original.BackgroundTransparency
+			BackgroundTransparency = fadeOut and 1 or instance:GetAttribute("OriginalBackgroundTransparency")
 		}):Play()
 	end
 end
@@ -1067,13 +1058,12 @@ end
 local function fadeUI(root, fadeOut)
 	for _, descendant in pairs(root:GetDescendants()) do
 		pcall(function()
-			recordOriginalTransparency(descendant)
 			fadeInstance(descendant, fadeOut)
 		end)
 	end
 end
 
--- Button click
+-- Toggle button logic
 buttons.MouseButton1Click:Connect(function()
 	isVisible = not isVisible
 	fadeUI(NEVERLOSE, not isVisible)
