@@ -979,10 +979,6 @@ saveButton_3c.MouseLeave:Connect(function()
 	imageLabel_6f.ImageTransparency = 0.3
 end)
 
--- style
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
---
-
 -- DraggingToggle
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/DragToggleSetting.lua"))()
 ----
@@ -1012,6 +1008,10 @@ uicornerb.CornerRadius = UDim.new(1, 0)
 uicornerb.Parent = buttons
 
 buttons.Parent = ScreenGui
+
+	-- style
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
+--
 	
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
