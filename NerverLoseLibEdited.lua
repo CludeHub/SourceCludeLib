@@ -1013,16 +1013,47 @@ uicornerb.Parent = buttons
 
 buttons.Parent = ScreenGui
 	
+local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
+
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
+local isVisible = true -- toggle state
+
+-- Tween settings
+local tweenInfo = TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+-- Function to fade a single instance
+local function fadeInstance(instance, fadeOut)
+	if instance:IsA("TextLabel") or instance:IsA("TextButton") or instance:IsA("TextBox") then
+		TweenService:Create(instance, tweenInfo, {
+			TextTransparency = fadeOut and 1 or 0,
+			BackgroundTransparency = fadeOut and 1 or 0
+		}):Play()
+	elseif instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
+		TweenService:Create(instance, tweenInfo, {
+			ImageTransparency = fadeOut and 1 or 0,
+			BackgroundTransparency = fadeOut and 1 or 0
+		}):Play()
+	elseif instance:IsA("Frame") or instance:IsA("ScrollingFrame") then
+		TweenService:Create(instance, tweenInfo, {
+			BackgroundTransparency = fadeOut and 1 or 0
+		}):Play()
+	end
+end
+
+-- Function to fade entire UI
+local function fadeUI(root, fadeOut)
+	for _, descendant in pairs(root:GetDescendants()) do
+		pcall(function()
+			fadeInstance(descendant, fadeOut)
+		end)
+	end
+end
+
+-- Toggle Button
 buttons.MouseButton1Click:Connect(function()
-    Frame.Visible = not Frame.Visible
-    Frame_2.Visible = not Frame_2.Visible
-    Frame_3.Visible = not Frame_3.Visible
-    TabHose.Visible = not TabHose.Visible
-    outlo.Visible = not outlo.Visible
-    outlo_2.Visible = not outlo_2.Visible
-    outlo_3.Visible = not outlo_3.Visible
-    UserData.Visible = not UserData.Visible
-			aboutFrame.Visible = false
+	isVisible = not isVisible
+	fadeUI(NEVERLOSE, not isVisible)
 end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
