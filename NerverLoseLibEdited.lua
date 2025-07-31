@@ -953,7 +953,7 @@ imageLabel_6f.ImageColor3 = Color3.fromRGB(255, 255, 255)
 imageLabel_6f.ImageTransparency = 0.300
 imageLabel_6f.BackgroundTransparency = 1
 imageLabel_6f.Position = UDim2.new(0.1, 0, 0.1, 0)
-imageLabel_6f.Size = UDim2.new(0.188, 0, 0.788, 0)
+imageLabel_6f.Size = UDim2.new(0, 15, 0, 17)
 imageLabel_6f.ZIndex = 6
 
 saveButton_3c.MouseEnter:Connect(function()
