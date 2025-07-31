@@ -1093,7 +1093,7 @@ end)
 		TabTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 		UIAspectRatioConstraint.Parent = TabTitle
-		UIAspectRatioConstraint.AspectRatio = 7.000
+		UIAspectRatioConstraint.AspectRatio = 9.000
 		UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 		local funcs = {}
