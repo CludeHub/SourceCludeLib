@@ -228,3 +228,36 @@ RunService.RenderStepped:Connect(function()
         lastTabColor = newTabColor
     end
 end)
+
+local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
+if not NEVERLOSE then return end
+
+local Frame = NEVERLOSE:FindFirstChild("Frame")
+if not Frame then return end
+
+local RunService = game:GetService("RunService")
+
+local lastAppliedColor = nil
+
+RunService.RenderStepped:Connect(function()
+    local bgColor = Frame.BackgroundColor3
+    local newDownBarColor = nil
+
+    if bgColor == Color3.fromRGB(1, 17, 33) then
+        newDownBarColor = Color3.fromRGB(1, 17, 33)
+    elseif bgColor == Color3.fromRGB(22, 22, 22) then
+        newDownBarColor = Color3.fromRGB(25, 25, 25)
+    else
+        return -- Unhandled color
+    end
+
+    -- Only update if different from last applied
+    if newDownBarColor ~= lastAppliedColor then
+        for _, obj in ipairs(Frame:GetDescendants()) do
+            if obj:IsA("Frame") and obj.Name == "DownBar" then
+                obj.BackgroundColor3 = newDownBarColor
+            end
+        end
+        lastAppliedColor = newDownBarColor
+    end
+end)
