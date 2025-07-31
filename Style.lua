@@ -244,7 +244,7 @@ RunService.RenderStepped:Connect(function()
     local newDownBarColor = nil
 
     if bgColor == Color3.fromRGB(1, 17, 33) then
-        newDownBarColor = Color3.fromRGB(1, 17, 33)
+        newDownBarColor = Color3.fromRGB(1, 30, 59)
     elseif bgColor == Color3.fromRGB(22, 22, 22) then
         newDownBarColor = Color3.fromRGB(25, 25, 25)
     else
