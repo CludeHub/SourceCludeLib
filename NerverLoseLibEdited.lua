@@ -415,7 +415,7 @@ print(Text .. " is Running")
 	Frame.Parent = ScreenGui
 	Frame.Active = true
 	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
-	Frame.BackgroundTransparency = 0.12
+	Frame.BackgroundTransparency = 0.05
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
 	Frame.Position = UDim2.new(0, 170, 0, 6)
@@ -458,7 +458,7 @@ aboutFrame.Name = "AboutFrame"
 aboutFrame.Size = UDim2.new(0, 260, 0, 300, 0)
 aboutFrame.Position = UDim2.new(0, 840, 0, 70)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
-aboutFrame.BackgroundTransparency = 0.2
+aboutFrame.BackgroundTransparency = 0.05
 aboutFrame.BorderSizePixel = 0
 aboutFrame.Visible = false
 Instance.new("UICorner", aboutFrame).CornerRadius = UDim.new(0, 3)
