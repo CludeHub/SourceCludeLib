@@ -1013,18 +1013,6 @@ uicornerb.Parent = buttons
 
 buttons.Parent = ScreenGui
 	
-buttons.MouseButton1Click:Connect(function()
-Frame.Visible = not Frame.Visible
-Frame_2.Visible = not Frame_2.Visible
-Frame_3.Visible = not Frame_3.Visible
-TabHose.Visible = not TabHose.Visible
-outlo.Visible = not outlo.Visible
-outlo_2.Visible = not outlo_2.Visible
-outlo_3.Visible = not outlo_3.Visible
-UserData.Visible = not UserData.Visible
-aboutFrame.Visible = false
-end)
-	
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
 	UserData.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
