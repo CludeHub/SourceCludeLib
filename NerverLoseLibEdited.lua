@@ -212,7 +212,7 @@ local function GetImageData(name:string,image:ImageLabel)
 	if name == "sprinkler" then
 		image.Image = "rbxassetid://139620040051222"
 		image.ImageRectOffset = Vector2.new(10, 40)
-		image.ImageReactSize = Vector2.new(1200,1200)
+		image.ImageRectSize = Vector2.new(1200,1200)
 	end
 
 	if name == "gear" then
