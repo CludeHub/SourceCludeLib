@@ -727,21 +727,21 @@ local Padding = Instance.new("UIPadding")
 Padding.Parent = TextBox
 Padding.PaddingLeft = UDim.new(0, 26)
 	
-			local ImageButtons2 = Instance.new("ImageButton")
+			local ImageButtons9 = Instance.new("ImageButton")
 
-		ImageButtons2.Parent = Frame
-		ImageButtons2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		ImageButtons2.BackgroundTransparency = 1.000
-		ImageButtons2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		ImageButtons2.BorderSizePixel = 0
-		ImageButtons2.Position = UDim2.new(0.94737024, 0, 0.0140369833, 0)
-		ImageButtons2.Size = UDim2.new(0.0400000036, 0, 0.0400000036, 0)
-		ImageButtons2.SizeConstraint = Enum.SizeConstraint.RelativeYY
-		ImageButtons2.ZIndex = 4
-		ImageButtons2.Image = "http://www.roblox.com/asset/?id=6031154871"
-		ImageButtons2.ScaleType = Enum.ScaleType.Fit
+		ImageButtons9.Parent = Frame
+		ImageButtons9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ImageButtons9.BackgroundTransparency = 1.000
+		ImageButtons9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ImageButtons9.BorderSizePixel = 0
+		ImageButtons9.Position = UDim2.new(0.94737024, 0, 0.0140369833, 0)
+		ImageButtons9.Size = UDim2.new(0.0400000036, 0, 0.0400000036, 0)
+		ImageButtons9.SizeConstraint = Enum.SizeConstraint.RelativeYY
+		ImageButtons9.ZIndex = 4
+		ImageButtons9.Image = "http://www.roblox.com/asset/?id=6031154871"
+		ImageButtons9.ScaleType = Enum.ScaleType.Fit
 
-		ImageButtons2.MouseButton1Click:Connect(function()
+		ImageButtons9.MouseButton1Click:Connect(function()
 			local Sound2 = Instance.new("Sound")
 Sound2.SoundId = "rbxassetid://6895079853"
 Sound2.Looped = false
