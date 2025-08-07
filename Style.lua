@@ -261,4 +261,3 @@ RunService.RenderStepped:Connect(function()
         lastAppliedColor = newDownBarColor
     end
 end)
-l
