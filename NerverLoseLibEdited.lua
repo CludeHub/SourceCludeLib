@@ -231,7 +231,7 @@ local NEVERLOSE = {
 		TraceColor = Color3.fromRGB(115, 115, 115),
 		MainColor = Color3.fromRGB(0, 172, 247),
 		MainColorDrop = Color3.fromRGB(64, 65, 67),
-		SectionColor = Color3.fromRGB(10, 11, 13),
+		SectionColor = Color3.fromRGB(10, 11, 16),
 		StrokeColor = Color3.fromRGB(28, 28, 28),
 		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
 		SearchColor = Color3.fromRGB(14, 14, 14),
@@ -252,7 +252,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(0, 76, 99)
 		NEVERLOSE.Themes.MainColor = Color3.fromRGB(19, 176, 243)
 		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
+		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 17, 33)
 		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
 		NEVERLOSE.Themes.SearchColor = Color3.fromRGB(0, 17, 35)
