@@ -1077,6 +1077,40 @@ end)
 	UserName.TextWrapped = true
 	UserName.TextXAlignment = Enum.TextXAlignment.Left
 
+	-- "UserID:" label (white)
+local UserIdText = Instance.new("TextLabel")
+UserIdText.Name = "UserIdText"
+UserIdText.Parent = UserData
+UserIdText.AnchorPoint = Vector2.new(0, 0.5)
+UserIdText.BackgroundTransparency = 1
+UserIdText.BorderSizePixel = 0
+UserIdText.Position = UDim2.new(0.314, 0, 0.65, 0)
+UserIdText.Size = UDim2.new(0, 80, 0, 20) -- width for "UserID:"
+UserIdText.ZIndex = 5
+UserIdText.Font = Enum.Font.SourceSansSemibold
+UserIdText.Text = "UserID:"
+UserIdText.TextColor3 = Color3.fromRGB(255, 255, 255)
+UserIdText.TextScaled = true
+UserIdText.TextWrapped = true
+UserIdText.TextXAlignment = Enum.TextXAlignment.Left
+
+-- Number ID label (blue)
+local UserIdNumber = Instance.new("TextLabel")
+UserIdNumber.Name = "UserIdNumber"
+UserIdNumber.Parent = UserData
+UserIdNumber.AnchorPoint = Vector2.new(0, 0.5)
+UserIdNumber.BackgroundTransparency = 1
+UserIdNumber.BorderSizePixel = 0
+UserIdNumber.Position = UDim2.new(0.314 + (80/UserData.AbsoluteSize.X), 0, 0.65, 0) -- right of "UserID:"
+UserIdNumber.Size = UDim2.new(0.717, 0, 0.649999976, -4)
+UserIdNumber.ZIndex = 5
+UserIdNumber.Font = Enum.Font.SourceSansSemibold
+UserIdNumber.Text = tostring(LocalPlayer.UserId)
+UserIdNumber.TextColor3 = Color3.fromRGB(0, 172, 247)
+UserIdNumber.TextScaled = true
+UserIdNumber.TextWrapped = true
+UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
+
 	function WindowFunctinos:AddTabLabel(Label)
 		local TabTitle = Instance.new("TextLabel")
 		local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
