@@ -52,7 +52,7 @@ orangeButton.Position = UDim2.new(0.1, 0, 0, 0)
 orangeButton.Size = UDim2.new(0.2, 0, 1, 0)
 orangeButton.AutoButtonColor = false
 orangeButton.Text = ""
-orangeButton.BackgroundColor3 = Color3.fromRGB(255, 140, 0)
+orangeButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 orangeButton.Parent = color
 Instance.new("UICorner", orangeButton).CornerRadius = UDim.new(1, 0)
 
