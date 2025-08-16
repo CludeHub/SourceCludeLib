@@ -82,6 +82,8 @@ local function applyTheme(theme)
                     obj.BackgroundColor3 = theme.StrokeColor
                 elseif name:find("MoveFrame") then
                     obj.BackgroundColor3 = theme.MainColorDrop
+                elseif name:find("Icon") then
+                    obj.BackgroundColor3 = theme.MainColor
                 elseif name:find("dpiDropdown") then
                     obj.BackgroundColor3 = theme.BlackgroundColor
                 elseif name:find("Stroke") or name:find("divider") or name:find("divider2") then
