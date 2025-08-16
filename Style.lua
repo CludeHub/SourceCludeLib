@@ -82,8 +82,6 @@ local function applyTheme(theme)
                     obj.BackgroundColor3 = theme.StrokeColor
                 elseif name:find("MoveFrame") then
                     obj.BackgroundColor3 = theme.MainColorDrop
-                elseif name:find("Icon") then
-                    obj.BackgroundColor3 = theme.MainColor
                 elseif name:find("dpiDropdown") then
                     obj.BackgroundColor3 = theme.BlackgroundColor
                 elseif name:find("Stroke") or name:find("divider") or name:find("divider2") then
@@ -177,6 +175,8 @@ elseif bgColor == Color3.fromRGB(22, 22, 22) then
     newDownBarColor = Color3.fromRGB(25, 25, 25)  
 elseif bgColor == Color3.fromRGB(43, 43, 43) then
     newDownBarColor = Color3.fromRGB(43, 43, 43)
+        elseif bgColor == Color3.fromRGB(43, 43, 43) then
+            Icor = Color3.fromRGB(255, 170, 0)
         else
     return -- Unhandled color  
 end  
@@ -190,5 +190,14 @@ if newDownBarColor ~= lastAppliedColor then
     end  
     lastAppliedColor = newDownBarColor  
 end
+
+        if Icor ~= lastAppliedColor then  
+    for _, obj in ipairs(Frame:GetDescendants()) do  
+        if obj:IsA("Frame") and obj.Name == "Icon" then  
+            obj.BackgroundColor3 = Icor
+        end  
+    end  
+    lastAppliedColor = Icor
+        end
 
 end)
