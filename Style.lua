@@ -195,7 +195,7 @@ RunService.RenderStepped:Connect(function()
     -- Update Icon only if changed
     if newIconColor and newIconColor ~= lastIconColor then  
         for _, obj in ipairs(Frame:GetDescendants()) do  
-            if obj:IsA("Frame") and obj.Name == "Icon" then  
+            if obj:IsA("Frame") and obj.Name == "MainFrame" then  
                 obj.BackgroundColor3 = newIconColor
             end  
         end  
