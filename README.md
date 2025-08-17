@@ -9,9 +9,9 @@ This is how it's look like (real)
 # USAGE
 ```lua
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
-local LOADER = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/loader.Function.lua"))()
+local Loader = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NL_LOADER.lua"))()
 
-LOADER:Add(function()
+Loader:Function(function()
 local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE",'original')
 
 local Notification = NEVERLOSE:Notification()
@@ -51,9 +51,9 @@ end)
 # Example Source Script Counter Strike 2 Cheat
 ```lua
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
-local LOADER = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/loader.Function.lua"))()
+local Loader = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NL_LOADER.lua"))()
 
-LOADER:Add(function()
+Loader:Function(function()
 
 local Window = NEVERLOSE:AddWindow("NEVERLOSE", "CS:GO CHEAT", 'original')
 
