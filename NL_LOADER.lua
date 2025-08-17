@@ -20,7 +20,9 @@ Frame_9227.Name = "Frame"
 Frame_9227.Size = UDim2.new(0,0,0,0) -- start fully closed
 Frame_9227.Position = UDim2.new(0,0,0,0)
 Frame_9227.BackgroundColor3 = Color3.fromRGB(162,162,162)
-Frame_9227.BorderSizePixel = 1
+Frame_9227.BorderSizePixel = 0
+Frame_9227.Active = true
+Frame_9227.Draggable = true
 Frame_9227.BorderColor3 = Color3.fromRGB(27,42,53)
 Frame_9227.ClipsDescendants = true
 Frame_9227.Image = "rbxthumb://type=Asset&id=91016878031860&w=420&h=420"
