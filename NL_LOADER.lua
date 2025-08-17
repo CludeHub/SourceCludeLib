@@ -475,6 +475,7 @@ Stroke_8187.Parent = Holder2_8883
     Buy_5088.BorderSizePixel = 1
     Buy_5088.BorderColor3 = Color3.fromRGB(27, 42, 53)
     Buy_5088.Visible = true
+    Buy_5088.ZIndex = 9
     Buy_5088.Text = "BUY"
     Buy_5088.Font = Enum.Font.SourceSansBold
     Buy_5088.TextSize = 18
