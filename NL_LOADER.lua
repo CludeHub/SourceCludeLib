@@ -1,7 +1,7 @@
 -- Full Dump of NEVERLOSE_Loader_Service UI
-local Loader = {}
+    local Loader = {}
 
-function Loader:Function(scriptToRun)
+function Loader:Function(paid, gamepassLink, gamepassId, scriptToRun)
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
@@ -477,49 +477,46 @@ Stroke_8187.Parent = Holder2_8883
     local Players = game:GetService("Players")
     local MarketplaceService = game:GetService("MarketplaceService")
     local LocalPlayer = Players.LocalPlayer
-    local gamename = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+    local gamename = MarketplaceService:GetProductInfo(game.PlaceId).Name
 
-    local Buy_5088 = Instance.new("TextButton")
-    Buy_5088.Name = "Buy"
-    Buy_5088.Size = UDim2.new(0.6, 0, 0.2, 0)
-    Buy_5088.Position = UDim2.new(0.209, 0, 0.434, 0)
-    Buy_5088.BackgroundColor3 = Color3.fromRGB(0, 182, 255)
-    Buy_5088.Text = "BUY"
-    Buy_5088.Font = Enum.Font.SourceSansBold
-    Buy_5088.TextSize = 18
-    Buy_5088.ZIndex = 99
-    Buy_5088.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Buy_5088.Parent = Holder2_8883
+    local BuyButton = Instance.new("TextButton")
+    BuyButton.Name = "Buy"
+    BuyButton.Size = UDim2.new(0.6, 0, 0.2, 0)
+    BuyButton.Position = UDim2.new(0.209, 0, 0.434, 0)
+    BuyButton.BackgroundColor3 = Color3.fromRGB(0, 182, 255)
+    BuyButton.Text = "BUY"
+    BuyButton.Font = Enum.Font.SourceSansBold
+    BuyButton.TextSize = 18
+    BuyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    BuyButton.ZIndex = 99
+    BuyButton.Parent = Holder2_8883  -- Make sure Holder2_8883 exists in your GUI
 
-    local gamepassId = 1233310627
     local success, hasPass = pcall(function()
         return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)
     end)
 
     if success and hasPass then
-        Buy_5088.Text = "START"
-        product_6625.Text = gamename
-        Buy_5088.MouseButton1Click:Connect(function()
+        BuyButton.Text = "START"
+        product_6625.Text = gamename  -- Make sure product_6625 exists in your GUI
+
+        BuyButton.MouseButton1Click:Connect(function()
             print("START CLICKED")
-        Frame_9227:Destroy()
+            Frame_9227:Destroy()  -- Make sure Frame_9227 exists
             if type(scriptToRun) == "function" then
-                scriptToRun() -- run whatever was passed in
+                scriptToRun()
             elseif type(scriptToRun) == "string" then
                 loadstring(scriptToRun)()
             end
         end)
     else
-        Buy_5088.Text = "BUY"
-        Buy_5088.MouseButton1Click:Connect(function()
+        BuyButton.Text = "BUY"
+        BuyButton.MouseButton1Click:Connect(function()
             if setclipboard then
-                setclipboard("https://www.roblox.com/game-pass/1233310627/NEVERLOSE-CC-LOADER")
+                setclipboard(gamepassLink or "https://www.roblox.com/game-pass/1233310627/NEVERLOSE-CC-LOADER")
             end
             print("Link Copied")
         end)
-      end
-
-
-
+                end
 local UICorner_3273 = Instance.new("UICorner")
 UICorner_3273.Name = "UICorner"
 UICorner_3273.Parent = Buy_5088
