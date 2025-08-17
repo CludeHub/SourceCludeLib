@@ -13,27 +13,36 @@ local thumbnail, isReady = Players:GetUserThumbnailAsync(
 
 local NL_LOADER_8823 = Instance.new("ScreenGui")
 NL_LOADER_8823.Name = "NL_LOADER"
+local TweenService = game:GetService("TweenService")
+
 local Frame_9227 = Instance.new("ImageLabel")
 Frame_9227.Name = "Frame"
-Frame_9227.Size = UDim2.new(0,870,0,480)
+Frame_9227.Size = UDim2.new(0,0,0,0) -- start fully closed
 Frame_9227.Position = UDim2.new(0,0,0,0)
 Frame_9227.BackgroundColor3 = Color3.fromRGB(162,162,162)
-Frame_9227.BackgroundTransparency = 0
 Frame_9227.BorderSizePixel = 1
 Frame_9227.BorderColor3 = Color3.fromRGB(27,42,53)
 Frame_9227.ClipsDescendants = true
-Frame_9227.AnchorPoint = Vector2.new(0,0)
-Frame_9227.Visible = true
-Frame_9227.Active = true
-Frame_9227.Selectable = false
-Frame_9227.ZIndex = 1
-Frame_9227.Rotation = 0
-Frame_9227.LayoutOrder = 0
 Frame_9227.Image = "rbxthumb://type=Asset&id=91016878031860&w=420&h=420"
-Frame_9227.ImageTransparency = 0
 Frame_9227.ScaleType = Enum.ScaleType.Stretch
-Frame_9227.SliceScale = 1
-Frame_9227.ResampleMode = Enum.ResamplerMode.Default
+Frame_9227.Parent = NL_LOADER_8823
+
+-- Tween settings
+local tweenInfo = TweenInfo.new(
+    0.7, -- animation speed
+    Enum.EasingStyle.Back, -- gives a smooth bounce-like effect
+    Enum.EasingDirection.Out
+)
+
+-- Target size (final frame size)
+local targetSize = UDim2.new(0,870,0,480)
+
+-- Create tween
+local tweenOpen = TweenService:Create(Frame_9227, tweenInfo, {Size = targetSize})
+
+-- Play animation
+tweenOpen:Play()
+        
 local Close_4757 = Instance.new("TextButton")
 Close_4757.Name = "Close"
 Close_4757.Size = UDim2.new(0,30,0,30)
@@ -538,9 +547,8 @@ TitleIcon_7247.ScaleType = Enum.ScaleType.Stretch
 TitleIcon_7247.SliceScale = 1
 TitleIcon_7247.ResampleMode = Enum.ResamplerMode.Default
 TitleIcon_7247.Parent = Frame_9227
-Frame_9227.Parent = NL_LOADER_8823
 
-NL_LOADER_8823.Parent = game.Players.LocalPlayer.PlayerGui
+NL_LOADER_8823.Parent = game.CoreGui
     end
 
 return Loader
