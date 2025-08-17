@@ -115,7 +115,7 @@ DescBox_5884.Selectable = true
 DescBox_5884.ZIndex = 5
 DescBox_5884.Rotation = 0
 DescBox_5884.LayoutOrder = 0
-DescBox_5884.Text = [[NEVERLOSE.CC UI Library is a sleek, modern, and customizable menu system designed for smooth performance and professional visuals. Inspired by premium cheat menus, it features a minimal yet stylish interface with clean typography, sharp layouts, and adaptive scaling for all screen sizes.
+DescBox_5884.Text = [[NEVERLOSE.CC UI Library is a sleek, modern, and customizable menu system designed for smooth performance and professional visuals. Inspired by premium cheat menus, it features a minimal yet stylish interface with clean typography, sharp layouts, and adaptive scaling for all PC screen.
 
 With its dark-themed design, smooth transitions, and customizable elements, the menu gives off a polished \"luxury software\" feel. The structure is lightweight, ensuring fast rendering and responsiveness even in complex environments]]
 DescBox_5884.Font = Enum.Font.SourceSansBold
