@@ -496,7 +496,7 @@ Stroke_8187.Parent = Holder2_8883
     end)
 
     if success and hasPass then
-        BuyButton.Text = "START"
+        Buy_5088.Text = "START"
         product_6625.Text = gamename  -- Make sure product_6625 exists in your GUI
 
         BuyButton.MouseButton1Click:Connect(function()
@@ -509,8 +509,8 @@ Stroke_8187.Parent = Holder2_8883
             end
         end)
     else
-        BuyButton.Text = "BUY"
-        BuyButton.MouseButton1Click:Connect(function()
+        Buy_5088.Text = "BUY"
+        Buy_5088.MouseButton1Click:Connect(function()
             if setclipboard then
                 setclipboard(gamepassLink or "https://www.roblox.com/game-pass/1233310627/NEVERLOSE-CC-LOADER")
             end
