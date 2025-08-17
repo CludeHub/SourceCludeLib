@@ -472,11 +472,10 @@ Stroke_8187.Thickness = 1
 Stroke_8187.Transparency = 0
 Stroke_8187.Parent = Holder2_8883
 
---// NEVERLOSE.CC UI Loader Library
-
     local Players = game:GetService("Players")
     local MarketplaceService = game:GetService("MarketplaceService")
     local LocalPlayer = Players.LocalPlayer
+    local gamename = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
     local Buy_5088 = Instance.new("TextButton")
     Buy_5088.Name = "Buy"
@@ -497,7 +496,7 @@ Stroke_8187.Parent = Holder2_8883
 
     if success and hasPass then
         Buy_5088.Text = "START"
-        product_6625.Text = "NEVERLOSE.CC"
+        product_6625.Text = gamename
         Buy_5088.MouseButton1Click:Connect(function()
             print("START CLICKED")
         Frame_9227:Destroy()
