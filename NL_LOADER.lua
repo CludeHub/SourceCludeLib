@@ -1,7 +1,7 @@
 -- Full Dump of NEVERLOSE_Loader_Service UI
-local Loader = {} -- Table for functions
+local Loader = {}
 
-function Loader:Function()
+function Loader:Function(scriptToRun)
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
@@ -463,6 +463,8 @@ Stroke_8187.Thickness = 1
 Stroke_8187.Transparency = 0
 Stroke_8187.Parent = Holder2_8883
 
+--// NEVERLOSE.CC UI Loader Library
+
     local Players = game:GetService("Players")
     local MarketplaceService = game:GetService("MarketplaceService")
     local LocalPlayer = Players.LocalPlayer
@@ -472,33 +474,31 @@ Stroke_8187.Parent = Holder2_8883
     Buy_5088.Size = UDim2.new(0.6, 0, 0.2, 0)
     Buy_5088.Position = UDim2.new(0.209, 0, 0.434, 0)
     Buy_5088.BackgroundColor3 = Color3.fromRGB(0, 182, 255)
-    Buy_5088.BorderSizePixel = 1
-    Buy_5088.BorderColor3 = Color3.fromRGB(27, 42, 53)
-    Buy_5088.Visible = true
-    Buy_5088.ZIndex = 9
     Buy_5088.Text = "BUY"
     Buy_5088.Font = Enum.Font.SourceSansBold
     Buy_5088.TextSize = 18
+    Buy_5088.ZIndex = 99
     Buy_5088.TextColor3 = Color3.fromRGB(255, 255, 255)
     Buy_5088.Parent = Holder2_8883
 
-    -- Gamepass ID
     local gamepassId = 1233310627
-
-    -- Check if player owns the gamepass
     local success, hasPass = pcall(function()
         return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)
     end)
 
     if success and hasPass then
-        -- Change to START mode
         Buy_5088.Text = "START"
         product_6625.Text = "NEVERLOSE.CC"
         Buy_5088.MouseButton1Click:Connect(function()
-            Frame_9227:Destroy()
+            print("START CLICKED")
+        Frame_9227:Destroy()
+            if type(scriptToRun) == "function" then
+                scriptToRun() -- run whatever was passed in
+            elseif type(scriptToRun) == "string" then
+                loadstring(scriptToRun)()
+            end
         end)
     else
-        -- Keep BUY mode
         Buy_5088.Text = "BUY"
         Buy_5088.MouseButton1Click:Connect(function()
             if setclipboard then
@@ -506,8 +506,7 @@ Stroke_8187.Parent = Holder2_8883
             end
             print("Link Copied")
         end)
-    end
-
+      end
 
 
 
@@ -542,6 +541,6 @@ TitleIcon_7247.Parent = Frame_9227
 Frame_9227.Parent = NL_LOADER_8823
 
 NL_LOADER_8823.Parent = game.Players.LocalPlayer.PlayerGui
-end
+    end
 
 return Loader
