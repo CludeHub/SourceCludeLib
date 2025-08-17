@@ -499,7 +499,7 @@ Stroke_8187.Parent = Holder2_8883
         Buy_5088.Text = "START"
         product_6625.Text = gamename  -- Make sure product_6625 exists in your GUI
 
-        BuyButton.MouseButton1Click:Connect(function()
+        Buy_5088.MouseButton1Click:Connect(function()
             print("START CLICKED")
             Frame_9227:Destroy()  -- Make sure Frame_9227 exists
             if type(scriptToRun) == "function" then
