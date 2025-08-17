@@ -11,7 +11,7 @@ This is how it's look like (real)
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
 local Loader = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NL_LOADER.lua"))()
 
-Loader:Function(function()
+Loader:Function(true, "https://www.roblox.com/game-pass/1233310627/NEVERLOSE-CC-LOADER", 1233310627, function()
 local Window = NEVERLOSE:AddWindow("NEVERLOSE","TEXT HERE",'original')
 
 local Notification = NEVERLOSE:Notification()
@@ -53,8 +53,7 @@ end)
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
 local Loader = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NL_LOADER.lua"))()
 
-Loader:Function(function()
-
+Loader:Function(true, "https://www.roblox.com/game-pass/1233310627/NEVERLOSE-CC-LOADER", 1233310627, function()
 local Window = NEVERLOSE:AddWindow("NEVERLOSE", "CS:GO CHEAT", 'original')
 
 Window:AddTabLabel('Aimbot')
