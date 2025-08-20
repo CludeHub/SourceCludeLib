@@ -478,17 +478,17 @@ Stroke_8187.Parent = Holder2_8883
     local LocalPlayer = Players.LocalPlayer
     local gamename = MarketplaceService:GetProductInfo(game.PlaceId).Name
 
-    local BuyButton = Instance.new("TextButton")
-    BuyButton.Name = "Buy"
-    BuyButton.Size = UDim2.new(0.6, 0, 0.2, 0)
-    BuyButton.Position = UDim2.new(0.209, 0, 0.434, 0)
-    BuyButton.BackgroundColor3 = Color3.fromRGB(0, 182, 255)
-    BuyButton.Text = "BUY"
-    BuyButton.Font = Enum.Font.SourceSansBold
-    BuyButton.TextSize = 18
-    BuyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    BuyButton.ZIndex = 99
-    BuyButton.Parent = Holder2_8883
+    local Buy_5088 = Instance.new("TextButton")
+    Buy_5088.Name = "Buy"
+    Buy_5088.Size = UDim2.new(0.6, 0, 0.2, 0)
+    Buy_5088.Position = UDim2.new(0.209, 0, 0.434, 0)
+    Buy_5088.BackgroundColor3 = Color3.fromRGB(0, 182, 255)
+    Buy_5088.Text = "BUY"
+    Buy_5088.Font = Enum.Font.SourceSansBold
+    Buy_5088.TextSize = 18
+    Buy_5088.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Buy_5088.ZIndex = 99
+    Buy_5088.Parent = Holder2_8883
 
     local userHasPass = false
     if paid then
@@ -499,9 +499,9 @@ Stroke_8187.Parent = Holder2_8883
     end
 
     if userHasPass then
-        BuyButton.Text = "START"
+        Buy_5088.Text = "START"
         product_6625.Text = gamename
-        BuyButton.MouseButton1Click:Connect(function()
+        Buy_5088.MouseButton1Click:Connect(function()
             print("START CLICKED")
             Frame_9227:Destroy()
             if type(scriptToRun) == "function" then
@@ -511,8 +511,8 @@ Stroke_8187.Parent = Holder2_8883
             end
         end)
     else
-        BuyButton.Text = "BUY"
-        BuyButton.MouseButton1Click:Connect(function()
+        Buy_5088.Text = "BUY"
+        Buy_5088.MouseButton1Click:Connect(function()
             if setclipboard then
                 setclipboard(gamepassLink or "https://www.roblox.com/game-pass/1233310627/NEVERLOSE-CC-LOADER")
             end
