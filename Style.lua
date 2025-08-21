@@ -202,3 +202,44 @@ RunService.RenderStepped:Connect(function()
         lastIconColor = newIconColor
     end
 end)
+
+
+local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
+if not NEVERLOSE then return end
+
+local Frame = NEVERLOSE:FindFirstChild("Frame")
+if not Frame then return end
+
+local RunService = game:GetService("RunService")
+
+local lastTabColor = nil
+
+RunService.RenderStepped:Connect(function()
+    local bgColor = Frame.BackgroundColor3
+    local newTabColor = nil
+
+    -- Original Theme
+    if bgColor == Color3.fromRGB(1, 17, 33) then
+        newTabColor = Color3.fromRGB(19, 176, 243)
+
+    -- Dark Theme
+    elseif bgColor == Color3.fromRGB(22, 22, 22) then
+        newTabColor = Color3.fromRGB(255, 255, 255)
+
+    -- Orange Theme
+    elseif bgColor == Color3.fromRGB(43, 43, 43) then
+        newTabColor = Color3.fromRGB(22, 22, 22)
+    else
+        return -- Not a handled theme
+    end
+
+    -- Update only if different
+    if newTabColor and newTabColor ~= lastTabColor then
+        for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
+            if obj:IsA("Frame") and obj.Name == "TabButton" then
+                obj.BackgroundColor3 = newTabColor
+            end
+        end
+        lastTabColor = newTabColor
+    end
+end)
