@@ -473,52 +473,57 @@ Stroke_8187.Thickness = 1
 Stroke_8187.Transparency = 0
 Stroke_8187.Parent = Holder2_8883
 
-    local Players = game:GetService("Players")
-    local MarketplaceService = game:GetService("MarketplaceService")
-    local LocalPlayer = Players.LocalPlayer
-    local gamename = MarketplaceService:GetProductInfo(game.PlaceId).Name
+    local Players = game:GetService("Players")  
+    local MarketplaceService = game:GetService("MarketplaceService")  
+    local LocalPlayer = Players.LocalPlayer  
+    local gamename = MarketplaceService:GetProductInfo(game.PlaceId).Name  
 
-    local Buy_5088 = Instance.new("TextButton")
-    Buy_5088.Name = "Buy"
-    Buy_5088.Size = UDim2.new(0.6, 0, 0.2, 0)
-    Buy_5088.Position = UDim2.new(0.209, 0, 0.434, 0)
-    Buy_5088.BackgroundColor3 = Color3.fromRGB(0, 182, 255)
-    Buy_5088.Text = "BUY"
-    Buy_5088.Font = Enum.Font.SourceSansBold
-    Buy_5088.TextSize = 18
-    Buy_5088.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Buy_5088.ZIndex = 99
-    Buy_5088.Parent = Holder2_8883
+    local Buy_5088 = Instance.new("TextButton")  
+    Buy_5088.Name = "Buy_5088"  
+    Buy_5088.Size = UDim2.new(0.6, 0, 0.2, 0)  
+    Buy_5088.Position = UDim2.new(0.209, 0, 0.434, 0)  
+    Buy_5088.BackgroundColor3 = Color3.fromRGB(0, 182, 255)  
+    Buy_5088.Text = "BUY"  
+    Buy_5088.Font = Enum.Font.SourceSansBold  
+    Buy_5088.TextSize = 18  
+    Buy_5088.TextColor3 = Color3.fromRGB(255, 255, 255)  
+    Buy_5088.ZIndex = 99  
+    Buy_5088.Parent = Holder2_8883  
 
-    local userHasPass = false
-    if paid then
-        local success, hasPass = pcall(function()
-            return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)
-        end)
-        userHasPass = success and hasPass
-    end
+    local userHasPass = false  
 
-    if userHasPass then
-        Buy_5088.Text = "START"
-        product_6625.Text = gamename
-        Buy_5088.MouseButton1Click:Connect(function()
-            print("START CLICKED")
-            Frame_9227:Destroy()
-            if type(scriptToRun) == "function" then
-                scriptToRun()
-            elseif type(scriptToRun) == "string" then
-                loadstring(scriptToRun)()
-            end
-        end)
-    else
-        Buy_5088.Text = "BUY"
-        Buy_5088.MouseButton1Click:Connect(function()
-            if setclipboard then
-                setclipboard(gamepassLink or "https://www.roblox.com/game-pass/1233310627/NEVERLOSE-CC-LOADER")
-            end
-            print("Link Copied")
-        end)
-    end
+    if paid then  
+        -- 🔒 Paid mode → check pass  
+        local success, hasPass = pcall(function()  
+            return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)  
+        end)  
+        userHasPass = success and hasPass  
+    else  
+        -- 🆓 Free mode → always allow  
+        userHasPass = true  
+    end  
+
+    if userHasPass then  
+        Buy_5088.Text = "START"  
+        product_6625.Text = gamename  
+        Buy_5088.MouseButton1Click:Connect(function()  
+            print("START CLICKED")  
+            Frame_9227:Destroy()  
+            if type(scriptToRun) == "function" then  
+                scriptToRun()  
+            elseif type(scriptToRun) == "string" then  
+                loadstring(scriptToRun)()  
+            end  
+        end)  
+    else  
+        Buy_5088.Text = "BUY"  
+        Buy_5088.MouseButton1Click:Connect(function()  
+            if setclipboard then  
+                setclipboard(gamepassLink or "https://www.roblox.com/game-pass/"..tostring(gamepassId))  
+            end  
+            print("Link Copied")  
+        end)  
+    end  
 local UICorner_3273 = Instance.new("UICorner")
 UICorner_3273.Name = "UICorner"
 UICorner_3273.Parent = Buy_5088
