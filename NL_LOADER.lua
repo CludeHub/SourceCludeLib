@@ -1,6 +1,6 @@
 local Loader = {}
 
-function Loader:Function(paid, txt, gamepassLink, gamepassId, scriptToRun)
+function Loader:Function(paid, gamepassLink, gamepassId, scriptToRun)
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
@@ -455,7 +455,7 @@ product_6625.Selectable = false
 product_6625.ZIndex = 5
 product_6625.Rotation = 0
 product_6625.LayoutOrder = 0
-product_6625.Text = txt
+product_6625.Text = "3 ROBUX"
 product_6625.Font = Enum.Font.GothamBlack
 product_6625.TextSize = 8
 product_6625.TextColor3 = Color3.fromRGB(255,255,255)
