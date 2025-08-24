@@ -219,10 +219,6 @@ UICorner_8870.Parent = Button
 
 Con2_2260.Parent = Frame_3541
 
-local UICorner_6235 = Instance.new("UICorner")
-UICorner_6235.Name = "UICorner"
-UICorner_6235.Parent = Setting_3693
-Setting_3693.Parent = Frame_3541
 local Username_4763 = Instance.new("TextLabel")
 Username_4763.Name = "Username"
 Username_4763.Size = UDim2.new(0,100,0,20)
