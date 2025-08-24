@@ -175,44 +175,56 @@ language_2100.Parent = Frame
 
 
     local Players = game:GetService("Players")
-    local MarketplaceService = game:GetService("MarketplaceService")
-    local LocalPlayer = Players.LocalPlayer
+local MarketplaceService = game:GetService("MarketplaceService")
+local LocalPlayer = Players.LocalPlayer
 
-    -- Create button
-    local Button = Instance.new("TextButton")
-    Button.Name = "LoaderButton"
-    Button.Size = UDim2.new(0, 150, 0, 50)
-    Button.Position = UDim2.new(0.5, -75, 0.5, 67)
-    Button.Text = paid and "BUY" or "START"
-    Button.TextSize = 18
-    Button.BackgroundColor3 = Color3.fromRGB(0, 222, 255)
-    Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Button.Font = Enum.Font.SourceSansBold
-    Button.Parent = Con2_2260
+-- Create button
+local Button = Instance.new("TextButton")
+Button.Name = "LoaderButton"
+Button.Size = UDim2.new(0, 150, 0, 50)
+Button.Position = UDim2.new(0.5, -75, 0.5, 67)
+Button.TextSize = 18
+Button.BackgroundColor3 = Color3.fromRGB(0, 222, 255)
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.Font = Enum.Font.SourceSansBold
+Button.Parent = Con2_2260  -- your frame/holder
 
-    local function runScript()
-        if callback then
-            callback()
-        end
-    end
+-- check ownership first
+local ownsPass = false
+local success, result = pcall(function()
+	return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)
+end)
+if success and result then
+	ownsPass = true
+	Button.Text = "START"
+else
+	Button.Text = "BUY"
+end
 
-    Button.MouseButton1Click:Connect(function()
-        if paid then
-            local success, owns = pcall(function()
-                return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)
-            end)
+-- callback function
+local function runScript()
+	if callback then
+		callback()
+	end
+	Frame_3541:Destroy()
+end
 
-            if owns then
-                Button.Text = "START"
-                runScript()
-            else
-                Button.Text = "BUY"
-                MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
-            end
-        else
-            runScript()
-        end
-    end)
+-- handle clicks
+Button.MouseButton1Click:Connect(function()
+	if ownsPass then
+		runScript()
+	else
+		MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
+	end
+end)
+
+-- listen for purchase complete
+MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(player, id, purchased)
+	if player == LocalPlayer and id == gamepassId and purchased then
+		ownsPass = true
+		Button.Text = "START"
+	end
+end)
     
 local UICorner_8870 = Instance.new("UICorner")
 UICorner_8870.Name = "UICorner"
