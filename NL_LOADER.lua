@@ -215,6 +215,7 @@ Button.MouseButton1Click:Connect(function()
 		runScript()
 	else
 		MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
+				setclipboard(link)
 	end
 end)
 
@@ -503,6 +504,9 @@ Close_2040.TextWrapped = true
 Close_2040.RichText = false
 Close_2040.TextScaled = true
 Close_2040.Parent = Frame_3541
+	Close_2040.MouseButton1Click:Connect(function()
+			NL_LoaderV2_9804:Destroy()
+		end)
 local UserImage_8989 = Instance.new("ImageLabel")
 UserImage_8989.Name = "UserImage"
 UserImage_8989.Size = UDim2.new(0,25,0,25)
