@@ -208,22 +208,15 @@ end
 Frame_3541:Destroy()
 end
 
-Button.MouseButton1Click:Connect(function()
-    if ownsPass then
-        runScript()
-    else
-            if setclipboard then
-                setclipboard(link)
-                Button.Text = "LINK COPIED!"
-                task.delay(2, function()
-                    Button.Text = "BUY"
-                end)
-            else
-                warn("setclipboard not supported in this environment")
-            end
-        end)
-    end
-end)
+if ownsPass then
+    Button.Text = "START"
+else
+    Button.Text = "BUY"
+    Button.MouseButton1Click:Connect(function()
+        setclipboard(link)
+        print("Gamepass link copied to clipboard!")
+    end)
+	end
 	
 -- listen for purchase complete
 MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(player, id, purchased)
