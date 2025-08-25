@@ -19,6 +19,7 @@ Toggle.BackgroundTransparency = 1
 Toggle.Position = UDim2.new(0.0300059989, 0, 0.700000823, 0)
 Toggle.Size = UDim2.new(0.400000012, 0, 0.0772999972, 0)
 Toggle.ZIndex = 5
+Toggle.ZIndex = 50
 
 Instance.new("UIAspectRatioConstraint", Toggle).AspectRatio = 7
 Instance.new("UICorner", Toggle).CornerRadius = UDim.new(0, 3)
@@ -37,7 +38,7 @@ LabelText.TextTransparency = 0.3
 LabelText.TextScaled = true
 LabelText.TextWrapped = true
 LabelText.TextXAlignment = Enum.TextXAlignment.Left
-
+LabelText.ZIndex = 50
 local Effect = Instance.new("Frame", Toggle)
 Effect.Name = "Effect"
 Effect.AnchorPoint = Vector2.new(0, 0.5)
@@ -46,6 +47,7 @@ Effect.Position = UDim2.new(1.99900003, 0, 0.5, 0)
 Effect.Size = UDim2.new(0.16, 0, 0.7, 0)
 Effect.ZIndex = 6
 Instance.new("UICorner", Effect).CornerRadius = UDim.new(0.5, 0)
+Effect.ZIndex = 50
 
 local Icon = Instance.new("Frame", Effect)
 Icon.Name = "Icon"
@@ -56,13 +58,13 @@ Icon.Size = UDim2.new(1, 0, 1, 0)
 Icon.SizeConstraint = Enum.SizeConstraint.RelativeYY
 Icon.ZIndex = 7
 Instance.new("UICorner", Icon).CornerRadius = UDim.new(1, 0)
-
+Icon.ZIndex = 50
 local Clicker = Instance.new("TextButton", Toggle)
 Clicker.BackgroundTransparency = 1
 Clicker.Size = UDim2.new(2.2, 0, 1, 0)
 Clicker.Text = ""
 Clicker.ZIndex = 10
-
+Clicker.ZIndex = 50
 -- Toggle visuals
 local function toggleval(val, timea)
 	if val then
