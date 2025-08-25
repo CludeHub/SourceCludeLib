@@ -1711,10 +1711,12 @@ Sound2.Ended:Connect(function()
 						TweenService:Create(LabelText,TweenInfo.new(timea),{TextTransparency=0}):Play()
 						TweenService:Create(Icon,TweenInfo.new(timea),{Position=UDim2.new(0.75,0,0.5,0),BackgroundColor3=NEVERLOSE.Themes.MainColor}):Play();
 						Effect.BackgroundColor3 = Color3.fromRGB(12, 18, 50)
+						Icon.BackgroundTransparency = 0
 					else
 						TweenService:Create(LabelText,TweenInfo.new(timea),{TextTransparency=0.3}):Play()
 						TweenService:Create(Icon,TweenInfo.new(timea),{Position=UDim2.new(0.25,0,0.5,0),BackgroundColor3=Color3.fromRGB(223, 251, 255)}):Play();
 						Effect.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
+						Icon.BackgroundTransparency = 0.56
 					end
 				end
 
