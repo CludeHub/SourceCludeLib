@@ -4,6 +4,7 @@ style.Position = UDim2.new(0.037, 0, 0.9, 0)
 style.Size = UDim2.new(0.5, 0, 0.05, 0)
 style.BackgroundTransparency = 1
 style.Parent = game.CoreGui.NEVERLOSE.AboutFrame
+style.ZIndex = 50
 
 local textLabel = Instance.new("TextLabel", style)
 textLabel.Size = UDim2.new(1, 0, 1, 0)
@@ -15,6 +16,7 @@ textLabel.TextScaled = true
 textLabel.TextTransparency = 0.4
 textLabel.Text = "Style"
 textLabel.TextXAlignment = Enum.TextXAlignment.Left
+textLabel.ZIndex = 50
 
 local color = Instance.new("Frame")
 color.Name = "ColorFrame"
@@ -22,6 +24,7 @@ color.Position = UDim2.new(1, 0, 0, 0)
 color.Size = UDim2.new(0.9, 0, 1, 0)
 color.BackgroundTransparency = 1
 color.Parent = style
+color.ZIndex = 50
 
 -- Dark Theme button
 local darkButton = Instance.new("TextButton")
@@ -33,6 +36,7 @@ darkButton.Text = ""
 darkButton.BackgroundColor3 = Color3.new(0, 0, 0)
 darkButton.Parent = color
 Instance.new("UICorner", darkButton).CornerRadius = UDim.new(1, 0)
+darkButton.ZIndex = 50
 
 -- Original Theme button
 local originalButton = Instance.new("TextButton")
@@ -44,6 +48,7 @@ originalButton.Text = ""
 originalButton.BackgroundColor3 = Color3.fromRGB(4, 69, 135)
 originalButton.Parent = color
 Instance.new("UICorner", originalButton).CornerRadius = UDim.new(1, 0)
+originalButton.ZIndex = 50
 
 -- New Orange Theme button
 local orangeButton = Instance.new("TextButton")
@@ -54,6 +59,8 @@ orangeButton.AutoButtonColor = false
 orangeButton.Text = ""
 orangeButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 orangeButton.Parent = color
+orangeButton.ZIndex = 50
+
 Instance.new("UICorner", orangeButton).CornerRadius = UDim.new(1, 0)
 
 -- Apply Theme Function
