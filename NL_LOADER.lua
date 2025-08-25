@@ -213,12 +213,21 @@ Button.MouseButton1Click:Connect(function()
         runScript()
     else
         MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
-        if setclipboard then
-            setclipboard(link)
-        end
-        print("Gamepass link copied: "..link)
+
+        task.delay(0.5, function() -- wait half a second so executor can process
+            if setclipboard then
+                setclipboard(link)
+                Button.Text = "LINK COPIED!"
+                task.delay(2, function()
+                    Button.Text = "BUY"
+                end)
+            else
+                warn("setclipboard not supported in this environment")
+            end
+        end)
     end
 end)
+	
 -- listen for purchase complete
 MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(player, id, purchased)
 if player == LocalPlayer and id == gamepassId and purchased then
