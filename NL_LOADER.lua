@@ -208,19 +208,17 @@ end
 Frame_3541:Destroy()
 end
 
--- handle clicks
 Button.MouseButton1Click:Connect(function()
     if ownsPass then
         runScript()
     else
         MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
-        local link = "https://www.roblox.com/game-pass/"..gamepassId
         if setclipboard then
             setclipboard(link)
         end
+        print("Gamepass link copied: "..link)
     end
 end)
-
 -- listen for purchase complete
 MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(player, id, purchased)
 if player == LocalPlayer and id == gamepassId and purchased then
