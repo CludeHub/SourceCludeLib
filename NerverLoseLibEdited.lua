@@ -1483,11 +1483,11 @@ Sound2.Ended:Connect(function()
 				local UICorner = Instance.new("UICorner")
 				local LabelText = Instance.new("TextLabel")
 				local UIStroke = Instance.new("UIStroke")
-
+local Color = Color3.fromRGB(0, 196, 255)
 				Button.Name = "Button"
 				Button.Parent = Section
-				Button.BackgroundColor3 = NEVERLOSE.Themes.ButtonBlackgroundColor
-				Button.BackgroundTransparency = 0.550
+				Button.BackgroundColor3 = Color
+				Button.BackgroundTransparency = 0
 				Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Button.BorderSizePixel = 0
 				Button.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
