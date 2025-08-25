@@ -469,6 +469,9 @@ aboutFrame.BorderSizePixel = 0
 aboutFrame.Visible = false
 Instance.new("UICorner", aboutFrame).CornerRadius = UDim.new(0, 3)
 aboutFrame.ZIndex = 50
+aboutFrame.Active = true
+aboutFrame.Draggable= true
+	
 -- Topbar
 local top = Instance.new("Frame", aboutFrame)
 top.Size = UDim2.new(1, 0, 0.1, 0)
