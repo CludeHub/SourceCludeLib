@@ -1695,7 +1695,7 @@ Sound2.Ended:Connect(function()
 				Icon.Parent = Effect
 				Icon.AnchorPoint = Vector2.new(0.5, 0.5)
 				Icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255)
-				Icon.BackgroundTransparency = 0.300
+				Icon.BackgroundTransparency = 0.563837373
 				Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Icon.BorderSizePixel = 0
 				Icon.Position = UDim2.new(0.75, 0, 0.5, 0)
