@@ -189,7 +189,6 @@ Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 Button.Font = Enum.Font.SourceSansBold
 Button.Parent = Con2_2260  -- your frame/holder
 
--- check ownership first
 local ownsPass = false
 local success, result = pcall(function()
 	return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)
@@ -215,7 +214,9 @@ Button.MouseButton1Click:Connect(function()
 		runScript()
 	else
 		MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
-				setclipboard(link)
+		if setclipboard then -- only works in exploits
+			setclipboard(link)
+		end
 	end
 end)
 
