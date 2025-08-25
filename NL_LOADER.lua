@@ -210,6 +210,9 @@ end
 
 if ownsPass then
     Button.Text = "START"
+    Button.MouseButton1Click:Connect(function()
+        runScript()  -- This runs your NEVERLOSE script
+    end)
 else
     Button.Text = "BUY"
     Button.MouseButton1Click:Connect(function()
