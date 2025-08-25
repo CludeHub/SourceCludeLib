@@ -100,7 +100,7 @@ local function applyTheme(theme)
                 elseif name == "Frame" and obj.Parent == root then
                     obj.BackgroundColor3 = theme.BlackgroundColor
                 elseif name:lower():find("button") then
-                    obj.BackgroundColor3 = theme.ButtonBlackgroundColor
+                    obj.BackgroundColor3 = theme.Button
                 end
             elseif obj:IsA("TextBox") and obj.Name:lower():find("search") then
                 obj.BackgroundColor3 = theme.SearchColor
@@ -125,6 +125,7 @@ darkButton.MouseButton1Click:Connect(function()
         SectionColor = Color3.fromRGB(10, 11, 16),
         StrokeColor = Color3.fromRGB(28, 28, 28),
         ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
+        Button = Color3.fromRGB(0, 196, 255),
         SearchColor = Color3.fromRGB(14, 14, 14),
         Save = Color3.fromRGB(28, 28, 28)
     })
@@ -141,6 +142,7 @@ originalButton.MouseButton1Click:Connect(function()
         SectionColor = Color3.fromRGB(0, 17, 33),
         StrokeColor = Color3.fromRGB(3, 35, 50),
         ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22),
+        Button = Color3.fromRGB(0, 196, 255),
         SearchColor = Color3.fromRGB(0, 17, 35),
         Save = Color3.fromRGB(0, 76, 99)
     })
