@@ -214,8 +214,11 @@ Button.MouseButton1Click:Connect(function()
 		runScript()
 	else
 		MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
-		if setclipboard then -- only works in exploits
-			setclipboard(link)
+		if typeof(setclipboard) == "function" then
+			setclipboard(link) -- works only in executor
+			print("Copied to clipboard:", link)
+		else
+			warn("Clipboard copy not supported in Studio/official client.")
 		end
 	end
 end)
