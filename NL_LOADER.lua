@@ -212,9 +212,6 @@ Button.MouseButton1Click:Connect(function()
     if ownsPass then
         runScript()
     else
-        MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
-
-        task.delay(0.5, function() -- wait half a second so executor can process
             if setclipboard then
                 setclipboard(link)
                 Button.Text = "LINK COPIED!"
