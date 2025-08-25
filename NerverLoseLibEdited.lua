@@ -1516,7 +1516,7 @@ Sound2.Ended:Connect(function()
 				LabelText.TextColor3 = Color3.fromRGB(255, 255, 255)
 				LabelText.TextScaled = true
 				LabelText.TextSize = 14.000
-				LabelText.TextTransparency = 0.300
+				LabelText.TextTransparency = 0
 				LabelText.TextWrapped = true
 
 				UIStroke.Thickness = 0.500
@@ -1543,7 +1543,7 @@ Sound2.Ended:Connect(function()
 				end)
 
 				Button.MouseLeave:Connect(function()
-					TweenService:Create(LabelText,TweenInfo.new(0.1),{TextTransparency=0.3}):Play()
+					TweenService:Create(LabelText,TweenInfo.new(0.1),{TextTransparency=0}):Play()
 				end)
 
 				local button_func={}
@@ -1672,7 +1672,7 @@ Sound2.Ended:Connect(function()
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = ToggleName or "Label-Test"
-				LabelText.TextColor3 = Color3.fromRGB(255, 255, 255)
+				LabelText.TextColor3 = Color3.fromRGB(223, 251, 255)
 				LabelText.TextScaled = true
 				LabelText.TextSize = 14.000
 				LabelText.TextWrapped = true
@@ -1820,7 +1820,7 @@ Sound2.Ended:Connect(function()
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = KeybindNameString or ''
-				LabelText.TextColor3 = Color3.fromRGB(255, 255, 255)
+				LabelText.TextColor3 = Color3.fromRGB(223, 251, 255)
 				LabelText.TextScaled = true
 				LabelText.TextSize = 14.000
 				LabelText.TextWrapped = true
@@ -1981,7 +1981,7 @@ Sound2.Ended:Connect(function()
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = SliderNameString or "Control"
-				LabelText.TextColor3 = Color3.fromRGB(255, 255, 255)
+				LabelText.TextColor3 = Color3.fromRGB(223, 251, 255)
 				LabelText.TextScaled = true
 				LabelText.TextSize = 14.000
 				LabelText.TextWrapped = true
@@ -2177,7 +2177,7 @@ Sound2.Ended:Connect(function()
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = DropdownName or "Label-Test"
-				LabelText.TextColor3 = Color3.fromRGB(255, 255, 255)
+				LabelText.TextColor3 = Color3.fromRGB(223, 251, 255)
 				LabelText.TextScaled = true
 				LabelText.TextSize = 14.000
 				LabelText.TextWrapped = true
@@ -2217,7 +2217,7 @@ Sound2.Ended:Connect(function()
 				ValueText.Font = Enum.Font.SourceSansSemibold
 				ValueText.Text = tostring(Default)
 				ValueText.TextTransparency = 0.3
-				ValueText.TextColor3 = Color3.fromRGB(255, 255, 255)
+				ValueText.TextColor3 = Color3.fromRGB(223, 251, 255)
 				ValueText.TextScaled = true
 				ValueText.TextSize = 14.000
 				ValueText.TextWrapped = true
