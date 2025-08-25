@@ -468,12 +468,12 @@ aboutFrame.BackgroundTransparency = 0.05
 aboutFrame.BorderSizePixel = 0
 aboutFrame.Visible = false
 Instance.new("UICorner", aboutFrame).CornerRadius = UDim.new(0, 3)
-
+aboutFrame.ZIndex = 50
 -- Topbar
 local top = Instance.new("Frame", aboutFrame)
 top.Size = UDim2.new(1, 0, 0.1, 0)
 top.BackgroundTransparency = 1
-
+top.ZIndex = 50
 -- Icon
 local icon = Instance.new("ImageLabel", top)
 icon.Size = UDim2.new(0.0816999972, 0, 0.689999998, 0)
@@ -482,7 +482,8 @@ icon.AnchorPoint = Vector2.new(0, 0.5)
 icon.BackgroundTransparency = 1
 icon.Image = "rbxassetid://134488580093972"
 icon.ImageColor3 = NEVERLOSE.Themes.MainColor
-		
+icon.ZIndex = 50
+	
 local topTitle = Instance.new("TextLabel", top)
 topTitle.Text = "About Neverlose"
 topTitle.Font = Enum.Font.Gotham
@@ -493,7 +494,7 @@ topTitle.TextScaled = true
 topTitle.Position = UDim2.new(0.18, 0, 0.2, 0) 
 topTitle.TextXAlignment = Enum.TextXAlignment.Left
 topTitle.Size = UDim2.new(1, 0, 0.5, 0)
-	
+topTitle.ZIndex = 50
 -- Divider
 local divider = Instance.new("Frame", aboutFrame)
 divider.Size = UDim2.new(1, 0, 0.002, 0)
@@ -501,12 +502,13 @@ divider.Position = UDim2.new(0, 0, 0.1, 0)
 divider.BackgroundColor3 = NEVERLOSE.Themes.StrokeColor
 divider.BackgroundTransparency = 0
 divider.BorderSizePixel = 0
-
+divider.ZIndex = 50
+	
 local titleh = Instance.new("Frame", aboutFrame)
 titleh.BackgroundTransparency = 1
 titleh.Size = UDim2.new(1, 0, 0.12, 0)
 titleh.Position = UDim2.new(0, 0, 0.12, 0)
-	
+titleh.ZIndex = 50
 -- Title
 local title = Instance.new("TextLabel", titleh)
 title.Text = "NEVERLOSE.CC"
@@ -519,7 +521,7 @@ title.BackgroundTransparency = 1
 title.Size = UDim2.new(1, 0, 1, 0)
 title.TextXAlignment = Enum.TextXAlignment.Center
 title.TextScaled = true
-	
+title.ZIndex = 50
 -- Info Rows
 local function AddInfo(label, value, index, isBlue)
 
@@ -527,7 +529,8 @@ local labelTexts = Instance.new("Frame", aboutFrame)
 labelTexts.BackgroundTransparency = 1
 labelTexts.Size = UDim2.new(0.45, 0, 0.05, 0)
 labelTexts.Position = UDim2.new(0.05, 0, 0.25 + index * 0.05, 0)
-	
+labelTexts.ZIndex = 50
+		
 local labelText = Instance.new("TextLabel", labelTexts)
 labelText.Text = label
 labelText.Font = Enum.Font.Gotham
@@ -537,12 +540,14 @@ labelText.BackgroundTransparency = 1
 labelText.Size = UDim2.new(1, 0, 1, 0)
 labelText.TextScaled = true
 labelText.TextXAlignment = Enum.TextXAlignment.Left
-
+labelText.ZIndex = 50
+		
 local valueText1 = Instance.new("Frame", aboutFrame)
 valueText1.BackgroundTransparency = 1  
 valueText1.Size = UDim2.new(0.45, 0, 0.05, 0)  
 valueText1.Position = UDim2.new(0.5, 0, 0.25 + index * 0.05, 0) 
-
+valueText1.ZIndex = 50
+		
 local valueText = Instance.new("TextLabel", valueText1)  
 valueText.Text = value  
 valueText.Font = Enum.Font.Gotham  
@@ -552,6 +557,7 @@ valueText.BackgroundTransparency = 1
 valueText.Size = UDim2.new(1, 0, 1, 0) 
 valueText.TextScaled = true
 valueText.TextXAlignment = Enum.TextXAlignment.Left
+valueText.ZIndex = 50
 
 end
 
@@ -572,6 +578,7 @@ copyright.Size = UDim2.new(1, 0, 0.04, 0)
 copyright.TextScaled = true
 copyright.Position = UDim2.new(0, 0, 0.51, 0)
 copyright.TextXAlignment = Enum.TextXAlignment.Center
+copyright.ZIndex = 50
 
 -- Divider 2
 local divider2 = divider:Clone()
@@ -582,6 +589,7 @@ local dpiLabel8 = Instance.new("Frame", aboutFrame)
 dpiLabel8.BackgroundTransparency = 1
 dpiLabel8.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiLabel8.Position = UDim2.new(0.05, 0, 0.64, 0)
+dpiLabel8.ZIndex = 50
 -- DPI Label
 local dpiLabel = Instance.new("TextLabel", dpiLabel8)
 dpiLabel.Text = "Dpi Scale"
@@ -593,6 +601,7 @@ dpiLabel.BackgroundTransparency = 1
 dpiLabel.TextScaled = true
 dpiLabel.Size = UDim2.new(1, 0, 1, 0)
 dpiLabel.TextXAlignment = Enum.TextXAlignment.Left
+dpiLabel.ZIndex = 50
 
 -- DPI Button
 local dpiDropdown = Instance.new("TextButton", aboutFrame)
@@ -607,7 +616,7 @@ dpiDropdown.TextScaled = true
 dpiDropdown.TextSize = 14
 dpiDropdown.BorderSizePixel = 0
 dpiDropdown.AutoButtonColor = false
-
+dpiDropdown.ZIndex = 50
 dpiDropdown.MouseEnter:Connect(function()
    dpiLabel.TextTransparency = 0
    dpiDropdown.TextTransparency = 0
