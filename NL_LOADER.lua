@@ -191,44 +191,42 @@ Button.Parent = Con2_2260  -- your frame/holder
 
 local ownsPass = false
 local success, result = pcall(function()
-	return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)
+return MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, gamepassId)
 end)
 if success and result then
-	ownsPass = true
-	Button.Text = "START"
+ownsPass = true
+Button.Text = "START"
 else
-	Button.Text = "BUY"
+Button.Text = "BUY"
 end
 
 -- callback function
 local function runScript()
-	if callback then
-		callback()
-	end
-	Frame_3541:Destroy()
+if callback then
+callback()
+end
+Frame_3541:Destroy()
 end
 
 -- handle clicks
 Button.MouseButton1Click:Connect(function()
-	if ownsPass then
-		runScript()
-	else
-		MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
-		if typeof(setclipboard) == "function" then
-			setclipboard(link) -- works only in executor
-			print("Copied to clipboard:", link)
-		else
-			warn("Clipboard copy not supported in Studio/official client.")
-		end
-	end
+    if ownsPass then
+        runScript()
+    else
+        MarketplaceService:PromptGamePassPurchase(LocalPlayer, gamepassId)
+        local link = "https://www.roblox.com/game-pass/"..gamepassId
+        if setclipboard then
+            setclipboard(link)
+        end
+    end
 end)
 
 -- listen for purchase complete
 MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(player, id, purchased)
-	if player == LocalPlayer and id == gamepassId and purchased then
-		ownsPass = true
-		Button.Text = "START"
-	end
+if player == LocalPlayer and id == gamepassId and purchased then
+ownsPass = true
+Button.Text = "START"
+end
 end)
     
 local UICorner_8870 = Instance.new("UICorner")
