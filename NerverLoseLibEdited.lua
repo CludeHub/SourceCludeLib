@@ -973,7 +973,7 @@ corner_5e.CornerRadius = UDim.new(0, 2)
 imageLabel_6f.Name = "ImageIcon"
 imageLabel_6f.Parent = saveButton_3c
 imageLabel_6f.Image = "http://www.roblox.com/asset/?id=6035067857"
-imageLabel_6f.ImageColor3 = Color3.fromRGB(255, 255, 255)
+imageLabel_6f.ImageColor3 = Color3.fromRGB(223, 251, 255)
 imageLabel_6f.ImageTransparency = 0.300
 imageLabel_6f.BackgroundTransparency = 1
 imageLabel_6f.Position = UDim2.new(0.1, 0, 0.19, 0)
