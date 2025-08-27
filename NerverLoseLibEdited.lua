@@ -310,7 +310,7 @@ print(Text .. " is Running")
 	local function ui_toggleong(val)
 		local uptime=1.4
 		if val then
-			TweenService:Create(Frame,TweenInfo.new(uptime,Enum.EasingStyle.Quint),{Size=ooldsize,Position=UDim2.new(0, 500,0, 400)}):Play()
+			TweenService:Create(Frame,TweenInfo.new(uptime,Enum.EasingStyle.Quint),{Size=ooldsize,Position=UDim2.new(0.4, -30, 0.5, 0)}):Play()
 			TweenService:Create(HeadName,TweenInfo.new(uptime/3,Enum.EasingStyle.Quint),{Size=UDim2.new(0.205458686, 0, 0.133462012, 0),Position=UDim2.new(0.0100000342, 0, 0.010000146, 0)}):Play()
 
 
@@ -431,7 +431,7 @@ print(Text .. " is Running")
 	Frame.AnchorPoint = Vector2.new(0.4, 0.5)
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0.4, -20, 0.5, 0)
+	Frame.Position = UDim2.new(0.4, -30, 0.5, 0)
 	Frame.Size = UDim2.new(0,0,0,0)
 	Frame.ZIndex = 2
 	Frame.ClipsDescendants=true
