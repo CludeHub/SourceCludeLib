@@ -454,7 +454,7 @@ if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
         local AboutFrame = NEVERLOSE:FindFirstChild("AboutFrame")
 
         if Frame then
-            Frame.Size = UDim2.new(0, 800, 0, 700)
+            Frame.Size = UDim2.new(0, 800, 0, 790)
         end
 
         if AboutFrame then
@@ -652,7 +652,7 @@ local dpiSizes = {
         ABOUT_POS = UDim2.new(0, 840, 0, 70)
     },
     ["100%"] = {
-        NEVERLOSE = UDim2.new(0, 830, 0, 700),
+        NEVERLOSE = UDim2.new(0, 830, 0, 790),
         ABOUT = UDim2.new(0, 360, 0, 450),
         ABOUT_POS = UDim2.new(0, 1030, 0, 70)
     }
@@ -1597,7 +1597,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.5, 0, 0.5, 0)
-				LabelText.Size = UDim2.new(1, -2, 0.649999976, 10)
+				LabelText.Size = UDim2.new(1, -2, 0.649999976, -10)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = LabelNameString or"Label"
@@ -1690,7 +1690,7 @@ Sound2.Ended:Connect(function()
 				Effect.Name = "Effect"
 				Effect.Parent = Toggle
 				Effect.AnchorPoint = Vector2.new(0, 0.5)
-				Effect.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
+				Effect.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
@@ -1724,7 +1724,7 @@ Sound2.Ended:Connect(function()
 					else
 						TweenService:Create(LabelText,TweenInfo.new(timea),{TextTransparency=0.3}):Play()
 						TweenService:Create(Icon,TweenInfo.new(timea),{Position=UDim2.new(0.25,0,0.5,0),BackgroundColor3=Color3.fromRGB(223, 251, 255)}):Play();
-						Effect.BackgroundColor3 = Color3.fromRGB(16, 16, 16)
+						Effect.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 						Icon.BackgroundTransparency = 0.56
 					end
 				end
