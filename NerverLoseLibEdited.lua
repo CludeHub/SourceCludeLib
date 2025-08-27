@@ -428,9 +428,10 @@ print(Text .. " is Running")
 	Frame.Active = true
 	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
 	Frame.BackgroundTransparency = 0.05
+	Frame.AnchorPoint = Vector2.new(0.4, 0.5)
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0, 170, 0, 6)
+	Frame.Position = UDim2.new(0.4, -20, 0.5, 0)
 	Frame.Size = UDim2.new(0,0,0,0)
 	Frame.ZIndex = 2
 	Frame.ClipsDescendants=true
