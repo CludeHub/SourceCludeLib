@@ -369,6 +369,7 @@ Box_3479.ClipsDescendants = true
 Box_3479.AnchorPoint = Vector2.new(0,0)
 Box_3479.Visible = true
 Box_3479.Active = true
+Box_3479.TextEditable = false
 Box_3479.Selectable = true
 Box_3479.ZIndex = 1
 Box_3479.Rotation = 0
