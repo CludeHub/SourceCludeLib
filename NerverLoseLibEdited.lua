@@ -1019,14 +1019,20 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeL
 -- don't edit this it can affect the ui design
 
 	local frame = game.CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame")
+local shrunk = {}
 
--- shrink all children UI objects but not the main frame
-for _, obj in pairs(frame:GetDescendants()) do
-    if obj:IsA("GuiObject") then
-        local size = obj.Size
-        obj.Size = UDim2.new(size.X.Scale, size.X.Offset, size.Y.Scale, size.Y.Offset - 1)
+-- auto update
+frame:GetPropertyChangedSignal("Size"):Connect(function()
+    if frame.Size.Y.Offset == 790 then
+        for _, obj in pairs(frame:GetDescendants()) do
+            if obj:IsA("GuiObject") and obj ~= frame and not shrunk[obj] then
+                local size = obj.Size
+                obj.Size = UDim2.new(size.X.Scale, size.X.Offset, size.Y.Scale, size.Y.Offset - 1)
+                shrunk[obj] = true
+            end
+        end
     end
-end
+end)
 	
 local buttons = Instance.new("ImageButton")
 buttons.Size = UDim2.new(0, 70, 0, 70)
