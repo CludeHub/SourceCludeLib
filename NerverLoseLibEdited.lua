@@ -1016,6 +1016,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeL
 
 -- slap battle searchbox function 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/SearchGlovesFunction.lua"))()
+-- don't edit this it can affect the ui design
+
+	local frame = game.CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame")
+
+-- shrink all children UI objects but not the main frame
+for _, obj in pairs(frame:GetDescendants()) do
+    if obj:IsA("GuiObject") then
+        local size = obj.Size
+        obj.Size = UDim2.new(size.X.Scale, size.X.Offset, size.Y.Scale, size.Y.Offset - 1)
+    end
+end
 	
 local buttons = Instance.new("ImageButton")
 buttons.Size = UDim2.new(0, 70, 0, 70)
