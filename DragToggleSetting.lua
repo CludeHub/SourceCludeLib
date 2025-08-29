@@ -2,7 +2,7 @@ local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 
 local toggleName = "Draggable"
-local defaultValue = false
+local defaultValue = true
 
 -- References
 local NEVERLOSE = game.CoreGui:WaitForChild("NEVERLOSE")
