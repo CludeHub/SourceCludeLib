@@ -1024,7 +1024,7 @@ local shrunk = {}
 
 -- auto update
 frame:GetPropertyChangedSignal("Size"):Connect(function()
-    if frame.Size.Y.Offset == 790 then
+    if frame.Size.Y.Offset == 790 or frame.Size.Y.Offset == 540 then
         for _, obj in pairs(frame:GetDescendants()) do
             if obj:IsA("GuiObject") 
                 and obj ~= frame 
@@ -1433,7 +1433,7 @@ Sound2.Ended:Connect(function()
 			UIListLayout.Parent = Section
 			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			UIListLayout.Padding = UDim.new(0, 6)
+			UIListLayout.Padding = UDim.new(0, 4)
 
 			lay.Name = "lay"
 			lay.Parent = Section
