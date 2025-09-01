@@ -253,22 +253,3 @@ RunService.RenderStepped:Connect(function()
         lastTabColor = newTabColor
     end
 end)
-
-local frame = game.CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame")
-local shrunk = {}
-
--- auto update
-frame:GetPropertyChangedSignal("Size"):Connect(function()
-    if frame.Size.Y.Offset == 540 then
-        for _, obj in pairs(frame:GetDescendants()) do
-            if obj:IsA("GuiObject") 
-                and obj ~= frame 
-                and not shrunk[obj] 
-                and not string.find(string.lower(obj.Name), "outlo") then
-
-                local size = obj.Size
-                obj.Size = UDim2.new(size.X.Scale, size.X.Offset, size.Y.Scale, size.Y.Offset - 1)
-                shrunk[obj] = true
-            end
-        end
-        end
