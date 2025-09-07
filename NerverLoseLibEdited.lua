@@ -1038,57 +1038,6 @@ frame:GetPropertyChangedSignal("Size"):Connect(function()
         end
     end
 end)
-
-
-	--// Services
-local CoreGui = game:GetService("CoreGui")
-local RunService = game:GetService("RunService")
-
---// Music setup
-local sound = Instance.new("Sound")
-sound.Parent = CoreGui
-sound.Volume = 1
-sound.Looped = false
-
---// Song list
-local songs = {
-    "rbxassetid://7015670345",
-    "rbxassetid://17849823851",
-    "rbxassetid://17850338799"
-}
-
-local currentIndex = 1
-local playing = false
-
--- Function to play songs in order
-local function playNextSong()
-    if currentIndex > #songs then
-        currentIndex = 1
-    end
-
-    sound.SoundId = songs[currentIndex]
-    sound:Play()
-
-    sound.Ended:Connect(function()
-        currentIndex = currentIndex + 1
-        playNextSong()
-    end)
-end
-
---// Loop to check visibility
-RunService.RenderStepped:Connect(function()
-    local frame = CoreGui:FindFirstChild("NEVERLOSE") and CoreGui.NEVERLOSE:FindFirstChild("Frame")
-    if frame then
-        if frame.Visible and not playing then
-            playing = true
-            currentIndex = 1
-            playNextSong()
-        elseif not frame.Visible and playing then
-            playing = false
-            sound:Stop()
-        end
-    end
-end)
 	
 local buttons = Instance.new("ImageButton")
 buttons.Size = UDim2.new(0, 70, 0, 70)
