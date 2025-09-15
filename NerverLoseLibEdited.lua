@@ -1484,7 +1484,7 @@ Sound2.Ended:Connect(function()
 						end
 					end
 
-					TweenService:Create(Section,TweenInfo.new(0.2),{Size=UDim2.new(0.97,0,0,15+a)}):Play()
+					TweenService:Create(Section,TweenInfo.new(0.2),{Size=UDim2.new(0.97,0,0,13+a)}):Play()
 				end
 			end
 
