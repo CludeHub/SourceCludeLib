@@ -1217,7 +1217,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		UIAspectRatioConstraint.AspectRatio = 5.000
 		UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-		UICorner.CornerRadius = UDim.new(0, 9)
+		UICorner.CornerRadius = UDim.new(0, 3)
 		UICorner.Parent = TabButton
 
 		Image.Name = "Image"
