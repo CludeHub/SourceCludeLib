@@ -574,7 +574,7 @@ AddInfo("Version:", "2.0.0", 0, true)
 AddInfo("Build date:", "Dec 30 2020", 1, true)
 AddInfo("Build type:", "Release", 2, true)
 AddInfo("Registered to:", LocalPlayer.DisplayName, 3, true)
-AddInfo("Subscription till:", "01.01.2021 21:07", 4, true)
+AddInfo("Subscription till:", "Infinite", 4, true)
 
 -- Footer
 local copyright = Instance.new("TextLabel", aboutFrame)
@@ -1128,7 +1128,7 @@ UserIdText.Position = UDim2.new(0.314, 0, 0.65, 0)
 UserIdText.Size = UDim2.new(0.717, 0, 0.649999976, -6)
 UserIdText.ZIndex = 5
 UserIdText.Font = Enum.Font.SourceSansSemibold
-UserIdText.Text = "UserID:"
+UserIdText.Text = "Till:"
 UserIdText.TextColor3 = Color3.fromRGB(255, 255, 255)
 UserIdText.TextScaled = true
 UserIdText.TextWrapped = true
@@ -1141,11 +1141,11 @@ UserIdNumber.Parent = UserData
 UserIdNumber.AnchorPoint = Vector2.new(0, 0.5)
 UserIdNumber.BackgroundTransparency = 1
 UserIdNumber.BorderSizePixel = 0
-UserIdNumber.Position = UDim2.new(0.547328591, 0, 0.650000036, 0) -- your exact position
+UserIdNumber.Position = UDim2.new(0.547328591, -3, 0.650000036, 0) -- your exact position
 UserIdNumber.Size = UDim2.new(0.717, 0, 0.649999976, -6)
 UserIdNumber.ZIndex = 5
 UserIdNumber.Font = Enum.Font.SourceSansSemibold
-UserIdNumber.Text = tostring(LocalPlayer.UserId)
+UserIdNumber.Text = "Infinite"
 UserIdNumber.TextColor3 = Color3.fromRGB(0, 172, 247)
 UserIdNumber.TextScaled = true
 UserIdNumber.TextWrapped = true
