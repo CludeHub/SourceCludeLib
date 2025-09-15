@@ -1024,7 +1024,7 @@ local shrunk = {}
 
 -- auto update
 frame:GetPropertyChangedSignal("Size"):Connect(function()
-    if frame.Size.Y.Offset == 540 then
+    if frame.Size.Y.Offset == 7500 then
         for _, obj in pairs(frame:GetDescendants()) do
             if obj:IsA("GuiObject") 
                 and obj ~= frame 
