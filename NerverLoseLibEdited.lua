@@ -454,7 +454,7 @@ if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
         local AboutFrame = NEVERLOSE:FindFirstChild("AboutFrame")
 
         if Frame then
-            Frame.Size = UDim2.new(0, 800, 0, 790)
+            Frame.Size = UDim2.new(0, 800, 0, 750)
         end
 
         if AboutFrame then
