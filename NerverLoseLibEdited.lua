@@ -652,7 +652,7 @@ local dpiSizes = {
         ABOUT_POS = UDim2.new(0, 840, 0, 70)
     },
     ["100%"] = {
-        NEVERLOSE = UDim2.new(0, 830, 0, 790),
+        NEVERLOSE = UDim2.new(0, 830, 0, 750),
         ABOUT = UDim2.new(0, 360, 0, 450),
         ABOUT_POS = UDim2.new(0, 1030, 0, 70)
     }
@@ -1024,7 +1024,7 @@ local shrunk = {}
 
 -- auto update
 frame:GetPropertyChangedSignal("Size"):Connect(function()
-    if frame.Size.Y.Offset == 790 or frame.Size.Y.Offset == 540 then
+    if frame.Size.Y.Offset == 540 then
         for _, obj in pairs(frame:GetDescendants()) do
             if obj:IsA("GuiObject") 
                 and obj ~= frame 
