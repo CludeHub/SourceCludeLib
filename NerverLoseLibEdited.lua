@@ -1406,10 +1406,6 @@ Sound2.Ended:Connect(function()
 			UICorner.CornerRadius = UDim.new(0, 0)
 			UICorner.Parent = Section
 
-			UIStroke.Color = NEVERLOSE.Themes.StrokeColor
-			UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-			UIStroke.Parent = Section
-
 			Header.Name = "Header"
 			Header.Parent = Section
 			Header.AnchorPoint = Vector2.new(0.5, 0)
