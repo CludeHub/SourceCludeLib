@@ -875,7 +875,7 @@ Sound2.Ended:Connect(function()
 	UIListLayout.Parent = TabButtons
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0, 2)
+	UIListLayout.Padding = UDim.new(0, 0)
 
 	scrolling_connect(TabButtons)
 
@@ -1200,7 +1200,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 
 		local cc = NEVERLOSE.Themes.MainColor
 
-		if cc == Color3.fromRGB(0, 172, 247) then
+		if cc == Color3.fromRGB(255, 255, 255) then
 			cc = NEVERLOSE.Themes.BlackgroundColor
 		end
 
@@ -1296,7 +1296,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		UIListLayout.Parent = Left
 		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout.Padding = UDim.new(0, 7)
+		UIListLayout.Padding = UDim.new(0, 0)
 
 		Right.Name = "Right"
 		Right.Parent = Tab
@@ -1315,7 +1315,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		UIListLayout_2.Parent = Right
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout_2.Padding = UDim.new(0, 7)
+		UIListLayout_2.Padding = UDim.new(0, 0)
 
 		scrolling_connect(Right)
 		scrolling_connect(Left)
@@ -1699,7 +1699,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.38587454, 0, 0.499999583, 0)
-				LabelText.Size = UDim2.new(0.772000015, -10, 0.75, -10)
+				LabelText.Size = UDim2.new(0.772000015, -11, 0.75, -11)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = ToggleName or "Label-Test"
@@ -1716,7 +1716,7 @@ Sound2.Ended:Connect(function()
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
-				Effect.Size = UDim2.new(0.150000006, 0, 0.5, 0)
+				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -1)
 				Effect.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0.5, 0)
