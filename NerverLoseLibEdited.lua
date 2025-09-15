@@ -1433,7 +1433,7 @@ Sound2.Ended:Connect(function()
 			UIListLayout.Parent = Section
 			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			UIListLayout.Padding = UDim.new(0, 2)
+			UIListLayout.Padding = UDim.new(0, 0)
 
 			lay.Name = "lay"
 			lay.Parent = Section
