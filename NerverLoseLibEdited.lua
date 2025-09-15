@@ -1214,10 +1214,10 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		TabButton.ZIndex = 5
 
 		UIAspectRatioConstraint.Parent = TabButton
-		UIAspectRatioConstraint.AspectRatio = 4.000
+		UIAspectRatioConstraint.AspectRatio = 5.000
 		UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-		UICorner.CornerRadius = UDim.new(0, 3)
+		UICorner.CornerRadius = UDim.new(0, 9)
 		UICorner.Parent = TabButton
 
 		Image.Name = "Image"
@@ -1249,7 +1249,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Label.BorderSizePixel = 0
 		Label.Position = UDim2.new(0.640507042, 0, 0.500000238, 0)
-		Label.Size = UDim2.new(0.718986034, -4, 0.600000024, -4)
+		Label.Size = UDim2.new(0.718986034, 0, 0.600000024, 0)
 		Label.ZIndex = 5
 		Label.Font = Enum.Font.SourceSansBold
 		Label.Text = TabNameString or "Index.json"
