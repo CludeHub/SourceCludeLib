@@ -1716,7 +1716,7 @@ Sound2.Ended:Connect(function()
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
-				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -1)
+				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -2)
 				Effect.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0.5, 0)
@@ -1730,7 +1730,7 @@ Sound2.Ended:Connect(function()
 				Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Icon.BorderSizePixel = 0
 				Icon.Position = UDim2.new(0.75, 0, 0.5, 0)
-				Icon.Size = UDim2.new(1, 0, 1, 0)
+				Icon.Size = UDim2.new(1, 0, 1, 1)
 				Icon.SizeConstraint = Enum.SizeConstraint.RelativeYY
 				Icon.ZIndex = 7
 
@@ -1850,7 +1850,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296665907, 0, 0.499999106, 0)
-				LabelText.Size = UDim2.new(0.593582749, -10, 0.75, -10)
+				LabelText.Size = UDim2.new(0.593582749, -11, 0.75, -11)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = KeybindNameString or ''
@@ -1860,6 +1860,7 @@ Sound2.Ended:Connect(function()
 				LabelText.TextWrapped = true
 				LabelText.TextXAlignment = Enum.TextXAlignment.Left
 				LabelText.TextTransparency=.3
+				
 				BrindText.Name = "BrindText"
 				BrindText.Parent = Keybind
 				BrindText.AnchorPoint = Vector2.new(1, 0.5)
@@ -2011,7 +2012,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.238462642, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.477176398, -10, 0.75, -10)
+				LabelText.Size = UDim2.new(0.477176398, -11, 0.75, -11)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = SliderNameString or "Control"
@@ -2093,7 +2094,7 @@ Sound2.Ended:Connect(function()
 				Cir.BorderSizePixel = 0
 				Cir.Position = UDim2.new(1, 0, 0.5, 0)
 				Cir.Rotation = 0.010
-				Cir.Size = UDim2.new(3, 0, 3, 0)
+				Cir.Size = UDim2.new(3, 0, 3, 1)
 				Cir.SizeConstraint = Enum.SizeConstraint.RelativeYY
 				Cir.ZIndex = 5
 
@@ -2207,7 +2208,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296666116, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.593582511, -10, 0.75, -10)
+				LabelText.Size = UDim2.new(0.593582511, -11, 0.75, -11)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = DropdownName or "Label-Test"
@@ -2226,7 +2227,7 @@ Sound2.Ended:Connect(function()
 				TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				TopBar.BorderSizePixel = 0
 				TopBar.Position = UDim2.new(0.950000167, 0, 0.500000715, 0)
-				TopBar.Size = UDim2.new(0.5, 0, 0.5, 0)
+				TopBar.Size = UDim2.new(0.5, 0, 0.5, -1)
 				TopBar.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0, 2)
@@ -2284,7 +2285,7 @@ Sound2.Ended:Connect(function()
 				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				DownBar.BorderSizePixel = 0
 				DownBar.Position = UDim2.new(0.948214233, 0, 0.873961239, 0)
-				DownBar.Size = UDim2.new(0.308999985, 0, 0, 0)
+				DownBar.Size = UDim2.new(0.308999985, 0, 0, -1)
 				DownBar.Visible = false
 				DownBar.ZIndex = 10
 
