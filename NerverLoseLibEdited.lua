@@ -875,7 +875,7 @@ Sound2.Ended:Connect(function()
 	UIListLayout.Parent = TabButtons
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0, 3)
+	UIListLayout.Padding = UDim.new(0, 2)
 
 	scrolling_connect(TabButtons)
 
@@ -1433,7 +1433,7 @@ Sound2.Ended:Connect(function()
 			UIListLayout.Parent = Section
 			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			UIListLayout.Padding = UDim.new(0, 4)
+			UIListLayout.Padding = UDim.new(0, 2)
 
 			lay.Name = "lay"
 			lay.Parent = Section
