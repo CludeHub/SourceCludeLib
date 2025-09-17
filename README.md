@@ -42,7 +42,7 @@ Example:AddSlider('Slider',1,100,50,function(val)
     print('slider',val)
 end)
 
-Example:AddDropdown('Dropdown',{1,2,3},2,function(val)
+Example:AddDropdown('Dropdown',{"1","2","3"},"2",function(val)
     print("dropdown",val)
 end)
 end)
