@@ -893,7 +893,7 @@ Sound2.Ended:Connect(function()
 	outlo.Parent = Frame
 	outlo.AnchorPoint = Vector2.new(1, 0)
 	outlo.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo.BackgroundTransparency = 0.6872
+	outlo.BackgroundTransparency = 0.7872
 	outlo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo.BorderSizePixel = 0
 	outlo.Position = UDim2.new(1, 0, 0.086999995, 0)
@@ -907,7 +907,7 @@ Sound2.Ended:Connect(function()
 	outlo_2.Parent = Frame
 	outlo_2.AnchorPoint = Vector2.new(1, 0.5)
 	outlo_2.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo_2.BackgroundTransparency = 0.6872
+	outlo_2.BackgroundTransparency = 0.7872
 	outlo_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo_2.BorderSizePixel = 0
 	outlo_2.Position = UDim2.new(0.223908007, 0, 0.5, 0)
@@ -921,7 +921,7 @@ Sound2.Ended:Connect(function()
 	outlo_3.Parent = Frame
 	outlo_3.AnchorPoint = Vector2.new(1, 0)
 	outlo_3.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
-	outlo_3.BackgroundTransparency = 0.6872
+	outlo_3.BackgroundTransparency = 0.7872
 	outlo_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo_3.BorderSizePixel = 0
 	outlo_3.Position = UDim2.new(0.223908007, 0, 0.923109949, 0)
@@ -1024,7 +1024,7 @@ local shrunk = {}
 
 -- auto update
 frame:GetPropertyChangedSignal("Size"):Connect(function()
-    if frame.Size.Y.Offset == 7500 then
+    if frame.Size.Y.Offset == 750 then
         for _, obj in pairs(frame:GetDescendants()) do
             if obj:IsA("GuiObject") 
                 and obj ~= frame 
