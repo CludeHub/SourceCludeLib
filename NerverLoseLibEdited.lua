@@ -454,7 +454,7 @@ if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
         local AboutFrame = NEVERLOSE:FindFirstChild("AboutFrame")
 
         if Frame then
-            Frame.Size = UDim2.new(0, 800, 0, 750)
+            Frame.Size = UDim2.new(0, 800, 0, 720)
         end
 
         if AboutFrame then
@@ -652,7 +652,7 @@ local dpiSizes = {
         ABOUT_POS = UDim2.new(0, 840, 0, 70)
     },
     ["100%"] = {
-        NEVERLOSE = UDim2.new(0, 830, 0, 750),
+        NEVERLOSE = UDim2.new(0, 830, 0, 720),
         ABOUT = UDim2.new(0, 360, 0, 450),
         ABOUT_POS = UDim2.new(0, 1030, 0, 70)
     }
@@ -1017,28 +1017,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeL
 -- slap battle searchbox function 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/SearchGlovesFunction.lua"))()
 -- don't edit this it can affect the ui design
-
-
-	local frame = game.CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame")
-local shrunk = {}
-
--- auto update
-frame:GetPropertyChangedSignal("Size"):Connect(function()
-    if frame.Size.Y.Offset == 750 then
-        for _, obj in pairs(frame:GetDescendants()) do
-            if obj:IsA("GuiObject") 
-                and obj ~= frame 
-                and not shrunk[obj] 
-                and not string.find(string.lower(obj.Name), "outlo") then
-
-                local size = obj.Size
-                obj.Size = UDim2.new(size.X.Scale, size.X.Offset, size.Y.Scale, size.Y.Offset - 1)
-                shrunk[obj] = true
-            end
-        end
-    end
-end)
-	
 local buttons = Instance.new("ImageButton")
 buttons.Size = UDim2.new(0, 70, 0, 70)
 buttons.Position = UDim2.new(0, 0, 0.137, 0)
