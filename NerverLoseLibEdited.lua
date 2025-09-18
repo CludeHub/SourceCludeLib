@@ -897,7 +897,7 @@ Sound2.Ended:Connect(function()
 	outlo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo.BorderSizePixel = 0
 	outlo.Position = UDim2.new(1, 0, 0.086999995, 0)
-	outlo.Size = UDim2.new(0.774999976, 0, 0, 1)
+	outlo.Size = UDim2.new(0.774999976, 0, 0, 2)
 	outlo.ZIndex = 4
 
 	UICorner_4.CornerRadius = UDim.new(0, 4)
@@ -911,7 +911,7 @@ Sound2.Ended:Connect(function()
 	outlo_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo_2.BorderSizePixel = 0
 	outlo_2.Position = UDim2.new(0.223908007, 0, 0.5, 0)
-	outlo_2.Size = UDim2.new(0, 1, 1, 0)
+	outlo_2.Size = UDim2.new(0, 2, 1, 0)
 	outlo_2.ZIndex = 4
 
 	UICorner_5.CornerRadius = UDim.new(0, 4)
@@ -925,7 +925,7 @@ Sound2.Ended:Connect(function()
 	outlo_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo_3.BorderSizePixel = 0
 	outlo_3.Position = UDim2.new(0.223908007, 0, 0.923109949, 0)
-	outlo_3.Size = UDim2.new(0.223908007, 0, 0, 1)
+	outlo_3.Size = UDim2.new(0.223908007, 0, 0, 2)
 	outlo_3.ZIndex = 4
 
 	UICorner_6.CornerRadius = UDim.new(0, 4)
@@ -1120,7 +1120,7 @@ UserIdNumber.AnchorPoint = Vector2.new(0, 0.5)
 UserIdNumber.BackgroundTransparency = 1
 UserIdNumber.BorderSizePixel = 0
 UserIdNumber.Position = UDim2.new(0.547328591, -7, 0.650000036, 0) -- your exact position
-UserIdNumber.Size = UDim2.new(0.717, 0, 0.649999976, -6)
+UserIdNumber.Size = UDim2.new(0.717, 0, 0.649999976, -9)
 UserIdNumber.ZIndex = 5
 UserIdNumber.Font = Enum.Font.SourceSansSemibold
 UserIdNumber.Text = "Infinite"
@@ -1143,7 +1143,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		TabTitle.ZIndex = 5
 		TabTitle.Font = Enum.Font.SourceSansSemibold
 		TabTitle.Text = Label or "Home"
-		TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TabTitle.TextColor3 = Color3.fromRGB(200, 200, 200)
 		TabTitle.TextScaled = true
 		TabTitle.TextSize = 14.000
 		TabTitle.TextTransparency = 0.610
@@ -2068,7 +2068,7 @@ Sound2.Ended:Connect(function()
 				Cir.BorderSizePixel = 0
 				Cir.Position = UDim2.new(1, 0, 0.5, 0)
 				Cir.Rotation = 0.010
-				Cir.Size = UDim2.new(3, 0, 3, 1)
+				Cir.Size = UDim2.new(3.1, 0, 3, 1)
 				Cir.SizeConstraint = Enum.SizeConstraint.RelativeYY
 				Cir.ZIndex = 5
 
