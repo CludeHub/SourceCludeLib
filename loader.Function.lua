@@ -27,6 +27,46 @@ LOADERFrame_5373.Parent = NEVERLOSE_Loader_Service_2535
 local UICorner_Loader = Instance.new("UICorner", LOADERFrame_5373)
 UICorner_Loader.CornerRadius = UDim.new(0,2)
 
+
+  -- Optimized Dump of NEVERLOSE_Loader_Service UI
+local TabButton_4903 = Instance.new("Frame")
+TabButton_4903.Name = "TabButton"
+TabButton_4903.Size = UDim2.new(0.30000001192092896,-6,0.03999999910593033,0)
+TabButton_4903.Position = UDim2.new(0,3,0.10000000149011612,9)
+TabButton_4903.BackgroundColor3 = Color3.fromRGB(0,170,255)
+TabButton_4903.BackgroundTransparency = 0.5
+TabButton_4903.ClipsDescendants = false
+TabButton_4903.Active = true
+TabButton_4903.Selectable = false
+local Corner_2322 = Instance.new("UICorner")
+Corner_2322.CornerRadius = UDim.new(0,6)
+Corner_2322.Parent = TabButton_4903
+TabButton_4903.Parent = LOADERFrame_5373
+
+  
+-- Optimized Dump of NEVERLOSE_Loader_Service UI
+local TabLabel_9765 = Instance.new("TextLabel")
+TabLabel_9765.Name = "TabLabel"
+TabLabel_9765.Size = UDim2.new(0.12000011652708054,0,0.03999870643019676,0)
+TabLabel_9765.Position = UDim2.new(0,0,0.10000000149011612,9)
+TabLabel_9765.BackgroundColor3 = Color3.fromRGB(163,162,165)
+TabLabel_9765.BackgroundTransparency = 1
+TabLabel_9765.ClipsDescendants = false
+TabLabel_9765.Active = true
+TabLabel_9765.Selectable = false
+TabLabel_9765.ZIndex = 4
+TabLabel_9765.Text = "CS:GO"
+TabLabel_9765.Font = Enum.Font.SourceSansBold
+TabLabel_9765.TextSize = 8
+TabLabel_9765.TextColor3 = Color3.fromRGB(255,255,255)
+TabLabel_9765.TextWrapped = true
+TabLabel_9765.RichText = false
+TabLabel_9765.TextScaled = true
+TabLabel_9765.TextXAlignment = Enum.TextXAlignment.Center
+TabLabel_9765.TextYAlignment = Enum.TextYAlignment.Center
+TabLabel_9765.TextDirection = Enum.TextDirection.Auto
+TabLabel_9765.Parent = LOADERFrame_5373
+  
 local Container_6323 = Instance.new("Frame")
 Container_6323.Name = "Container"
 Container_6323.Size = UDim2.new(0.7,0,1,0)
