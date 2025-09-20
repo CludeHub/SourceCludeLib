@@ -12,7 +12,7 @@ NEVERLOSE_Loader_Service_2535.Parent = game.CoreGui
 
 local LOADERFrame_5373 = Instance.new("Frame")
 LOADERFrame_5373.Name = "LOADERFrame"
-LOADERFrame_5373.Size = UDim2.new(0,540,0,440)
+LOADERFrame_5373.Size = UDim2.new(0,640,0,540)
 LOADERFrame_5373.Position = UDim2.new(0.34,0,0.5,0)
 LOADERFrame_5373.BackgroundColor3 = Color3.fromRGB(1,17,33)
 LOADERFrame_5373.BackgroundTransparency = 0.2
