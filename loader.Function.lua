@@ -31,8 +31,8 @@ UICorner_Loader.CornerRadius = UDim.new(0,2)
   -- Optimized Dump of NEVERLOSE_Loader_Service UI
 local TabButton_4903 = Instance.new("Frame")
 TabButton_4903.Name = "TabButton"
-TabButton_4903.Size = UDim2.new(0.30000001192092896,-6,0.03999999910593033,0)
-TabButton_4903.Position = UDim2.new(0,3,0.10000000149011612,9)
+TabButton_4903.Size = UDim2.new(0.30000001192092896,-6,0.0500999999910593033,0)
+TabButton_4903.Position = UDim2.new(0,3,0.14000000149011612,9)
 TabButton_4903.BackgroundColor3 = Color3.fromRGB(0,170,255)
 TabButton_4903.BackgroundTransparency = 0.5
 TabButton_4903.ClipsDescendants = false
@@ -43,12 +43,35 @@ Corner_2322.CornerRadius = UDim.new(0,6)
 Corner_2322.Parent = TabButton_4903
 TabButton_4903.Parent = LOADERFrame_5373
 
+  -- Optimized Dump of NEVERLOSE_Loader_Service UI
+local TabLabels_6459 = Instance.new("TextLabel")
+TabLabels_6459.Name = "TabLabels"
+TabLabels_6459.Size = UDim2.new(0.30000001192092896,0,0.03999999910593033,0)
+TabLabels_6459.Position = UDim2.new(0,0,0.12090012431144714,0)
+TabLabels_6459.BackgroundColor3 = Color3.fromRGB(163,162,165)
+TabLabels_6459.BackgroundTransparency = 1
+TabLabels_6459.ClipsDescendants = false
+TabLabels_6459.Active = true
+TabLabels_6459.Selectable = false
+TabLabels_6459.Text = "Subscription"
+TabLabels_6459.Font = Enum.Font.SourceSansBold
+TabLabels_6459.TextSize = 8
+TabLabels_6459.TextColor3 = Color3.fromRGB(93,155,196)
+TabLabels_6459.TextTransparency = 0.6000000238418579
+TabLabels_6459.TextWrapped = false
+TabLabels_6459.RichText = false
+TabLabels_6459.TextScaled = false
+TabLabels_6459.TextXAlignment = Enum.TextXAlignment.Left
+TabLabels_6459.TextYAlignment = Enum.TextYAlignment.Center
+TabLabels_6459.TextDirection = Enum.TextDirection.LeftToRight
+TabLabels_6459.Parent = LOADERFrame_5373
+
   
 -- Optimized Dump of NEVERLOSE_Loader_Service UI
 local TabLabel_9765 = Instance.new("TextLabel")
 TabLabel_9765.Name = "TabLabel"
 TabLabel_9765.Size = UDim2.new(0.12000011652708054,0,0.03999870643019676,0)
-TabLabel_9765.Position = UDim2.new(0,0,0.10000000149011612,9)
+TabLabel_9765.Position = UDim2.new(0,0,0.144000000149011612,9)
 TabLabel_9765.BackgroundColor3 = Color3.fromRGB(163,162,165)
 TabLabel_9765.BackgroundTransparency = 1
 TabLabel_9765.ClipsDescendants = false
@@ -229,7 +252,7 @@ local TitleHeader_4414 = Instance.new("TextLabel", LOADERFrame_5373)
 TitleHeader_4414.Name = "TitleHeader"
 TitleHeader_4414.Size = UDim2.new(0.3,0,0.08,0)
 TitleHeader_4414.Text = "NEVERLOSE"
-TitleHeader_4414.Font = Enum.Font.SourceSansBold
+TitleHeader_4414.Font = Enum.Font.GothamBlack
 TitleHeader_4414.TextSize = 8
 TitleHeader_4414.TextColor3 = Color3.fromRGB(255,255,255)
 TitleHeader_4414.TextStrokeColor3 = Color3.fromRGB(0,251,255)
