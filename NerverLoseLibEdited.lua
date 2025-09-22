@@ -1407,7 +1407,7 @@ Sound2.Ended:Connect(function()
 			UIListLayout.Parent = Section
 			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			UIListLayout.Padding = UDim.new(0, 0)
+			UIListLayout.Padding = UDim.new(0, -1)
 
 			lay.Name = "lay"
 			lay.Parent = Section
@@ -1690,7 +1690,7 @@ Sound2.Ended:Connect(function()
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
-				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -3)
+				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -4)
 				Effect.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0.5, 0)
