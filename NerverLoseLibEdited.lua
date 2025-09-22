@@ -1448,7 +1448,7 @@ Sound2.Ended:Connect(function()
 			Header.Position = UDim2.new(0.5, 0, 0.100000001, 0)
 			Header.Size = UDim2.new(0.949999988, 0, 0, 13)
 			Header.ZIndex = 5
-			Header.Font = Enum.Font.SourceSansSemibold
+			Header.Font = Enum.Font.ArialBold
 			Header.Text = SectionName or "Section"
 			Header.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Header.TextScaled = true
