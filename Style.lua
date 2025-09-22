@@ -253,3 +253,113 @@ RunService.RenderStepped:Connect(function()
         lastTabColor = newTabColor
     end
 end)
+
+
+local frame = game.CoreGui.NEVERLOSE.Frame
+
+spawn(function()
+    while true do
+        for _, icon in ipairs(frame:GetDescendants()) do
+            if icon.Name == "Icon" and icon:IsA("Frame") then
+                if frame.BackgroundColor3 == Color3.fromRGB(43, 43, 43) then
+                    if icon.BackgroundTransparency == 0 then
+                        icon.BackgroundColor3 = Color3.fromRGB(255, 128, 0) -- Orange
+                    else
+                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255) -- Light Blue
+                    end
+                else
+                    if icon.BackgroundTransparency == 0 then
+                        icon.BackgroundColor3 = Color3.fromRGB(19, 176, 243) -- Cyan
+                    else
+                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255) -- Light Blue
+                    end
+                end
+            end
+        end
+        task.wait(0.1)
+    end
+end)
+
+local CoreGui = game.CoreGui
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
+local targetFrame = NEVERLOSE:WaitForChild("Frame")
+
+local cyanColors = {
+    Color3.fromRGB(0, 172, 247),
+    Color3.fromRGB(19, 176, 243),
+    Color3.fromRGB(0, 72, 247)
+}
+
+local orangeColor = Color3.fromRGB(255, 128, 0)
+
+-- Store original colors so we can restore them
+local originalColors = {}
+
+local function isCyanColor(color)
+    for _, c in ipairs(cyanColors) do
+        if color == c then
+            return true
+        end
+    end
+    return false
+end
+
+local function recolorObject(obj, makeOrange)
+    -- Handle Icons specially
+    if obj.Name == "Icon" and (obj:IsA("ImageLabel") or obj:IsA("ImageButton")) then
+        if isCyanColor(obj.ImageColor3) or originalColors[obj] then
+            if not originalColors[obj] then
+                originalColors[obj] = obj.ImageColor3
+            end
+            obj.ImageColor3 = makeOrange and orangeColor or originalColors[obj]
+        end
+        return
+    end
+
+    -- Background for frames
+    if obj:IsA("Frame") and (isCyanColor(obj.BackgroundColor3) or originalColors[obj]) then
+        if not originalColors[obj] then
+            originalColors[obj] = obj.BackgroundColor3
+        end
+        obj.BackgroundColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+
+    -- Text
+    if (obj:IsA("TextLabel") or obj:IsA("TextButton")) and (isCyanColor(obj.TextColor3) or originalColors[obj]) then
+        if not originalColors[obj] then
+            originalColors[obj] = obj.TextColor3
+        end
+        obj.TextColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+
+    -- Image
+    if (obj:IsA("ImageLabel") or obj:IsA("ImageButton")) and (isCyanColor(obj.ImageColor3) or originalColors[obj]) then
+        if not originalColors[obj] then
+            originalColors[obj] = obj.ImageColor3
+        end
+        obj.ImageColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+end
+
+local function applyColors(makeOrange)
+    for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
+        recolorObject(obj, makeOrange)
+    end
+end
+
+local function refresh()
+    local isDark = targetFrame.BackgroundColor3 == Color3.fromRGB(43, 43, 43)
+    applyColors(isDark)
+end
+
+-- Update when frame changes
+targetFrame:GetPropertyChangedSignal("BackgroundColor3"):Connect(refresh)
+
+-- Update when new objects appear
+NEVERLOSE.DescendantAdded:Connect(function(obj)
+    task.wait()
+    recolorObject(obj, targetFrame.BackgroundColor3 == Color3.fromRGB(43, 43, 43))
+end)
+
+-- Initial check
+refresh()
