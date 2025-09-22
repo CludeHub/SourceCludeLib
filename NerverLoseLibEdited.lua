@@ -694,7 +694,7 @@ end
 -- Create dropdown option buttons
 for _, option in ipairs(dpiOptions) do
     local btn = Instance.new("TextButton", listFrame)
-    btn.Size = UDim2.new(1, 0, 0, 10)
+    btn.Size = UDim2.new(1, 0, 0, 19)
     btn.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
     btn.BorderSizePixel = 0
     btn.Text = option
