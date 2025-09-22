@@ -1491,7 +1491,7 @@ Sound2.Ended:Connect(function()
 							if v:isA('Frame') or v:isA('TextLabel') then
 								if v.Visible then
 									pcall(function()
-										a=a+v.AbsoluteSize.Y*1.1
+										a=a+v.AbsoluteSize.Y*1.0
 									end)
 								end
 							end
@@ -1506,7 +1506,7 @@ Sound2.Ended:Connect(function()
 						if v:isA('Frame') or v:isA('TextLabel') then
 							if v.Visible then
 								pcall(function()
-									a=a+v.AbsoluteSize.Y*1.1
+									a=a+v.AbsoluteSize.Y*1.0
 								end)
 							end
 						end
