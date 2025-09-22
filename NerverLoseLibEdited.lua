@@ -594,63 +594,71 @@ local divider2 = divider:Clone()
 divider2.Position = UDim2.new(0, 0, 0.56, 0)
 divider2.Parent = aboutFrame
 
+ local TweenService = game:GetService("TweenService")
+
+-- DPI Label
 local dpiLabel8 = Instance.new("Frame", aboutFrame)
 dpiLabel8.BackgroundTransparency = 1
 dpiLabel8.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiLabel8.Position = UDim2.new(0.05, 0, 0.64, 0)
 dpiLabel8.ZIndex = 50
--- DPI Label
+
 local dpiLabel = Instance.new("TextLabel", dpiLabel8)
 dpiLabel.Text = "Dpi Scale"
 dpiLabel.Font = Enum.Font.Gotham
 dpiLabel.TextSize = 14
-dpiLabel.TextColor3 = Color3.new(255, 255, 255)
-dpiLabel.TextTransparency = 0.300
+dpiLabel.TextColor3 = Color3.new(1, 1, 1)
+dpiLabel.TextTransparency = 0.3
 dpiLabel.BackgroundTransparency = 1
 dpiLabel.TextScaled = true
 dpiLabel.Size = UDim2.new(1, 0, 1, 0)
 dpiLabel.TextXAlignment = Enum.TextXAlignment.Left
 dpiLabel.ZIndex = 50
 
--- DPI Button
+-- Dropdown button
 local dpiDropdown = Instance.new("TextButton", aboutFrame)
 dpiDropdown.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiDropdown.Position = UDim2.new(0.55, 0, 0.64, 0)
 dpiDropdown.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
 dpiDropdown.Text = "80%"
-dpiDropdown.TextColor3 = Color3.new(255, 255, 255)
-dpiDropdown.TextTransparency = 0.300
+dpiDropdown.TextColor3 = Color3.new(1, 1, 1)
+dpiDropdown.TextTransparency = 0.3
 dpiDropdown.Font = Enum.Font.Gotham
 dpiDropdown.TextScaled = true
-dpiDropdown.TextSize = 14
 dpiDropdown.BorderSizePixel = 0
 dpiDropdown.AutoButtonColor = false
 dpiDropdown.ZIndex = 50
-dpiDropdown.MouseEnter:Connect(function()
-   dpiLabel.TextTransparency = 0
-   dpiDropdown.TextTransparency = 0
-		end)
 
-dpiDropdown.MouseLeave:Connect(function()
-   dpiLabel.TextTransparency = 0.300
-   dpiDropdown.TextTransparency = 0.300
-		end)
-	
 local corn = Instance.new("UICorner", dpiDropdown)
-	corn.CornerRadius = UDim.new(0, 3)
+corn.CornerRadius = UDim.new(0, 3)
 
 local stroc = Instance.new("UIStroke", dpiDropdown)
 stroc.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 stroc.Color = Color3.fromRGB(28, 28, 28)
 stroc.Thickness = 0.6
 
--- DPI Logic
+-- Dropdown list container
+local listFrame = Instance.new("Frame", dpiDropdown)
+listFrame.Size = UDim2.new(1, 0, 0, 0) -- starts collapsed
+listFrame.Position = UDim2.new(0, 0, 1, 0)
+listFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+listFrame.BorderSizePixel = 0
+listFrame.ClipsDescendants = true
+listFrame.ZIndex = 49
+
+local listCorner = Instance.new("UICorner", listFrame)
+listCorner.CornerRadius = UDim.new(0, 3)
+
+local uiListLayout = Instance.new("UIListLayout", listFrame)
+uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+-- DPI options
 local dpiSizes = {
     ["80%"] = {
         NEVERLOSE = UDim2.new(0, 610, 0, 500),
         ABOUT = UDim2.new(0, 220, 0, 260),
         ABOUT_POS = UDim2.new(0, 840, 0, 70)
-	},
+    },
     ["90%"] = {
         NEVERLOSE = UDim2.new(0, 650, 0, 540),
         ABOUT = UDim2.new(0, 260, 0, 300),
@@ -664,44 +672,64 @@ local dpiSizes = {
 }
 
 local dpiOptions = { "80%", "90%", "100%" }
-local dpiIndex = 1
+local open = false
+local optionButtons = {}
 
-local function updateDPI()
-    local scaleKey = dpiOptions[dpiIndex]
+-- Function to update DPI
+local function updateDPI(scaleKey)
     dpiDropdown.Text = scaleKey
     local sizeInfo = dpiSizes[scaleKey]
 
-    -- Resize and reposition About Frame
     aboutFrame.Size = sizeInfo.ABOUT
     aboutFrame.Position = sizeInfo.ABOUT_POS
 
-    -- Resize and fix position of main NEVERLOSE.Frame
     local mainGui = CoreGui:FindFirstChild("NEVERLOSE")
     if mainGui and mainGui:FindFirstChild("Frame") then
         local frame = mainGui.Frame
         frame.Size = sizeInfo.NEVERLOSE
-        frame.Position = UDim2.new(0, 170, 0, 6) -- Fixed position
+        frame.Position = UDim2.new(0, 170, 0, 6)
     end
 end
 
-dpiDropdown.MouseButton1Click:Connect(function()
-    local Sound2 = Instance.new("Sound")
-    Sound2.SoundId = "rbxassetid://6895079853"
-    Sound2.Looped = false
-    Sound2.Volume = 1
-    Sound2.Parent = game:GetService("SoundService")
-    Sound2:Play()
+-- Create dropdown option buttons
+for _, option in ipairs(dpiOptions) do
+    local btn = Instance.new("TextButton", listFrame)
+    btn.Size = UDim2.new(1, 0, 0, 30)
+    btn.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+    btn.BorderSizePixel = 0
+    btn.Text = option
+    btn.TextColor3 = Color3.new(1, 1, 1)
+    btn.Font = Enum.Font.Gotham
+    btn.TextScaled = true
+    btn.ZIndex = 50
 
-    Sound2.Ended:Connect(function()
-        Sound2:Destroy()
+    local c = Instance.new("UICorner", btn)
+    c.CornerRadius = UDim.new(0, 3)
+
+    btn.MouseButton1Click:Connect(function()
+        updateDPI(option)
+        -- Close dropdown with animation
+        TweenService:Create(listFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(1, 0, 0, 0)}):Play()
+        open = false
     end)
 
-    dpiIndex = dpiIndex % #dpiOptions + 1
-    updateDPI()
+    table.insert(optionButtons, btn)
+end
+
+-- Open/close dropdown on main button click
+dpiDropdown.MouseButton1Click:Connect(function()
+    if not open then
+        local height = #dpiOptions * 30
+        TweenService:Create(listFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(1, 0, 0, height)}):Play()
+        open = true
+    else
+        TweenService:Create(listFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(1, 0, 0, 0)}):Play()
+        open = false
+    end
 end)
 
 -- Initial DPI set
-updateDPI()
+updateDPI("80%")
 
 	-- Create the TextBox
 local TextBox = Instance.new("TextBox")
