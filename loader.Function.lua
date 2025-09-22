@@ -50,6 +50,7 @@ Close_9943.TextXAlignment = Enum.TextXAlignment.Center
 Close_9943.TextYAlignment = Enum.TextYAlignment.Center
 Close_9943.TextDirection = Enum.TextDirection.Auto
 Close_9943.Parent = LOADERFrame_5373
+Close_9943.ZIndex = 999
 
   -- Optimized Dump of NEVERLOSE_Loader_Service UI
 local TabButton_4903 = Instance.new("Frame")
