@@ -63,6 +63,54 @@ orangeButton.ZIndex = 50
 
 Instance.new("UICorner", orangeButton).CornerRadius = UDim.new(1, 0)
 
+-- Optimized Dump of NEVERLOSE_Loader_Service UI
+local Pink_6714 = Instance.new("TextButton")
+Pink_6714.Name = "Pink"
+Pink_6714.Size = UDim2.new(0.20000000298023224,0,1,0)
+Pink_6714.Position = UDim2.new(-0.4899999797344208,0,0,0)
+Pink_6714.BackgroundColor3 = Color3.fromRGB(231,190,255)
+Pink_6714.ClipsDescendants = false
+Pink_6714.Active = true
+Pink_6714.Selectable = true
+Pink_6714.ZIndex = 50
+Pink_6714.Font = Enum.Font.Legacy
+Pink_6714.TextSize = 8
+Pink_6714.TextColor3 = Color3.fromRGB(27,42,53)
+Pink_6714.TextWrapped = false
+Pink_6714.RichText = false
+Pink_6714.TextScaled = false
+Pink_6714.TextXAlignment = Enum.TextXAlignment.Center
+Pink_6714.TextYAlignment = Enum.TextYAlignment.Center
+Pink_6714.TextDirection = Enum.TextDirection.Auto
+local Corner_1410 = Instance.new("UICorner")
+Corner_1410.CornerRadius = UDim.new(1,0)
+Corner_1410.Parent = Pink_6714
+Pink_6714.Parent = color
+
+-- Optimized Dump of NEVERLOSE_Loader_Service UI
+local Red_1907 = Instance.new("TextButton")
+Red_1907.Name = "Red"
+Red_1907.Size = UDim2.new(0.20000000298023224,0,1,0)
+Red_1907.Position = UDim2.new(-0.20000000298023224,0,0,0)
+Red_1907.BackgroundColor3 = Color3.fromRGB(85,0,0)
+Red_1907.ClipsDescendants = false
+Red_1907.Active = true
+Red_1907.Selectable = true
+Red_1907.ZIndex = 50
+Red_1907.Font = Enum.Font.Legacy
+Red_1907.TextSize = 8
+Red_1907.TextColor3 = Color3.fromRGB(27,42,53)
+Red_1907.TextWrapped = false
+Red_1907.RichText = false
+Red_1907.TextScaled = false
+Red_1907.TextXAlignment = Enum.TextXAlignment.Center
+Red_1907.TextYAlignment = Enum.TextYAlignment.Center
+Red_1907.TextDirection = Enum.TextDirection.Auto
+local Corner_4205 = Instance.new("UICorner")
+Corner_4205.CornerRadius = UDim.new(1,0)
+Corner_4205.Parent = Red_1907
+Red_1907.Parent = color
+
 -- Apply Theme Function
 local function applyTheme(theme)
     local core = game.CoreGui:FindFirstChild("NEVERLOSE")
@@ -164,6 +212,42 @@ orangeButton.MouseButton1Click:Connect(function()
         Save = Color3.fromRGB(100, 100, 100)
     })
 end)
+
+Red.MouseButton1Click:Connect(function()
+    applyTheme({
+        BlackgroundColor = Color3.fromRGB(18, 0, 0),
+        BlackColor = Color3.fromRGB(8, 8, 8),
+        HeaderColor = Color3.fromRGB(8, 8, 8),
+        TraceColor = Color3.fromRGB(115, 115, 115),
+        MainColor = Color3.fromRGB(255, 104, 110),
+        MainColorDrop = Color3.fromRGB(64, 65, 67),
+        SectionColor = Color3.fromRGB(10, 11, 19),
+        StrokeColor = Color3.fromRGB(28, 28, 28),
+        ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
+        Button = Color3.fromRGB(0, 172, 247),
+        SearchColor = Color3.fromRGB(14, 14, 14),
+        Save = Color3.fromRGB(28, 28, 28)
+    })
+end)
+
+
+Pink.MouseButton1Click:Connect(function()
+    applyTheme({
+        BlackgroundColor = Color3.fromRGB(121 17, 48),
+        BlackColor = Color3.fromRGB(8, 8, 8),
+        HeaderColor = Color3.fromRGB(8, 8, 8),
+        TraceColor = Color3.fromRGB(115, 115, 115),
+        MainColor = Color3.fromRGB(255, 235, 249),
+        MainColorDrop = Color3.fromRGB(64, 65, 67),
+        SectionColor = Color3.fromRGB(10, 11, 19),
+        StrokeColor = Color3.fromRGB(28, 28, 28),
+        ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
+        Button = Color3.fromRGB(0, 172, 247),
+        SearchColor = Color3.fromRGB(14, 14, 14),
+        Save = Color3.fromRGB(28, 28, 28)
+    })
+end)
+
 
 local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
 if not NEVERLOSE then return end
@@ -269,6 +353,119 @@ spawn(function()
                     end
                 else
                     if icon.BackgroundTransparency == 0 then
+                        icon.BackgroundColor3 = Color3.fromRGB(19, 176, 243) -- Cyan
+                    else
+                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255) -- Light Blue
+                    end
+                end
+            end
+        end
+        task.wait(0.1)
+    end
+end)
+
+local CoreGui = game.CoreGui
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
+local targetFrame = NEVERLOSE:WaitForChild("Frame")
+
+local cyanColors = {
+    Color3.fromRGB(0, 172, 247),
+    Color3.fromRGB(19, 176, 243),
+    Color3.fromRGB(0, 72, 247)
+}
+
+local orangeColor = Color3.fromRGB(255, 128, 0)
+
+-- Store original colors so we can restore them
+local originalColors = {}
+
+local function isCyanColor(color)
+    for _, c in ipairs(cyanColors) do
+        if color == c then
+            return true
+        end
+    end
+    return false
+end
+
+local function recolorObject(obj, makeOrange)
+    -- Handle Icons specially
+    if obj.Name == "Icon" and (obj:IsA("ImageLabel") or obj:IsA("ImageButton")) then
+        if isCyanColor(obj.ImageColor3) or originalColors[obj] then
+            if not originalColors[obj] then
+                originalColors[obj] = obj.ImageColor3
+            end
+            obj.ImageColor3 = makeOrange and orangeColor or originalColors[obj]
+        end
+        return
+    end
+
+    -- Background for frames
+    if obj:IsA("Frame") and (isCyanColor(obj.BackgroundColor3) or originalColors[obj]) then
+        if not originalColors[obj] then
+            originalColors[obj] = obj.BackgroundColor3
+        end
+        obj.BackgroundColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+
+    -- Text
+    if (obj:IsA("TextLabel") or obj:IsA("TextButton")) and (isCyanColor(obj.TextColor3) or originalColors[obj]) then
+        if not originalColors[obj] then
+            originalColors[obj] = obj.TextColor3
+        end
+        obj.TextColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+
+    -- Image
+    if (obj:IsA("ImageLabel") or obj:IsA("ImageButton")) and (isCyanColor(obj.ImageColor3) or originalColors[obj]) then
+        if not originalColors[obj] then
+            originalColors[obj] = obj.ImageColor3
+        end
+        obj.ImageColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+end
+
+local function applyColors(makeOrange)
+    for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
+        recolorObject(obj, makeOrange)
+    end
+end
+
+local function refresh()
+    local isDark = targetFrame.BackgroundColor3 == Color3.fromRGB(43, 43, 43)
+    applyColors(isDark)
+end
+
+-- Update when frame changes
+targetFrame:GetPropertyChangedSignal("BackgroundColor3"):Connect(refresh)
+
+-- Update when new objects appear
+NEVERLOSE.DescendantAdded:Connect(function(obj)
+    task.wait()
+    recolorObject(obj, targetFrame.BackgroundColor3 == Color3.fromRGB(43, 43, 43))
+end)
+
+-- Initial check
+refresh()
+
+
+
+-- red
+local frame = game.CoreGui.NEVERLOSE.Frame
+
+spawn(function()
+    while true do
+        for _, icon in ipairs(frame:GetDescendants()) do
+            if icon.Name == "Icon" and icon:IsA("Frame") then
+                if frame.BackgroundColor3 == Color3.fromRGB(18, 0, 0) then
+                    if icon.BackgroundTransparency == 0 then
+                        icon.BackgroundColor3 = Color3.fromRGB(255, 104, 110)
+                    else
+                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255) -- Light Blue
+                    end
+                else
+                    if icon.BackgroundTransparency == 0 then
+                            
                         icon.BackgroundColor3 = Color3.fromRGB(19, 176, 243) -- Cyan
                     else
                         icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255) -- Light Blue
