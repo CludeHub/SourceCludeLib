@@ -1407,7 +1407,7 @@ Sound2.Ended:Connect(function()
 			UIListLayout.Parent = Section
 			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			UIListLayout.Padding = UDim.new(0, -1)
+			UIListLayout.Padding = UDim.new(0, 0)
 
 			lay.Name = "lay"
 			lay.Parent = Section
@@ -2220,7 +2220,7 @@ Sound2.Ended:Connect(function()
 				ValueText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				ValueText.BorderSizePixel = 0
 				ValueText.Position = UDim2.new(0.358571023, 0, 0.500001013, 0)
-				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, 0)
+				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, -2)
 				ValueText.ZIndex = 6
 				ValueText.TextXAlignment = Enum.TextXAlignment.Left
 				ValueText.Font = Enum.Font.SourceSansSemibold
