@@ -57,7 +57,7 @@ orangeButton.Position = UDim2.new(0.1, 0, 0, 0)
 orangeButton.Size = UDim2.new(0.2, 0, 1, 0)
 orangeButton.AutoButtonColor = false
 orangeButton.Text = ""
-orangeButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+orangeButton.BackgroundColor3 = Color3.fromRGB(255, 128, 0)
 orangeButton.Parent = color
 orangeButton.ZIndex = 50
 
@@ -122,7 +122,7 @@ darkButton.MouseButton1Click:Connect(function()
         TraceColor = Color3.fromRGB(115, 115, 115),
         MainColor = Color3.fromRGB(0, 172, 247),
         MainColorDrop = Color3.fromRGB(64, 65, 67),
-        SectionColor = Color3.fromRGB(10, 11, 19),
+        SectionColor = Color3.fromRGB(10, 11, 16),
         StrokeColor = Color3.fromRGB(28, 28, 28),
         ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
         Button = Color3.fromRGB(0, 172, 247),
@@ -150,11 +150,11 @@ end)
 
 orangeButton.MouseButton1Click:Connect(function()
     applyTheme({
-        BlackgroundColor = Color3.fromRGB(43, 43, 43),
+        BlackgroundColor = Color3.fromRGB(40, 40, 40),
         BlackColor = Color3.fromRGB(16, 16, 16),
         HeaderColor = Color3.fromRGB(47, 47, 47),
         TraceColor = Color3.fromRGB(100, 100, 100),
-        MainColor = Color3.fromRGB(255, 140, 0),
+        MainColor = Color3.fromRGB(255, 128, 0),
         MainColorDrop = Color3.fromRGB(65, 54, 31),
         SectionColor = Color3.fromRGB(26, 26, 26),
         StrokeColor = Color3.fromRGB(50, 50, 50),
