@@ -248,56 +248,6 @@ Pink.MouseButton1Click:Connect(function()
     })
 end)
 
-
-local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
-if not NEVERLOSE then return end
-
-local Frame = NEVERLOSE:FindFirstChild("Frame")
-if not Frame then return end
-
-local RunService = game:GetService("RunService")
-
-local lastDownBarColor = nil
-local lastIconColor = nil
-
-RunService.RenderStepped:Connect(function()
-    local bgColor = Frame.BackgroundColor3
-    local newDownBarColor = nil
-    local newIconColor = nil
-
-    if bgColor == Color3.fromRGB(1, 17, 33) then  
-        newDownBarColor = Color3.fromRGB(1, 30, 59)  
-    elseif bgColor == Color3.fromRGB(22, 22, 22) then  
-        newDownBarColor = Color3.fromRGB(25, 25, 25)  
-    elseif bgColor == Color3.fromRGB(43, 43, 43) then
-        newDownBarColor = Color3.fromRGB(43, 43, 43)
-        newIconColor = Color3.fromRGB(255, 170, 0) -- only here Icon changes
-    else
-        return -- Unhandled color  
-    end  
-
-    -- Update DownBar only if changed
-    if newDownBarColor and newDownBarColor ~= lastDownBarColor then  
-        for _, obj in ipairs(Frame:GetDescendants()) do  
-            if obj:IsA("Frame") and obj.Name == "DownBar" then  
-                obj.BackgroundColor3 = newDownBarColor  
-            end  
-        end  
-        lastDownBarColor = newDownBarColor  
-    end
-
-    -- Update Icon only if changed
-    if newIconColor and newIconColor ~= lastIconColor then  
-        for _, obj in ipairs(Frame:GetDescendants()) do  
-            if obj:IsA("Frame") and obj.Name == "MainFrame" then  
-                obj.BackgroundColor3 = newIconColor
-            end  
-        end  
-        lastIconColor = newIconColor
-    end
-end)
-
-
 local CoreGui = game.CoreGui
 local NEVERLOSE = CoreGui:FindFirstChild("NEVERLOSE")
 if not NEVERLOSE then return end
