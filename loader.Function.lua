@@ -31,7 +31,7 @@ UICorner_Loader.CornerRadius = UDim.new(0,2)
 local Close_9943 = Instance.new("TextButton")
 Close_9943.Name = "Close"
 Close_9943.Size = UDim2.new(0,30,0,30)
-Close_9943.Position = UDim2.new(0.8999999761581421,30,0,4)
+Close_9943.Position = UDim2.new(0.8999999761581421,26,0,4)
 Close_9943.BackgroundColor3 = Color3.fromRGB(163,162,165)
 Close_9943.BackgroundTransparency = 1
 Close_9943.ClipsDescendants = false
@@ -52,6 +52,9 @@ Close_9943.TextDirection = Enum.TextDirection.Auto
 Close_9943.Parent = LOADERFrame_5373
 Close_9943.ZIndex = 999
 
+  Close_9943.MouseButton1Click:Connect(function()
+      LOADERFrame_5373:Destroy()
+    end)
   -- Optimized Dump of NEVERLOSE_Loader_Service UI
 local TabButton_4903 = Instance.new("Frame")
 TabButton_4903.Name = "TabButton"
