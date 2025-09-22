@@ -1629,7 +1629,7 @@ Sound2.Ended:Connect(function()
 				Label.BackgroundTransparency = 1.000
 				Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Label.BorderSizePixel = 0
-				Label.Size = UDim2.new(0.899999976, 0, 0.5, 0)
+				Label.Size = UDim2.new(1, 0, 0.5, 0)
 				Label.ZIndex = 5
 
 				UIAspectRatioConstraint.Parent = Label
@@ -1744,7 +1744,7 @@ Sound2.Ended:Connect(function()
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
-				Effect.Size = UDim2.new(0.150000006, -4, 0.5, -3)
+				Effect.Size = UDim2.new(0.150000006, -6, 0.5, -5)
 				Effect.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0.5, 0)
