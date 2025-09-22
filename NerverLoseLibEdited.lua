@@ -630,12 +630,12 @@ dpiDropdown.AutoButtonColor = false
 dpiDropdown.ZIndex = 50
 
 local corn = Instance.new("UICorner", dpiDropdown)
-corn.CornerRadius = UDim.new(0, 0)
+corn.CornerRadius = UDim.new(0, 2)
 
 local stroc = Instance.new("UIStroke", dpiDropdown)
 stroc.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 stroc.Color = Color3.fromRGB(28, 28, 28)
-stroc.Thickness = 0.3
+stroc.Thickness = 0.8
 
 -- Dropdown list container
 local listFrame = Instance.new("Frame", dpiDropdown)
@@ -691,7 +691,7 @@ local dpiSizes = {
     }
 }
 
-local dpiOptions = { "80%", "90%", "100%", "110", "120", "130", "140" }
+local dpiOptions = { "80%", "90%", "100%", "110%", "120%", "130%", "140%" }
 local open = false
 local optionButtons = {}
 
