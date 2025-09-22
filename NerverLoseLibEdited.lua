@@ -635,7 +635,7 @@ corn.CornerRadius = UDim.new(0, 3)
 local stroc = Instance.new("UIStroke", dpiDropdown)
 stroc.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 stroc.Color = Color3.fromRGB(28, 28, 28)
-stroc.Thickness = 0.6
+stroc.Thickness = 0.3
 
 -- Dropdown list container
 local listFrame = Instance.new("Frame", dpiDropdown)
@@ -644,10 +644,10 @@ listFrame.Position = UDim2.new(0, 0, 1, 0)
 listFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 listFrame.BorderSizePixel = 0
 listFrame.ClipsDescendants = true
-listFrame.ZIndex = 49
+listFrame.ZIndex = 1002
 
 local listCorner = Instance.new("UICorner", listFrame)
-listCorner.CornerRadius = UDim.new(0, 3)
+listCorner.CornerRadius = UDim.new(0, 1)
 
 local uiListLayout = Instance.new("UIListLayout", listFrame)
 uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -694,14 +694,15 @@ end
 -- Create dropdown option buttons
 for _, option in ipairs(dpiOptions) do
     local btn = Instance.new("TextButton", listFrame)
-    btn.Size = UDim2.new(1, 0, 0, 30)
+    btn.Size = UDim2.new(1, 0, 0, 20)
     btn.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
     btn.BorderSizePixel = 0
     btn.Text = option
     btn.TextColor3 = Color3.new(1, 1, 1)
-    btn.Font = Enum.Font.Gotham
+    btn.Font = Enum.Font.SourceSansBold
     btn.TextScaled = true
-    btn.ZIndex = 50
+	btn.TextXAlignment = Enum.TextXAlignment.Left
+    btn.ZIndex = 5000
 
     local c = Instance.new("UICorner", btn)
     c.CornerRadius = UDim.new(0, 3)
