@@ -2078,7 +2078,7 @@ Sound2.Ended:Connect(function()
 				ValueText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				ValueText.BorderSizePixel = 0
 				ValueText.Position = UDim2.new(0.5, 0, 0.5, 0)
-				ValueText.Size = UDim2.new(0.99000001, 0, 0.99000001, 0)
+				ValueText.Size = UDim2.new(0.99000001, -2, 0.99000001, -2)
 				ValueText.ZIndex = 6
 				ValueText.Font = Enum.Font.SourceSansSemibold
 				ValueText.Text = tostring(Default)
@@ -2095,7 +2095,7 @@ Sound2.Ended:Connect(function()
 				MoveFrame.BorderSizePixel = 0
 				MoveFrame.ClipsDescendants = true
 				MoveFrame.Position = UDim2.new(0.477050841, 0, 0.50000006, 0)
-				MoveFrame.Size = UDim2.new(0.290949076, 0, 0.099999994, 0)
+				MoveFrame.Size = UDim2.new(0.290949076, -2, 0.099999994, 0)
 				MoveFrame.ZIndex = 5
 
 				UICorner_3.CornerRadius = UDim.new(0, 3)
@@ -2254,7 +2254,7 @@ Sound2.Ended:Connect(function()
 				TopBar.BackgroundTransparency = 0.500
 				TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				TopBar.BorderSizePixel = 0
-				TopBar.Position = UDim2.new(0.950000167, 0, 0.500000715, 0)
+				TopBar.Position = UDim2.new(0.950000167, -3, 0.500000715, -2)
 				TopBar.Size = UDim2.new(0.5, 0, 0.5, -1)
 				TopBar.ZIndex = 6
 
