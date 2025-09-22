@@ -215,18 +215,18 @@ local function applyTheme(theme)
 end
 
     applyTheme({
-        BlackgroundColor = Color3.fromRGB(22, 22, 22),
-        BlackColor = Color3.fromRGB(8, 8, 8),
-        HeaderColor = Color3.fromRGB(8, 8, 8),
-        TraceColor = Color3.fromRGB(115, 115, 115),
-        MainColor = Color3.fromRGB(0, 172, 247),
-        MainColorDrop = Color3.fromRGB(64, 65, 67),
-        SectionColor = Color3.fromRGB(10, 11, 19),
-        StrokeColor = Color3.fromRGB(28, 28, 28),
-        ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
+        BlackgroundColor = Color3.fromRGB(1, 17, 33),
+        BlackColor = Color3.fromRGB(9, 9, 19),
+        HeaderColor = Color3.fromRGB(7, 7, 17),
+        TraceColor = Color3.fromRGB(0, 76, 99),
+        MainColor = Color3.fromRGB(19, 176, 243),
+        MainColorDrop = Color3.fromRGB(3, 6, 25),
+        SectionColor = Color3.fromRGB(0, 17, 33),
+        StrokeColor = Color3.fromRGB(3, 35, 50),
+        ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22),
         Button = Color3.fromRGB(0, 172, 247),
-        SearchColor = Color3.fromRGB(14, 14, 14),
-        Save = Color3.fromRGB(28, 28, 28)
+        SearchColor = Color3.fromRGB(0, 17, 35),
+        Save = Color3.fromRGB(0, 76, 99)
     })
 local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
 if not NEVERLOSE then return end
