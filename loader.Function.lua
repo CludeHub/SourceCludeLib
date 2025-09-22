@@ -27,6 +27,29 @@ LOADERFrame_5373.Parent = NEVERLOSE_Loader_Service_2535
 local UICorner_Loader = Instance.new("UICorner", LOADERFrame_5373)
 UICorner_Loader.CornerRadius = UDim.new(0,2)
 
+-- Optimized Dump of NEVERLOSE_Loader_Service UI
+local Close_9943 = Instance.new("TextButton")
+Close_9943.Name = "Close"
+Close_9943.Size = UDim2.new(0,30,0,30)
+Close_9943.Position = UDim2.new(0.8999999761581421,30,0,4)
+Close_9943.BackgroundColor3 = Color3.fromRGB(163,162,165)
+Close_9943.BackgroundTransparency = 1
+Close_9943.ClipsDescendants = false
+Close_9943.Active = true
+Close_9943.Selectable = true
+Close_9943.Text = "x"
+Close_9943.Font = Enum.Font.Legacy
+Close_9943.TextSize = 20
+Close_9943.TextColor3 = Color3.fromRGB(255,255,255)
+Close_9943.TextStrokeColor3 = Color3.fromRGB(255,255,255)
+Close_9943.TextTransparency = 0.30000001192092896
+Close_9943.TextWrapped = false
+Close_9943.RichText = false
+Close_9943.TextScaled = false
+Close_9943.TextXAlignment = Enum.TextXAlignment.Center
+Close_9943.TextYAlignment = Enum.TextYAlignment.Center
+Close_9943.TextDirection = Enum.TextDirection.Auto
+Close_9943.Parent = LOADERFrame_5373
 
   -- Optimized Dump of NEVERLOSE_Loader_Service UI
 local TabButton_4903 = Instance.new("Frame")
@@ -266,7 +289,7 @@ UsernameLo_2940.Size = UDim2.new(0.2,0,0.049,0)
 UsernameLo_2940.Position = UDim2.new(0.078,0,0.92,0)
 UsernameLo_2940.BackgroundTransparency = 1
 UsernameLo_2940.Text = game.Players.LocalPlayer.Name
-UsernameLo_2940.Font = Enum.Font.SourceSans
+UsernameLo_2940.Font = Enum.Font.SourceSansBold
 UsernameLo_2940.TextSize = 8
 UsernameLo_2940.TextColor3 = Color3.fromRGB(255,255,255)
 UsernameLo_2940.TextScaled = true
