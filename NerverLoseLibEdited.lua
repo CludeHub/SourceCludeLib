@@ -646,6 +646,10 @@ stroc.Thickness = 0.6
 
 -- DPI Logic
 local dpiSizes = {
+    ["80%"] = {
+        NEVERLOSE = UDim2.new(0, 610, 0, 500),
+        ABOUT = UDim2.new(0, 320, 0, 410),
+        ABOUT_POS = UDim2.new(0, 840, 0, 70)
     ["90%"] = {
         NEVERLOSE = UDim2.new(0, 650, 0, 540),
         ABOUT = UDim2.new(0, 260, 0, 300),
@@ -658,7 +662,7 @@ local dpiSizes = {
     }
 }
 
-local dpiOptions = { "90%", "100%" }
+local dpiOptions = { "80%", "90%", "100%" }
 local dpiIndex = 1
 
 local function updateDPI()
