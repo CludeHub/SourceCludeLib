@@ -1,165 +1,186 @@
-local NEVERLOSE = {}
-
+-- ModuleScript: NEVERLOSE
 local TweenService = game:GetService("TweenService")
-local CoreGui = game:GetService("CoreGui")
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
+local UserInputService = game:GetService("UserInputService")
 
--- UI Main Function
-function NEVERLOSE:AddWindow(titleText)
-    local gui = Instance.new("ScreenGui", CoreGui)
-    gui.Name = "NEVERLOSE"
-    gui.ResetOnSpawn = false
-    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local NEVERLOSE = {}
+NEVERLOSE.__index = NEVERLOSE
 
-    -- Main Frame
-    local Main = Instance.new("Frame", gui)
-    Main.AnchorPoint = Vector2.new(0.5, 0.5)
-    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-    Main.Size = UDim2.new(0.6, 0, 0.5, 0)
-    Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+NEVERLOSE.Theme = {
+    Background = Color3.fromRGB(32, 32, 32),
+    Section = Color3.fromRGB(40, 40, 40),
+    Stroke = Color3.fromRGB(80, 80, 80),
+    Text = Color3.fromRGB(255, 255, 255),
+    Accent = Color3.fromRGB(0, 170, 255)
+}
+
+-- // Create Window
+function NEVERLOSE:CreateWindow(title)
+    local ScreenGui = Instance.new("ScreenGui")
+    ScreenGui.Name = "NEVERLOSE_UI"
+    ScreenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+    local Main = Instance.new("Frame")
+    Main.Size = UDim2.new(0, 300, 0, 400)
+    Main.Position = UDim2.new(0.5, -150, 0.5, -200)
+    Main.BackgroundColor3 = self.Theme.Background
     Main.BorderSizePixel = 0
-    Main.ClipsDescendants = true
+    Main.Active = true
+    Main.Draggable = true
+    Main.Parent = ScreenGui
 
-    local UICorner = Instance.new("UICorner", Main)
-    UICorner.CornerRadius = UDim.new(0, 6)
+    local Stroke = Instance.new("UIStroke")
+    Stroke.Color = self.Theme.Stroke
+    Stroke.Parent = Main
 
-    -- Topbar
-    local Topbar = Instance.new("Frame", Main)
-    Topbar.Size = UDim2.new(1, 0, 0.1, 0)
-    Topbar.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-    Instance.new("UICorner", Topbar).CornerRadius = UDim.new(0, 6)
+    local TitleBar = Instance.new("TextLabel")
+    TitleBar.Size = UDim2.new(1, 0, 0, 30)
+    TitleBar.BackgroundColor3 = self.Theme.Section
+    TitleBar.BorderSizePixel = 0
+    TitleBar.Text = title or "NEVERLOSE"
+    TitleBar.TextColor3 = self.Theme.Text
+    TitleBar.Font = Enum.Font.SourceSansBold
+    TitleBar.TextSize = 16
+    TitleBar.Parent = Main
 
-    local Title = Instance.new("TextLabel", Topbar)
-    Title.Text = titleText or "NEVERLOSE"
-    Title.Size = UDim2.new(0.5, 0, 1, 0)
-    Title.Position = UDim2.new(0, 10, 0, 0)
-    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Title.BackgroundTransparency = 1
-    Title.Font = Enum.Font.GothamBold
-    Title.TextXAlignment = Enum.TextXAlignment.Left
-    Title.TextScaled = true
-
-    -- Sidebar
-    local Sidebar = Instance.new("Frame", Main)
-    Sidebar.Size = UDim2.new(0.2, 0, 0.9, 0)
-    Sidebar.Position = UDim2.new(0, 0, 0.1, 0)
-    Sidebar.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-
-    -- Sidebar Button
-    local function AddSidebarButton(text)
-        local Button = Instance.new("TextButton", Sidebar)
-        Button.Size = UDim2.new(1, 0, 0, 30)
-        Button.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-        Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-        Button.Font = Enum.Font.Gotham
-        Button.Text = text
-        Button.TextScaled = true
-        Button.BorderSizePixel = 0
-        local UICorner = Instance.new("UICorner", Button)
-        UICorner.CornerRadius = UDim.new(0, 4)
-        return Button
-    end
-
-    AddSidebarButton("Autofarm")
-    AddSidebarButton("Misc")
-
-    -- Main Content Area
-    local Content = Instance.new("Frame", Main)
-    Content.Position = UDim2.new(0.2, 0, 0.1, 0)
-    Content.Size = UDim2.new(0.8, 0, 0.9, 0)
+    local Content = Instance.new("Frame")
+    Content.Size = UDim2.new(1, -10, 1, -40)
+    Content.Position = UDim2.new(0, 5, 0, 35)
     Content.BackgroundTransparency = 1
+    Content.Parent = Main
 
-    -- Autofarm Section
-    local AutofarmSection = Instance.new("Frame", Content)
-    AutofarmSection.Size = UDim2.new(0.5, -10, 1, 0)
-    AutofarmSection.Position = UDim2.new(0, 0, 0, 0)
-    AutofarmSection.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-    AutofarmSection.BorderSizePixel = 0
-    Instance.new("UICorner", AutofarmSection).CornerRadius = UDim.new(0, 4)
+    local Layout = Instance.new("UIListLayout")
+    Layout.Padding = UDim.new(0, 8)
+    Layout.Parent = Content
 
-    local function AddToggle(text)
-        local ToggleFrame = Instance.new("Frame", AutofarmSection)
-        ToggleFrame.Size = UDim2.new(1, -10, 0, 25)
-        ToggleFrame.BackgroundTransparency = 1
+    local Window = setmetatable({Content = Content}, NEVERLOSE)
+    return Window
+end
 
-        local ToggleLabel = Instance.new("TextLabel", ToggleFrame)
-        ToggleLabel.Text = text
-        ToggleLabel.Font = Enum.Font.Gotham
-        ToggleLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
-        ToggleLabel.BackgroundTransparency = 1
-        ToggleLabel.TextScaled = true
-        ToggleLabel.Size = UDim2.new(0.8, 0, 1, 0)
-        ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+-- // Add Section
+function NEVERLOSE:AddSection(name)
+    local Section = Instance.new("Frame")
+    Section.Size = UDim2.new(1, 0, 0, 100)
+    Section.BackgroundColor3 = self.Theme.Section
+    Section.BorderSizePixel = 0
+    Section.Parent = self.Content
 
-        local Toggle = Instance.new("TextButton", ToggleFrame)
-        Toggle.Size = UDim2.new(0.2, -5, 1, -6)
-        Toggle.Position = UDim2.new(0.8, 0, 0, 3)
-        Toggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-        Toggle.Text = ""
-        Toggle.AutoButtonColor = false
-        local corner = Instance.new("UICorner", Toggle)
-        corner.CornerRadius = UDim.new(1, 0)
+    local Stroke = Instance.new("UIStroke")
+    Stroke.Color = self.Theme.Stroke
+    Stroke.Parent = Section
 
-        local Enabled = false
-        Toggle.MouseButton1Click:Connect(function()
-            Enabled = not Enabled
-            Toggle.BackgroundColor3 = Enabled and Color3.fromRGB(0, 170, 255) or Color3.fromRGB(40, 40, 40)
-        end)
-    end
+    local Layout = Instance.new("UIListLayout")
+    Layout.Padding = UDim.new(0, 5)
+    Layout.Parent = Section
 
-    for i = 1, 9 do
-        AddToggle("AutoOther Farm")
-    end
-    AddToggle("Auto Farm")
+    local Label = Instance.new("TextLabel")
+    Label.Size = UDim2.new(1, 0, 0, 25)
+    Label.BackgroundTransparency = 1
+    Label.Text = name or "Section"
+    Label.Font = Enum.Font.SourceSansBold
+    Label.TextColor3 = self.Theme.Text
+    Label.TextSize = 14
+    Label.Parent = Section
 
-    -- Config Section
-    local ConfigSection = Instance.new("Frame", Content)
-    ConfigSection.Size = UDim2.new(0.5, -10, 1, 0)
-    ConfigSection.Position = UDim2.new(0.5, 10, 0, 0)
-    ConfigSection.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-    Instance.new("UICorner", ConfigSection).CornerRadius = UDim.new(0, 4)
+    local SectionObj = setmetatable({Section = Section}, NEVERLOSE)
+    return SectionObj
+end
 
-    local function AddConfigButton(text)
-        local Button = Instance.new("TextButton", ConfigSection)
-        Button.Size = UDim2.new(0.9, 0, 0, 25)
-        Button.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-        Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-        Button.Text = text
-        Button.Font = Enum.Font.Gotham
-        Button.TextScaled = true
-        Button.BorderSizePixel = 0
-        Instance.new("UICorner", Button).CornerRadius = UDim.new(0, 3)
-    end
+-- // Add Toggle
+function NEVERLOSE:AddToggle(name, default, callback)
+    local Button = Instance.new("TextButton")
+    Button.Size = UDim2.new(1, -10, 0, 25)
+    Button.BackgroundColor3 = self.Theme.Background
+    Button.Text = name .. " [" .. (default and "ON" or "OFF") .. "]"
+    Button.TextColor3 = self.Theme.Text
+    Button.Font = Enum.Font.SourceSans
+    Button.TextSize = 14
+    Button.Parent = self.Section
 
-    AddConfigButton("Create CFG")
-    AddConfigButton("Save CFG")
-    AddConfigButton("Load CFG")
+    local state = default or false
+    Button.MouseButton1Click:Connect(function()
+        state = not state
+        Button.Text = name .. " [" .. (state and "ON" or "OFF") .. "]"
+        TweenService:Create(Button, TweenInfo.new(0.15), {
+            BackgroundColor3 = state and self.Theme.Accent or self.Theme.Background
+        }):Play()
+        if callback then callback(state) end
+    end)
+end
 
-    -- Dropdown
-    local Dropdown = Instance.new("TextButton", ConfigSection)
-    Dropdown.Size = UDim2.new(0.9, 0, 0, 25)
-    Dropdown.Position = UDim2.new(0, 0, 0, 80)
-    Dropdown.Text = "Select Config ▼"
-    Dropdown.Font = Enum.Font.Gotham
-    Dropdown.TextScaled = true
-    Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Dropdown.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    Instance.new("UICorner", Dropdown).CornerRadius = UDim.new(0, 3)
+-- // Add Slider
+function NEVERLOSE:AddSlider(name, min, max, default, callback)
+    local Frame = Instance.new("Frame")
+    Frame.Size = UDim2.new(1, -10, 0, 40)
+    Frame.BackgroundColor3 = self.Theme.Background
+    Frame.Parent = self.Section
 
-    -- Slider
-    local Slider = Instance.new("Frame", ConfigSection)
-    Slider.Size = UDim2.new(0.9, 0, 0, 25)
-    Slider.Position = UDim2.new(0, 0, 0, 110)
-    Slider.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-    Instance.new("UICorner", Slider).CornerRadius = UDim.new(0, 3)
+    local Label = Instance.new("TextLabel")
+    Label.Size = UDim2.new(1, 0, 0, 20)
+    Label.BackgroundTransparency = 1
+    Label.Text = name .. ": " .. tostring(default)
+    Label.TextColor3 = self.Theme.Text
+    Label.Font = Enum.Font.SourceSans
+    Label.TextSize = 14
+    Label.Parent = Frame
 
-    local Knob = Instance.new("Frame", Slider)
-    Knob.Size = UDim2.new(0.5, 0, 1, 0)
-    Knob.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-    Instance.new("UICorner", Knob).CornerRadius = UDim.new(0, 3)
+    local Bar = Instance.new("Frame")
+    Bar.Size = UDim2.new(1, 0, 0, 10)
+    Bar.Position = UDim2.new(0, 0, 1, -10)
+    Bar.BackgroundColor3 = self.Theme.Section
+    Bar.Parent = Frame
 
-    return NEVERLOSE
+    local Fill = Instance.new("Frame")
+    Fill.Size = UDim2.new((default-min)/(max-min), 0, 1, 0)
+    Fill.BackgroundColor3 = self.Theme.Accent
+    Fill.Parent = Bar
+
+    local value = default
+    local dragging = false
+
+    Bar.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = true
+        end
+    end)
+
+    UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = false
+        end
+    end)
+
+    UserInputService.InputChanged:Connect(function(input)
+        if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+            local pos = math.clamp((input.Position.X - Bar.AbsolutePosition.X) / Bar.AbsoluteSize.X, 0, 1)
+            value = math.floor(min + (max-min) * pos)
+            Fill.Size = UDim2.new(pos, 0, 1, 0)
+            Label.Text = name .. ": " .. tostring(value)
+            if callback then callback(value) end
+        end
+    end)
+end
+
+-- // Add Dropdown
+function NEVERLOSE:AddDropdown(name, list, default, callback)
+    local Button = Instance.new("TextButton")
+    Button.Size = UDim2.new(1, -10, 0, 25)
+    Button.BackgroundColor3 = self.Theme.Background
+    Button.Text = name .. ": " .. tostring(default)
+    Button.TextColor3 = self.Theme.Text
+    Button.Font = Enum.Font.SourceSans
+    Button.TextSize = 14
+    Button.Parent = self.Section
+
+    local options = list or {}
+    local index = table.find(options, default) or 1
+    local value = options[index]
+
+    Button.MouseButton1Click:Connect(function()
+        index = index % #options + 1
+        value = options[index]
+        Button.Text = name .. ": " .. tostring(value)
+        if callback then callback(value) end
+    end)
 end
 
 return NEVERLOSE
