@@ -249,7 +249,7 @@ local NEVERLOSE = {
 }
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
-	    if name == "neon" or name == "original" then
+	    if name == "neon" or name == "original" or name == "darkblue" then
 		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
 		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
 		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
@@ -1678,7 +1678,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.38587454, 0, 0.499999583, 0)
-				LabelText.Size = UDim2.new(0.772000015, -11, 0.75, -14)
+				LabelText.Size = UDim2.new(0.772000015, -11, 0.75, -13)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = ToggleName or "Label-Test"
@@ -1695,7 +1695,7 @@ Sound2.Ended:Connect(function()
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
-				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -4)
+				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -3)
 				Effect.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0.5, 0)
@@ -1829,7 +1829,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296665907, 0, 0.499999106, 0)
-				LabelText.Size = UDim2.new(0.593582749, -11, 0.75, -14)
+				LabelText.Size = UDim2.new(0.593582749, -11, 0.75, -13)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = KeybindNameString or ''
@@ -1991,7 +1991,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.238462642, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.477176398, -11, 0.75, -14)
+				LabelText.Size = UDim2.new(0.477176398, -11, 0.75, -13)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = SliderNameString or "Control"
@@ -2187,7 +2187,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296666116, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.593582511, -11, 0.75, -14)
+				LabelText.Size = UDim2.new(0.593582511, -11, 0.75, -13)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = DropdownName or "Label-Test"
@@ -2225,7 +2225,7 @@ Sound2.Ended:Connect(function()
 				ValueText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				ValueText.BorderSizePixel = 0
 				ValueText.Position = UDim2.new(0.358571023, 0, 0.500001013, 0)
-				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, 0)
+				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, -1)
 				ValueText.ZIndex = 6
 				ValueText.TextXAlignment = Enum.TextXAlignment.Left
 				ValueText.Font = Enum.Font.SourceSansSemibold
