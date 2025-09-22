@@ -266,7 +266,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0, 650, 0, 540)
+	local ooldsize=UICustomSize or UDim2.new(0, 610, 0, 500)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -467,7 +467,7 @@ if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
-aboutFrame.Size = UDim2.new(0, 260, 0, 300, 0)
+aboutFrame.Size = UDim2.new(0, 220, 0, 260, 0)
 aboutFrame.Position = UDim2.new(0, 840, 0, 70)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
 aboutFrame.BackgroundTransparency = 0.05
