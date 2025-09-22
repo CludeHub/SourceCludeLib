@@ -664,14 +664,34 @@ local dpiSizes = {
         ABOUT = UDim2.new(0, 260, 0, 300),
         ABOUT_POS = UDim2.new(0, 840, 0, 70)
     },
-    ["100%"] = {
+	["100%"] = {
+        NEVERLOSE = UDim2.new(0, 670, 0, 560),
+        ABOUT = UDim2.new(0, 280, 0, 320),
+        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+    },
+	["110%"] = {
+        NEVERLOSE = UDim2.new(0, 690, 0, 580),
+        ABOUT = UDim2.new(0, 300, 0, 340),
+        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+    },
+	["120%"] = {
+        NEVERLOSE = UDim2.new(0, 710, 0, 600),
+        ABOUT = UDim2.new(0, 320, 0, 360),
+        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+    },
+	["130%"] = {
+        NEVERLOSE = UDim2.new(0, 730, 0, 620),
+        ABOUT = UDim2.new(0, 340, 0, 380),
+        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+    },
+    ["140%"] = {
         NEVERLOSE = UDim2.new(0, 830, 0, 720),
         ABOUT = UDim2.new(0, 360, 0, 450),
         ABOUT_POS = UDim2.new(0, 1030, 0, 70)
     }
 }
 
-local dpiOptions = { "80%", "90%", "100%" }
+local dpiOptions = { "80%", "90%", "100%", "110", "120", "130", "140" }
 local open = false
 local optionButtons = {}
 
