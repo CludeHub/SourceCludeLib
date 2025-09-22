@@ -1655,7 +1655,7 @@ Sound2.Ended:Connect(function()
 				Toggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Toggle.BorderSizePixel = 0
 				Toggle.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
-				Toggle.Size = UDim2.new(0.899999976, 0, -0.351014495, 0)
+				Toggle.Size = UDim2.new(1, 0, -0.351014495, 0)
 				Toggle.ZIndex = 5
 
 				UIAspectRatioConstraint.Parent = Toggle
@@ -1673,7 +1673,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.38587454, 0, 0.499999583, 0)
-				LabelText.Size = UDim2.new(0.772000015, -11, 0.75, -11)
+				LabelText.Size = UDim2.new(0.772000015, -11, 0.75, -14)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = ToggleName or "Label-Test"
@@ -1690,7 +1690,7 @@ Sound2.Ended:Connect(function()
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
-				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -4)
+				Effect.Size = UDim2.new(0.150000006, 0, 0.5, -3)
 				Effect.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0.5, 0)
@@ -1806,7 +1806,7 @@ Sound2.Ended:Connect(function()
 				Keybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Keybind.BorderSizePixel = 0
 				Keybind.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
-				Keybind.Size = UDim2.new(0.899999976, 0, -0.351014495, 0)
+				Keybind.Size = UDim2.new(1, 0, -0.351014495, 0)
 				Keybind.ZIndex = 5
 
 				UIAspectRatioConstraint.Parent = Keybind
@@ -1824,7 +1824,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296665907, 0, 0.499999106, 0)
-				LabelText.Size = UDim2.new(0.593582749, -11, 0.75, -11)
+				LabelText.Size = UDim2.new(0.593582749, -11, 0.75, -14)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = KeybindNameString or ''
@@ -1968,7 +1968,7 @@ Sound2.Ended:Connect(function()
 				Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Slider.BorderSizePixel = 0
 				Slider.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
-				Slider.Size = UDim2.new(0.899999976, 0, -0.351014495, 0)
+				Slider.Size = UDim2.new(1, 0, -0.351014495, 0)
 				Slider.ZIndex = 5
 
 				UIAspectRatioConstraint.Parent = Slider
@@ -1986,7 +1986,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.238462642, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.477176398, -11, 0.75, -11)
+				LabelText.Size = UDim2.new(0.477176398, -11, 0.75, -14)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = SliderNameString or "Control"
@@ -2164,7 +2164,7 @@ Sound2.Ended:Connect(function()
 				Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Dropdown.BorderSizePixel = 0
 				Dropdown.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
-				Dropdown.Size = UDim2.new(0.899999976, 0, -0.351014495, 0)
+				Dropdown.Size = UDim2.new(1, 0, -0.351014495, 0)
 				Dropdown.ZIndex = 5
 
 				UIAspectRatioConstraint.Parent = Dropdown
@@ -2182,7 +2182,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296666116, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.593582511, -11, 0.75, -11)
+				LabelText.Size = UDim2.new(0.593582511, -11, 0.75, -14)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansSemibold
 				LabelText.Text = DropdownName or "Label-Test"
