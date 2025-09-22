@@ -261,7 +261,7 @@ spawn(function()
     while true do
         for _, icon in ipairs(frame:GetDescendants()) do
             if icon.Name == "Icon" and icon:IsA("Frame") then
-                if frame.BackgroundColor3 == Color3.fromRGB(43, 43, 43) then
+                if frame.BackgroundColor3 == Color3.fromRGB(40, 40, 40) then
                     if icon.BackgroundTransparency == 0 then
                         icon.BackgroundColor3 = Color3.fromRGB(255, 128, 0) -- Orange
                     else
