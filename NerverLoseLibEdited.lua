@@ -630,7 +630,7 @@ dpiDropdown.AutoButtonColor = false
 dpiDropdown.ZIndex = 50
 
 local corn = Instance.new("UICorner", dpiDropdown)
-corn.CornerRadius = UDim.new(0, 3)
+corn.CornerRadius = UDim.new(0, 0)
 
 local stroc = Instance.new("UIStroke", dpiDropdown)
 stroc.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
@@ -694,7 +694,7 @@ end
 -- Create dropdown option buttons
 for _, option in ipairs(dpiOptions) do
     local btn = Instance.new("TextButton", listFrame)
-    btn.Size = UDim2.new(1, 0, 0, 20)
+    btn.Size = UDim2.new(1, 0, 0, 10)
     btn.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
     btn.BorderSizePixel = 0
     btn.Text = option
