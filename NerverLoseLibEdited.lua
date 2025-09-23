@@ -1066,8 +1066,8 @@ Icon_5763.Parent = MainFrame_7172
 MainFrame_7172.Parent = Frame
 
 SaveButton_2179.MouseEnter:Connect(function()
-	saveButton_3c.TextTransparency = 0
-	imageLabel_6f.ImageTransparency = 0			
+	SaveButton_2179.TextTransparency = 0
+	Icon_5763.ImageTransparency = 0			
 end)
 	
 SaveButton_2179.MouseButton1Click:Connect(function()
@@ -1084,8 +1084,8 @@ Sound2.Ended:Connect(function()
 end)
 
 SaveButton_2179.MouseLeave:Connect(function()
-	saveButton_3c.TextTransparency = 0.3
-	imageLabel_6f.ImageTransparency = 0.3
+	SaveButton_2179.TextTransparency = 0.3
+	Icon_5763.ImageTransparency = 0.3
 end)
 -- style
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
