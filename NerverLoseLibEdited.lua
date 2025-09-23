@@ -1012,6 +1012,7 @@ SaveButton_2179.TextWrapped = true
 SaveButton_2179.RichText = false
 SaveButton_2179.AutoButtonColor = false
 SaveButton_2179.TextScaled = true
+SaveButton_2179.Text = ""
 SaveButton_2179.TextXAlignment = Enum.TextXAlignment.Center
 SaveButton_2179.TextYAlignment = Enum.TextYAlignment.Center
 SaveButton_2179.TextDirection = Enum.TextDirection.Auto
