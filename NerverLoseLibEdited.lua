@@ -1041,7 +1041,7 @@ Save_4145.Parent = SaveButton_2179
 local Stroke_2938 = Instance.new("UIStroke")
 Stroke_2938.Color = Color3.fromRGB(223,251,255)
 Stroke_2938.Thickness = 1
-Stroke_2938.Transparency = 0.800000011920929
+Stroke_2938.Transparency = 0.3
 Stroke_2938.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 Stroke_2938.Parent = SaveButton_2179
 local Corner_1199 = Instance.new("UICorner")
@@ -1066,8 +1066,8 @@ Icon_5763.Parent = MainFrame_7172
 MainFrame_7172.Parent = Frame
 
 SaveButton_2179.MouseEnter:Connect(function()
-	SaveButton_2179..TextTransparency = 0
-	Icon_5763.ImageTransparency = 0		
+	saveButton_3c.TextTransparency = 0
+	imageLabel_6f.ImageTransparency = 0			
 end)
 	
 SaveButton_2179.MouseButton1Click:Connect(function()
@@ -1084,8 +1084,8 @@ Sound2.Ended:Connect(function()
 end)
 
 SaveButton_2179.MouseLeave:Connect(function()
-	SaveButton_2179..TextTransparency = 0.3
-	Icon_5763.ImageTransparency = 0.3
+	saveButton_3c.TextTransparency = 0.3
+	imageLabel_6f.ImageTransparency = 0.3
 end)
 -- style
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
