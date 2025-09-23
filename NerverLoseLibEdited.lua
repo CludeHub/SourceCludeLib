@@ -988,7 +988,7 @@ Sound2.Ended:Connect(function()
 	-- Optimized Dump of NEVERLOSE_Loader_Service UI
 local MainFrame_7172 = Instance.new("Frame")
 MainFrame_7172.Name = "MainFrame"
-MainFrame_7172.Size = UDim2.new(0.6068897843360901,0,0.06278181821107864,-13)
+MainFrame_7172.Size = UDim2.new(0.6068897843360901,0,0.06578181821107864,-13)
 MainFrame_7172.Position = UDim2.new(0.24300000071525574,0,0.02500000037252903,0)
 MainFrame_7172.BackgroundColor3 = Color3.fromRGB(163,162,165)
 MainFrame_7172.BackgroundTransparency = 1
@@ -1041,7 +1041,7 @@ Save_4145.Parent = SaveButton_2179
 local Stroke_2938 = Instance.new("UIStroke")
 Stroke_2938.Color = Color3.fromRGB(223,251,255)
 Stroke_2938.Thickness = 1
-Stroke_2938.Transparency = 0.800000011920929
+Stroke_2938.Transparency = 0.330000011920929
 Stroke_2938.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 Stroke_2938.Parent = SaveButton_2179
 local Corner_1199 = Instance.new("UICorner")
