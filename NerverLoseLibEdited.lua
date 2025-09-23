@@ -1197,7 +1197,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		TabTitle.ZIndex = 5
 		TabTitle.Font = Enum.Font.ArialBold
 		TabTitle.Text = Label or "Home"
-		TabTitle.TextColor3 = Color3.fromRGB(200, 200, 222)
+		TabTitle.TextColor3 = Color3.fromRGB(200, 200, 228)
 		TabTitle.TextScaled = true
 		TabTitle.TextSize = 14.000
 		TabTitle.TextTransparency = 0.610
@@ -1205,7 +1205,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		TabTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 		UIAspectRatioConstraint.Parent = TabTitle
-		UIAspectRatioConstraint.AspectRatio = 9.000
+		UIAspectRatioConstraint.AspectRatio = 11.5
 		UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 		local funcs = {}
