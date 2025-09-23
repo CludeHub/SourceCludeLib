@@ -984,62 +984,92 @@ Sound2.Ended:Connect(function()
 
 	UICorner_6.CornerRadius = UDim.new(0, 4)
 	UICorner_6.Parent = outlo_3
-	
-local mainFrame_2b = Instance.new("Frame")
-local saveButton_3c = Instance.new("TextButton")
-local stroke_4d = Instance.new("UIStroke")
-local corner_5e = Instance.new("UICorner")
-local imageLabel_6f = Instance.new("ImageLabel")
 
-mainFrame_2b.Name = "MainFrame"
-mainFrame_2b.Parent = Frame
-mainFrame_2b.BackgroundTransparency = 1
-mainFrame_2b.Position = UDim2.new(0.243, 0, 0.025, 0)
-mainFrame_2b.Size = UDim2.new(0.606889784, 0, 0.0627818182, -13)
+	-- Optimized Dump of NEVERLOSE_Loader_Service UI
+local MainFrame_7172 = Instance.new("Frame")
+MainFrame_7172.Name = "MainFrame"
+MainFrame_7172.Size = UDim2.new(0.6068897843360901,0,0.06278181821107864,-13)
+MainFrame_7172.Position = UDim2.new(0.24300000071525574,0,0.02500000037252903,0)
+MainFrame_7172.BackgroundColor3 = Color3.fromRGB(163,162,165)
+MainFrame_7172.BackgroundTransparency = 1
+MainFrame_7172.ClipsDescendants = false
+MainFrame_7172.Active = false
+MainFrame_7172.Selectable = false
+local SaveButton_2179 = Instance.new("TextButton")
+SaveButton_2179.Name = "SaveButton"
+SaveButton_2179.Size = UDim2.new(0.20000000298023224,0,1,0)
+SaveButton_2179.Position = UDim2.new(0,0,0,0)
+SaveButton_2179.BackgroundColor3 = Color3.fromRGB(163,162,165)
+SaveButton_2179.BackgroundTransparency = 1
+SaveButton_2179.ClipsDescendants = false
+SaveButton_2179.Active = true
+SaveButton_2179.Selectable = true
+SaveButton_2179.ZIndex = 10
+SaveButton_2179.Font = Enum.Font.Legacy
+SaveButton_2179.TextSize = 8
+SaveButton_2179.TextColor3 = Color3.fromRGB(255,255,255)
+SaveButton_2179.TextWrapped = true
+SaveButton_2179.RichText = false
+SaveButton_2179.AutoButtonColor = false
+SaveButton_2179.TextScaled = true
+SaveButton_2179.TextXAlignment = Enum.TextXAlignment.Center
+SaveButton_2179.TextYAlignment = Enum.TextYAlignment.Center
+SaveButton_2179.TextDirection = Enum.TextDirection.Auto
+local Save_4145 = Instance.new("TextLabel")
+Save_4145.Name = "Save"
+Save_4145.Size = UDim2.new(0.5,0,1,0)
+Save_4145.Position = UDim2.new(0.39800000190734863,0,0,0)
+Save_4145.BackgroundColor3 = Color3.fromRGB(163,162,165)
+Save_4145.BackgroundTransparency = 1
+Save_4145.ClipsDescendants = false
+Save_4145.Active = true
+Save_4145.Selectable = false
+Save_4145.ZIndex = 10
+Save_4145.Text = "Save"
+Save_4145.Font = Enum.Font.ArialBold
+Save_4145.TextSize = 8
+Save_4145.TextColor3 = Color3.fromRGB(223,251,255)
+Save_4145.TextTransparency = 0.30000001192092896
+Save_4145.TextWrapped = false
+Save_4145.RichText = false
+Save_4145.TextScaled = false
+Save_4145.TextXAlignment = Enum.TextXAlignment.Center
+Save_4145.TextYAlignment = Enum.TextYAlignment.Center
+Save_4145.TextDirection = Enum.TextDirection.Auto
+Save_4145.Parent = SaveButton_2179
+local Stroke_2938 = Instance.new("UIStroke")
+Stroke_2938.Color = Color3.fromRGB(223,251,255)
+Stroke_2938.Thickness = 1
+Stroke_2938.Transparency = 0.800000011920929
+Stroke_2938.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Stroke_2938.Parent = SaveButton_2179
+local Corner_1199 = Instance.new("UICorner")
+Corner_1199.CornerRadius = UDim.new(0,4)
+Corner_1199.Parent = SaveButton_2179
+SaveButton_2179.Parent = MainFrame_7172
+local Icon_5763 = Instance.new("ImageLabel")
+Icon_5763.Name = "Icon"
+Icon_5763.Size = UDim2.new(0.060000013560056686,0,0.800000011920929,0)
+Icon_5763.Position = UDim2.new(0.009099995717406273,0,0.07000000029802322,0)
+Icon_5763.BackgroundColor3 = Color3.fromRGB(163,162,165)
+Icon_5763.BackgroundTransparency = 1
+Icon_5763.ClipsDescendants = false
+Icon_5763.Active = true
+Icon_5763.Selectable = false
+Icon_5763.ZIndex = 10
+Icon_5763.Image = "http://www.roblox.com/asset/?id=6035067857"
+Icon_5763.ImageTransparency = 0.30000001192092896
+Icon_5763.ScaleType = Enum.ScaleType.Stretch
+Icon_5763.ImageColor3 = Color3.fromRGB(223,251,255)
+Icon_5763.Parent = MainFrame_7172
+MainFrame_7172.Parent = Frame
 
--- Save Button (parented to Frame)
-saveButton_3c.Name = "SaveB"
-saveButton_3c.Parent = mainFrame_2b
-saveButton_3c.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
-saveButton_3c.Position = UDim2.new(0, 0, 0, 0)
-saveButton_3c.Size = UDim2.new(0.199998885, 0, 1, 0)
-saveButton_3c.ZIndex = 5
-saveButton_3c.Text = "Save"
-saveButton_3c.TextColor3 = Color3.fromRGB(223, 251, 255)
-saveButton_3c.TextTransparency = 0.300
-saveButton_3c.TextSize = 11
-saveButton_3c.Font = Enum.Font.GothamBold
-saveButton_3c.AutoButtonColor = false
-
--- Stroke (parented to Save Button)
-stroke_4d.Name = "Stroke"
-stroke_4d.Parent = saveButton_3c
-stroke_4d.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-stroke_4d.Color = NEVERLOSE.Themes.StrokeColor
-stroke_4d.Thickness = 1
-stroke_4d.Transparency = 0
-
--- Corner (parented to Save Button)
-corner_5e.Parent = saveButton_3c
-corner_5e.CornerRadius = UDim.new(0, 2)
-
--- ImageLabel (parented to Save Button)
-imageLabel_6f.Name = "ImageIcon"
-imageLabel_6f.Parent = saveButton_3c
-imageLabel_6f.Image = "http://www.roblox.com/asset/?id=6035067857"
-imageLabel_6f.ImageColor3 = Color3.fromRGB(223, 251, 255)
-imageLabel_6f.ImageTransparency = 0.300
-imageLabel_6f.BackgroundTransparency = 1
-imageLabel_6f.Position = UDim2.new(0.1, 0, 0.19, 0)
-imageLabel_6f.Size = UDim2.new(0, 15, 0, 17)
-imageLabel_6f.ZIndex = 6
-
-saveButton_3c.MouseEnter:Connect(function()
+SaveButton_2179.MouseEnter:Connect(function()
 	saveButton_3c.TextTransparency = 0
 	imageLabel_6f.ImageTransparency = 0			
 end)
 	
-saveButton_3c.MouseButton1Click:Connect(function()
+SaveButton_2179.MouseButton1Click:Connect(function()
 local Sound2 = Instance.new("Sound")
 Sound2.SoundId = "rbxassetid://6895079853"
 Sound2.Looped = false
@@ -1052,7 +1082,7 @@ Sound2.Ended:Connect(function()
      end)
 end)
 
-saveButton_3c.MouseLeave:Connect(function()
+SaveButton_2179.MouseLeave:Connect(function()
 	saveButton_3c.TextTransparency = 0.3
 	imageLabel_6f.ImageTransparency = 0.3
 end)
