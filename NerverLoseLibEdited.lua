@@ -929,7 +929,7 @@ Sound2.Ended:Connect(function()
 	UIListLayout.Parent = TabButtons
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0, 7)
+	UIListLayout.Padding = UDim.new(0, 8)
 
 	scrolling_connect(TabButtons)
 
