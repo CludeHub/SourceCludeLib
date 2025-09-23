@@ -1281,7 +1281,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Label.BorderSizePixel = 0
 		Label.Position = UDim2.new(0.580507042, 0, 0.500000238, 0)
-		Label.Size = UDim2.new(0.718986034, 0, 0.600000024, -2)
+		Label.Size = UDim2.new(0.718986034, 0, 0.600000024, -1)
 		Label.ZIndex = 5
 		Label.Font = Enum.Font.ArialBold
 		Label.Text = TabNameString or "Index.json"
@@ -2274,7 +2274,7 @@ Sound2.Ended:Connect(function()
 				ValueText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				ValueText.BorderSizePixel = 0
 				ValueText.Position = UDim2.new(0.358571023, 0, 0.500001013, 0)
-				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, -1)
+				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, -2)
 				ValueText.ZIndex = 6
 				ValueText.TextXAlignment = Enum.TextXAlignment.Left
 				ValueText.Font = Enum.Font.ArialBold
@@ -2435,7 +2435,7 @@ Sound2.Ended:Connect(function()
 					Dropdown.BackgroundTransparency = 1.000
 					Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
 					Dropdown.BorderSizePixel = 0
-					Dropdown.Size = UDim2.new(0.99000001, 0, 0.5, 0)
+					Dropdown.Size = UDim2.new(0.99000001, 0, 0.5, -2)
 					Dropdown.ZIndex = 1000
 					Dropdown.Font = Enum.Font.ArialBold
 					Dropdown.Text = "List"
