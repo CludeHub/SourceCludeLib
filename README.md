@@ -26,16 +26,9 @@ local Example = ExampleTab:AddSection('Example',"left")
 
 Example:AddLabel("Label")
 
-Example:AddButton("Test Notification",function()
-    print('button')
-end)
 
 Example:AddToggle('Toggle',false,function(val)
     print("Toggle",val)
-end)
-
-Example:AddKeybind('Keybind',Enum.KeyCode.X,function(val)
-    print('keybind',val)
 end)
 
 Example:AddSlider('Slider',1,100,50,function(val)
@@ -44,6 +37,14 @@ end)
 
 Example:AddDropdown('Dropdown',{"1","2","3"},"2",function(val)
     print("dropdown",val)
+end)
+
+Example:AddButton("Test Notification",function()
+    print('button')
+end)
+
+Example:AddKeybind('Keybind',Enum.KeyCode.X,function(val)
+    print('keybind',val)
 end)
 end)
 ```
