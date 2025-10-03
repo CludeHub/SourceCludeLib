@@ -713,7 +713,7 @@ local dpiSizes = {
         ABOUT = UDim2.new(0.24007001, 0, 0.53000614, 0),
     },
     ["Auto"] = {
-        NEVERLOSE = UDim2.new(0.550999988, 0, 0.900999971, 0),
+        NEVERLOSE = UDim2.new(0.530999988, 0, 0.900999971, 0),
         ABOUT = UDim2.new(0.24, 0, 0.53, 0),
     }
 }
@@ -1556,7 +1556,7 @@ Sound2.Ended:Connect(function()
 			Header.Text = SectionName or "Section"
 			Header.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Header.TextScaled = true
-			Header.TextSize = 11.000
+			Header.TextSize = 8.000
 			Header.TextWrapped = true
 			Header.TextXAlignment = Enum.TextXAlignment.Left
 			Header.TextTransparency=1
