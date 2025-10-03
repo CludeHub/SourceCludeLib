@@ -2313,7 +2313,7 @@ Sound2.Ended:Connect(function()
 				ValueText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				ValueText.BorderSizePixel = 0
 				ValueText.Position = UDim2.new(0.358571023, 0, 0.500001013, 0)
-				ValueText.Size = UDim2.new(0.697142839, 0, 0.998000145, -2)
+				ValueText.Size = UDim2.new(0.697142839, 0, 0.9000145, 0)
 				ValueText.ZIndex = 6
 				ValueText.TextXAlignment = Enum.TextXAlignment.Left
 				ValueText.Font = Enum.Font.ArialBold
@@ -2352,7 +2352,7 @@ Sound2.Ended:Connect(function()
 				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				DownBar.BorderSizePixel = 0
 				DownBar.Position = UDim2.new(0.948214233, 0, 0.873961239, 0)
-				DownBar.Size = UDim2.new(0.308999985, 0, 0, -1)
+				DownBar.Size = UDim2.new(0.308999985, 0, -0.02, 0)
 				DownBar.Visible = false
 				DownBar.ZIndex = 10
 
@@ -2474,12 +2474,12 @@ Sound2.Ended:Connect(function()
 					Dropdown.BackgroundTransparency = 1.000
 					Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
 					Dropdown.BorderSizePixel = 0
-					Dropdown.Size = UDim2.new(0.99000001, 0, 0.5, -2)
+					Dropdown.Size = UDim2.new(0.9200001, 0, -0.46, 0)
 					Dropdown.ZIndex = 1000
 					Dropdown.Font = Enum.Font.ArialBold
 					Dropdown.Text = "List"
 					Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
-					Dropdown.TextScaled = false
+					Dropdown.TextScaled = true
 					Dropdown.TextSize = 13.000
 					Dropdown.TextWrapped = true
 					Dropdown.TextXAlignment = Enum.TextXAlignment.Left
