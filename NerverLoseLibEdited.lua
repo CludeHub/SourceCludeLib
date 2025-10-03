@@ -284,7 +284,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0.5530999988, 0, 0.960999971, 0)
+	local ooldsize=UICustomSize or UDim2.new(0.5530999988, 0, 0.980999971, 0)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -458,35 +458,11 @@ print(Text .. " is Running")
 
 	UICorner.Parent = Frame
 	UICorner.CornerRadius = UDim.new(0, 3)
-
-	if UserInputService == nil then
-    UserInputService = game:GetService("UserInputService")
-end
-
--- Check if platform is PC
-if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
-    local CoreGui = game:GetService("CoreGui")
-    local NEVERLOSE = CoreGui:FindFirstChild("NEVERLOSE")
-    
-    if NEVERLOSE then
-        local Frame = NEVERLOSE:FindFirstChild("Frame")
-        local AboutFrame = NEVERLOSE:FindFirstChild("AboutFrame")
-
-        if Frame then
-            Frame.Size = UDim2.new(0, 800, 0, 720)
-        end
-
-        if AboutFrame then
-            AboutFrame.Size = UDim2.new(0, 360, 0, 450)
-	    AboutFrame.Position = UDim2.new(0, 980, 0, 70)
-        end
-    end
-	end
 	
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
-aboutFrame.Size = UDim2.new(0, 220, 0, 260, 0)
+aboutFrame.Size = UDim2.new(0.24, 0, 53, 0)
 aboutFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 aboutFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
@@ -713,7 +689,7 @@ local dpiSizes = {
         ABOUT = UDim2.new(0.24007001, 0, 0.53000614, 0),
     },
     ["Auto"] = {
-        NEVERLOSE = UDim2.new(0.5530999988, 0, 0.960999971, 0),
+        NEVERLOSE = UDim2.new(0.5530999988, 0, 0.980999971, 0),
         ABOUT = UDim2.new(0.24, 0, 0.53, 0),
     }
 }
