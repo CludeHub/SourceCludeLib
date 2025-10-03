@@ -1110,11 +1110,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeL
 -- slap battle searchbox function 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/SearchGlovesFunction.lua"))()
 
-game.CoreGui.NEVERLOSE.AboutFrame.Subscription.Position = UDim2.new(0.451000005, 0, 0.450000018, 0)
-game.CoreGui.NEVERLOSE.AboutFrame.BuildType.Position = UDim2.new(0.320000052, 0, 0.349999994, 0)
-game.CoreGui.NEVERLOSE.AboutFrame.Registered.Position = UDim2.new(0.4, 0, 0.4, 0)
-game.CoreGui.NEVERLOSE.AboutFrame.Date.Position = UDim2.new(0.32, 0, 0.3, 0)
-game.CoreGui.NEVERLOSE.AboutFrame.Ver.Position = UDim2.new(0.25, 0, 0.25, 0)
+
 	 
 -- don't edit this it can affect the ui design
 local buttons = Instance.new("ImageButton")
