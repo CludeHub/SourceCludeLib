@@ -672,70 +672,74 @@ listCorner.CornerRadius = UDim.new(0, 1)
 local uiListLayout = Instance.new("UIListLayout", listFrame)
 uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
--- DPI options
+-local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
+
+-- Reference your frames
+local aboutFrame = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
+
+-- DPI table (split into Size + Position for clarity)
 local dpiSizes = {
     ["10%"] = {
-        NEVERLOSE = UDim2.new(0.449999988, 0, 0.779999971, 0),
-        ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0),
-        
+        NEVERLOSE = UDim2.new(0.449999988, 0, 0.779999971, 0), -- size
+        ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0), -- position
     },
     ["20%"] = {
         NEVERLOSE = UDim2.new(0.459999988, 0, 0.789999971, 0),
         ABOUT = UDim2.new(0.20007001, 0, 0.460000614, 0),
-        
     },
-	["30%"] = {
+    ["30%"] = {
         NEVERLOSE = UDim2.new(0.469999988, 0, 0.7909999971, 0),
         ABOUT = UDim2.new(0.21007001, 0, 0.470000614, 0),
-        
     },
-	["40%"] = {
+    ["40%"] = {
         NEVERLOSE = UDim2.new(0.479999988, 0, 0.8009999971, 0),
         ABOUT = UDim2.new(0.22007001, 0, 0.480000614, 0),
-        
     },
-	["50%"] = {
+    ["50%"] = {
         NEVERLOSE = UDim2.new(0.489999988, 0, 0.81009999971, 0),
         ABOUT = UDim2.new(0.23007001, 0, 0.490000614, 0),
-	},
-	["60%"] = {
+    },
+    ["60%"] = {
         NEVERLOSE = UDim2.new(0.490999988, 0, 0.82009999971, 0),
         ABOUT = UDim2.new(0.24007001, 0, 0.50000614, 0),
-        
     },
-	["70%"] = {
+    ["70%"] = {
         NEVERLOSE = UDim2.new(0.500999988, 0, 0.83009999971, 0),
         ABOUT = UDim2.new(0.24007001, 0, 0.51000614, 0),
-        
     },
-	["80%"] = {
+    ["80%"] = {
         NEVERLOSE = UDim2.new(0.510999988, 0, 0.84009999971, 0),
         ABOUT = UDim2.new(0.24007001, 0, 0.53000614, 0),
-        
     },
-	["90%"] = {
+    ["Auto"] = {
         NEVERLOSE = UDim2.new(0.550999988, 0, 0.900999971, 0),
         ABOUT = UDim2.new(0.24, 0, 0.53, 0),
-        
     }
 }
 
-local dpiOptions = { "10%", "20%", "30%", "40%", "50%", "60", "70", "80", "90" }
+-- Dropdown options
+local dpiOptions = { "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "Auto" }
 local open = false
 local optionButtons = {}
 
--- Function to update DPI
+-- Function to update DPI scaling
 local function updateDPI(scaleKey)
     dpiDropdown.Text = scaleKey
     local sizeInfo = dpiSizes[scaleKey]
 
-    aboutFrame.Size = sizeInfo.ABOUT
+    if sizeInfo then
+        -- Update ABOUT position
+        aboutFrame.Position = sizeInfo.ABOUT
 
-    local mainGui = CoreGui:FindFirstChild("NEVERLOSE")
-    if mainGui and mainGui:FindFirstChild("Frame") then
-        local frame = mainGui.Frame
-        frame.Size = sizeInfo.NEVERLOSE
-        frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+        -- Update NEVERLOSE main frame
+        local mainGui = CoreGui:FindFirstChild("NEVERLOSE")
+        if mainGui and mainGui:FindFirstChild("Frame") then
+            local frame = mainGui.Frame
+            frame.Size = sizeInfo.NEVERLOSE
+            frame.AnchorPoint = Vector2.new(0.5, 0.5)
+            frame.Position = UDim2.new(0.5, 0, 0.5, 0) -- keep centered
+        end
     end
 end
 
@@ -749,7 +753,7 @@ for _, option in ipairs(dpiOptions) do
     btn.TextColor3 = Color3.new(1, 1, 1)
     btn.Font = Enum.Font.SourceSansBold
     btn.TextScaled = true
-	btn.TextXAlignment = Enum.TextXAlignment.Left
+    btn.TextXAlignment = Enum.TextXAlignment.Left
     btn.ZIndex = 5000
 
     local c = Instance.new("UICorner", btn)
@@ -758,7 +762,11 @@ for _, option in ipairs(dpiOptions) do
     btn.MouseButton1Click:Connect(function()
         updateDPI(option)
         -- Close dropdown with animation
-        TweenService:Create(listFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(1, 0, 0, 0)}):Play()
+        TweenService:Create(
+            listFrame,
+            TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+            {Size = UDim2.new(1, 0, 0, 0)}
+        ):Play()
         open = false
     end)
 
@@ -769,16 +777,24 @@ end
 dpiDropdown.MouseButton1Click:Connect(function()
     if not open then
         local height = #dpiOptions * 30
-        TweenService:Create(listFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(1, 0, 0, height)}):Play()
+        TweenService:Create(
+            listFrame,
+            TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+            {Size = UDim2.new(1, 0, 0, height)}
+        ):Play()
         open = true
     else
-        TweenService:Create(listFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(1, 0, 0, 0)}):Play()
+        TweenService:Create(
+            listFrame,
+            TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+            {Size = UDim2.new(1, 0, 0, 0)}
+        ):Play()
         open = false
     end
 end)
 
 -- Initial DPI set
-updateDPI("80%")
+updateDPI("10%") -- DPI options
 
 	-- Create the TextBox
 local TextBox = Instance.new("TextBox")
