@@ -797,7 +797,7 @@ local Icon = Instance.new("ImageLabel")
 Icon.Name = "SearchIcon"
 Icon.Parent = TextBox
 Icon.BackgroundTransparency = 1
-Icon.Size = UDim2.new(0, 16, 0, 16)
+Icon.Size = UDim2.new(0, 0.08, 0, 0.8)
 Icon.Position = UDim2.new(-0.07, 0, 0.2, 0)
 Icon.Image = "http://www.roblox.com/asset/?id=6031154871"
 Icon.ZIndex = 29
