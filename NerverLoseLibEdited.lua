@@ -284,7 +284,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0.449999988, 0, 0.779999971, 0)
+	local ooldsize=UICustomSize or UDim2.new(0.5530999988, 0, 0.960999971, 0)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -640,7 +640,7 @@ local dpiDropdown = Instance.new("TextButton", aboutFrame)
 dpiDropdown.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiDropdown.Position = UDim2.new(0.55, 0, 0.64, 0)
 dpiDropdown.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-dpiDropdown.Text = "10%"
+dpiDropdown.Text = "Auto"
 dpiDropdown.TextColor3 = Color3.new(1, 1, 1)
 dpiDropdown.TextTransparency = 0.3
 dpiDropdown.Font = Enum.Font.Gotham
@@ -713,7 +713,7 @@ local dpiSizes = {
         ABOUT = UDim2.new(0.24007001, 0, 0.53000614, 0),
     },
     ["Auto"] = {
-        NEVERLOSE = UDim2.new(0.530999988, 0, 0.900999971, 0),
+        NEVERLOSE = UDim2.new(0.5530999988, 0, 0.960999971, 0),
         ABOUT = UDim2.new(0.24, 0, 0.53, 0),
     }
 }
