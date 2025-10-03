@@ -908,7 +908,7 @@ Sound2.Ended:Connect(function()
 	HeadName.BackgroundTransparency = 1.000
 	HeadName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	HeadName.BorderSizePixel = 0
-	HeadName.Position = UDim2.new(0.0100000342, 0, 0.010000146, -17)
+	HeadName.Position = UDim2.new(0.0100000342, 0, -0.0150000146, 0)
 	HeadName.Size = UDim2.new(0.205458686, 0, 0.115462012, 0)
 	HeadName.ZIndex = 4
 	HeadName.Font = Enum.Font.GothamBlack
