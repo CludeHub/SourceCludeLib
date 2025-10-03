@@ -2134,7 +2134,7 @@ Sound2.Ended:Connect(function()
 				MoveFrame.BorderSizePixel = 0
 				MoveFrame.ClipsDescendants = true
 				MoveFrame.Position = UDim2.new(0.477050841, 0, 0.50000006, 0)
-				MoveFrame.Size = UDim2.new(0.290949076, -2, 0.099999994, 0)
+				MoveFrame.Size = UDim2.new(0.290949076, 0, 0.099999994, 0)
 				MoveFrame.ZIndex = 5
 
 				UICorner_3.CornerRadius = UDim.new(0, 3)
@@ -2161,7 +2161,7 @@ Sound2.Ended:Connect(function()
 				Cir.BorderSizePixel = 0
 				Cir.Position = UDim2.new(1, 0, 0.5, 0)
 				Cir.Rotation = 0.010
-				Cir.Size = UDim2.new(3.1, 0, 3, 1)
+				Cir.Size = UDim2.new(3.1, 0, 3, 0)
 				Cir.SizeConstraint = Enum.SizeConstraint.RelativeYY
 				Cir.ZIndex = 5
 
