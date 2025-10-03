@@ -284,7 +284,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0, 610, 0, 500)
+	local ooldsize=UICustomSize or UDim2.new(0.449999988, 0, 0.779999971, 0)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -448,7 +448,8 @@ print(Text .. " is Running")
 	Frame.BackgroundTransparency = 0.085
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0, 170, 0, 6)
+	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+	Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Frame.Size = UDim2.new(0,0,0,0)
 	Frame.ZIndex = 2
 	Frame.ClipsDescendants=true
@@ -486,7 +487,8 @@ if UserInputService.KeyboardEnabled and not UserInputService.TouchEnabled then
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
 aboutFrame.Size = UDim2.new(0, 220, 0, 260, 0)
-aboutFrame.Position = UDim2.new(0, 840, 0, 70)
+aboutFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+aboutFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
 aboutFrame.BackgroundTransparency = 0.05
 aboutFrame.BorderSizePixel = 0
@@ -638,7 +640,7 @@ local dpiDropdown = Instance.new("TextButton", aboutFrame)
 dpiDropdown.Size = UDim2.new(0.4, 0, 0.05, 0)
 dpiDropdown.Position = UDim2.new(0.55, 0, 0.64, 0)
 dpiDropdown.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-dpiDropdown.Text = "80%"
+dpiDropdown.Text = "10%"
 dpiDropdown.TextColor3 = Color3.new(1, 1, 1)
 dpiDropdown.TextTransparency = 0.3
 dpiDropdown.Font = Enum.Font.Gotham
@@ -672,34 +674,53 @@ uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 -- DPI options
 local dpiSizes = {
-    ["80%"] = {
-        NEVERLOSE = UDim2.new(0, 610, 0, 500),
-        ABOUT = UDim2.new(0, 220, 0, 260),
-        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+    ["10%"] = {
+        NEVERLOSE = UDim2.new(0.449999988, 0, 0.779999971, 0),
+        ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0),
+        
     },
-    ["90%"] = {
-        NEVERLOSE = UDim2.new(0, 650, 0, 540),
-        ABOUT = UDim2.new(0, 260, 0, 300),
-        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+    ["20%"] = {
+        NEVERLOSE = UDim2.new(0.459999988, 0, 0.789999971, 0),
+        ABOUT = UDim2.new(0.20007001, 0, 0.460000614, 0),
+        
     },
-	["100%"] = {
-        NEVERLOSE = UDim2.new(0, 670, 0, 560),
-        ABOUT = UDim2.new(0, 280, 0, 320),
-        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+	["30%"] = {
+        NEVERLOSE = UDim2.new(0.469999988, 0, 0.7909999971, 0),
+        ABOUT = UDim2.new(0.21007001, 0, 0.470000614, 0),
+        
     },
-	["110%"] = {
-        NEVERLOSE = UDim2.new(0, 690, 0, 580),
-        ABOUT = UDim2.new(0, 300, 0, 340),
-        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+	["40%"] = {
+        NEVERLOSE = UDim2.new(0.479999988, 0, 0.8009999971, 0),
+        ABOUT = UDim2.new(0.22007001, 0, 0.480000614, 0),
+        
     },
-	["120%"] = {
-        NEVERLOSE = UDim2.new(0, 710, 0, 600),
-        ABOUT = UDim2.new(0, 320, 0, 360),
-        ABOUT_POS = UDim2.new(0, 840, 0, 70)
+	["50%"] = {
+        NEVERLOSE = UDim2.new(0.489999988, 0, 0.81009999971, 0),
+        ABOUT = UDim2.new(0.23007001, 0, 0.490000614, 0),
+	},
+	["60%"] = {
+        NEVERLOSE = UDim2.new(0.490999988, 0, 0.82009999971, 0),
+        ABOUT = UDim2.new(0.24007001, 0, 0.50000614, 0),
+        
+    },
+	["70%"] = {
+        NEVERLOSE = UDim2.new(0.500999988, 0, 0.83009999971, 0),
+        ABOUT = UDim2.new(0.24007001, 0, 0.51000614, 0),
+        
+    },
+	["80%"] = {
+        NEVERLOSE = UDim2.new(0.510999988, 0, 0.84009999971, 0),
+        ABOUT = UDim2.new(0.24007001, 0, 0.53000614, 0),
+        
+    },
+	["90%"] = {
+        NEVERLOSE = UDim2.new(0.550999988, 0, 0.900999971, 0),
+        ABOUT = UDim2.new(0.24, 0, 0.53, 0),
+        
     }
 }
 
-local dpiOptions = { "80%", "90%", "100%", "110%", "120%" }
+local dpiOptions = { "10%", "20%", "30%", "40%", "50%", "60", "70", "80", "90" }
 local open = false
 local optionButtons = {}
 
@@ -715,7 +736,7 @@ local function updateDPI(scaleKey)
     if mainGui and mainGui:FindFirstChild("Frame") then
         local frame = mainGui.Frame
         frame.Size = sizeInfo.NEVERLOSE
-        frame.Position = UDim2.new(0, 170, 0, 6)
+        frame.Position = UDim2.new(0.5, 0, 0.5, 0)
     end
 end
 
