@@ -1058,7 +1058,7 @@ Corner_1199.Parent = SaveButton_2179
 SaveButton_2179.Parent = MainFrame_7172
 local Icon_5763 = Instance.new("ImageLabel")
 Icon_5763.Name = "Icon"
-Icon_5763.Size = UDim2.new(0.060000013560056686,0,0.800000011920929,0)
+Icon_5763.Size = UDim2.new(0.050000013560056686,0,0.800000011920929,0)
 Icon_5763.Position = UDim2.new(0.009099995717406273,0,0.07000000029802322,0)
 Icon_5763.BackgroundColor3 = Color3.fromRGB(163,162,165)
 Icon_5763.BackgroundTransparency = 1
@@ -1109,7 +1109,33 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeL
 
 -- slap battle searchbox function 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/SearchGlovesFunction.lua"))()
+local about = game.CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
 
+for _, obj in pairs(about:GetDescendants()) do
+    if obj:IsA("Frame") then
+        local pos = obj.Position
+        if pos == UDim2.new(0.5, 0, 0.35, 0) then
+            obj.Name = "BuildType"
+            obj.Position = UDim2.new(0.32, 0, 0.35, 0)
+
+        elseif pos == UDim2.new(0.5, 0, 0.45, 0) then
+            obj.Name = "Subscription"
+            obj.Position = UDim2.new(0.451, 0, 0.45, 0)
+
+        elseif pos == UDim2.new(0.5, 0, 0.4, 0) then
+            obj.Name = "Registered"
+            obj.Position = UDim2.new(0.4, 0, 0.4, 0)
+
+        elseif pos == UDim2.new(0.5, 0, 0.3, 0) then
+            obj.Name = "Date"
+            obj.Position = UDim2.new(0.32, 0, 0.3, 0)
+
+        elseif pos == UDim2.new(0.5, 0, 0.25, 0) then
+            obj.Name = "Ver"
+            obj.Position = UDim2.new(0.25, 0, 0.25, 0)
+        end
+    end
+	end
 
 	 
 -- don't edit this it can affect the ui design
