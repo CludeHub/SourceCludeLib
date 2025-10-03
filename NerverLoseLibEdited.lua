@@ -1589,7 +1589,7 @@ Sound2.Ended:Connect(function()
 				Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Button.BorderSizePixel = 0
 				Button.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
-				Button.Size = UDim2.new(0.899999976, -25, -0.351014495, 0)
+				Button.Size = UDim2.new(0.799999976, 0, -0.351014495, 0)
 				Button.ZIndex = 5
 
 				UIAspectRatioConstraint.Parent = Button
@@ -1607,7 +1607,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.5, 0, 0.5, 0)
-				LabelText.Size = UDim2.new(0.899999976, -5, 0.75, 0)
+				LabelText.Size = UDim2.new(0.699999976, 0, 0.75, 0)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.SourceSansBold
 				LabelText.Text = ButtonName or"Kill all"
