@@ -1766,7 +1766,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.38587454, 0, 0.499999583, 0)
-				LabelText.Size = UDim2.new(0.772000015, -11, 0.75, -14)
+				LabelText.Size = UDim2.new(0.772000015, 0, 0.3, 0)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.ArialBold
 				LabelText.Text = ToggleName or "Label-Test"
@@ -1783,7 +1783,7 @@ Sound2.Ended:Connect(function()
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
 				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
-				Effect.Size = UDim2.new(0.150000006, -6, 0.5, -5)
+				Effect.Size = UDim2.new(0.150000006, 0, 0.35, 0)
 				Effect.ZIndex = 6
 
 				UICorner_2.CornerRadius = UDim.new(0.5, 0)
@@ -1917,7 +1917,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296665907, 0, 0.499999106, 0)
-				LabelText.Size = UDim2.new(0.593582749, -11, 0.75, -14)
+				LabelText.Size = UDim2.new(0.593582749, 0, 0.3, 0)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.ArialBold
 				LabelText.Text = KeybindNameString or ''
@@ -2079,7 +2079,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.238462642, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.477176398, -11, 0.75, -14)
+				LabelText.Size = UDim2.new(0.477176398, 0, 0.3, 0)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.ArialBold
 				LabelText.Text = SliderNameString or "Control"
@@ -2275,7 +2275,7 @@ Sound2.Ended:Connect(function()
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
 				LabelText.Position = UDim2.new(0.296666116, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.593582511, -11, 0.75, -14)
+				LabelText.Size = UDim2.new(0.593582511, 0, 0.3, 0)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.ArialBold
 				LabelText.Text = DropdownName or "Label-Test"
