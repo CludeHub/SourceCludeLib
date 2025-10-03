@@ -1550,7 +1550,7 @@ Sound2.Ended:Connect(function()
 			Header.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Header.BorderSizePixel = 0
 			Header.Position = UDim2.new(0.5, 0, 0.100000001, 0)
-			Header.Size = UDim2.new(0.949999988, 0, 0, 13)
+			Header.Size = UDim2.new(0.949999988, 0, 0, 9)
 			Header.ZIndex = 5
 			Header.Font = Enum.Font.ArialBold
 			Header.Text = SectionName or "Section"
