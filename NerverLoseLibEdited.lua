@@ -672,7 +672,7 @@ listCorner.CornerRadius = UDim.new(0, 1)
 local uiListLayout = Instance.new("UIListLayout", listFrame)
 uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
--local TweenService = game:GetService("TweenService")
+local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 
 -- Reference your frames
