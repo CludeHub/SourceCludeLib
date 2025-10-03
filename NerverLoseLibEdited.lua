@@ -730,7 +730,6 @@ local function updateDPI(scaleKey)
     local sizeInfo = dpiSizes[scaleKey]
 
     aboutFrame.Size = sizeInfo.ABOUT
-    aboutFrame.Position = sizeInfo.ABOUT_POS
 
     local mainGui = CoreGui:FindFirstChild("NEVERLOSE")
     if mainGui and mainGui:FindFirstChild("Frame") then
