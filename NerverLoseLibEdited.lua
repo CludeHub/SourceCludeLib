@@ -1281,7 +1281,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		TabButton.BackgroundTransparency = 1
 		TabButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabButton.BorderSizePixel = 0
-		TabButton.Size = UDim2.new(0.899999976, -4, 0.5, -5)
+		TabButton.Size = UDim2.new(0.899999976, 0, 0.5, 0)
 		TabButton.ZIndex = 5
 
 		UIAspectRatioConstraint.Parent = TabButton
@@ -1320,7 +1320,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Label.BorderSizePixel = 0
 		Label.Position = UDim2.new(0.580507042, 0, 0.500000238, 0)
-		Label.Size = UDim2.new(0.718986034, 0, 0.600000024, -1)
+		Label.Size = UDim2.new(0.718986034, 0, 0.595000024, 0)
 		Label.ZIndex = 5
 		Label.Font = Enum.Font.ArialBold
 		Label.Text = TabNameString or "Index.json"
