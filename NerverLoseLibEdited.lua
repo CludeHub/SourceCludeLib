@@ -1148,7 +1148,7 @@ end)
 	UserData.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserData.BorderSizePixel = 0
 	UserData.Position = UDim2.new(-0.000179085735, 0, 0.946525633, 0)
-	UserData.Size = UDim2.new(0.225179195, 0, 0.06318210712, 0)
+	UserData.Size = UDim2.new(0.225179195, 0, 0.058018210712, 0)
 	UserData.ZIndex = 5
 
 	UICorner_7.CornerRadius = UDim.new(0, 2)
@@ -1162,7 +1162,7 @@ end)
 	UserImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserImage.BorderSizePixel = 0
 	UserImage.Position = UDim2.new(0.150000006, 0, 0.5, 0)
-	UserImage.Size = UDim2.new(0.949999988, 0, 0.949999988, -2)
+	UserImage.Size = UDim2.new(0.949999988, 0, 0.949999988, 0)
 	UserImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
 	UserImage.ZIndex = 5
 	UserImage.Image = game:GetService('Players'):GetUserThumbnailAsync(LocalPlayer.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size150x150)
@@ -1178,7 +1178,7 @@ end)
 	UserName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserName.BorderSizePixel = 0
 	UserName.Position = UDim2.new(0.31400001, 0, 0.3, 0)
-	UserName.Size = UDim2.new(0.717000008, 0, 0.649999976, -6)
+	UserName.Size = UDim2.new(0.717000008, 0, 0.449999976, 0)
 	UserName.ZIndex = 5
 	UserName.Font = Enum.Font.ArialBold
 	UserName.Text = LocalPlayer.DisplayName or "https://httpbin.org/get"
@@ -1196,7 +1196,7 @@ UserIdText.AnchorPoint = Vector2.new(0, 0.5)
 UserIdText.BackgroundTransparency = 1
 UserIdText.BorderSizePixel = 0
 UserIdText.Position = UDim2.new(0.314, 0, 0.65, 0)
-UserIdText.Size = UDim2.new(0.717, 0, 0.649999976, -6)
+UserIdText.Size = UDim2.new(0.717, 0, 0.449999976, 0)
 UserIdText.ZIndex = 5
 UserIdText.Font = Enum.Font.ArialBold
 UserIdText.Text = "Till:"
@@ -1213,7 +1213,7 @@ UserIdNumber.AnchorPoint = Vector2.new(0, 0.5)
 UserIdNumber.BackgroundTransparency = 1
 UserIdNumber.BorderSizePixel = 0
 UserIdNumber.Position = UDim2.new(0.547328591, -7, 0.650000036, 0) -- your exact position
-UserIdNumber.Size = UDim2.new(0.717, 0, 0.649999976, -9)
+UserIdNumber.Size = UDim2.new(0.717, 0, 0.449999976, 0)
 UserIdNumber.ZIndex = 5
 UserIdNumber.Font = Enum.Font.ArialBold
 UserIdNumber.Text = "Infinite"
