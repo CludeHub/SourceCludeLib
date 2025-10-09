@@ -1326,7 +1326,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		TabButton.ZIndex = 5
 
 		UIAspectRatioConstraint.Parent = TabButton
-		UIAspectRatioConstraint.AspectRatio = 5.000
+		UIAspectRatioConstraint.AspectRatio = 5.5
 		UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 		UICorner.CornerRadius = UDim.new(0, 3)
