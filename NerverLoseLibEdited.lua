@@ -1823,7 +1823,7 @@ Sound2.Ended:Connect(function()
 				Effect.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Effect.BorderSizePixel = 0
-				Effect.Position = UDim2.new(0.800000012, 0, 0.5, 0)
+				Effect.Position = UDim2.new(0.860000012, 0, 0.5, 0)
 				Effect.Size = UDim2.new(0.12000006, 0, 0.29, 0)
 				Effect.ZIndex = 6
 
@@ -2138,7 +2138,7 @@ Sound2.Ended:Connect(function()
 				Box.BackgroundTransparency = 0.100
 				Box.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Box.BorderSizePixel = 0
-				Box.Position = UDim2.new(0.800000012, 0, 0.5, 0)
+				Box.Position = UDim2.new(0.820000012, 0, 0.5, 0)
 				Box.Size = UDim2.new(0.150000006, 0, 0.5, 0)
 				Box.ZIndex = 6
 
@@ -2174,7 +2174,7 @@ Sound2.Ended:Connect(function()
 				MoveFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				MoveFrame.BorderSizePixel = 0
 				MoveFrame.ClipsDescendants = true
-				MoveFrame.Position = UDim2.new(0.477050841, 0, 0.50000006, 0)
+				MoveFrame.Position = UDim2.new(0.497050841, 0, 0.50000006, 0)
 				MoveFrame.Size = UDim2.new(0.290949076, 0, 0.099999994, 0)
 				MoveFrame.ZIndex = 5
 
@@ -2215,7 +2215,7 @@ Sound2.Ended:Connect(function()
 				Frame.BackgroundTransparency = 1.000
 				Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Frame.BorderSizePixel = 0
-				Frame.Position = UDim2.new(0.477050841, 0, 0.500000358, 0)
+				Frame.Position = UDim2.new(0.497050841, 0, 0.500000358, 0)
 				Frame.Size = UDim2.new(0.322948873, 0, 0.900000036, 0)
 				Frame.ZIndex = 5
 
@@ -2334,7 +2334,7 @@ Sound2.Ended:Connect(function()
 				TopBar.BackgroundTransparency = 0.500
 				TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				TopBar.BorderSizePixel = 0
-				TopBar.Position = UDim2.new(0.950000167, -3, 0.500000715, -2)
+				TopBar.Position = UDim2.new(0.970000167, -3, 0.500000715, -2)
 				TopBar.Size = UDim2.new(0.5, 0, 0.5, -1)
 				TopBar.ZIndex = 6
 
@@ -2392,7 +2392,7 @@ Sound2.Ended:Connect(function()
 				DownBar.BackgroundTransparency = 0
 				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				DownBar.BorderSizePixel = 0
-				DownBar.Position = UDim2.new(0.948214233, 0, 0.873961239, 0)
+				DownBar.Position = UDim2.new(0.968214233, 0, 0.873961239, 0)
 				DownBar.Size = UDim2.new(0.308999985, 0, -0.02, 0)
 				DownBar.Visible = false
 				DownBar.ZIndex = 10
@@ -2515,7 +2515,7 @@ Sound2.Ended:Connect(function()
 					Dropdown.BackgroundTransparency = 1.000
 					Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
 					Dropdown.BorderSizePixel = 0
-					Dropdown.Size = UDim2.new(0.9200001, 0, -0.46, 0)
+					Dropdown.Size = UDim2.new(0.8200001, 0, -0.46, 0)
 					Dropdown.ZIndex = 1000
 					Dropdown.Font = Enum.Font.ArialBold
 					Dropdown.Text = "List"
