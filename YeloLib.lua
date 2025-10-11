@@ -1,235 +1,212 @@
-local Yelo = {}
-Yelo.__index = Yelo
+--// Aesthetic UI Library by moonsec V5
+--// Requirements: StarterGui or PlayerGui
 
-function Yelo.new()
-    local self = setmetatable({}, Yelo)
-    local player = game.Players.LocalPlayer
-    self.PlayerGui = player:WaitForChild("PlayerGui")
+local AestheticUI = {}
 
-    local YeloLib = Instance.new("ScreenGui")
-    YeloLib.Name = "YeloLib"
-    YeloLib.Parent = self.PlayerGui
-    self.YeloLib = YeloLib
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
 
-    self.Windows = {}
-    self.Containers = {}
-    self.Tabs = {}
-
-    self.Player = player
-    return self
+--// Tween Function
+local function tween(obj, goal, time, style)
+	TweenService:Create(obj, TweenInfo.new(time or 0.25, style or Enum.EasingStyle.Quad, Enum.EasingDirection.Out), goal):Play()
 end
 
--- Add main window with Title and Title_2
-function Yelo:AddWindow(options)
-    options = options or {}
-    local window = Instance.new("Frame")
-    window.Name = "AddWindow"
-    window.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-    window.Size = UDim2.new(0, 442, 0, 422)
-    window.Position = UDim2.new(0.3, 0, 0, 0)
-    window.Parent = self.YeloLib
-
-    local corner = Instance.new("UICorner")
-    corner.Parent = window
-    corner.CornerRadius = UDim.new(0, 6)
-
-    -- Title
-    local Title = Instance.new("TextLabel")
-    Title.Name = "Title"
-    Title.Text = options.Title or "title"
-    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Title.TextSize = 15
-    Title.TextXAlignment = Enum.TextXAlignment.Left
-    Title.BackgroundTransparency = 1
-    Title.Size = UDim2.new(1, -60, 0, 29)
-    Title.Position = UDim2.new(0, 7, 0, 0)
-    Title.Parent = window
-
-    local TitleStroke = Instance.new("UIStroke")
-    TitleStroke.Parent = Title
-    TitleStroke.Color = Color3.fromRGB(127, 127, 127)
-
-    -- Title_2 container label (like "CludeHub")
-    local Title_2 = Instance.new("TextLabel")
-    Title_2.Name = "Title_2"
-    Title_2.Text = options.Title_2 or ""
-    Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Title_2.TextSize = 15
-    Title_2.TextXAlignment = Enum.TextXAlignment.Left
-    Title_2.BackgroundTransparency = 1
-    Title_2.Size = UDim2.new(1, -20, 0, 29)
-    Title_2.Position = UDim2.new(0, 8, 0, 0)
-    Title_2.Parent = nil -- will be parented to container later (optional)
-
-    local Title2Stroke = Instance.new("UIStroke")
-    Title2Stroke.Parent = Title_2
-    Title2Stroke.Color = Color3.fromRGB(127, 127, 127)
-
-    -- Close Button
-    local CloseButton = Instance.new("TextButton")
-    CloseButton.Name = "CloseButton"
-    CloseButton.Text = "X"
-    CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    CloseButton.TextSize = 16
-    CloseButton.BackgroundTransparency = 1
-    CloseButton.Size = UDim2.new(0, 35, 0, 29)
-    CloseButton.Position = UDim2.new(1, -37, 0, 0)
-    CloseButton.Parent = window
-
-    local CloseButtonStroke = Instance.new("UIStroke")
-    CloseButtonStroke.Parent = CloseButton
-    CloseButtonStroke.Color = Color3.fromRGB(127, 127, 127)
-
-    CloseButton.MouseButton1Click:Connect(function()
-        window:Destroy()
-    end)
-
-    -- Line under title
-    local Line_1 = Instance.new("Frame")
-    Line_1.Name = "Line_1"
-    Line_1.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
-    Line_1.Size = UDim2.new(1, 0, 0, 1)
-    Line_1.Position = UDim2.new(0, 0, 0, 29)
-    Line_1.Parent = window
-    Line_1.BorderSizePixel = 0
-
-    self.Windows[window] = {Title_2 = Title_2} -- Store ref for later
-
-    return window, Title_2
+--// Make Draggable
+local function makeDraggable(frame)
+	local dragToggle, dragStart, startPos
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+		end
+	end)
+	UserInputService.InputChanged:Connect(function(input)
+		if dragToggle and input.UserInputType == Enum.UserInputType.MouseMovement then
+			local delta = input.Position - dragStart
+			frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+	end)
+	UserInputService.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragToggle = false
+		end
+	end)
 end
 
--- Add left or right container with scrolling frame, return the container frame
-function Yelo:AddContainer(side)
-    assert(side == "left" or side == "right", "Container side must be 'left' or 'right'")
+--// Create Main Window
+function AestheticUI:CreateWindow(titleText, imageId)
+	local ScreenGui = Instance.new("ScreenGui")
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-    local window = next(self.Windows)
-    if not window then
-        error("No window created. Call Yelo:AddWindow first.")
-    end
+	local Background = Instance.new("ImageLabel")
+	Background.Name = "MainBackground"
+	Background.Size = UDim2.new(0, 420, 0, 300)
+	Background.Position = UDim2.new(0.5, -210, 0.5, -150)
+	Background.AnchorPoint = Vector2.new(0.5, 0.5)
+	Background.Image = imageId or "rbxassetid://12785147241" -- default aesthetic image
+	Background.ImageTransparency = 0
+	Background.BackgroundTransparency = 1
+	Background.Parent = ScreenGui
 
-    local container = Instance.new("Frame")
-    container.Name = side == "left" and "left" or "right"
-    container.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
-    container.Size = UDim2.new(0, 200, 0, 200)
-    container.Position = side == "left" and UDim2.new(0, 4, 0, 34) or UDim2.new(0, 238, 0, 34)
-    container.Parent = window
+	local UICorner = Instance.new("UICorner", Background)
+	UICorner.CornerRadius = UDim.new(0, 15)
 
-    local corner = Instance.new("UICorner")
-    corner.Parent = container
-    corner.CornerRadius = UDim.new(0, 6)
+	local UIStroke = Instance.new("UIStroke", Background)
+	UIStroke.Thickness = 2
+	UIStroke.Color = Color3.fromRGB(255, 255, 255)
 
-    local scroll = Instance.new("ScrollingFrame")
-    scroll.Name = "ScrollingFrame"
-    scroll.BackgroundColor3 = Color3.fromRGB(162, 162, 162)
-    scroll.Size = UDim2.new(1, -4, 1, -4)
-    scroll.Position = UDim2.new(0, 2, 0, 2)
-    scroll.BackgroundTransparency = 1
-    scroll.ScrollBarThickness = 0
-    scroll.Parent = container
+	local Title = Instance.new("TextLabel")
+	Title.Text = titleText or "Aesthetic UI"
+	Title.Font = Enum.Font.Fantasy
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.BackgroundTransparency = 1
+	Title.Size = UDim2.new(1, 0, 0, 40)
+	Title.Parent = Background
 
-    local listLayout = Instance.new("UIListLayout")
-    listLayout.Parent = scroll
-    listLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    listLayout.Padding = UDim.new(0, 4)
+	makeDraggable(Background)
 
-    self.Containers[side] = container
-
-    return container, scroll
+	return {
+		Main = Background,
+		ScreenGui = ScreenGui
+	}
 end
 
--- Add tab button to left/right container's scrolling frame, returns the button
-function Yelo:AddTab(name, iconImage)
-    local leftContainer = self.Containers["left"]
-    if not leftContainer then
-        error("No left container found. Call Yelo:AddContainer('left') first.")
-    end
-    local scrollingFrame = leftContainer:FindFirstChildWhichIsA("ScrollingFrame")
-    if not scrollingFrame then
-        error("No scrolling frame found inside left container.")
-    end
+--// Button
+function AestheticUI:CreateButton(parent, text, callback)
+	local Button = Instance.new("TextButton")
+	Button.Text = text
+	Button.Font = Enum.Font.Fantasy
+	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.Size = UDim2.new(0, 160, 0, 35)
+	Button.BackgroundTransparency = 0.8
+	Button.Parent = parent
 
-    local button = Instance.new("TextButton")
-    button.Name = name .. "Tab"
-    button.Text = name
-    button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    button.TextSize = 15
-    button.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-    button.Size = UDim2.new(1, 0, 0, 28)
-    button.BackgroundTransparency = 1
-    button.Parent = scrollingFrame
+	local UICorner = Instance.new("UICorner", Button)
+	local UIStroke = Instance.new("UIStroke", Button)
+	UIStroke.Thickness = 1.5
 
-    local corner = Instance.new("UICorner")
-    corner.Parent = button
-    corner.CornerRadius = UDim.new(0, 6)
+	Button.MouseEnter:Connect(function()
+		tween(Button, {BackgroundTransparency = 0.4}, 0.2)
+	end)
+	Button.MouseLeave:Connect(function()
+		tween(Button, {BackgroundTransparency = 0.8}, 0.2)
+	end)
+	Button.MouseButton1Click:Connect(function()
+		tween(Button, {BackgroundTransparency = 0.2}, 0.1)
+		task.wait(0.1)
+		tween(Button, {BackgroundTransparency = 0.8}, 0.2)
+		if callback then callback() end
+	end)
 
-    local stroke = Instance.new("UIStroke")
-    stroke.Parent = button
-    stroke.Color = Color3.fromRGB(127, 127, 127)
-
-    if iconImage then
-        local icon = Instance.new("ImageLabel")
-        icon.Name = "icon"
-        icon.BackgroundTransparency = 1
-        icon.Size = UDim2.new(0, 23, 0, 22)
-        icon.Position = UDim2.new(0, 3, 0, 3)
-        icon.Image = iconImage
-        icon.Parent = button
-    end
-
-    return button
+	return Button
 end
 
--- Set user thumbnail on given ImageLabel (safe)
-function Yelo:SetUserThumbnail(imageLabel)
-    local success, thumbnail = pcall(function()
-        return game.Players:GetUserThumbnailAsync(self.Player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size48)
-    end)
+--// Toggle
+function AestheticUI:CreateToggle(parent, text, callback)
+	local Frame = Instance.new("Frame")
+	Frame.Size = UDim2.new(0, 180, 0, 35)
+	Frame.BackgroundTransparency = 1
+	Frame.Parent = parent
 
-    if success and thumbnail then
-        imageLabel.Image = thumbnail
-    end
+	local Label = Instance.new("TextLabel")
+	Label.Text = text
+	Label.Font = Enum.Font.Fantasy
+	Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Label.BackgroundTransparency = 1
+	Label.Size = UDim2.new(0.7, 0, 1, 0)
+	Label.Parent = Frame
+
+	local Toggle = Instance.new("Frame")
+	Toggle.Size = UDim2.new(0, 35, 0, 20)
+	Toggle.Position = UDim2.new(0.75, 0, 0.2, 0)
+	Toggle.BackgroundTransparency = 0
+	Toggle.BackgroundColor3 = Color3.fromRGB(255, 90, 90)
+	Toggle.Parent = Frame
+
+	local UICorner = Instance.new("UICorner", Toggle)
+	local UIStroke = Instance.new("UIStroke", Toggle)
+
+	local On = false
+	local function Switch(state)
+		On = state
+		if On then
+			tween(Toggle, {BackgroundColor3 = Color3.fromRGB(90, 255, 120)}, 0.25)
+		else
+			tween(Toggle, {BackgroundColor3 = Color3.fromRGB(255, 90, 90)}, 0.25)
+		end
+		if callback then callback(On) end
+	end
+
+	Toggle.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			Switch(not On)
+		end
+	end)
+
+	return Frame
 end
 
--- Add the user info display on the TabFrame container (like username + image)
-function Yelo:AddUserInfo(container)
-    local TabFrame = container
-    if not TabFrame then
-        error("AddUserInfo requires a container/frame.")
-    end
+--// Dropdown
+function AestheticUI:CreateDropdown(parent, text, list, callback)
+	local Drop = Instance.new("Frame")
+	Drop.Size = UDim2.new(0, 200, 0, 35)
+	Drop.BackgroundTransparency = 0
+	Drop.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+	Drop.Parent = parent
 
-    -- Username text label
-    local Username = Instance.new("TextLabel")
-    Username.Name = "Username"
-    Username.Text = self.Player.Name
-    Username.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Username.TextScaled = true
-    Username.TextXAlignment = Enum.TextXAlignment.Left
-    Username.BackgroundTransparency = 1
-    Username.Size = UDim2.new(0, 89, 0, 34)
-    Username.Position = UDim2.new(0, 48, 0, 383)
-    Username.Parent = TabFrame
+	local UICorner = Instance.new("UICorner", Drop)
+	local UIStroke = Instance.new("UIStroke", Drop)
 
-    local UsernameStroke = Instance.new("UIStroke")
-    UsernameStroke.Parent = Username
-    UsernameStroke.Color = Color3.fromRGB(127, 127, 127)
+	local Title = Instance.new("TextLabel")
+	Title.Text = text
+	Title.Font = Enum.Font.Fantasy
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.Size = UDim2.new(1, 0, 1, 0)
+	Title.BackgroundTransparency = 1
+	Title.Parent = Drop
 
-    -- ImageLabel for user thumbnail
-    local ImageLabel = Instance.new("ImageLabel")
-    ImageLabel.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
-    ImageLabel.Size = UDim2.new(0, 34, 0, 34)
-    ImageLabel.Position = UDim2.new(0, 5, 0, 384)
-    ImageLabel.Parent = TabFrame
-    ImageLabel.BackgroundTransparency = 0
+	local Open = false
+	local ListFrame = Instance.new("Frame")
+	ListFrame.Size = UDim2.new(1, 0, 0, 0)
+	ListFrame.Position = UDim2.new(0, 0, 1, 0)
+	ListFrame.BackgroundTransparency = 1
+	ListFrame.ClipsDescendants = true
+	ListFrame.Parent = Drop
 
-    local UICorner_ImageLabel = Instance.new("UICorner")
-    UICorner_ImageLabel.Parent = ImageLabel
-    UICorner_ImageLabel.CornerRadius = UDim.new(1, 0)
+	for _, v in ipairs(list) do
+		local Option = Instance.new("TextButton")
+		Option.Text = v
+		Option.Font = Enum.Font.Fantasy
+		Option.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Option.Size = UDim2.new(1, 0, 0, 30)
+		Option.BackgroundTransparency = 0.8
+		Option.Parent = ListFrame
 
-    local ImageLabelStroke = Instance.new("UIStroke")
-    ImageLabelStroke.Parent = ImageLabel
-    ImageLabelStroke.Color = Color3.fromRGB(127, 127, 127)
+		local UIStroke2 = Instance.new("UIStroke", Option)
+		local UICorner2 = Instance.new("UICorner", Option)
 
-    self:SetUserThumbnail(ImageLabel)
+		Option.MouseButton1Click:Connect(function()
+			callback(v)
+			Title.Text = text..": "..v
+			tween(ListFrame, {Size = UDim2.new(1,0,0,0)}, 0.3)
+			Open = false
+		end)
+	end
+
+	Drop.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			if Open then
+				tween(ListFrame, {Size = UDim2.new(1, 0, 0, 0)}, 0.3)
+			else
+				tween(ListFrame, {Size = UDim2.new(1, 0, 0, #list * 30)}, 0.3)
+			end
+			Open = not Open
+		end
+	end)
+
+	return Drop
 end
 
-return Yelo
+return AestheticUI
