@@ -49,6 +49,23 @@ end)
 end)
 ```
 
+# Key System
+```lua
+
+local function Start(Key)
+	-- your code here
+end
+
+local KeySystem = NEVERLOSE:KeySystem("Key System","https://link",function(key)
+	if key=='1234' then
+		return true
+	end
+	return false
+end)
+
+KeySystem:Callback(Start)
+```
+
 # Example Source Script Counter Strike 2 Cheat
 ```lua
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
