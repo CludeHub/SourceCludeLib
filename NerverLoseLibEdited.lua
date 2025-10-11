@@ -1838,7 +1838,7 @@ Sound2.Ended:Connect(function()
 				Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Icon.BorderSizePixel = 0
 				Icon.Position = UDim2.new(0.75, 0, 0.5, 0)
-				Icon.Size = UDim2.new(1.39, 0, 1.21, 0)
+				Icon.Size = UDim2.new(1.27, 0, 1.21, 0)
 				Icon.SizeConstraint = Enum.SizeConstraint.RelativeYY
 				Icon.ZIndex = 7
 
