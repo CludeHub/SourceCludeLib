@@ -5,7 +5,8 @@ This is how it's look like (real)
 ![CludeLib UI](https://github.com/CludeHub/SourceCludeLib/blob/c3bcda14e7e285ef43947c78405d26432a5faac9/e976a087e4ce36998318741ce77d28ec611a6a2a_2_1035x604.png)
 ![Clude](https://github.com/CludeHub/SourceCludeLib/blob/c3bcda14e7e285ef43947c78405d26432a5faac9/bfca45da0a0086cb167be4c180410d5920b26230.png)
 ![the Ui](https://github.com/CludeHub/SourceCludeLib/blob/561d5ba16166cd141d655bb33c913e01b465c8b2/Screenshot_20251017_144658_com.roblox.client.jpg)
-![Ui](https://github.com/CludeHub/SourceCludeLib/blob/d416d43d1d7fcae0c9349097f450090870249c65/IMG_20250731_184148.jpg)
+![Ui](https://github.com/CludeHub/SourceCludeLib/blob/8680a311b557b742879701281e67e5a2854772d7/Screenshot_20251017_144704_com.roblox.client.jpg)
+![Ui]()
 # USAGE
 ```lua
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
