@@ -1526,7 +1526,7 @@ Sound2.Ended:Connect(function()
 			Header.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Header.BorderSizePixel = 0
 			Header.Position = UDim2.new(0.5, 0, 0.100000001, 0)
-			Header.Size = UDim2.new(0.949999988, 0, 0, 9)
+			Header.Size = UDim2.new(1, 0, 0, 9)
 			Header.ZIndex = 5
 			Header.Font = Enum.Font.ArialBold
 			Header.Text = SectionName or "Section"
@@ -2520,7 +2520,7 @@ Sound2.Ended:Connect(function()
 					Dropdown.Font = Enum.Font.ArialBold
 					Dropdown.Text = "List"
 					Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
-					Dropdown.TextScaled = true
+					Dropdown.TextScaled = false
 					Dropdown.TextSize = 13.000
 					Dropdown.TextWrapped = true
 					Dropdown.TextXAlignment = Enum.TextXAlignment.Left
