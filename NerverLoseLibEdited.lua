@@ -1630,7 +1630,7 @@ Sound2.Ended:Connect(function()
 				Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Button.BorderSizePixel = 0
 				Button.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
-				Button.Size = UDim2.new(0.799999976, 0, -0.351014495, 0)
+				Button.Size = UDim2.new(0.51, 0, -0.351014495, 0)
 				Button.ZIndex = 5
 
 				UIAspectRatioConstraint.Parent = Button
