@@ -1,3 +1,10 @@
+--[[
+
+INTRODUCING NEVERLOSE V2 CSGO CHEAT MENU
+BUILD DATE: 4/21/24
+VERSION: 2.6
+MADE BY CLUDEHUB
+]]
 local LocalPlayer = game:GetService('Players').LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 local InputService = game:GetService('UserInputService');
