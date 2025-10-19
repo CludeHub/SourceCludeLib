@@ -27,6 +27,8 @@ local Example = ExampleTab:AddSection('Example',"left")
 
 Example:AddLabel("Label")
 
+Example:AddButton("Click me", function()
+end)
 
 Example:AddToggle('Toggle',false,function(val)
     print("Toggle",val)
