@@ -45,10 +45,6 @@ end)
 Example:AddButton("Test Notification",function()
     print('button')
 end)
-
-Example:AddKeybind('Keybind',Enum.KeyCode.X,function(val)
-    print('keybind',val)
-end)
 end)
 ```
 
