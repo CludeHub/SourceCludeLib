@@ -462,7 +462,7 @@ print(Text .. " is Running")
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
-aboutFrame.Size = UDim2.new(0.24, 0, 0.53, 0)
+aboutFrame.Size = UDim2.new(0.2, 0, 0.53, 0)
 aboutFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 aboutFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 aboutFrame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
@@ -652,7 +652,7 @@ local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 
 -- Reference your frames
-local aboutFrame = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
+local ABOUT = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
 
 -- DPI table (split into Size + Position for clarity)
 local dpiSizes = {
@@ -686,7 +686,7 @@ local dpiSizes = {
     },
     ["80%"] = {
         NEVERLOSE = UDim2.new(0.510999988, 0, 0.84009999971, 0),
-        ABOUT = UDim2.new(0.24007001, 0, 0.53000614, 0),
+        ABOUT = UDim2.new(0.2, 0, 0.53000614, 0),
     },
     ["Auto"] = {
         NEVERLOSE = UDim2.new(0.5530999988, 0, 0.980999971, 0),
@@ -1408,7 +1408,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		UIListLayout.Parent = Left
 		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout.Padding = UDim.new(0, 0)
+		UIListLayout.Padding = UDim.new(0, 5)
 
 		Right.Name = "Right"
 		Right.Parent = Tab
@@ -1427,7 +1427,7 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		UIListLayout_2.Parent = Right
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout_2.Padding = UDim.new(0, 0)
+		UIListLayout_2.Padding = UDim.new(0, 5)
 
 		scrolling_connect(Right)
 		scrolling_connect(Left)
