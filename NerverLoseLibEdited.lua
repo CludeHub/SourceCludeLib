@@ -663,7 +663,7 @@ local ABOUT = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
 
 -- DPI table (split into Size + Position for clarity)
 local dpiSizes = {
-    ["10%"] = {
+    ["Auto"] = {
         NEVERLOSE = UDim2.new(0.449, 0, 0.825, 0), -- size
         ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0), -- position
     },
@@ -695,7 +695,7 @@ local dpiSizes = {
         NEVERLOSE = UDim2.new(0.510999988, 0, 0.84009999971, 0),
         ABOUT = UDim2.new(0.2, 0, 0.53000614, 0),
     },
-    ["Auto"] = {
+    ["100%"] = {
         NEVERLOSE = UDim2.new(0.5530999988, 0, 0.980999971, 0),
         ABOUT = UDim2.new(0.23, 0, 0.53, 0),
     }
@@ -1159,7 +1159,7 @@ for _, obj in pairs(about:GetDescendants()) do
 	 
 -- don't edit this it can affect the ui design
 local buttons = Instance.new("ImageButton")
-buttons.Size = UDim2.new(0, 70, 0, 70)
+buttons.Size = UDim2.new(0, 50, 0, 50)
 buttons.Position = UDim2.new(0, 0, 0.137, 0)
 buttons.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 buttons.ImageColor3 = Color3.fromRGB(0, 209, 255)
