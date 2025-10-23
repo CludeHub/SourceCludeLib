@@ -291,7 +291,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0.5530999988, 0, 0.980999971, 0)
+	local ooldsize=UICustomSize or UDim2.new(0.449, 0, 0.825, 0)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -664,7 +664,7 @@ local ABOUT = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
 -- DPI table (split into Size + Position for clarity)
 local dpiSizes = {
     ["10%"] = {
-        NEVERLOSE = UDim2.new(0.449999988, 0, 0.779999971, 0), -- size
+        NEVERLOSE = UDim2.new(0.449, 0, 0.825, 0), -- size
         ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0), -- position
     },
     ["20%"] = {
@@ -702,7 +702,7 @@ local dpiSizes = {
 }
 
 -- Dropdown options
-local dpiOptions = { "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "Auto" }
+local dpiOptions = { "Auto", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "100%" }
 local open = false
 local optionButtons = {}
 
