@@ -12,7 +12,7 @@ NEVERLOSE_Loader_Service_2535.Parent = game.CoreGui
 
 local LOADERFrame_5373 = Instance.new("Frame")
 LOADERFrame_5373.Name = "LOADERFrame"
-LOADERFrame_5373.Size = UDim2.new(0,640,0,540)
+LOADERFrame_5373.Size = UDim2.new(0.43,0,0.843,0)
 LOADERFrame_5373.Position = UDim2.new(0.34,0,0.5,0)
 LOADERFrame_5373.BackgroundColor3 = Color3.fromRGB(1,17,33)
 LOADERFrame_5373.BackgroundTransparency = 0.2
@@ -31,7 +31,7 @@ UICorner_Loader.CornerRadius = UDim.new(0,2)
 local Close_9943 = Instance.new("TextButton")
 Close_9943.Name = "Close"
 Close_9943.Size = UDim2.new(0,30,0,30)
-Close_9943.Position = UDim2.new(0.8999999761581421,26,0,4)
+Close_9943.Position = UDim2.new(0.8999999761581421,0,0,4)
 Close_9943.BackgroundColor3 = Color3.fromRGB(163,162,165)
 Close_9943.BackgroundTransparency = 1
 Close_9943.ClipsDescendants = false
