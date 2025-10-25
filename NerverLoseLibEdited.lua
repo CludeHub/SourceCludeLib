@@ -1533,7 +1533,7 @@ Sound2.Ended:Connect(function()
 			Header.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Header.BorderSizePixel = 0
 			Header.Position = UDim2.new(0.5, 0, 0.100000001, 0)
-			Header.Size = UDim2.new(1, 0, 0, 9)
+			Header.Size = UDim2.new(1, 0, 0.1, 0)
 			Header.ZIndex = 5
 			Header.Font = Enum.Font.ArialBold
 			Header.Text = SectionName or "Section"
@@ -1545,6 +1545,13 @@ Sound2.Ended:Connect(function()
 			Header.TextTransparency=1
 			TweenService:Create(Header,TweenInfo.new(0.3),{TextTransparency=0}):Play()
 
+			local AspectRatio = Instance.new("UIAspectRatioConstraint")
+
+			AspectRatio.Parent = Header
+            AspectRatio.AspectRatio = 19
+            AspectRatio.DominantAxis = Enum.DominantAxis.Width
+            AspectRatio.AspectType = Enum.AspectType.ScaleWithParentSize
+			
 			UIListLayout.Parent = Section
 			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
