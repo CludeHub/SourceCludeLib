@@ -465,7 +465,20 @@ print(Text .. " is Running")
 
 	UICorner.Parent = Frame
 	UICorner.CornerRadius = UDim.new(0, 3)
-	
+
+
+	local CoreGui = game:GetService("CoreGui")
+
+local parentFrame = CoreGui:FindFirstChild("NEVERLOSE") and CoreGui.NEVERLOSE:FindFirstChild("Frame")
+if not parentFrame then
+    warn("NEVERLOSE.Frame not found in CoreGui")
+    return
+end
+
+local aspect = Instance.new("UIAspectRatioConstraint")
+aspect.Parent = parentFrame
+aspect.AspectRatio = 1.2
+
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
 aboutFrame.Name = "AboutFrame"
