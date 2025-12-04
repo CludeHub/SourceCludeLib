@@ -464,8 +464,21 @@ print(Text .. " is Running")
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
 	UICorner.Parent = Frame
-	UICorner.CornerRadius = UDim.new(0, 3)
+	UICorner.CornerRadius = UDim.new(0, 12)
 
+
+	
+local DropShadow2 = Instance.new('ImageLabel')
+DropShadow2.Position = UDim2.new(0.5,0,0.5,0)
+DropShadow2.Size = UDim2.new(1,47,1,47)
+DropShadow2.AnchorPoint = Vector2.new(0.5,0.5)
+DropShadow2.BackgroundColor3 = Color3.fromRGB(163,162,165)
+DropShadow2.BackgroundTransparency = 1
+DropShadow2.BorderSizePixel = 0
+DropShadow2.Image = "rbxassetid://6014261993"
+DropShadow2.ImageColor3 = Color3.fromRGB(0,0,0)
+DropShadow2.ZIndex = 0
+DropShadow2.Parent = Frame
 
 	local CoreGui = game:GetService("CoreGui")
 
@@ -477,7 +490,7 @@ end
 
 local aspect = Instance.new("UIAspectRatioConstraint")
 aspect.Parent = parentFrame
-aspect.AspectRatio = 1.2
+aspect.AspectRatio = 1.3
 
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
@@ -679,43 +692,11 @@ local dpiSizes = {
     ["Auto"] = {
         NEVERLOSE = UDim2.new(0.455, 0, 0.825, 0), -- size
         ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0), -- position
-    },
-    ["20%"] = {
-        NEVERLOSE = UDim2.new(0.459999988, 0, 0.789999971, 0),
-        ABOUT = UDim2.new(0.20007001, 0, 0.460000614, 0),
-    },
-    ["30%"] = {
-        NEVERLOSE = UDim2.new(0.469999988, 0, 0.7909999971, 0),
-        ABOUT = UDim2.new(0.21007001, 0, 0.470000614, 0),
-    },
-    ["40%"] = {
-        NEVERLOSE = UDim2.new(0.479999988, 0, 0.8009999971, 0),
-        ABOUT = UDim2.new(0.22007001, 0, 0.480000614, 0),
-    },
-    ["50%"] = {
-        NEVERLOSE = UDim2.new(0.489999988, 0, 0.81009999971, 0),
-        ABOUT = UDim2.new(0.23007001, 0, 0.490000614, 0),
-    },
-    ["60%"] = {
-        NEVERLOSE = UDim2.new(0.490999988, 0, 0.82009999971, 0),
-        ABOUT = UDim2.new(0.24007001, 0, 0.50000614, 0),
-    },
-    ["70%"] = {
-        NEVERLOSE = UDim2.new(0.500999988, 0, 0.83009999971, 0),
-        ABOUT = UDim2.new(0.24007001, 0, 0.51000614, 0),
-    },
-    ["80%"] = {
-        NEVERLOSE = UDim2.new(0.510999988, 0, 0.84009999971, 0),
-        ABOUT = UDim2.new(0.2, 0, 0.53000614, 0),
-    },
-    ["100%"] = {
-        NEVERLOSE = UDim2.new(0.5530999988, 0, 0.980999971, 0),
-        ABOUT = UDim2.new(0.23, 0, 0.53, 0),
-    }
+		)
 }
 
 -- Dropdown options
-local dpiOptions = { "Auto", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "100%" }
+local dpiOptions = { "Auto"}
 local open = false
 local optionButtons = {}
 
@@ -904,7 +885,7 @@ Sound2.Ended:Connect(function()
 	Frame_2.Size = UDim2.new(0.774634778, 0, 1, 0)
 	Frame_2.ZIndex = 2
 	
-	UICorner_2.CornerRadius = UDim.new(0, 2)
+	UICorner_2.CornerRadius = UDim.new(0, 12)
 	UICorner_2.Parent = Frame_2
 
 	Frame_3.Parent = Frame
@@ -917,7 +898,7 @@ Sound2.Ended:Connect(function()
 	Frame_3.Size = UDim2.new(0.774999976, 0, 0.140000001, 0)
 	Frame_3.ZIndex = 4
 
-	UICorner_3.CornerRadius = UDim.new(0, 2)
+	UICorner_3.CornerRadius = UDim.new(0, 12)
 	UICorner_3.Parent = Frame_3
 
 	DropShadow.Name = "DropShadow"
