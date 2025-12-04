@@ -468,17 +468,7 @@ print(Text .. " is Running")
 
 
 	
-local DropShadow2 = Instance.new('ImageLabel')
-DropShadow2.Position = UDim2.new(0.5,0,0.5,0)
-DropShadow2.Size = UDim2.new(1,47,1,47)
-DropShadow2.AnchorPoint = Vector2.new(0.5,0.5)
-DropShadow2.BackgroundColor3 = Color3.fromRGB(163,162,165)
-DropShadow2.BackgroundTransparency = 1
-DropShadow2.BorderSizePixel = 0
-DropShadow2.Image = "rbxassetid://6014261993"
-DropShadow2.ImageColor3 = Color3.fromRGB(0,0,0)
-DropShadow2.ZIndex = 0
-DropShadow2.Parent = Frame
+
 
 	local CoreGui = game:GetService("CoreGui")
 
