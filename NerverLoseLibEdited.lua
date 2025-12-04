@@ -681,24 +681,31 @@ listCorner.CornerRadius = UDim.new(0, 1)
 local uiListLayout = Instance.new("UIListLayout", listFrame)
 uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
+
+-- Create dropdown option buttons
 local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 
 -- Reference your frames
-local ABOUT = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
+local ABOUT = NEVERLOSE:WaitForChild("AboutFrame")
 
 -- DPI table (split into Size + Position for clarity)
 local dpiSizes = {
     ["Auto"] = {
         NEVERLOSE = UDim2.new(0.455, 0, 0.825, 0), -- size
-        ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0), -- position
-		)
+        ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0) -- position
+    }
 }
 
 -- Dropdown options
-local dpiOptions = { "Auto"}
+local dpiOptions = { "Auto" }
 local open = false
 local optionButtons = {}
+
+-- References that must exist in your GUI
+local dpiDropdown = ABOUT:WaitForChild("dpiDropdown") -- your dropdown button
+local listFrame = ABOUT:WaitForChild("listFrame") -- your dropdown list frame
 
 -- Function to update DPI scaling
 local function updateDPI(scaleKey)
@@ -706,21 +713,18 @@ local function updateDPI(scaleKey)
     local sizeInfo = dpiSizes[scaleKey]
 
     if sizeInfo then
-        -- Update ABOUT position
-        aboutFrame.Position = sizeInfo.ABOUT
+        ABOUT.Position = sizeInfo.ABOUT
 
-        -- Update NEVERLOSE main frame
         local mainGui = CoreGui:FindFirstChild("NEVERLOSE")
         if mainGui and mainGui:FindFirstChild("Frame") then
             local frame = mainGui.Frame
             frame.Size = sizeInfo.NEVERLOSE
             frame.AnchorPoint = Vector2.new(0.5, 0.5)
-            frame.Position = UDim2.new(0.5, 0, 0.5, 0) -- keep centered
+            frame.Position = UDim2.new(0.5, 0, 0.5, 0)
         end
     end
 end
 
--- Create dropdown option buttons
 for _, option in ipairs(dpiOptions) do
     local btn = Instance.new("TextButton", listFrame)
     btn.Size = UDim2.new(1, 0, 0, 19)
@@ -738,7 +742,6 @@ for _, option in ipairs(dpiOptions) do
 
     btn.MouseButton1Click:Connect(function()
         updateDPI(option)
-        -- Close dropdown with animation
         TweenService:Create(
             listFrame,
             TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
@@ -771,7 +774,7 @@ dpiDropdown.MouseButton1Click:Connect(function()
 end)
 
 -- Initial DPI set
-updateDPI("10%") -- DPI options
+updateDPI("Auto")
 
 	-- Create the TextBox
 local TextBox = Instance.new("TextBox")
