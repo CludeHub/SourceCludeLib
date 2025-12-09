@@ -2438,7 +2438,7 @@ Sound2.Ended:Connect(function()
 				DownBar.Size = UDim2.new(0.308999985, 0, 0, 45)
 				DownBar.Visible = false
 				DownBar.ZIndex = 10
-				DownBar.AutomaticCanvasSize = Enum.AutomaticCanvasSize.Y
+				DownBar.AutomaticCanvasSize = Enum.AutomaticSize.Y
 
 				UIStroke_2.Thickness = 0.500
 				UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
