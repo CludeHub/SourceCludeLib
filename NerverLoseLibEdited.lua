@@ -2312,276 +2312,228 @@ Sound2.Ended:Connect(function()
 				return func
 			end
 
-			function sectionfunc:AddDropdown(DropdownName,data,Default,callback)
-				data=data or {}
-				Default=Default or data[1]
-				callback=callback or function()
+				
+function sectionfunc:AddDropdown(DropdownName, data, Default, callback)
+    data = data or {}
+    Default = Default or data[1]
+    callback = callback or function() end
 
-				end
+    local Dropdown = Instance.new("Frame")
+    local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+    local UICorner = Instance.new("UICorner")
+    local LabelText = Instance.new("TextLabel")
+    local TopBar = Instance.new("Frame")
+    local UICorner_2 = Instance.new("UICorner")
+    local UIStroke = Instance.new("UIStroke")
+    local ValueText = Instance.new("TextLabel")
+    local Icon = Instance.new("TextLabel")
+    local DownBar = Instance.new("ScrollingFrame") -- Changed to ScrollingFrame
+    local UICorner_3 = Instance.new("UICorner")
+    local UIStroke_2 = Instance.new("UIStroke")
+    local UIListLayout = Instance.new("UIListLayout")
 
-				local Dropdown = Instance.new("Frame")
-				local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-				local UICorner = Instance.new("UICorner")
-				local LabelText = Instance.new("TextLabel")
-				local TopBar = Instance.new("Frame")
-				local UICorner_2 = Instance.new("UICorner")
-				local UIStroke = Instance.new("UIStroke")
-				local ValueText = Instance.new("TextLabel")
-				local Icon = Instance.new("TextLabel")
-				local DownBar = Instance.new("Frame")
-				local UICorner_3 = Instance.new("UICorner")
-				local UIStroke_2 = Instance.new("UIStroke")
-				local UIListLayout = Instance.new("UIListLayout")
+    Dropdown.Name = "Dropdown"
+    Dropdown.Parent = Section
+    Dropdown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Dropdown.BackgroundTransparency = 1
+    Dropdown.BorderSizePixel = 0
+    Dropdown.Position = UDim2.new(0.05, 0, 0.6, 0)
+    Dropdown.Size = UDim2.new(1, 0, -0.35, 0)
+    Dropdown.ZIndex = 5
 
-				Dropdown.Name = "Dropdown"
-				Dropdown.Parent = Section
-				Dropdown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				Dropdown.BackgroundTransparency = 1.000
-				Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
-				Dropdown.BorderSizePixel = 0
-				Dropdown.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
-				Dropdown.Size = UDim2.new(1, 0, -0.351014495, 0)
-				Dropdown.ZIndex = 5
+    UIAspectRatioConstraint.Parent = Dropdown
+    UIAspectRatioConstraint.AspectRatio = 7
+    UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UIAspectRatioConstraint.Parent = Dropdown
-				UIAspectRatioConstraint.AspectRatio = 7.000
-				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
+    UICorner.CornerRadius = UDim.new(0, 3)
+    UICorner.Parent = Dropdown
 
-				UICorner.CornerRadius = UDim.new(0, 3)
-				UICorner.Parent = Dropdown
+    LabelText.Name = "LabelText"
+    LabelText.Parent = Dropdown
+    LabelText.AnchorPoint = Vector2.new(0.5, 0.5)
+    LabelText.BackgroundTransparency = 1
+    LabelText.Position = UDim2.new(0.3, 0, 0.5, 0)
+    LabelText.Size = UDim2.new(0.59, 0, 0.33, 0)
+    LabelText.ZIndex = 6
+    LabelText.Font = Enum.Font.ArialBold
+    LabelText.Text = DropdownName or "Label-Test"
+    LabelText.TextColor3 = Color3.fromRGB(223, 251, 255)
+    LabelText.TextScaled = true
+    LabelText.TextWrapped = true
+    LabelText.TextXAlignment = Enum.TextXAlignment.Left
 
-				LabelText.Name = "LabelText"
-				LabelText.Parent = Dropdown
-				LabelText.AnchorPoint = Vector2.new(0.5, 0.5)
-				LabelText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				LabelText.BackgroundTransparency = 1.000
-				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
-				LabelText.BorderSizePixel = 0
-				LabelText.Position = UDim2.new(0.296666116, 0, 0.499999374, 0)
-				LabelText.Size = UDim2.new(0.593582511, 0, 0.33, 0)
-				LabelText.ZIndex = 6
-				LabelText.Font = Enum.Font.ArialBold
-				LabelText.Text = DropdownName or "Label-Test"
-				LabelText.TextColor3 = Color3.fromRGB(223, 251, 255)
-				LabelText.TextScaled = true
-				LabelText.TextSize = 14.000
-				LabelText.TextWrapped = true
-				LabelText.TextXAlignment = Enum.TextXAlignment.Left
+    TopBar.Name = "TopBar"
+    TopBar.Parent = Dropdown
+    TopBar.Active = true
+    TopBar.AnchorPoint = Vector2.new(1, 0.5)
+    TopBar.BackgroundColor3 = NEVERLOSE.Themes.ButtonBlackgroundColor
+    TopBar.BackgroundTransparency = 0.5
+    TopBar.BorderSizePixel = 0
+    TopBar.Position = UDim2.new(0.97, -3, 0.5, -2)
+    TopBar.Size = UDim2.new(0.5, 0, 0.5, -1)
+    TopBar.ZIndex = 6
 
-				TopBar.Name = "TopBar"
-				TopBar.Parent = Dropdown
-				TopBar.Active = true
-				TopBar.AnchorPoint = Vector2.new(1, 0.5)
-				TopBar.BackgroundColor3 = NEVERLOSE.Themes.ButtonBlackgroundColor
-				TopBar.BackgroundTransparency = 0.500
-				TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
-				TopBar.BorderSizePixel = 0
-				TopBar.Position = UDim2.new(0.970000167, -3, 0.500000715, -2)
-				TopBar.Size = UDim2.new(0.5, 0, 0.5, -1)
-				TopBar.ZIndex = 6
+    UICorner_2.CornerRadius = UDim.new(0, 2)
+    UICorner_2.Parent = TopBar
 
-				UICorner_2.CornerRadius = UDim.new(0, 2)
-				UICorner_2.Parent = TopBar
+    UIStroke.Thickness = 0.5
+    UIStroke.Color = NEVERLOSE.Themes.StrokeColor
+    UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+    UIStroke.Parent = TopBar
 
-				UIStroke.Thickness = 0.500
-				UIStroke.Color = NEVERLOSE.Themes.StrokeColor
-				UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-				UIStroke.Parent = TopBar
+    ValueText.Name = "ValueText"
+    ValueText.Parent = TopBar
+    ValueText.AnchorPoint = Vector2.new(0.5, 0.5)
+    ValueText.BackgroundTransparency = 1
+    ValueText.Position = UDim2.new(0.36, 0, 0.5, 0)
+    ValueText.Size = UDim2.new(0.7, 0, 0.9, 0)
+    ValueText.ZIndex = 6
+    ValueText.TextXAlignment = Enum.TextXAlignment.Left
+    ValueText.Font = Enum.Font.ArialBold
+    ValueText.Text = tostring(Default)
+    ValueText.TextTransparency = 0.3
+    ValueText.TextColor3 = Color3.fromRGB(223, 251, 255)
+    ValueText.TextScaled = true
+    ValueText.TextWrapped = true
 
-				ValueText.Name = "ValueText"
-				ValueText.Parent = TopBar
-				ValueText.AnchorPoint = Vector2.new(0.5, 0.5)
-				ValueText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				ValueText.BackgroundTransparency = 1.000
-				ValueText.BorderColor3 = Color3.fromRGB(0, 0, 0)
-				ValueText.BorderSizePixel = 0
-				ValueText.Position = UDim2.new(0.358571023, 0, 0.500001013, 0)
-				ValueText.Size = UDim2.new(0.697142839, 0, 0.9000145, 0)
-				ValueText.ZIndex = 6
-				ValueText.TextXAlignment = Enum.TextXAlignment.Left
-				ValueText.Font = Enum.Font.ArialBold
-				ValueText.Text = tostring(Default)
-				ValueText.TextTransparency = 0.3
-				ValueText.TextColor3 = Color3.fromRGB(223, 251, 255)
-				ValueText.TextScaled = true
-				ValueText.TextSize = 14.000
-				ValueText.TextWrapped = true
+    Icon.Name = "Icon"
+    Icon.Parent = TopBar
+    Icon.AnchorPoint = Vector2.new(1, 0.5)
+    Icon.BackgroundTransparency = 1
+    Icon.Position = UDim2.new(1, 0, 0.5, 0)
+    Icon.Rotation = 90
+    Icon.Size = UDim2.new(0.95, 0, 0.95, 0)
+    Icon.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    Icon.ZIndex = 6
+    Icon.Font = Enum.Font.SourceSans
+    Icon.Text = "<"
+    Icon.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Icon.TextScaled = true
+    Icon.TextWrapped = true
 
-				Icon.Name = "Icon"
-				Icon.Parent = TopBar
-				Icon.AnchorPoint = Vector2.new(1, 0.5)
-				Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				Icon.BackgroundTransparency = 1.000
-				Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
-				Icon.BorderSizePixel = 0
-				Icon.Position = UDim2.new(1, 0, 0.5, 0)
-				Icon.Rotation = 90.000
-				Icon.Size = UDim2.new(0.949999988, 0, 0.949999988, 0)
-				Icon.SizeConstraint = Enum.SizeConstraint.RelativeYY
-				Icon.ZIndex = 6
-				Icon.Font = Enum.Font.SourceSans
-				Icon.Text = "<"
-				Icon.TextColor3 = Color3.fromRGB(255, 255, 255)
-				Icon.TextScaled = true
-				Icon.TextSize = 14.000
-				Icon.TextWrapped = true
+    DownBar.Name = "DownBar"
+    DownBar.Parent = Dropdown
+    DownBar.Active = true
+    DownBar.AnchorPoint = Vector2.new(1, 0)
+    DownBar.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+    DownBar.BorderSizePixel = 0
+    DownBar.Position = UDim2.new(0.968, 0, 0.873, 0)
+    DownBar.Size = UDim2.new(0.31, 0, 0, 0) -- Start collapsed
+    DownBar.Visible = false
+    DownBar.ZIndex = 10
+    DownBar.CanvasSize = UDim2.new(0, 0, 0, 0)
+    DownBar.ScrollBarThickness = 6
+    DownBar.ScrollBarImageColor3 = Color3.fromRGB(120, 120, 120)
 
-				DownBar.Name = "DownBar"
-				DownBar.Parent = Dropdown
-				DownBar.Active = true
-				DownBar.AnchorPoint = Vector2.new(1, 0)
-				DownBar.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-				DownBar.BackgroundTransparency = 0
-				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
-				DownBar.BorderSizePixel = 0
-				DownBar.Position = UDim2.new(0.968214233, 0, 0.873961239, 0)
-				DownBar.Size = UDim2.new(0.308999985, 0, -0.02, 0)
-				DownBar.Visible = false
-				DownBar.ZIndex = 10
+    UIStroke_2.Thickness = 0.5
+    UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
+    UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+    UIStroke_2.Parent = DownBar
 
-				UIStroke_2.Thickness = 0.500
-				UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
-				UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-				UIStroke_2.Parent = DownBar
+    UIListLayout.Parent = DownBar
+    UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayout.Padding = UDim.new(0, 2)
 
-				UIListLayout.Parent = DownBar
-				UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-				UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-				UIListLayout.Padding = UDim.new(0, 2)
+    local choose = Default
+    local DropdownToggle = false
 
-				local choose = Default
-				local DropdownToggle = false
+    local function updateCanvasSize()
+        local total = 0
+        for i, v in ipairs(DownBar:GetChildren()) do
+            if v:IsA("TextButton") then
+                total = total + v.AbsoluteSize.Y + UIListLayout.Padding.Offset
+            end
+        end
+        DownBar.CanvasSize = UDim2.new(0, 0, 0, total)
+    end
 
-				DownBar:GetPropertyChangedSignal('Size'):Connect(function()
-					if DownBar.Size.Y.Offset<4 then
-						DownBar.Visible=false
-					else
-						DownBar.Visible=true
-					end
-				end)
+    local function DropdownToggleEffect(val)
+        if val then
+            Dropdown.Visible = true
+            TweenService:Create(Icon, TweenInfo.new(0.15), {Rotation = 90}):Play()
+            TweenService:Create(LabelText, TweenInfo.new(0.4), {TextTransparency = 0}):Play()
+            TweenService:Create(DownBar, TweenInfo.new(0.1), {Size = UDim2.new(0.4, 0, 0, 200)}):Play() -- Max height
+            for _, v in ipairs(DownBar:GetChildren()) do
+                if v:IsA("TextButton") then
+                    TweenService:Create(v, TweenInfo.new(0.1), {TextTransparency = 0.3}):Play()
+                end
+            end
+        else
+            for _, v in ipairs(DownBar:GetChildren()) do
+                if v:IsA("TextButton") then
+                    TweenService:Create(v, TweenInfo.new(0.04), {TextTransparency = 1}):Play()
+                end
+            end
+            TweenService:Create(Icon, TweenInfo.new(0.15), {Rotation = -90}):Play()
+            TweenService:Create(LabelText, TweenInfo.new(0.4), {TextTransparency = 0.3}):Play()
+            TweenService:Create(DownBar, TweenInfo.new(0.1), {Size = UDim2.new(0.4, 0, 0, 0)}):Play()
+        end
+    end
 
-				local function get_list_size()
-					local a=0
+    DropdownToggleEffect(DropdownToggle)
 
-					for i,v:TextButton in ipairs(DownBar:GetChildren()) do
-						if v:isA('TextButton') then
-							a=a + 9
-						end
-					end
+    TopBar.InputBegan:Connect(function()
+        DropdownToggle = not DropdownToggle
+        DropdownToggleEffect(DropdownToggle)
 
-					return a + 15
-				end
+        local Sound2 = Instance.new("Sound")
+        Sound2.SoundId = "rbxassetid://6895079853"
+        Sound2.Looped = false
+        Sound2.Volume = 1
+        Sound2.Parent = game:GetService("SoundService")
+        Sound2:Play()
+        Sound2.Ended:Connect(function()
+            Sound2:Destroy()
+        end)
+    end)
 
-				local function get_list_v4()
-					local a=0
+    local function newbutton(optionText)
+        local button = Instance.new("TextButton")
+        local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
-					for i,v:TextButton in ipairs(DownBar:GetChildren()) do
-						if v:isA('TextButton') then
-							a=a + v.AbsoluteSize.Y
-						end
-					end
+        button.Name = "DropdownOption"
+        button.Parent = DownBar
+        button.BackgroundTransparency = 1
+        button.Size = UDim2.new(0.98, 0, 0, 30)
+        button.ZIndex = 100
+        button.Font = Enum.Font.ArialBold
+        button.Text = optionText
+        button.TextColor3 = Color3.fromRGB(255, 255, 255)
+        button.TextScaled = true
+        button.TextWrapped = true
+        button.TextXAlignment = Enum.TextXAlignment.Left
 
-					return a + 15
-				end
+        UIAspectRatioConstraint.Parent = button
+        UIAspectRatioConstraint.AspectRatio = 4.5
+        UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				local function auto_updatea()
-					if DropdownToggle then
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,get_list_v4())}):Play()
-					else
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,0)}):Play()
-					end
-				end
+        button.MouseEnter:Connect(function()
+            TweenService:Create(button, TweenInfo.new(0.1), {TextTransparency = 0}):Play()
+        end)
 
-				local function DropdownToggleEffect(val)
-					if val then
-						Dropdown.Visible=true
-						TweenService:Create(Icon,TweenInfo.new(0.15),{Rotation=90}):Play()
-						TweenService:Create(LabelText,TweenInfo.new(0.4),{TextTransparency=0}):Play()
+        button.MouseLeave:Connect(function()
+            TweenService:Create(button, TweenInfo.new(0.1), {TextTransparency = 0.3}):Play()
+        end)
 
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.4,0,0,get_list_size())}):Play()
+        button.MouseButton1Click:Connect(function()
+            ValueText.Text = button.Text
+            choose = button.Text
+            callback(button.Text)
+            DropdownToggle = false
+            DropdownToggleEffect(DropdownToggle)
+        end)
 
-						auto_updatea()
+        updateCanvasSize()
+    end
 
-						for i,v:TextButton in ipairs(DownBar:GetChildren()) do
-							if v:isA('TextButton') then
-								v.Size=UDim2.new(0,0,0,0)
-								v.TextTransparency=1
-								TweenService:Create(v,TweenInfo.new(0.01+(i/100)),{
-									Size  = UDim2.new(0.99000001, 0, 0.5, 0),
-									TextTransparency=0.3
-								}):Play()
-							end
-						end
-					else
-						for i,v:TextButton in ipairs(DownBar:GetChildren()) do
-							if v:isA('TextButton') then
-								v.TextTransparency=.3
-								TweenService:Create(v,TweenInfo.new(0.04),{
-									Size  = UDim2.new(0,0,0,0),
-									TextTransparency=1
-								}):Play()
-							end
-						end
+    -- Create all buttons from data
+    for _, option in ipairs(data) do
+        newbutton(option)
+    end
 
-						TweenService:Create(Icon,TweenInfo.new(0.15),{Rotation=-90}):Play()
-						TweenService:Create(LabelText,TweenInfo.new(0.4),{TextTransparency=0.3}):Play()
-
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.4,0,0,0)}):Play()
-					end
-				end
-
-				DropdownToggleEffect(DropdownToggle)
-
-				cretate_button(Dropdown).MouseButton1Click:Connect(function()
-						local Sound2 = Instance.new("Sound")
-Sound2.SoundId = "rbxassetid://6895079853"
-Sound2.Looped = false
-Sound2.Volume = 1
-Sound2.Parent = game:GetService("SoundService")
-Sound2:Play()
-
-Sound2.Ended:Connect(function()
-	Sound2:Destroy()
-     end)
-					DropdownToggle=not DropdownToggle
-					DropdownToggleEffect(DropdownToggle)
-				end)
-
-				local function newbutton()
-					local Dropdown = Instance.new("TextButton")
-					local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-
-					Dropdown.Name = "Dropdown"
-					Dropdown.Parent = DownBar
-					Dropdown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-					Dropdown.BackgroundTransparency = 1.000
-					Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
-					Dropdown.BorderSizePixel = 0
-					Dropdown.Size = UDim2.new(0.8200001, 0, -0.46, 0)
-					Dropdown.ZIndex = 1000
-					Dropdown.Font = Enum.Font.ArialBold
-					Dropdown.Text = "List"
-					Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
-					Dropdown.TextScaled = false
-					Dropdown.TextSize = 13.000
-					Dropdown.TextWrapped = true
-					Dropdown.TextXAlignment = Enum.TextXAlignment.Left
-					TweenService:Create(Dropdown,TweenInfo.new(0.1),{TextTransparency=0.3}):Play()
-					Dropdown.ZIndex = 10000
-					UIAspectRatioConstraint.Parent = Dropdown
-					UIAspectRatioConstraint.AspectRatio = 4.5
-					UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
-
-					Dropdown.MouseEnter:Connect(function()
-						TweenService:Create(Dropdown,TweenInfo.new(0.1),{TextTransparency=0}):Play()
-					end)
-
-					Dropdown.MouseLeave:Connect(function()
-						TweenService:Create(Dropdown,TweenInfo.new(0.1),{TextTransparency=0.3}):Play()
-					end)
-
-					return Dropdown
-				end
+    return Dropdown
+			end
 
 				local function refresh()
 					for i,v:TextButton in ipairs(DownBar:GetChildren()) do
