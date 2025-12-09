@@ -2328,7 +2328,7 @@ Sound2.Ended:Connect(function()
 				local UIStroke = Instance.new("UIStroke")
 				local ValueText = Instance.new("TextLabel")
 				local Icon = Instance.new("TextLabel")
-				local DownBar = Instance.new("Frame")
+				local DownBar = Instance.new("ScrollingFrame")
 				local UICorner_3 = Instance.new("UICorner")
 				local UIStroke_2 = Instance.new("UIStroke")
 				local UIListLayout = Instance.new("UIListLayout")
@@ -2435,9 +2435,10 @@ Sound2.Ended:Connect(function()
 				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				DownBar.BorderSizePixel = 0
 				DownBar.Position = UDim2.new(0.968214233, 0, 0.873961239, 0)
-				DownBar.Size = UDim2.new(0.308999985, 0, -0.02, 0)
+				DownBar.Size = UDim2.new(0.308999985, 0, 0, 45)
 				DownBar.Visible = false
 				DownBar.ZIndex = 10
+				DownBar.AutomaticCanvasSize = Enum.AutomaticCanvasSize.Y
 
 				UIStroke_2.Thickness = 0.500
 				UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
@@ -2469,7 +2470,7 @@ Sound2.Ended:Connect(function()
 						end
 					end
 
-					return a + 15
+					return a + 0
 				end
 
 				local function get_list_v4()
