@@ -2435,7 +2435,7 @@ Sound2.Ended:Connect(function()
 				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				DownBar.BorderSizePixel = 0
 				DownBar.Position = UDim2.new(0.968214233, 0, 0.873961239, 0)
-				DownBar.Size = UDim2.new(0.308999985, 0, 0, 45)
+				DownBar.Size = UDim2.new(0.308999985, 0, 0, 65)
 				DownBar.Visible = false
 				DownBar.ZIndex = 10
 				DownBar.AutomaticCanvasSize = Enum.AutomaticSize.Y
@@ -2466,7 +2466,7 @@ Sound2.Ended:Connect(function()
 
 					for i,v:TextButton in ipairs(DownBar:GetChildren()) do
 						if v:isA('TextButton') then
-							a=a + 9
+							a=a + 0
 						end
 					end
 
@@ -2482,7 +2482,7 @@ Sound2.Ended:Connect(function()
 						end
 					end
 
-					return a + 15
+					return a + 0
 				end
 
 				local function auto_updatea()
