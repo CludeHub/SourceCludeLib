@@ -2426,19 +2426,22 @@ Sound2.Ended:Connect(function()
 				Icon.TextSize = 14.000
 				Icon.TextWrapped = true
 
-				DownBar.Name = "DownBar"
-				DownBar.Parent = Dropdown
-				DownBar.Active = true
-				DownBar.AnchorPoint = Vector2.new(1, 0)
-				DownBar.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-				DownBar.BackgroundTransparency = 0
-				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
-				DownBar.BorderSizePixel = 0
-				DownBar.Position = UDim2.new(0.968214233, 0, 0.873961239, 0)
-				DownBar.Size = UDim2.new(0.308999985, 0, 0, 120)
-				DownBar.Visible = false
-				DownBar.ZIndex = 10
-				DownBar.AutomaticCanvasSize = Enum.AutomaticSize.Y
+	DownBar.Name = "DownBar"
+DownBar.Parent = Dropdown
+DownBar.Active = true
+DownBar.AnchorPoint = Vector2.new(1, 0)
+DownBar.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+DownBar.BackgroundTransparency = 0
+DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DownBar.BorderSizePixel = 0
+DownBar.Position = UDim2.new(0.968214233, 0, 0.873961239, 0)
+DownBar.Size = UDim2.new(0.308999985, 0, 0, 120)
+DownBar.Visible = false
+DownBar.ZIndex = 10
+DownBar.CanvasSize = UDim2.new(0, 0, 0, 0)
+DownBar.AutomaticCanvasSize = Enum.AutomaticSize.Y
+DownBar.ScrollBarThickness = 4
+DownBar.ScrollingDirection = Enum.ScrollingDirection.Y
 
 				UIStroke_2.Thickness = 0.500
 				UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
