@@ -1546,8 +1546,7 @@ local Sectionh = SectionHeader
 			Sectionh.BackgroundTransparency = 1
 			Sectionh.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Sectionh.BorderSizePixel = 1
-			Sectionh.Size = UDim2.new(0, 0, 0, 0)
-			Sectionh.AutomaticSize = Enum.AutomaticSize.Y
+			Sectionh.Size = UDim2.new(0.98, 0, 0.1, 0)
 			Sectionh.ZIndex = 4
 			
 			Section.Name = "Section"
@@ -1555,7 +1554,7 @@ local Sectionh = SectionHeader
 			Section.BackgroundColor3 = NEVERLOSE.Themes.SectionColor
 			Section.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Section.BorderSizePixel = 0
-			Section.Position = UDim2.new(0, 0, 0.05, 0)
+			Section.Position = UDim2.new(0, 0, 0.07, 0)
 			Section.Size = UDim2.new(0.970000029, 0, 0, 0)
 			Section.ZIndex = 5
 
@@ -1570,7 +1569,7 @@ local Sectionh = SectionHeader
 			Header.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Header.BorderSizePixel = 0
 			Header.Position = UDim2.new(0.5, 0, 0, 0)
-			Header.Size = UDim2.new(1, 0, 0.1, 0)
+			Header.Size = UDim2.new(0.8, 0, 0.1, 0)
 			Header.ZIndex = 5
 			Header.Font = Enum.Font.ArialBold
 			Header.Text = SectionName or "Section"
@@ -1580,7 +1579,7 @@ local Sectionh = SectionHeader
 			Header.TextWrapped = true
 			Header.TextXAlignment = Enum.TextXAlignment.Left
 			Header.TextTransparency=1
-			TweenService:Create(Header,TweenInfo.new(0.3),{TextTransparency=0.3}):Play()
+			TweenService:Create(Header,TweenInfo.new(0.3),{TextTransparency=0.5}):Play()
 
 			local AspectRatio = Instance.new("UIAspectRatioConstraint")
 
