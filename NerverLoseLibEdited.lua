@@ -2569,7 +2569,7 @@ Sound2.Ended:Connect(function()
 					TweenService:Create(Dropdown,TweenInfo.new(0.1),{TextTransparency=0.3}):Play()
 					Dropdown.ZIndex = 10000
 					UIAspectRatioConstraint.Parent = Dropdown
-					UIAspectRatioConstraint.AspectRatio = 4.5
+					UIAspectRatioConstraint.AspectRatio = 10
 					UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 					Dropdown.MouseEnter:Connect(function()
