@@ -1550,7 +1550,7 @@ Sound2.Ended:Connect(function()
 			Section.Size = UDim2.new(0.970000029, 0, 0, 0)
 			Section.ZIndex = 5
 
-			UICorner.CornerRadius = UDim.new(0, 0)
+			UICorner.CornerRadius = UDim.new(0, 10)
 			UICorner.Parent = Section
 
 			Header.Name = "Header"
