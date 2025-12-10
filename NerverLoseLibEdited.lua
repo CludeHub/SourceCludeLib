@@ -452,7 +452,7 @@ print(Text .. " is Running")
 	Frame.Parent = ScreenGui
 	Frame.Active = true
 	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
-	Frame.BackgroundTransparency = 0.085
+	Frame.BackgroundTransparency = 0.4
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
 	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
