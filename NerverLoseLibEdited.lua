@@ -2488,14 +2488,6 @@ DownBar.ScrollingDirection = Enum.ScrollingDirection.Y
 					return a + 0
 				end
 
-				local function auto_updatea()
-					if DropdownToggle then
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,100)}):Play()
-					else
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,0)}):Play()
-					end
-				end
-
 				local function DropdownToggleEffect(val)
 					if val then
 						Dropdown.Visible=true
