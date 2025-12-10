@@ -2495,8 +2495,6 @@ DownBar.ScrollBarThickness = 4
 
 						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.4,0,0,get_list_size())}):Play()
 
-						auto_updatea()
-
 						for i,v:TextButton in ipairs(DownBar:GetChildren()) do
 							if v:isA('TextButton') then
 								v.Size=UDim2.new(0,0,0,0)
