@@ -2557,7 +2557,7 @@ Sound2.Ended:Connect(function()
 					Dropdown.BackgroundTransparency = 1.000
 					Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
 					Dropdown.BorderSizePixel = 0
-					Dropdown.Size = UDim2.new(0.8200001, 0, -0.3, 0)
+					Dropdown.Size = UDim2.new(0.8200001, 0, -0.1, 0)
 					Dropdown.ZIndex = 1000
 					Dropdown.Font = Enum.Font.ArialBold
 					Dropdown.Text = "List"
