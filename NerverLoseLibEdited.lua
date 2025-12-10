@@ -2487,7 +2487,7 @@ Sound2.Ended:Connect(function()
 
 				local function auto_updatea()
 					if DropdownToggle then
-						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,get_list_v4())}):Play()
+						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,60)}):Play()
 					else
 						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,0)}):Play()
 					end
