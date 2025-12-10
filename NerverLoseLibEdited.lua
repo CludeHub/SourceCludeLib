@@ -1555,7 +1555,7 @@ local Sectionh = SectionHeader
 			Section.BackgroundColor3 = NEVERLOSE.Themes.SectionColor
 			Section.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Section.BorderSizePixel = 0
-			Section.Postion = UDim2.new(0, 0, 0.05, 0)
+			Section.Position = UDim2.new(0, 0, 0.05, 0)
 			Section.Size = UDim2.new(0.970000029, 0, 0, 0)
 			Section.ZIndex = 5
 
