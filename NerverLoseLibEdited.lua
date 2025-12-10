@@ -1,6 +1,6 @@
 --[[
 
-INTRODUCING NEVERLOSE V2 CS2 CHEAT MENU
+INTRODUCING NEVERLOSE V2 CSGO CHEAT MENU
 BUILD DATE: 4/21/24
 VERSION: 2.6
 MADE BY CLUDEHUB
@@ -452,7 +452,7 @@ print(Text .. " is Running")
 	Frame.Parent = ScreenGui
 	Frame.Active = true
 	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
-	Frame.BackgroundTransparency = 0.2
+	Frame.BackgroundTransparency = 0.085
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
 	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1532,7 +1532,7 @@ Sound2.Ended:Connect(function()
 
 		function TabFunctions:AddSection(SectionName,parentname)
 			parentname = parentname or "left"
-            local SectionHeader = Instance.new("Frame")
+
 			local Section = Instance.new("Frame")
 			local UICorner = Instance.new("UICorner")
 			local UIStroke = Instance.new("UIStroke")
@@ -1540,21 +1540,13 @@ Sound2.Ended:Connect(function()
 			local UIListLayout = Instance.new("UIListLayout")
 			local lay = Instance.new("Frame")
 			local UICorner_2 = Instance.new("UICorner")
-local Sectionh = SectionHeader
-			Sectionh.Name = "SectionHeader"
-			Sectionh.Parent = (parentname=="left"and Left) or (parentname=="right"and Right) or nil
-			Sectionh.BackgroundTransparency = 1
-			Sectionh.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			Sectionh.BorderSizePixel = 1
-			Sectionh.Size = UDim2.new(0.98, 0, 0.1, 0)
-			Sectionh.ZIndex = 4
-			
+
 			Section.Name = "Section"
-			Section.Parent = Sectionh
+			Section.Parent = (parentname=="left"and Left) or (parentname=="right"and Right) or nil
+
 			Section.BackgroundColor3 = NEVERLOSE.Themes.SectionColor
 			Section.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Section.BorderSizePixel = 0
-			Section.Position = UDim2.new(0, 0, 0.07, 0)
 			Section.Size = UDim2.new(0.970000029, 0, 0, 0)
 			Section.ZIndex = 5
 
@@ -1562,24 +1554,24 @@ local Sectionh = SectionHeader
 			UICorner.Parent = Section
 
 			Header.Name = "Header"
-			Header.Parent = Sectionh
+			Header.Parent = Section
 			Header.AnchorPoint = Vector2.new(0.5, 0)
 			Header.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Header.BackgroundTransparency = 1.000
 			Header.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Header.BorderSizePixel = 0
-			Header.Position = UDim2.new(0.5, 0, 0, 0)
-			Header.Size = UDim2.new(0.8, 0, 0.1, 0)
+			Header.Position = UDim2.new(0.5, 0, 0.100000001, 0)
+			Header.Size = UDim2.new(1, 0, 0.1, 0)
 			Header.ZIndex = 5
 			Header.Font = Enum.Font.ArialBold
 			Header.Text = SectionName or "Section"
-			Header.TextColor3 = Color3.fromRGB(200,200,228)
+			Header.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Header.TextScaled = true
 			Header.TextSize = 8.000
 			Header.TextWrapped = true
 			Header.TextXAlignment = Enum.TextXAlignment.Left
 			Header.TextTransparency=1
-			TweenService:Create(Header,TweenInfo.new(0.3),{TextTransparency=0.5}):Play()
+			TweenService:Create(Header,TweenInfo.new(0.3),{TextTransparency=0}):Play()
 
 			local AspectRatio = Instance.new("UIAspectRatioConstraint")
 
@@ -1601,11 +1593,10 @@ local Sectionh = SectionHeader
 			lay.Size = UDim2.new(0.970000029, 0, 0, 2)
 			lay.ZIndex = 5
 			lay.BackgroundTransparency=1
-			
 			Section.BackgroundTransparency=1
 			UIStroke.Transparency=1
 
-			TweenService:Create(lay,TweenInfo.new(1),{BackgroundTransparency=1}):Play()
+			TweenService:Create(lay,TweenInfo.new(1),{BackgroundTransparency=0}):Play()
 			TweenService:Create(Section,TweenInfo.new(1),{BackgroundTransparency=0}):Play()
 			TweenService:Create(UIStroke,TweenInfo.new(1),{Transparency=0}):Play()
 
