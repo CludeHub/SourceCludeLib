@@ -2441,7 +2441,6 @@ DownBar.ZIndex = 10
 DownBar.CanvasSize = UDim2.new(0, 0, 3, 0)
 DownBar.AutomaticCanvasSize = Enum.AutomaticSize.Y
 DownBar.ScrollBarThickness = 4
-DownBar.ScrollingDirection = Enum.ScrollingDirection.Y
 
 				UIStroke_2.Thickness = 0.500
 				UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
