@@ -2328,7 +2328,7 @@ Sound2.Ended:Connect(function()
 				local UIStroke = Instance.new("UIStroke")
 				local ValueText = Instance.new("TextLabel")
 				local Icon = Instance.new("TextLabel")
-				local DownBar = Instance.new("ScrollingFrame")
+				local DownBar = Instance.new("Frame")
 				local UICorner_3 = Instance.new("UICorner")
 				local UIStroke_2 = Instance.new("UIStroke")
 				local UIListLayout = Instance.new("UIListLayout")
@@ -2426,22 +2426,18 @@ Sound2.Ended:Connect(function()
 				Icon.TextSize = 14.000
 				Icon.TextWrapped = true
 
-	DownBar.Name = "DownBar"
-DownBar.Parent = Dropdown
-DownBar.Active = true
-DownBar.AnchorPoint = Vector2.new(1, 0)
-DownBar.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-DownBar.BackgroundTransparency = 0
-DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
-DownBar.BorderSizePixel = 0
-DownBar.Position = UDim2.new(0.968214233, 0, 0.873961239, 0)
-DownBar.Size = UDim2.new(0.308999985, 0, 0, 120)
-DownBar.Visible = false
-DownBar.ZIndex = 10
-DownBar.CanvasSize = UDim2.new(0, 0, 3, 0)
-DownBar.AutomaticCanvasSize = Enum.AutomaticSize.Y
-DownBar.ScrollBarThickness = 4
-DownBar.ScrollingDirection = Enum.ScrollingDirection.Y
+				DownBar.Name = "DownBar"
+				DownBar.Parent = Dropdown
+				DownBar.Active = true
+				DownBar.AnchorPoint = Vector2.new(1, 0)
+				DownBar.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+				DownBar.BackgroundTransparency = 0
+				DownBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				DownBar.BorderSizePixel = 0
+				DownBar.Position = UDim2.new(0.968214233, 0, 0.873961239, 0)
+				DownBar.Size = UDim2.new(0.308999985, 0, -0.02, 0)
+				DownBar.Visible = false
+				DownBar.ZIndex = 10
 
 				UIStroke_2.Thickness = 0.500
 				UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
@@ -2469,11 +2465,11 @@ DownBar.ScrollingDirection = Enum.ScrollingDirection.Y
 
 					for i,v:TextButton in ipairs(DownBar:GetChildren()) do
 						if v:isA('TextButton') then
-							a=a + 0
+							a=a + 9
 						end
 					end
 
-					return a + 0
+					return a + 15
 				end
 
 				local function get_list_v4()
@@ -2485,7 +2481,15 @@ DownBar.ScrollingDirection = Enum.ScrollingDirection.Y
 						end
 					end
 
-					return a + 0
+					return a + 15
+				end
+
+				local function auto_updatea()
+					if DropdownToggle then
+						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,get_list_v4())}):Play()
+					else
+						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.5,0,0,0)}):Play()
+					end
 				end
 
 				local function DropdownToggleEffect(val)
@@ -2553,7 +2557,7 @@ Sound2.Ended:Connect(function()
 					Dropdown.BackgroundTransparency = 1.000
 					Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
 					Dropdown.BorderSizePixel = 0
-					Dropdown.Size = UDim2.new(0.8200001, 0, -0.46, 0)
+					Dropdown.Size = UDim2.new(0.8200001, 0, -0.3, 0)
 					Dropdown.ZIndex = 1000
 					Dropdown.Font = Enum.Font.ArialBold
 					Dropdown.Text = "List"
