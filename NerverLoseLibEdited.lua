@@ -2441,6 +2441,7 @@ DownBar.ZIndex = 10
 DownBar.CanvasSize = UDim2.new(0, 0, 3, 0)
 DownBar.AutomaticCanvasSize = Enum.AutomaticSize.Y
 DownBar.ScrollBarThickness = 4
+DownBar.ScrollingDirection = Enum.ScrollingDirection.Y
 
 				UIStroke_2.Thickness = 0.500
 				UIStroke_2.Color = NEVERLOSE.Themes.StrokeColor
@@ -2494,6 +2495,8 @@ DownBar.ScrollBarThickness = 4
 						TweenService:Create(LabelText,TweenInfo.new(0.4),{TextTransparency=0}):Play()
 
 						TweenService:Create(DownBar,TweenInfo.new(0.1),{Size=UDim2.new(0.4,0,0,get_list_size())}):Play()
+
+						auto_updatea()
 
 						for i,v:TextButton in ipairs(DownBar:GetChildren()) do
 							if v:isA('TextButton') then
