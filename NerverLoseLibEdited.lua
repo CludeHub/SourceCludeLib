@@ -291,7 +291,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0.5530999988, 0, 0.980999971, 0)
+	local ooldsize=UICustomSize or UDim2.new(0.5530999988, 30, 0.980999971, 0)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -477,7 +477,7 @@ end
 
 local aspect = Instance.new("UIAspectRatioConstraint")
 aspect.Parent = parentFrame
-aspect.AspectRatio = 1.3
+aspect.AspectRatio = 1.4
 
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
@@ -677,39 +677,39 @@ local ABOUT = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("AboutFrame")
 -- DPI table (split into Size + Position for clarity)
 local dpiSizes = {
     ["Auto"] = {
-        NEVERLOSE = UDim2.new(0.455, 0, 0.825, 0), -- size
+        NEVERLOSE = UDim2.new(0.455, 30, 0.825, 0), -- size
         ABOUT = UDim2.new(0.190007001, 0, 0.450000614, 0), -- position
     },
     ["20%"] = {
-        NEVERLOSE = UDim2.new(0.459999988, 0, 0.789999971, 0),
+        NEVERLOSE = UDim2.new(0.459999988, 30, 0.789999971, 0),
         ABOUT = UDim2.new(0.20007001, 0, 0.460000614, 0),
     },
     ["30%"] = {
-        NEVERLOSE = UDim2.new(0.469999988, 0, 0.7909999971, 0),
+        NEVERLOSE = UDim2.new(0.469999988, 30, 0.7909999971, 0),
         ABOUT = UDim2.new(0.21007001, 0, 0.470000614, 0),
     },
     ["40%"] = {
-        NEVERLOSE = UDim2.new(0.479999988, 0, 0.8009999971, 0),
+        NEVERLOSE = UDim2.new(0.479999988, 30, 0.8009999971, 0),
         ABOUT = UDim2.new(0.22007001, 0, 0.480000614, 0),
     },
     ["50%"] = {
-        NEVERLOSE = UDim2.new(0.489999988, 0, 0.81009999971, 0),
+        NEVERLOSE = UDim2.new(0.489999988, 30, 0.81009999971, 0),
         ABOUT = UDim2.new(0.23007001, 0, 0.490000614, 0),
     },
     ["60%"] = {
-        NEVERLOSE = UDim2.new(0.490999988, 0, 0.82009999971, 0),
+        NEVERLOSE = UDim2.new(0.490999988, 30, 0.82009999971, 0),
         ABOUT = UDim2.new(0.24007001, 0, 0.50000614, 0),
     },
     ["70%"] = {
-        NEVERLOSE = UDim2.new(0.500999988, 0, 0.83009999971, 0),
+        NEVERLOSE = UDim2.new(0.500999988, 30, 0.83009999971, 0),
         ABOUT = UDim2.new(0.24007001, 0, 0.51000614, 0),
     },
     ["80%"] = {
-        NEVERLOSE = UDim2.new(0.510999988, 0, 0.84009999971, 0),
+        NEVERLOSE = UDim2.new(0.510999988, 30, 0.84009999971, 0),
         ABOUT = UDim2.new(0.2, 0, 0.53000614, 0),
     },
     ["100%"] = {
-        NEVERLOSE = UDim2.new(0.5530999988, 0, 0.980999971, 0),
+        NEVERLOSE = UDim2.new(0.5530999988, 30, 0.980999971, 0),
         ABOUT = UDim2.new(0.23, 0, 0.53, 0),
     }
 }
@@ -849,7 +849,7 @@ Padding.PaddingLeft = UDim.new(0, 26)
 		ImageButtons9.Position = UDim2.new(0.94737024, 0, 0.0140369833, 0)
 		ImageButtons9.Size = UDim2.new(0.0400000036, 0, 0.03400000036, 0)
 		ImageButtons9.SizeConstraint = Enum.SizeConstraint.RelativeYY
-		ImageButtons9.ZIndex = 4
+		ImageButtons9.ZIndex = 6
 		ImageButtons9.Image = "http://www.roblox.com/asset/?id=6031154871"
 		ImageButtons9.ScaleType = Enum.ScaleType.Fit
 
@@ -874,11 +874,11 @@ Sound2.Ended:Connect(function()
 		ImageButtons.BackgroundTransparency = 1.000
 		ImageButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons.BorderSizePixel = 0
-		ImageButtons.Position = UDim2.new(0.8970207, 0, 0.0139103699, 0)
-		ImageButtons.Size = UDim2.new(0.0400000036, 0, 0.03400000036, 0)
+		ImageButtons.Position = UDim2.new(0.8970207, 0, 0.012003699, 0)
+		ImageButtons.Size = UDim2.new(0.050000036, 0, 0.05400000036, 0)
 		ImageButtons.SizeConstraint = Enum.SizeConstraint.RelativeYY
-		ImageButtons.ZIndex = 4
-		ImageButtons.Image = "http://www.roblox.com/asset/?id=6031280882"
+		ImageButtons.ZIndex = 6
+		ImageButtons.Image = "http://www.roblox.com/asset/?id=82272638714622"
 		ImageButtons.ScaleType = Enum.ScaleType.Fit
 
 		ImageButtons.MouseButton1Click:Connect(function()
@@ -900,8 +900,8 @@ Sound2.Ended:Connect(function()
 	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.MewColor1
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_2.BorderSizePixel = 0
-	Frame_2.Position = UDim2.new(0.223214373, 0, 0, 0)
-	Frame_2.Size = UDim2.new(0.774634778, 0, 1, 0)
+	Frame_2.Position = UDim2.new(0.223214373, 0, 0.091, 0)
+	Frame_2.Size = UDim2.new(0.774634778, 0, 0.91, 0)
 	Frame_2.ZIndex = 2
 	
 	UICorner_2.CornerRadius = UDim.new(0, 12)
@@ -910,7 +910,7 @@ Sound2.Ended:Connect(function()
 	Frame_3.Parent = Frame
 	Frame_3.Name = "Frame_3"
 	Frame_3.BackgroundColor3 = NEVERLOSE.Themes.MewColor2
-	Frame_3.BackgroundTransparency = 0.900
+	Frame_3.BackgroundTransparency = 0.4
 	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_3.BorderSizePixel = 0
 	Frame_3.Position = UDim2.new(0.223214373, 0, 0, 0)
@@ -1142,9 +1142,8 @@ SaveButton_2179.MouseLeave:Connect(function()
 	SaveButton_2179.TextTransparency = 0.3
 	Icon_5763.ImageTransparency = 0.3
 end)
--- style
+            -- Style
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
---
 	
 -- DraggingToggle
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/DragToggleSetting.lua"))()
@@ -1541,62 +1540,67 @@ Sound2.Ended:Connect(function()
 			local lay = Instance.new("Frame")
 			local UICorner_2 = Instance.new("UICorner")
 
-			Section.Name = "Section"
-			Section.Parent = (parentname=="left"and Left) or (parentname=="right"and Right) or nil
+			
+local SectionHead = Instance.new("Frame")
+SectionHead.Name = "Section"
+SectionHead.Position = UDim2.new(0,0,0,0)
+SectionHead.Size = UDim2.new(0.97,0,0,13)
+SectionHead.AnchorPoint = Vector2.new(0,0)
+SectionHead.BackgroundColor3 = Color3.fromRGB(0,17,33)
+SectionHead.BackgroundTransparency = 1
+SectionHead.BorderSizePixel = 0
+SectionHead.ZIndex = 5
+SectionHead.AutomaticSize = Enum.AutomaticSize.Y
+SectionHead.Parent = (parentname=="left"and Left) or (parentname=="right"and Right) or nil
 
+Header.Name = "Header"
+Header.Position = UDim2.new(0.5,0,-0.009,0)
+Header.Size = UDim2.new(1,0,0.6,0)
+Header.AnchorPoint = Vector2.new(0.5,0)
+Header.BackgroundColor3 = Color3.fromRGB(255,255,255)
+Header.BackgroundTransparency = 1
+Header.BorderSizePixel = 0
+Header.Text = SectionName or "Section"
+Header.TextColor3 = Color3.fromRGB(255,255,255)
+Header.TextScaled = true
+Header.TextSize = 8
+Header.Font = Enum.Font.ArialBold
+Header.TextTransparency = 0.699999988079071
+Header.ZIndex = 10
+Header.TextXAlignment = Enum.TextXAlignment.Left
+Header.Parent = SectionHead
+			
+local as = Instance.new('UIAspectRatioConstraint')
+as.AspectRatio = 22
+as.Parent = Header
+as.AspectType = Enum.AspectType.ScaleWithParentSize
+
+			Section.Name = "Section"
+			Section.Parent = SectionHead
 			Section.BackgroundColor3 = NEVERLOSE.Themes.SectionColor
 			Section.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Section.BorderSizePixel = 0
-			Section.Size = UDim2.new(0.970000029, 0, 0, 0)
+			Section.Position = UDim2.new(0, 0, 0, 17)
+			Section.Size = UDim2.new(1, 0, 0, 0)
 			Section.ZIndex = 5
 
+local UIStrokes = Instance.new('UIStroke')
+UIStrokes.Color = Color3.fromRGB(3,35,50)
+UIStrokes.Transparency = 0.20000000298023224
+UIStrokes.Parent = Section
+
+
+			UIListLayout.Parent = Section
+		UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Top
+		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		UIListLayout.Padding = UDim.new(0, 0)
+			
 			UICorner.CornerRadius = UDim.new(0, 10)
 			UICorner.Parent = Section
 
-			Header.Name = "Header"
-			Header.Parent = Section
-			Header.AnchorPoint = Vector2.new(0.5, 0)
-			Header.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			Header.BackgroundTransparency = 1.000
-			Header.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			Header.BorderSizePixel = 0
-			Header.Position = UDim2.new(0.5, 0, 0.100000001, 0)
-			Header.Size = UDim2.new(1, 0, 0.1, 0)
-			Header.ZIndex = 5
-			Header.Font = Enum.Font.ArialBold
-			Header.Text = SectionName or "Section"
-			Header.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Header.TextScaled = true
-			Header.TextSize = 8.000
-			Header.TextWrapped = true
-			Header.TextXAlignment = Enum.TextXAlignment.Left
-			Header.TextTransparency=1
-			TweenService:Create(Header,TweenInfo.new(0.3),{TextTransparency=0}):Play()
-
-			local AspectRatio = Instance.new("UIAspectRatioConstraint")
-
-			AspectRatio.Parent = Header
-            AspectRatio.AspectRatio = 19
-            AspectRatio.DominantAxis = Enum.DominantAxis.Width
-            AspectRatio.AspectType = Enum.AspectType.ScaleWithParentSize
-			
-			UIListLayout.Parent = Section
-			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			UIListLayout.Padding = UDim.new(0, 0)
-
-			lay.Name = "lay"
-			lay.Parent = Section
-			lay.BackgroundColor3 = NEVERLOSE.Themes.StrokeColor
-			lay.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			lay.BorderSizePixel = 0
-			lay.Size = UDim2.new(0.970000029, 0, 0, 2)
-			lay.ZIndex = 5
-			lay.BackgroundTransparency=1
 			Section.BackgroundTransparency=1
 			UIStroke.Transparency=1
 
-			TweenService:Create(lay,TweenInfo.new(1),{BackgroundTransparency=0}):Play()
 			TweenService:Create(Section,TweenInfo.new(1),{BackgroundTransparency=0}):Play()
 			TweenService:Create(UIStroke,TweenInfo.new(1),{Transparency=0}):Play()
 
@@ -1641,7 +1645,7 @@ Sound2.Ended:Connect(function()
 			table.insert(NEVERLOSE.auto_function,update_section_size)
 
 			Section:GetPropertyChangedSignal('Size'):Connect(function()
-				if Section.Size.Y.Offset <= 1 then
+				if Section.Size.Y.Offset <= 0 then
 					Section.Visible=false
 				else
 					Section.Visible=true
@@ -1834,6 +1838,16 @@ Sound2.Ended:Connect(function()
 				Toggle.Size = UDim2.new(1, 0, -0.351014495, 0)
 				Toggle.ZIndex = 5
 
+				
+local Line = Instance.new('Frame')
+Line.Position = UDim2.new(0.07000000029802322,0,1,0)
+Line.Size = UDim2.new(0.8700000047683716,0,0.003000000026077032,0)
+Line.AnchorPoint = Vector2.new(0,0)
+Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
+Line.BackgroundTransparency = 0.699999988079071
+Line.ZIndex = 10
+Line.Parent = Toggle
+
 				UIAspectRatioConstraint.Parent = Toggle
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
@@ -1984,6 +1998,15 @@ Sound2.Ended:Connect(function()
 				Keybind.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
 				Keybind.Size = UDim2.new(1, 0, -0.351014495, 0)
 				Keybind.ZIndex = 5
+
+				local Line = Instance.new('Frame')
+Line.Position = UDim2.new(0.07000000029802322,0,1,0)
+Line.Size = UDim2.new(0.8700000047683716,0,0.003000000026077032,0)
+Line.AnchorPoint = Vector2.new(0,0)
+Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
+Line.BackgroundTransparency = 0.699999988079071
+Line.ZIndex = 10
+Line.Parent = Keybind
 
 				UIAspectRatioConstraint.Parent = Keybind
 				UIAspectRatioConstraint.AspectRatio = 7.000
@@ -2146,6 +2169,15 @@ Sound2.Ended:Connect(function()
 				Slider.Position = UDim2.new(0.0500000231, 0, 0.601014614, 0)
 				Slider.Size = UDim2.new(1, 0, -0.351014495, 0)
 				Slider.ZIndex = 5
+
+				local Line = Instance.new('Frame')
+Line.Position = UDim2.new(0.07000000029802322,0,1,0)
+Line.Size = UDim2.new(0.8700000047683716,0,0.003000000026077032,0)
+Line.AnchorPoint = Vector2.new(0,0)
+Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
+Line.BackgroundTransparency = 0.699999988079071
+Line.ZIndex = 10
+Line.Parent = Slider
 
 				UIAspectRatioConstraint.Parent = Slider
 				UIAspectRatioConstraint.AspectRatio = 7.000
@@ -2343,6 +2375,17 @@ Sound2.Ended:Connect(function()
 				Dropdown.Size = UDim2.new(1, 0, -0.351014495, 0)
 				Dropdown.ZIndex = 5
 
+
+				local Line = Instance.new('Frame')
+Line.Position = UDim2.new(0.07000000029802322,0,1,0)
+Line.Size = UDim2.new(0.8700000047683716,0,0.003000000026077032,0)
+Line.AnchorPoint = Vector2.new(0,0)
+Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
+Line.BackgroundTransparency = 0.699999988079071
+Line.ZIndex = 10
+Line.Parent = Dropdown
+
+				
 				UIAspectRatioConstraint.Parent = Dropdown
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
