@@ -8,7 +8,6 @@ style.ZIndex = 50
 
 local textLabel = Instance.new("TextLabel", style)
 textLabel.Size = UDim2.new(1, 0, 1, 0)
-textLabel.Position = UDim2.new(0, 0, 0, 0)
 textLabel.BackgroundTransparency = 1
 textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 textLabel.Font = Enum.Font.Gotham
@@ -26,7 +25,6 @@ color.BackgroundTransparency = 1
 color.Parent = style
 color.ZIndex = 50
 
--- Dark Theme button
 local darkButton = Instance.new("TextButton")
 darkButton.Name = "Dark"
 darkButton.Position = UDim2.new(0.7, 0, 0, 0)
@@ -38,7 +36,6 @@ darkButton.Parent = color
 Instance.new("UICorner", darkButton).CornerRadius = UDim.new(1, 0)
 darkButton.ZIndex = 50
 
--- Original Theme button
 local originalButton = Instance.new("TextButton")
 originalButton.Name = "Original"
 originalButton.Position = UDim2.new(0.4, 0, 0, 0)
@@ -50,7 +47,6 @@ originalButton.Parent = color
 Instance.new("UICorner", originalButton).CornerRadius = UDim.new(1, 0)
 originalButton.ZIndex = 50
 
--- New Orange Theme button
 local orangeButton = Instance.new("TextButton")
 orangeButton.Name = "Orange"
 orangeButton.Position = UDim2.new(0.1, 0, 0, 0)
@@ -59,11 +55,10 @@ orangeButton.AutoButtonColor = false
 orangeButton.Text = ""
 orangeButton.BackgroundColor3 = Color3.fromRGB(255, 128, 0)
 orangeButton.Parent = color
+Instance.new("UICorner", orangeButton).CornerRadius = UDim.new(1, 0)
 orangeButton.ZIndex = 50
 
-Instance.new("UICorner", orangeButton).CornerRadius = UDim.new(1, 0)
-
--- Apply Theme Function
+-- THEME APPLY FUNCTION
 local function applyTheme(theme)
     local core = game.CoreGui:FindFirstChild("NEVERLOSE")
     if not core then return end
@@ -79,11 +74,11 @@ local function applyTheme(theme)
         for _, obj in pairs(root:GetDescendants()) do
             if obj:IsA("Frame") then
                 local name = obj.Name
-                if name:find("Section") then
+                if name == "Line" then
+                    obj.BackgroundColor3 = theme.MainColor
+                elseif name:find("Section") then
                     obj.BackgroundColor3 = theme.SectionColor
-                elseif name:find("outlo") then
-                    obj.BackgroundColor3 = theme.TraceColor
-                elseif name:find("outlo_2") or name:find("outlo_3") then
+                elseif name:find("outlo") or name:find("outlo_2") or name:find("outlo_3") then
                     obj.BackgroundColor3 = theme.TraceColor
                 elseif name:find("lay") then
                     obj.BackgroundColor3 = theme.StrokeColor
@@ -113,7 +108,7 @@ local function applyTheme(theme)
     end
 end
 
--- Button connections
+-- THEME BUTTONS
 darkButton.MouseButton1Click:Connect(function()
     applyTheme({
         BlackgroundColor = Color3.fromRGB(22, 22, 22),
@@ -165,34 +160,50 @@ orangeButton.MouseButton1Click:Connect(function()
     })
 end)
 
+-- AUTO LOAD ORIGINAL THEME
+task.wait(0.5)
+applyTheme({
+    BlackgroundColor = Color3.fromRGB(1, 17, 33),
+    BlackColor = Color3.fromRGB(9, 9, 19),
+    HeaderColor = Color3.fromRGB(7, 7, 17),
+    TraceColor = Color3.fromRGB(0, 76, 99),
+    MainColor = Color3.fromRGB(19, 176, 243),
+    MainColorDrop = Color3.fromRGB(3, 6, 25),
+    SectionColor = Color3.fromRGB(0, 17, 33),
+    StrokeColor = Color3.fromRGB(3, 35, 50),
+    ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22),
+    Button = Color3.fromRGB(0, 172, 247),
+    SearchColor = Color3.fromRGB(0, 17, 35),
+    Save = Color3.fromRGB(0, 76, 99)
+})
+
+-- EXTRA COLOR DYNAMICS (DownBar + TabButton + Icons)
 local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
 if not NEVERLOSE then return end
-
 local Frame = NEVERLOSE:FindFirstChild("Frame")
 if not Frame then return end
 
 local RunService = game:GetService("RunService")
-
-local lastDownBarColor = nil
-local lastIconColor = nil
+local lastDownBarColor, lastIconColor, lastTabColor = nil, nil, nil
 
 RunService.RenderStepped:Connect(function()
     local bgColor = Frame.BackgroundColor3
-    local newDownBarColor = nil
-    local newIconColor = nil
+    local newDownBarColor, newIconColor, newTabColor = nil, nil, nil
 
     if bgColor == Color3.fromRGB(1, 17, 33) then  
-        newDownBarColor = Color3.fromRGB(1, 30, 59)  
+        newDownBarColor = Color3.fromRGB(1, 30, 59)
+        newTabColor = Color3.fromRGB(19, 176, 243)
     elseif bgColor == Color3.fromRGB(22, 22, 22) then  
-        newDownBarColor = Color3.fromRGB(25, 25, 25)  
+        newDownBarColor = Color3.fromRGB(25, 25, 25)
+        newTabColor = Color3.fromRGB(255, 255, 255)
     elseif bgColor == Color3.fromRGB(43, 43, 43) then
         newDownBarColor = Color3.fromRGB(43, 43, 43)
-        newIconColor = Color3.fromRGB(255, 170, 0) -- only here Icon changes
+        newIconColor = Color3.fromRGB(255, 170, 0)
+        newTabColor = Color3.fromRGB(22, 22, 22)
     else
-        return -- Unhandled color  
+        return
     end  
 
-    -- Update DownBar only if changed
     if newDownBarColor and newDownBarColor ~= lastDownBarColor then  
         for _, obj in ipairs(Frame:GetDescendants()) do  
             if obj:IsA("Frame") and obj.Name == "DownBar" then  
@@ -202,7 +213,6 @@ RunService.RenderStepped:Connect(function()
         lastDownBarColor = newDownBarColor  
     end
 
-    -- Update Icon only if changed
     if newIconColor and newIconColor ~= lastIconColor then  
         for _, obj in ipairs(Frame:GetDescendants()) do  
             if obj:IsA("Frame") and obj.Name == "MainFrame" then  
@@ -211,39 +221,7 @@ RunService.RenderStepped:Connect(function()
         end  
         lastIconColor = newIconColor
     end
-end)
 
-
-local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
-if not NEVERLOSE then return end
-
-local Frame = NEVERLOSE:FindFirstChild("Frame")
-if not Frame then return end
-
-local RunService = game:GetService("RunService")
-
-local lastTabColor = nil
-
-RunService.RenderStepped:Connect(function()
-    local bgColor = Frame.BackgroundColor3
-    local newTabColor = nil
-
-    -- Original Theme
-    if bgColor == Color3.fromRGB(1, 17, 33) then
-        newTabColor = Color3.fromRGB(19, 176, 243)
-
-    -- Dark Theme
-    elseif bgColor == Color3.fromRGB(22, 22, 22) then
-        newTabColor = Color3.fromRGB(255, 255, 255)
-
-    -- Orange Theme
-    elseif bgColor == Color3.fromRGB(43, 43, 43) then
-        newTabColor = Color3.fromRGB(22, 22, 22)
-    else
-        return -- Not a handled theme
-    end
-
-    -- Update only if different
     if newTabColor and newTabColor ~= lastTabColor then
         for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
             if obj:IsA("Frame") and obj.Name == "TabButton" then
@@ -254,24 +232,21 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
-
-local frame = game.CoreGui.NEVERLOSE.Frame
-
 spawn(function()
     while true do
-        for _, icon in ipairs(frame:GetDescendants()) do
+        for _, icon in ipairs(Frame:GetDescendants()) do
             if icon.Name == "Icon" and icon:IsA("Frame") then
-                if frame.BackgroundColor3 == Color3.fromRGB(43, 43, 43) then
+                if Frame.BackgroundColor3 == Color3.fromRGB(43, 43, 43) then
                     if icon.BackgroundTransparency == 0 then
-                        icon.BackgroundColor3 = Color3.fromRGB(255, 128, 0) -- Orange
+                        icon.BackgroundColor3 = Color3.fromRGB(255, 128, 0)
                     else
-                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255) -- Light Blue
+                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255)
                     end
                 else
                     if icon.BackgroundTransparency == 0 then
-                        icon.BackgroundColor3 = Color3.fromRGB(19, 176, 243) -- Cyan
+                        icon.BackgroundColor3 = Color3.fromRGB(19, 176, 243)
                     else
-                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255) -- Light Blue
+                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255)
                     end
                 end
             end
@@ -279,87 +254,3 @@ spawn(function()
         task.wait(0.1)
     end
 end)
-
-local CoreGui = game.CoreGui
-local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
-local targetFrame = NEVERLOSE:WaitForChild("Frame")
-
-local cyanColors = {
-    Color3.fromRGB(0, 172, 247),
-    Color3.fromRGB(19, 176, 243),
-    Color3.fromRGB(0, 72, 247)
-}
-
-local orangeColor = Color3.fromRGB(255, 128, 0)
-
--- Store original colors so we can restore them
-local originalColors = {}
-
-local function isCyanColor(color)
-    for _, c in ipairs(cyanColors) do
-        if color == c then
-            return true
-        end
-    end
-    return false
-end
-
-local function recolorObject(obj, makeOrange)
-    -- Handle Icons specially
-    if obj.Name == "Icon" and (obj:IsA("ImageLabel") or obj:IsA("ImageButton")) then
-        if isCyanColor(obj.ImageColor3) or originalColors[obj] then
-            if not originalColors[obj] then
-                originalColors[obj] = obj.ImageColor3
-            end
-            obj.ImageColor3 = makeOrange and orangeColor or originalColors[obj]
-        end
-        return
-    end
-
-    -- Background for frames
-    if obj:IsA("Frame") and (isCyanColor(obj.BackgroundColor3) or originalColors[obj]) then
-        if not originalColors[obj] then
-            originalColors[obj] = obj.BackgroundColor3
-        end
-        obj.BackgroundColor3 = makeOrange and orangeColor or originalColors[obj]
-    end
-
-    -- Text
-    if (obj:IsA("TextLabel") or obj:IsA("TextButton")) and (isCyanColor(obj.TextColor3) or originalColors[obj]) then
-        if not originalColors[obj] then
-            originalColors[obj] = obj.TextColor3
-        end
-        obj.TextColor3 = makeOrange and orangeColor or originalColors[obj]
-    end
-
-    -- Image
-    if (obj:IsA("ImageLabel") or obj:IsA("ImageButton")) and (isCyanColor(obj.ImageColor3) or originalColors[obj]) then
-        if not originalColors[obj] then
-            originalColors[obj] = obj.ImageColor3
-        end
-        obj.ImageColor3 = makeOrange and orangeColor or originalColors[obj]
-    end
-end
-
-local function applyColors(makeOrange)
-    for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
-        recolorObject(obj, makeOrange)
-    end
-end
-
-local function refresh()
-    local isDark = targetFrame.BackgroundColor3 == Color3.fromRGB(43, 43, 43)
-    applyColors(isDark)
-end
-
--- Update when frame changes
-targetFrame:GetPropertyChangedSignal("BackgroundColor3"):Connect(refresh)
-
--- Update when new objects appear
-NEVERLOSE.DescendantAdded:Connect(function(obj)
-    task.wait()
-    recolorObject(obj, targetFrame.BackgroundColor3 == Color3.fromRGB(43, 43, 43))
-end)
-
--- Initial check
-refresh()
