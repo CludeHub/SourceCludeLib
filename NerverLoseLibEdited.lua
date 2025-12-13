@@ -493,7 +493,11 @@ Instance.new("UICorner", aboutFrame).CornerRadius = UDim.new(0, 3)
 aboutFrame.ZIndex = 50
 aboutFrame.Active = true
 aboutFrame.Draggable= true
-	
+
+
+	local aspects = Instance.new("UIAspectRatioConstraint")
+aspects.Parent = aboutFrame
+aspects.AspectRatio = 1
 -- Topbar
 local top = Instance.new("Frame", aboutFrame)
 top.Size = UDim2.new(1, 0, 0.1, 0)
