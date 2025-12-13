@@ -1846,8 +1846,8 @@ Sound2.Ended:Connect(function()
 
 				
 local Line = Instance.new('Frame')
-Line.Position = UDim2.new(0.07000000029802322,0,1,0)
-Line.Size = UDim2.new(0.8700000047683716,0,0.003000000026077032,0)
+Line.Position = UDim2.new(0.05000000029802322,0,1,0)
+Line.Size = UDim2.new(0.8900000047683716,0,0.003000000026077032,0)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
 Line.BackgroundTransparency = 0.699999988079071
@@ -1868,7 +1868,7 @@ Line.Parent = Toggle
 				LabelText.BackgroundTransparency = 1.000
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
-				LabelText.Position = UDim2.new(0.4587454, 0, 0.499999583, 0)
+				LabelText.Position = UDim2.new(0.4387454, 0, 0.499999583, 0)
 				LabelText.Size = UDim2.new(0.772000015, 0, 0.33, 0)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.ArialBold
@@ -2177,8 +2177,8 @@ Sound2.Ended:Connect(function()
 				Slider.ZIndex = 5
 
 				local Line = Instance.new('Frame')
-Line.Position = UDim2.new(0.07000000029802322,0,1,0)
-Line.Size = UDim2.new(0.8700000047683716,0,0.003000000026077032,0)
+Line.Position = UDim2.new(0.05000000029802322,0,1,0)
+Line.Size = UDim2.new(0.8900000047683716,0,0.003000000026077032,0)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
 Line.BackgroundTransparency = 0.699999988079071
@@ -2199,7 +2199,7 @@ Line.Parent = Slider
 				LabelText.BackgroundTransparency = 1.000
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
-				LabelText.Position = UDim2.new(0.258462642, 0, 0.499999374, 0)
+				LabelText.Position = UDim2.new(0.268462642, 0, 0.499999374, 0)
 				LabelText.Size = UDim2.new(0.477176398, 0, 0.33, 0)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.ArialBold
@@ -2383,8 +2383,8 @@ Line.Parent = Slider
 
 
 				local Line = Instance.new('Frame')
-Line.Position = UDim2.new(0.07000000029802322,0,1,0)
-Line.Size = UDim2.new(0.8700000047683716,0,0.003000000026077032,0)
+Line.Position = UDim2.new(0.05000000029802322,0,1,0)
+Line.Size = UDim2.new(0.8900000047683716,0,0.003000000026077032,0)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
 Line.BackgroundTransparency = 0.699999988079071
@@ -2406,7 +2406,7 @@ Line.Parent = Dropdown
 				LabelText.BackgroundTransparency = 1.000
 				LabelText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				LabelText.BorderSizePixel = 0
-				LabelText.Position = UDim2.new(0.310666116, 0, 0.499999374, 0)
+				LabelText.Position = UDim2.new(0.33666116, 0, 0.499999374, 0)
 				LabelText.Size = UDim2.new(0.593582511, 0, 0.33, 0)
 				LabelText.ZIndex = 6
 				LabelText.Font = Enum.Font.ArialBold
