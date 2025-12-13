@@ -459,7 +459,7 @@ print(Text .. " is Running")
 	Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Frame.Size = UDim2.new(0,0,0,0)
 	Frame.ZIndex = 2
-	Frame.ClipsDescendants=true
+	Frame.ClipsDescendants= false
 
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
@@ -995,7 +995,7 @@ DropShadow2.SliceCenter = Rect.new(49, 49, 450, 450)
 	TabHose.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabHose.BorderSizePixel = 0
 	TabHose.Position = UDim2.new(0.223214373, 0, 0.143462211, 0)
-	TabHose.Size = UDim2.new(0.774635077, 0, 0.856537759, 47)
+	TabHose.Size = UDim2.new(0.774635077, 0, 0.856537759, 20)
 	TabHose.ZIndex = 5
 
 	outlo.Name = "outlo"
@@ -1406,23 +1406,25 @@ UserIdNumber.TextXAlignment = Enum.TextXAlignment.Left
 		Label.TextXAlignment = Enum.TextXAlignment.Left
 		Label.TextYAlignment = Enum.TextYAlignment.Top
 
-		local Tab = Instance.new("Frame")
+		local Tab = Instance.new("ScrollingFrame")
 		local Left = Instance.new("ScrollingFrame")
 		local UIListLayout = Instance.new("UIListLayout")
 		local Right = Instance.new("ScrollingFrame")
 		local UIListLayout_2 = Instance.new("UIListLayout")
 
 		Tab.Name = "Tab"
-		Tab.Parent = TabHose
-		Tab.AnchorPoint = Vector2.new(0.5, 0.5)
-		Tab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Tab.BackgroundTransparency = 1.000
-		Tab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Tab.BorderSizePixel = 0
-		Tab.ClipsDescendants = true
-		Tab.Position = UDim2.new(0.5, 0, 0.5, -27)
-		Tab.Size = UDim2.new(0.99000001, 0, 0.99000001, 0)
-		Tab.ZIndex = 6
+Tab.Parent = TabHose
+Tab.AnchorPoint = Vector2.new(0.5, 0.5)
+Tab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Tab.BackgroundTransparency = 1
+Tab.BorderSizePixel = 0
+Tab.ClipsDescendants = true
+Tab.Position = UDim2.new(0.5, 0, 0.5, -27)
+Tab.Size = UDim2.new(0.99, 0, 0.99, 0)
+Tab.ZIndex = 6
+Tab.ScrollBarThickness = 3
+Tab.AutomaticCanvasSize = Enum.AutomaticSize.Y
+Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
 
 		Left.Name = "Left"
 		Left.Parent = Tab
