@@ -1124,6 +1124,14 @@ Icon_5763.ImageColor3 = Color3.fromRGB(223,251,255)
 Icon_5763.Parent = MainFrame_7172
 MainFrame_7172.Parent = Frame
 
+	local asp = Instance.new("UIAspectRatioConstraint")
+	asp.Parent = Icon_5763
+	asp.AspectRatio = 1
+
+	local asp = asp:Clone()
+	asp.Parent = SaveButton_2179
+	asp.AspectRatio = 4.4
+	
 SaveButton_2179.MouseEnter:Connect(function()
 	SaveButton_2179.TextTransparency = 0
 	Icon_5763.ImageTransparency = 0			
