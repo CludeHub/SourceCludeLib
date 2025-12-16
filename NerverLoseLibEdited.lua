@@ -1568,7 +1568,7 @@ SectionHead.AutomaticSize = Enum.AutomaticSize.Y
 SectionHead.Parent = (parentname=="left"and Left) or (parentname=="right"and Right) or nil
 
 Header.Name = "Header"
-Header.Position = UDim2.new(0.5,0,-0.009,0)
+Header.Position = UDim2.new(0.5,0,0.05,0)
 Header.Size = UDim2.new(1,0,0.6,0)
 Header.AnchorPoint = Vector2.new(0.5,0)
 Header.BackgroundColor3 = Color3.fromRGB(255,255,255)
