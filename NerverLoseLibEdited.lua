@@ -1594,7 +1594,7 @@ as.AspectType = Enum.AspectType.ScaleWithParentSize
 			Section.BackgroundColor3 = NEVERLOSE.Themes.SectionColor
 			Section.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Section.BorderSizePixel = 0
-			Section.Position = UDim2.new(0, 0, 0, 17)
+			Section.Position = UDim2.new(0, 0, 0, 25)
 			Section.Size = UDim2.new(1, 0, 0, 0)
 			Section.ZIndex = 5
 
