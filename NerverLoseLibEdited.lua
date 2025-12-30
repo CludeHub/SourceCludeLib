@@ -914,7 +914,7 @@ Sound2.Ended:Connect(function()
 	Frame_3.Parent = Frame
 	Frame_3.Name = "Frame_3"
 	Frame_3.BackgroundColor3 = NEVERLOSE.Themes.MewColor2
-	Frame_3.BackgroundTransparency = 0.4
+	Frame_3.BackgroundTransparency = 0
 	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_3.BorderSizePixel = 0
 	Frame_3.Position = UDim2.new(0.223214373, 0, 0, 0)
