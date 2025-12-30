@@ -8,6 +8,7 @@ style.ZIndex = 50
 
 local textLabel = Instance.new("TextLabel", style)
 textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.Position = UDim2.new(0, 0, 0, 0)
 textLabel.BackgroundTransparency = 1
 textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 textLabel.Font = Enum.Font.Gotham
@@ -74,9 +75,7 @@ local function applyTheme(theme)
         for _, obj in pairs(root:GetDescendants()) do
             if obj:IsA("Frame") then
                 local name = obj.Name
-                if name == "Line" then
-                    obj.BackgroundColor3 = theme.MainColor
-                elseif name:find("Section") then
+                if name:find("Section") then
                     obj.BackgroundColor3 = theme.SectionColor
                 elseif name:find("outlo") or name:find("outlo_2") or name:find("outlo_3") then
                     obj.BackgroundColor3 = theme.TraceColor
@@ -108,7 +107,7 @@ local function applyTheme(theme)
     end
 end
 
--- THEME BUTTONS
+-- BUTTON THEMES
 darkButton.MouseButton1Click:Connect(function()
     applyTheme({
         BlackgroundColor = Color3.fromRGB(22, 22, 22),
@@ -134,7 +133,7 @@ originalButton.MouseButton1Click:Connect(function()
         TraceColor = Color3.fromRGB(0, 76, 99),
         MainColor = Color3.fromRGB(19, 176, 243),
         MainColorDrop = Color3.fromRGB(3, 6, 25),
-        SectionColor = Color3.fromRGB(0, 11, 30),
+        SectionColor = Color3.fromRGB(0, 17, 33),
         StrokeColor = Color3.fromRGB(3, 35, 50),
         ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22),
         Button = Color3.fromRGB(0, 172, 247),
@@ -160,8 +159,7 @@ orangeButton.MouseButton1Click:Connect(function()
     })
 end)
 
--- AUTO LOAD ORIGINAL THEME
-task.wait(0.5)
+-- AUTOLOAD ORIGINAL THEME
 applyTheme({
     BlackgroundColor = Color3.fromRGB(1, 17, 33),
     BlackColor = Color3.fromRGB(9, 9, 19),
@@ -177,48 +175,47 @@ applyTheme({
     Save = Color3.fromRGB(0, 76, 99)
 })
 
--- EXTRA COLOR DYNAMICS (DownBar + TabButton + Icons)
+-- AUTO SYNC COLORS FOR FRAMES, TABS, ICONS
 local NEVERLOSE = game.CoreGui:FindFirstChild("NEVERLOSE")
 if not NEVERLOSE then return end
 local Frame = NEVERLOSE:FindFirstChild("Frame")
 if not Frame then return end
 
 local RunService = game:GetService("RunService")
+
 local lastDownBarColor, lastIconColor, lastTabColor = nil, nil, nil
 
 RunService.RenderStepped:Connect(function()
     local bgColor = Frame.BackgroundColor3
     local newDownBarColor, newIconColor, newTabColor = nil, nil, nil
 
-    if bgColor == Color3.fromRGB(1, 17, 36) then  
+    if bgColor == Color3.fromRGB(1, 17, 33) then
         newDownBarColor = Color3.fromRGB(1, 30, 59)
         newTabColor = Color3.fromRGB(19, 176, 243)
-    elseif bgColor == Color3.fromRGB(22, 22, 22) then  
+    elseif bgColor == Color3.fromRGB(22, 22, 22) then
         newDownBarColor = Color3.fromRGB(25, 25, 25)
         newTabColor = Color3.fromRGB(255, 255, 255)
     elseif bgColor == Color3.fromRGB(43, 43, 43) then
         newDownBarColor = Color3.fromRGB(43, 43, 43)
         newIconColor = Color3.fromRGB(255, 170, 0)
         newTabColor = Color3.fromRGB(22, 22, 22)
-    else
-        return
-    end  
-
-    if newDownBarColor and newDownBarColor ~= lastDownBarColor then  
-        for _, obj in ipairs(Frame:GetDescendants()) do  
-            if obj:IsA("Frame") and obj.Name == "DownBar" then  
-                obj.BackgroundColor3 = newDownBarColor  
-            end  
-        end  
-        lastDownBarColor = newDownBarColor  
     end
 
-    if newIconColor and newIconColor ~= lastIconColor then  
-        for _, obj in ipairs(Frame:GetDescendants()) do  
-            if obj:IsA("Frame") and obj.Name == "MainFrame" then  
+    if newDownBarColor and newDownBarColor ~= lastDownBarColor then
+        for _, obj in ipairs(Frame:GetDescendants()) do
+            if obj:IsA("Frame") and obj.Name == "DownBar" then
+                obj.BackgroundColor3 = newDownBarColor
+            end
+        end
+        lastDownBarColor = newDownBarColor
+    end
+
+    if newIconColor and newIconColor ~= lastIconColor then
+        for _, obj in ipairs(Frame:GetDescendants()) do
+            if obj:IsA("Frame") and obj.Name == "MainFrame" then
                 obj.BackgroundColor3 = newIconColor
-            end  
-        end  
+            end
+        end
         lastIconColor = newIconColor
     end
 
@@ -232,25 +229,86 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
+local frame = game.CoreGui.NEVERLOSE.Frame
 spawn(function()
     while true do
-        for _, icon in ipairs(Frame:GetDescendants()) do
+        for _, icon in ipairs(frame:GetDescendants()) do
             if icon.Name == "Icon" and icon:IsA("Frame") then
-                if Frame.BackgroundColor3 == Color3.fromRGB(43, 43, 43) then
-                    if icon.BackgroundTransparency == 0 then
-                        icon.BackgroundColor3 = Color3.fromRGB(255, 128, 0)
-                    else
-                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255)
-                    end
+                if frame.BackgroundColor3 == Color3.fromRGB(43, 43, 43) then
+                    icon.BackgroundColor3 = (icon.BackgroundTransparency == 0) and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(223, 251, 255)
                 else
-                    if icon.BackgroundTransparency == 0 then
-                        icon.BackgroundColor3 = Color3.fromRGB(19, 176, 243)
-                    else
-                        icon.BackgroundColor3 = Color3.fromRGB(223, 251, 255)
-                    end
+                    icon.BackgroundColor3 = (icon.BackgroundTransparency == 0) and Color3.fromRGB(19, 176, 243) or Color3.fromRGB(223, 251, 255)
                 end
             end
         end
         task.wait(0.1)
     end
 end)
+
+local CoreGui = game.CoreGui
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
+local targetFrame = NEVERLOSE:WaitForChild("Frame")
+
+local cyanColors = {
+    Color3.fromRGB(0, 172, 247),
+    Color3.fromRGB(19, 176, 243),
+    Color3.fromRGB(0, 72, 247)
+}
+
+local orangeColor = Color3.fromRGB(255, 128, 0)
+local originalColors = {}
+
+local function isCyanColor(color)
+    for _, c in ipairs(cyanColors) do
+        if color == c then return true end
+    end
+    return false
+end
+
+local function recolorObject(obj, makeOrange)
+    if obj:IsA("UIStroke") then
+        obj.Color = makeOrange and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(3, 35, 50)
+        return
+    end
+
+    if obj.Name == "Icon" and (obj:IsA("ImageLabel") or obj:IsA("ImageButton")) then
+        if isCyanColor(obj.ImageColor3) or originalColors[obj] then
+            originalColors[obj] = originalColors[obj] or obj.ImageColor3
+            obj.ImageColor3 = makeOrange and orangeColor or originalColors[obj]
+        end
+        return
+    end
+
+    if obj:IsA("Frame") and (isCyanColor(obj.BackgroundColor3) or originalColors[obj]) then
+        originalColors[obj] = originalColors[obj] or obj.BackgroundColor3
+        obj.BackgroundColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+
+    if (obj:IsA("TextLabel") or obj:IsA("TextButton")) and (isCyanColor(obj.TextColor3) or originalColors[obj]) then
+        originalColors[obj] = originalColors[obj] or obj.TextColor3
+        obj.TextColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+
+    if (obj:IsA("ImageLabel") or obj:IsA("ImageButton")) and (isCyanColor(obj.ImageColor3) or originalColors[obj]) then
+        originalColors[obj] = originalColors[obj] or obj.ImageColor3
+        obj.ImageColor3 = makeOrange and orangeColor or originalColors[obj]
+    end
+end
+
+local function applyColors(makeOrange)
+    for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
+        recolorObject(obj, makeOrange)
+    end
+end
+
+local function refresh()
+    local isDark = targetFrame.BackgroundColor3 == Color3.fromRGB(43, 43, 43)
+    applyColors(isDark)
+end
+
+targetFrame:GetPropertyChangedSignal("BackgroundColor3"):Connect(refresh)
+NEVERLOSE.DescendantAdded:Connect(function(obj)
+    task.wait()
+    recolorObject(obj, targetFrame.BackgroundColor3 == Color3.fromRGB(43, 43, 43))
+end)
+refresh()
