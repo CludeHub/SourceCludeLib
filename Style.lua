@@ -194,29 +194,38 @@ local TabHose = Frame:WaitForChild("TabHose")
 local function updateColors()
 	local frameColor = Frame.BackgroundColor3
 
+	-- If frame color is dark gray (22,22,22)
 	if frameColor == Color3.fromRGB(22,22,22) then
+		-- Make all TabButtons frames white
 		for _, v in pairs(TabButtons:GetChildren()) do
 			if v:IsA("Frame") then
 				v.BackgroundColor3 = Color3.fromRGB(255,255,255)
 			end
 		end
 
-		local section2 = TabHose:FindFirstChild("Tab") and TabHose.Tab:FindFirstChild("Left")
+		-- Get UIStroke color of Section2
+		local section2 = TabHose:FindFirstChild("Tab")
+			and TabHose.Tab:FindFirstChild("Left")
 			and TabHose.Tab.Left:FindFirstChild("Section2")
+
 		if section2 and section2:FindFirstChildOfClass("UIStroke") then
 			local strokeColor = section2:FindFirstChildOfClass("UIStroke").Color
-			local section = TabHose:FindFirstChild("Tab") and TabHose.Tab:FindFirstChild("Left")
+
+			-- Apply that color to all frames in Section.Section
+			local section = TabHose:FindFirstChild("Tab")
+				and TabHose.Tab:FindFirstChild("Left")
 				and TabHose.Tab.Left:FindFirstChild("Section")
 
 			if section and section:FindFirstChild("Section") then
-				for _, toggle in pairs(section.Section:GetDescendants()) do
-					if toggle:IsA("Frame") and toggle.Name == "Frame" and toggle.Parent.Name == "Toggle" then
-						toggle.BackgroundColor3 = strokeColor
+				for _, obj in pairs(section.Section:GetDescendants()) do
+					if obj:IsA("Frame") then
+						obj.BackgroundColor3 = strokeColor
 					end
 				end
 			end
 		end
 
+	-- If frame color is dark blue (1,17,33)
 	elseif frameColor == Color3.fromRGB(1,17,33) then
 		for _, v in pairs(TabButtons:GetChildren()) do
 			if v:IsA("Frame") then
@@ -226,5 +235,6 @@ local function updateColors()
 	end
 end
 
+-- Run immediately and when color changes
 updateColors()
 Frame:GetPropertyChangedSignal("BackgroundColor3"):Connect(updateColors)
