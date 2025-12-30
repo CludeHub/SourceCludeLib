@@ -183,3 +183,48 @@ local mainFrame = NEVERLOSE:FindFirstChild("Frame")
 if mainFrame then
 	mainFrame:GetPropertyChangedSignal("BackgroundColor3"):Connect(updateLines)
 end
+
+
+local CoreGui = game:GetService("CoreGui")
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
+local Frame = NEVERLOSE:WaitForChild("Frame")
+local TabButtons = Frame:WaitForChild("TabButtons")
+local TabHose = Frame:WaitForChild("TabHose")
+
+local function updateColors()
+	local frameColor = Frame.BackgroundColor3
+
+	if frameColor == Color3.fromRGB(22,22,22) then
+		for _, v in pairs(TabButtons:GetChildren()) do
+			if v:IsA("Frame") then
+				v.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			end
+		end
+
+		local section2 = TabHose:FindFirstChild("Tab") and TabHose.Tab:FindFirstChild("Left")
+			and TabHose.Tab.Left:FindFirstChild("Section2")
+		if section2 and section2:FindFirstChildOfClass("UIStroke") then
+			local strokeColor = section2:FindFirstChildOfClass("UIStroke").Color
+			local section = TabHose:FindFirstChild("Tab") and TabHose.Tab:FindFirstChild("Left")
+				and TabHose.Tab.Left:FindFirstChild("Section")
+
+			if section and section:FindFirstChild("Section") then
+				for _, toggle in pairs(section.Section:GetDescendants()) do
+					if toggle:IsA("Frame") and toggle.Name == "Frame" and toggle.Parent.Name == "Toggle" then
+						toggle.BackgroundColor3 = strokeColor
+					end
+				end
+			end
+		end
+
+	elseif frameColor == Color3.fromRGB(1,17,33) then
+		for _, v in pairs(TabButtons:GetChildren()) do
+			if v:IsA("Frame") then
+				v.BackgroundColor3 = Color3.fromRGB(19,176,243)
+			end
+		end
+	end
+end
+
+updateColors()
+Frame:GetPropertyChangedSignal("BackgroundColor3"):Connect(updateColors)
