@@ -102,7 +102,7 @@ darkButton.MouseButton1Click:Connect(function()
 		TraceColor = Color3.fromRGB(115, 115, 115),
 		MainColor = Color3.fromRGB(0, 172, 247),
 		MainColorDrop = Color3.fromRGB(64, 65, 67),
-		SectionColor = Color3.fromRGB(10, 11, 16),
+		SectionColor = Color3.fromRGB(0,0,20),
 		StrokeColor = Color3.fromRGB(28, 28, 28),
 		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
 		Button = Color3.fromRGB(0, 172, 247),
