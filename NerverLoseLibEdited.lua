@@ -275,7 +275,7 @@ local NEVERLOSE = {
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	    if name == "neon" or name == "original" or name == "darkblue" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(1, 17, 33)
+		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(2, 32, 63)
 		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(9, 9, 19)
 		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(7, 7, 17)
 		NEVERLOSE.Themes.MewColor1 = Color3.fromRGB(9, 9, 19)
@@ -968,7 +968,7 @@ DropShadow2.SliceCenter = Rect.new(49, 49, 450, 450)
 	HeadName.TextScaled = true
 	HeadName.TextSize = 14.000
 	HeadName.TextStrokeColor3 = Color3.fromRGB(0, 251, 255)
-	HeadName.TextStrokeTransparency = 1
+	HeadName.TextStrokeTransparency = 0.8
 	HeadName.TextWrapped = true
 
 	TabButtons.Name = "TabButtons"
@@ -1098,7 +1098,7 @@ Save_4145.TextYAlignment = Enum.TextYAlignment.Center
 Save_4145.TextDirection = Enum.TextDirection.Auto
 Save_4145.Parent = SaveButton_2179
 local Stroke_2938 = Instance.new("UIStroke")
-Stroke_2938.Color = Color3.fromRGB(223,251,255)
+Stroke_2938.Color = Color3.fromRGB(2, 35, 50)
 Stroke_2938.Thickness = 1
 Stroke_2938.Transparency = 0.3
 Stroke_2938.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
