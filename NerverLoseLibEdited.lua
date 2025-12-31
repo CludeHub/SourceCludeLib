@@ -1856,9 +1856,10 @@ Sound2.Ended:Connect(function()
 local Line = Instance.new('Frame')
 Line.Position = UDim2.new(0.05000000029802322,0,1,0)
 Line.Size = UDim2.new(0.8900000047683716,0,0.003000000026077032,0)
+Line.BorderSizePixel = 0
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
-Line.BackgroundTransparency = 0.699999988079071
+Line.BackgroundTransparency = 0.6
 Line.ZIndex = 10
 Line.Parent = Toggle
 
@@ -2018,7 +2019,8 @@ Line.Position = UDim2.new(0.07000000029802322,0,1,0)
 Line.Size = UDim2.new(0.8700000047683716,0,0.003000000026077032,0)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
-Line.BackgroundTransparency = 0.699999988079071
+Line.BackgroundTransparency = 0.6
+Line.BorderSizePixel = 0
 Line.ZIndex = 10
 Line.Parent = Keybind
 
@@ -2189,7 +2191,8 @@ Line.Position = UDim2.new(0.05000000029802322,0,1,0)
 Line.Size = UDim2.new(0.8900000047683716,0,0.003000000026077032,0)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
-Line.BackgroundTransparency = 0.699999988079071
+Line.BackgroundTransparency = 0.6
+Line.BorderSizePixel = 0
 Line.ZIndex = 10
 Line.Parent = Slider
 
@@ -2395,7 +2398,8 @@ Line.Position = UDim2.new(0.05000000029802322,0,1,0)
 Line.Size = UDim2.new(0.8900000047683716,0,0.003000000026077032,0)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
-Line.BackgroundTransparency = 0.699999988079071
+Line.BackgroundTransparency = 0.6
+Line.BorderSizePixel = 0
 Line.ZIndex = 10
 Line.Parent = Dropdown
 
