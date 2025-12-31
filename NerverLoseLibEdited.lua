@@ -283,7 +283,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(0, 76, 99)
 		NEVERLOSE.Themes.MainColor = Color3.fromRGB(19, 176, 243)
 		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(3, 6, 25)
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 10, 34)
+		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(4, 13, 24)
 		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
 		NEVERLOSE.Themes.SearchColor = Color3.fromRGB(0, 17, 35)
@@ -1600,7 +1600,7 @@ as.AspectType = Enum.AspectType.ScaleWithParentSize
 
 local UIStrokes = Instance.new('UIStroke')
 UIStrokes.Color = Color3.fromRGB(3,35,50)
-UIStrokes.Transparency = 0.20000000298023224
+UIStrokes.Transparency = 0.30000000298023224
 UIStrokes.Parent = Section
 
 
@@ -1859,7 +1859,7 @@ Line.Size = UDim2.new(0.8900000047683716,0,0,1)
 Line.BorderSizePixel = 0
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
-Line.BackgroundTransparency = 0
+Line.BackgroundTransparency = 0.2
 Line.ZIndex = 10
 Line.Parent = Toggle
 
@@ -2019,7 +2019,7 @@ Line.Position = UDim2.new(0.07000000029802322,0,1,0)
 Line.Size = UDim2.new(0.8700000047683716,0,0,1)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
-Line.BackgroundTransparency = 0
+Line.BackgroundTransparency = 0.2
 Line.BorderSizePixel = 0
 Line.ZIndex = 10
 Line.Parent = Keybind
@@ -2191,7 +2191,7 @@ Line.Position = UDim2.new(0.05000000029802322,0,1,0)
 Line.Size = UDim2.new(0.8900000047683716,0,0,1)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
-Line.BackgroundTransparency = 0
+Line.BackgroundTransparency = 0.2
 Line.BorderSizePixel = 0
 Line.ZIndex = 10
 Line.Parent = Slider
@@ -2398,7 +2398,7 @@ Line.Position = UDim2.new(0.05000000029802322,0,1,0)
 Line.Size = UDim2.new(0.8900000047683716,0,0,1)
 Line.AnchorPoint = Vector2.new(0,0)
 Line.BackgroundColor3 = Color3.fromRGB(3,35,50)
-Line.BackgroundTransparency = 0
+Line.BackgroundTransparency = 0.2
 Line.BorderSizePixel = 0
 Line.ZIndex = 10
 Line.Parent = Dropdown
