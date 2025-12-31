@@ -113,7 +113,7 @@ end)
 
 originalButton.MouseButton1Click:Connect(function()
 	applyTheme({
-		BlackgroundColor = Color3.fromRGB(1, 17, 33),
+		BlackgroundColor = Color3.fromRGB(2, 32, 63),
 		BlackColor = Color3.fromRGB(9, 9, 19),
 		HeaderColor = Color3.fromRGB(7, 7, 17),
 		TraceColor = Color3.fromRGB(0, 76, 99),
