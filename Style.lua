@@ -133,13 +133,13 @@ orangeButton.MouseButton1Click:Connect(function()
 		BlackgroundColor = Color3.fromRGB(11, 17, 25),
 		BlackColor = Color3.fromRGB(3, 8, 18),
 		HeaderColor = Color3.fromRGB(3, 8, 18),
-		TraceColor = Color3.fromRGB(200, 200, 255),
+		TraceColor = Color3.fromRGB(20,20,20),
 		MainColor = Color3.fromRGB(30, 30, 30),
 		MainColorDrop = Color3.fromRGB(64, 65, 67),
 		SectionColor = Color3.fromRGB(23, 23, 30),
 		StrokeColor = Color3.fromRGB(20, 20, 30),
 		ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26),
-		Button = Color3.fromRGB(26, 26, 26),
+		Button = Color3.fromRGB(200,200,255),
 		SearchColor = Color3.fromRGB(10, 10, 20),
 		Save = Color3.fromRGB(28,28,28)
 	})
