@@ -245,22 +245,51 @@ local CoreGui = game:GetService("CoreGui")
 
 local Frame = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame")
 local TabHose = Frame:WaitForChild("TabHose")
-local TargetToggle = TabHose:GetChildren()[5].Left.Section.Section.Toggle
-local Icon = TargetToggle:WaitForChild("Effect"):WaitForChild("Icon")
-local Effect = TargetToggle:WaitForChild("Effect")
 
+-- Colors
 local CheckColor = Color3.fromRGB(11, 17, 27)
 local IconOnColor = Color3.fromRGB(255, 255, 255)
 local EffectOnColor = Color3.fromRGB(0, 170, 255)
-local IconOffColor = Icon.ImageColor3 -- store original colors
-local EffectOffColor = Effect.BackgroundColor3
 
+-- Store original colors to restore
+local originalColors = {}
+
+-- Gather all toggles once
+local Toggles = {}
+for _, tab in pairs(TabHose:GetChildren()) do
+    if tab:FindFirstChild("Left") and tab.Left:FindFirstChild("Section") then
+        local section = tab.Left.Section
+        if section:FindFirstChild("Section") then
+            local innerSection = section.Section
+            if innerSection:FindFirstChild("Toggle") then
+                local toggle = innerSection.Toggle
+                local effect = toggle:FindFirstChild("Effect")
+                if effect and effect:FindFirstChild("Icon") then
+                    table.insert(Toggles, toggle)
+                    originalColors[toggle] = {
+                        Icon = effect.Icon.ImageColor3,
+                        Effect = effect.BackgroundColor3
+                    }
+                end
+            end
+        end
+    end
+end
+
+-- Loop efficiently
 RunService.RenderStepped:Connect(function()
-    if Frame.BackgroundColor3 == CheckColor then
-        Icon.ImageColor3 = IconOnColor
-        Effect.BackgroundColor3 = EffectOnColor
-    else
-        Icon.ImageColor3 = IconOffColor
-        Effect.BackgroundColor3 = EffectOffColor
+    local active = Frame.BackgroundColor3 == CheckColor
+    for _, toggle in pairs(Toggles) do
+        local effect = toggle:FindFirstChild("Effect")
+        if effect and effect:FindFirstChild("Icon") then
+            if active then
+                effect.Icon.ImageColor3 = IconOnColor
+                effect.BackgroundColor3 = EffectOnColor
+            else
+                local orig = originalColors[toggle]
+                effect.Icon.ImageColor3 = orig.Icon
+                effect.BackgroundColor3 = orig.Effect
+            end
+        end
     end
 end)
