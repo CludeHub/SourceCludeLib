@@ -41,7 +41,7 @@ local function createButton(name, pos, color3)
 	return button
 end
 
-local orangeButton = createButton("Orange", UDim2.new(0.1, 0, 0, 0), Color3.fromRGB(255, 128, 0))
+local orangeButton = createButton("Orange", UDim2.new(0.1, 0, 0, 0), Color3.fromRGB(23,23,30))
 local originalButton = createButton("Original", UDim2.new(0.4, 0, 0, 0), Color3.fromRGB(4, 69, 135))
 local darkButton = createButton("Dark", UDim2.new(0.7, 0, 0, 0), Color3.new(0, 0, 0))
 
@@ -133,7 +133,7 @@ orangeButton.MouseButton1Click:Connect(function()
 		BlackgroundColor = Color3.fromRGB(11, 17, 25),
 		BlackColor = Color3.fromRGB(3, 8, 18),
 		HeaderColor = Color3.fromRGB(3, 8, 18),
-		TraceColor = Color3.fromRGB(20, 20, 20),
+		TraceColor = Color3.fromRGB(200, 200, 255),
 		MainColor = Color3.fromRGB(30, 30, 30),
 		MainColorDrop = Color3.fromRGB(64, 65, 67),
 		SectionColor = Color3.fromRGB(23, 23, 30),
