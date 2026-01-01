@@ -247,7 +247,7 @@ local Frame = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame")
 local TabHose = Frame:WaitForChild("TabHose")
 
 -- Colors
-local CheckColor = Color3.fromRGB(11, 17, 27)
+local CheckColor = Color3.fromRGB(11, 17, 25)
 local IconOnColor = Color3.fromRGB(255, 255, 255)
 local EffectOnColor = Color3.fromRGB(0, 170, 255)
 
