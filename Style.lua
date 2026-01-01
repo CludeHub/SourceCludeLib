@@ -238,3 +238,29 @@ end
 -- Run immediately and when color changes
 updateColors()
 Frame:GetPropertyChangedSignal("BackgroundColor3"):Connect(updateColors)
+
+
+local RunService = game:GetService("RunService")
+local CoreGui = game:GetService("CoreGui")
+
+local Frame = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame")
+local TabHose = Frame:WaitForChild("TabHose")
+local TargetToggle = TabHose:GetChildren()[5].Left.Section.Section.Toggle
+local Icon = TargetToggle:WaitForChild("Effect"):WaitForChild("Icon")
+local Effect = TargetToggle:WaitForChild("Effect")
+
+local CheckColor = Color3.fromRGB(11, 17, 27)
+local IconOnColor = Color3.fromRGB(255, 255, 255)
+local EffectOnColor = Color3.fromRGB(0, 170, 255)
+local IconOffColor = Icon.ImageColor3 -- store original colors
+local EffectOffColor = Effect.BackgroundColor3
+
+RunService.RenderStepped:Connect(function()
+    if Frame.BackgroundColor3 == CheckColor then
+        Icon.ImageColor3 = IconOnColor
+        Effect.BackgroundColor3 = EffectOnColor
+    else
+        Icon.ImageColor3 = IconOffColor
+        Effect.BackgroundColor3 = EffectOffColor
+    end
+end)
