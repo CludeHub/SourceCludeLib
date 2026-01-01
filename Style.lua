@@ -131,8 +131,8 @@ end)
 orangeButton.MouseButton1Click:Connect(function()
 	applyTheme({
 		BlackgroundColor = Color3.fromRGB(11, 17, 25),
-		BlackColor = Color3.fromRGB(11, 17, 27),
-		HeaderColor = Color3.fromRGB(11, 17, 27),
+		BlackColor = Color3.fromRGB(3, 8, 18),
+		HeaderColor = Color3.fromRGB(3, 8, 18),
 		TraceColor = Color3.fromRGB(20, 20, 20),
 		MainColor = Color3.fromRGB(0, 172, 255),
 		MainColorDrop = Color3.fromRGB(0, 172, 255),
