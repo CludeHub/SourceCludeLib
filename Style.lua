@@ -250,16 +250,17 @@ local CheckColor = Color3.fromRGB(11, 17, 25)
 local IconOnColor = Color3.fromRGB(255, 255, 255)
 local EffectOnColor = Color3.fromRGB(0, 170, 255)
 
--- STORAGE
 local Toggles = {}
 local OriginalColors = {}
 
--- FLOAT-SAFE COLOR COMPARE
+-- SAFE Color3 compare
 local function SameColor(a, b)
-    return (a - b).Magnitude < 0.01
+    return math.abs(a.R - b.R) < 0.01
+       and math.abs(a.G - b.G) < 0.01
+       and math.abs(a.B - b.B) < 0.01
 end
 
--- FIND ALL TOGGLES (NO PARENT REQUIREMENTS)
+-- FIND ALL TOGGLES (NO PARENT LOGIC)
 local function ScanToggles()
     table.clear(Toggles)
     table.clear(OriginalColors)
@@ -270,7 +271,7 @@ local function ScanToggles()
             local icon = effect and effect:FindFirstChild("Icon")
 
             if effect and icon then
-                table.insert(Toggles, obj)
+                Toggles[#Toggles + 1] = obj
                 OriginalColors[obj] = {
                     Icon = icon.ImageColor3,
                     Effect = effect.BackgroundColor3
@@ -280,17 +281,16 @@ local function ScanToggles()
     end
 end
 
--- INITIAL SCAN
 ScanToggles()
 
--- RESCAN IF UI CHANGES (NEW TOGGLES)
+-- RESCAN IF UI ADDS MORE
 NEVERLOSE.DescendantAdded:Connect(function(obj)
     if obj.Name == "Toggle" then
-        task.delay(0, ScanToggles)
+        task.defer(ScanToggles)
     end
 end)
 
--- UPDATE LOOP (FAST & SAFE)
+-- MAIN LOOP
 RunService.RenderStepped:Connect(function()
     local active = SameColor(Frame.BackgroundColor3, CheckColor)
 
