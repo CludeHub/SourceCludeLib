@@ -239,55 +239,72 @@ end
 updateColors()
 Frame:GetPropertyChangedSignal("BackgroundColor3"):Connect(updateColors)
 
-
 local RunService = game:GetService("RunService")
 local CoreGui = game:GetService("CoreGui")
 
-local Frame = CoreGui:WaitForChild("NEVERLOSE"):WaitForChild("Frame")
-local TabHose = Frame:WaitForChild("TabHose")
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
+local Frame = NEVERLOSE:WaitForChild("Frame")
 
--- Colors
+-- COLORS
 local CheckColor = Color3.fromRGB(11, 17, 25)
 local IconOnColor = Color3.fromRGB(255, 255, 255)
 local EffectOnColor = Color3.fromRGB(0, 170, 255)
 
--- Store original colors to restore
-local originalColors = {}
-
--- Gather all toggles once
+-- STORAGE
 local Toggles = {}
-for _, tab in pairs(TabHose:GetChildren()) do
-    if tab:FindFirstChild("Left") and tab.Left:FindFirstChild("Section") then
-        local section = tab.Left.Section
-        if section:FindFirstChild("Section") then
-            local innerSection = section.Section
-            if innerSection:FindFirstChild("Toggle") then
-                local toggle = innerSection.Toggle
-                local effect = toggle:FindFirstChild("Effect")
-                if effect and effect:FindFirstChild("Icon") then
-                    table.insert(Toggles, toggle)
-                    originalColors[toggle] = {
-                        Icon = effect.Icon.ImageColor3,
-                        Effect = effect.BackgroundColor3
-                    }
-                end
+local OriginalColors = {}
+
+-- FLOAT-SAFE COLOR COMPARE
+local function SameColor(a, b)
+    return (a - b).Magnitude < 0.01
+end
+
+-- FIND ALL TOGGLES (NO PARENT REQUIREMENTS)
+local function ScanToggles()
+    table.clear(Toggles)
+    table.clear(OriginalColors)
+
+    for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
+        if obj.Name == "Toggle" then
+            local effect = obj:FindFirstChild("Effect")
+            local icon = effect and effect:FindFirstChild("Icon")
+
+            if effect and icon then
+                table.insert(Toggles, obj)
+                OriginalColors[obj] = {
+                    Icon = icon.ImageColor3,
+                    Effect = effect.BackgroundColor3
+                }
             end
         end
     end
 end
 
--- Loop efficiently
+-- INITIAL SCAN
+ScanToggles()
+
+-- RESCAN IF UI CHANGES (NEW TOGGLES)
+NEVERLOSE.DescendantAdded:Connect(function(obj)
+    if obj.Name == "Toggle" then
+        task.delay(0, ScanToggles)
+    end
+end)
+
+-- UPDATE LOOP (FAST & SAFE)
 RunService.RenderStepped:Connect(function()
-    local active = Frame.BackgroundColor3 == CheckColor
-    for _, toggle in pairs(Toggles) do
+    local active = SameColor(Frame.BackgroundColor3, CheckColor)
+
+    for _, toggle in ipairs(Toggles) do
         local effect = toggle:FindFirstChild("Effect")
-        if effect and effect:FindFirstChild("Icon") then
+        local icon = effect and effect:FindFirstChild("Icon")
+        local orig = OriginalColors[toggle]
+
+        if effect and icon and orig then
             if active then
-                effect.Icon.ImageColor3 = IconOnColor
+                icon.ImageColor3 = IconOnColor
                 effect.BackgroundColor3 = EffectOnColor
             else
-                local orig = originalColors[toggle]
-                effect.Icon.ImageColor3 = orig.Icon
+                icon.ImageColor3 = orig.Icon
                 effect.BackgroundColor3 = orig.Effect
             end
         end
