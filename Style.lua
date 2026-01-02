@@ -253,14 +253,14 @@ local EffectOnColor = Color3.fromRGB(0, 170, 255)
 local Toggles = {}
 local OriginalColors = {}
 
--- SAFE Color3 compare
+-- Safe Color3 compare
 local function SameColor(a, b)
     return math.abs(a.R - b.R) < 0.01
        and math.abs(a.G - b.G) < 0.01
        and math.abs(a.B - b.B) < 0.01
 end
 
--- FIND ALL TOGGLES (NO PARENT LOGIC)
+-- Scan all toggles (NO parent dependency)
 local function ScanToggles()
     table.clear(Toggles)
     table.clear(OriginalColors)
@@ -270,10 +270,11 @@ local function ScanToggles()
             local effect = obj:FindFirstChild("Effect")
             local icon = effect and effect:FindFirstChild("Icon")
 
-            if effect and icon then
+            -- Icon IS A FRAME
+            if effect and icon and icon:IsA("Frame") then
                 Toggles[#Toggles + 1] = obj
                 OriginalColors[obj] = {
-                    Icon = icon.ImageColor3,
+                    Icon = icon.BackgroundColor3,
                     Effect = effect.BackgroundColor3
                 }
             end
@@ -283,14 +284,14 @@ end
 
 ScanToggles()
 
--- RESCAN IF UI ADDS MORE
+-- Re-scan if new toggles appear
 NEVERLOSE.DescendantAdded:Connect(function(obj)
     if obj.Name == "Toggle" then
         task.defer(ScanToggles)
     end
 end)
 
--- MAIN LOOP
+-- Update loop
 RunService.RenderStepped:Connect(function()
     local active = SameColor(Frame.BackgroundColor3, CheckColor)
 
@@ -301,10 +302,10 @@ RunService.RenderStepped:Connect(function()
 
         if effect and icon and orig then
             if active then
-                icon.ImageColor3 = IconOnColor
+                icon.BackgroundColor3 = IconOnColor
                 effect.BackgroundColor3 = EffectOnColor
             else
-                icon.ImageColor3 = orig.Icon
+                icon.BackgroundColor3 = orig.Icon
                 effect.BackgroundColor3 = orig.Effect
             end
         end
