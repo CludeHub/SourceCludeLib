@@ -240,88 +240,81 @@ updateColors()
 Frame:GetPropertyChangedSignal("BackgroundColor3"):Connect(updateColors)
 
 
-local RunService = game:GetService("RunService")
-local CoreGui = game:GetService("CoreGui")
-
-local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")
-local Frame = NEVERLOSE:WaitForChild("Frame")
-
--- THE COLOR TO TRIGGER RECOLOR
-local CheckColor = Color3.fromRGB(11, 17, 25)
-
--- COLORS FOR TOGGLES
-local IconOnColor = Color3.fromRGB(255, 255, 255)
-local EffectOnColor = Color3.fromRGB(0, 170, 255)
-
--- ICON TRANSPARENCY WHEN INACTIVE
-local IconInactiveTransparency = 0.3
-
--- STORAGE
-local Toggles = {}
-local OriginalColors = {}
-local OriginalTransparency = {}
-
--- SAFE COLOR3 COMPARE
-local function SameColor(a, b)
-    return math.abs(a.R - b.R) < 0.01
-       and math.abs(a.G - b.G) < 0.01
-       and math.abs(a.B - b.B) < 0.01
-end
-
--- FIND ALL TOGGLES
-local function ScanToggles()
-    table.clear(Toggles)
-    table.clear(OriginalColors)
-    table.clear(OriginalTransparency)
-
-    for _, obj in ipairs(NEVERLOSE:GetDescendants()) do
-        if obj.Name == "Toggle" then
-            local effect = obj:FindFirstChild("Effect")
-            local icon = effect and effect:FindFirstChild("Icon")
-            if effect and icon and icon:IsA("Frame") then
-                table.insert(Toggles, obj)
-                OriginalColors[obj] = {
-                    Icon = icon.BackgroundColor3,
-                    Effect = effect.BackgroundColor3
-                }
-                OriginalTransparency[obj] = icon.BackgroundTransparency or 0
-            end
-        end
-    end
-end
-
--- INITIAL SCAN
-ScanToggles()
-
--- RESCAN IF NEW TOGGLES ARE ADDED
-NEVERLOSE.DescendantAdded:Connect(function(obj)
-    if obj.Name == "Toggle" then
-        task.defer(ScanToggles)
-    end
-end)
-
--- MAIN LOOP
-RunService.RenderStepped:Connect(function()
-    local active = SameColor(Frame.BackgroundColor3, CheckColor)
-
-    for _, toggle in ipairs(Toggles) do
-        local effect = toggle:FindFirstChild("Effect")
-        local icon = effect and effect:FindFirstChild("Icon")
-        local origColor = OriginalColors[toggle]
-        local origTrans = OriginalTransparency[toggle]
-
-        if effect and icon and origColor and origTrans then
-            if active then
-                -- RECOLOR TOGGLES
-                icon.BackgroundColor3 = IconOnColor
-                effect.BackgroundColor3 = EffectOnColor
-                icon.BackgroundTransparency = 0
-            else
-                -- RESTORE ORIGINAL COLORS
-                icon.BackgroundColor3 = origColor.Icon
-                effect.BackgroundColor3 = origColor.Effect
-                icon.BackgroundTransparency = origTrans
-            end
-        end
-    end
+                local RunService = game:GetService("RunService")  
+local CoreGui = game:GetService("CoreGui")  
+  
+local NEVERLOSE = CoreGui:WaitForChild("NEVERLOSE")  
+local Frame = NEVERLOSE:WaitForChild("Frame")  
+  
+-- THE COLOR TO TRIGGER RECOLOR  
+local CheckColor = Color3.fromRGB(11, 17, 25)  
+  
+-- COLORS FOR TOGGLES  
+local IconOnColor = Color3.fromRGB(255, 255, 255)  
+local EffectOnColor = Color3.fromRGB(0, 170, 255)  
+  
+-- STORAGE  
+local Toggles = {}  
+local OriginalColors = {}  
+  
+-- SAFE COLOR3 COMPARE  
+local function SameColor(a, b)  
+    return math.abs(a.R - b.R) < 0.01  
+       and math.abs(a.G - b.G) < 0.01  
+       and math.abs(a.B - b.B) < 0.01  
+end  
+  
+-- FIND ALL TOGGLES  
+local function ScanToggles()  
+    table.clear(Toggles)  
+    table.clear(OriginalColors)  
+  
+    for _, obj in ipairs(NEVERLOSE:GetDescendants()) do  
+        if obj.Name == "Toggle" then  
+            local effect = obj:FindFirstChild("Effect")  
+            local icon = effect and effect:FindFirstChild("Icon")  
+            if effect and icon and icon:IsA("Frame") then  
+                table.insert(Toggles, obj)  
+                OriginalColors[obj] = {  
+                    Icon = icon.BackgroundColor3,  
+                    Effect = effect.BackgroundColor3  
+                }  
+            end  
+        end  
+    end  
+end  
+  
+-- INITIAL SCAN  
+ScanToggles()  
+  
+-- RESCAN IF NEW TOGGLES ARE ADDED  
+NEVERLOSE.DescendantAdded:Connect(function(obj)  
+    if obj.Name == "Toggle" then  
+        task.defer(ScanToggles)  
+    end  
+end)  
+  
+-- MAIN LOOP  
+RunService.RenderStepped:Connect(function()  
+    local active = SameColor(Frame.BackgroundColor3, CheckColor)  
+  
+    for _, toggle in ipairs(Toggles) do  
+        local effect = toggle:FindFirstChild("Effect")  
+        local icon = effect and effect:FindFirstChild("Icon")  
+        local orig = OriginalColors[toggle]  
+  
+        if effect and icon and orig then  
+            if active then  
+                -- RECOLOR  
+                icon.BackgroundColor3 = IconOnColor  
+                effect.BackgroundColor3 = EffectOnColor  
+                icon.BackgroundTransparency = 0  
+            else  
+                -- RESTORE ORIGINAL COLORS  
+                icon.BackgroundColor3 = orig.Icon  
+                effect.BackgroundColor3 = orig.Effect  
+                 icon.BackgroundTransparency = 0.3  
+            end  
+        end  
+    end  
 end)
