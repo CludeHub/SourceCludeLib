@@ -40,6 +40,9 @@ end)
 Example:AddButton("Test Notification",function()
     print('button')
 end)
+
+Example:Colorpicker("Color", Color3.fromRGB(0, 172, 255), function(val)
+end)
 end)
 ```
 
