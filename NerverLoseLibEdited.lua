@@ -21,7 +21,7 @@ local function cretate_button(asd)
 	button.TextTransparency=1
 	button.Text=""
 	button.Parent=asd
-	button.ZIndex=5000
+	button.ZIndex=120
 	return button
 end
 
