@@ -2404,7 +2404,6 @@ end
 
 function buttoneffect(params)
     local frame = params.frame
-    -- optional hover effect: just change text color
     frame.MouseEnter:Connect(function()
         frame.TextColor3 = Color3.fromRGB(234, 239, 246)
     end)
@@ -2414,7 +2413,7 @@ function buttoneffect(params)
 end
 
 function Resize(size)
-    -- do nothing
+    
 end
 
 function sectionfunc:Colorpicker(text, color, callback)
