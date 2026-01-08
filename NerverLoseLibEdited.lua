@@ -2720,6 +2720,8 @@ Dragify(colorpickerFrame, Colorpicker)
     end
 
     setcolor({hue, sat, val})
+
+	return Colorpicker
 end
 
 			function sectionfunc:AddDropdown(DropdownName,data,Default,callback)
