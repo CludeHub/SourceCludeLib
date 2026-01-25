@@ -291,7 +291,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 	
 	local WindowFunctinos={}
 	local ToggleUI=false
-	local ooldsize=UICustomSize or UDim2.new(0.5530999988, 30, 0.980999971, 0)
+	local ooldsize=UICustomSize or UDim2.new(0.5530999988, 0, 0.980999971, 0)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
@@ -477,7 +477,7 @@ end
 
 local aspect = Instance.new("UIAspectRatioConstraint")
 aspect.Parent = parentFrame
-aspect.AspectRatio = 1.4
+aspect.AspectRatio = 1.29
 
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
@@ -713,7 +713,7 @@ local dpiSizes = {
         ABOUT = UDim2.new(0.2, 0, 0.53000614, 0),
     },
     ["100%"] = {
-        NEVERLOSE = UDim2.new(0.5530999988, 30, 0.980999971, 0),
+        NEVERLOSE = UDim2.new(0.5530999988, 0, 0.980999971, 0),
         ABOUT = UDim2.new(0.23, 0, 0.53, 0),
     }
 }
