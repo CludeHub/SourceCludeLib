@@ -1446,6 +1446,7 @@ Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
 		Left.BackgroundTransparency = 1.000
 		Left.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Left.BorderSizePixel = 0
+		Left.ScrollingEnabled = false
 		Left.ClipsDescendants = false
 		Left.Position = UDim2.new(0, 0, 0.5, 0)
 		Left.Size = UDim2.new(0.499000001, 0, 0.980000019, 0)
@@ -1461,6 +1462,7 @@ Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
 		Right.Name = "Right"
 		Right.Parent = Tab
 		Right.Active = true
+		Right.ScrollingEnabled = false
 		Right.AnchorPoint = Vector2.new(1, 0.5)
 		Right.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		Right.BackgroundTransparency = 1.000
@@ -1504,8 +1506,8 @@ Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
 				end
 
 				Tab.Visible=true
-				TweenService:Create(Tab,TweenInfo.new(.3,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position = UDim2.new(0.5, 0, 0.5, -27)}):Play()
-				TweenService:Create(Tab,TweenInfo.new(.75,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Size = UDim2.new(0.99000001, 0, 0.99000001, 0)}):Play()
+				TweenService:Create(Tab,TweenInfo.new(.3,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position = UDim2.new(0.506, 0, 0.5, -27)}):Play()
+				TweenService:Create(Tab,TweenInfo.new(.75,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Size = UDim2.new(0.96500001, 0, 0.99000001, 0)}):Play()
 				TweenService:Create(TabButton,TweenInfo.new(0.3),{BackgroundTransparency=0.6}):Play()
 			else
 				Tab.Visible=false
