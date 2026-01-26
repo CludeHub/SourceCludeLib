@@ -113,7 +113,7 @@ end)
 
 originalButton.MouseButton1Click:Connect(function()
 	applyTheme({
-		BlackgroundColor = Color3.fromRGB(2, 32, 63),
+		BlackgroundColor = Color3.fromRGB(2, 27, 53),
 		BlackColor = Color3.fromRGB(7, 7, 17),
 		HeaderColor = Color3.fromRGB(7, 7, 17),
 		TraceColor = Color3.fromRGB(0, 76, 99),
@@ -136,7 +136,7 @@ orangeButton.MouseButton1Click:Connect(function()
 		TraceColor = Color3.fromRGB(20,20,20),
 		MainColor = Color3.fromRGB(30, 30, 30),
 		MainColorDrop = Color3.fromRGB(64, 65, 67),
-		SectionColor = Color3.fromRGB(23, 23, 30),
+		SectionColor = Color3.fromRGB(17, 17, 24),
 		StrokeColor = Color3.fromRGB(20, 20, 30),
 		ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26),
 		Button = Color3.fromRGB(200,200,255),
