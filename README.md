@@ -71,6 +71,9 @@ local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/Clu
     
 Window:AddTabLabel("Aimbot")
     local RageTab = Window:AddTab("Rage","crosshair")
+    local LegitTab = Window:AddTab("Legit","mouse")
+Window:AddTabLabel("Common")
+local VisualTab = Window:AddTab("Visual","earth")
 
     local Main = RageTab:AddSection("MAIN","left")
     Main:AddToggle("Enabled",true,function(v)end)
