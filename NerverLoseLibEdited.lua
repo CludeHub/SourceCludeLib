@@ -865,7 +865,7 @@ Padding.PaddingLeft = UDim.new(0, 26)
 		ImageButtons9.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons9.BorderSizePixel = 0
 		ImageButtons9.Position = UDim2.new(0.96, 0, 0.01800369833, 0)
-		ImageButtons9.Size = UDim2.new(0.0700000036, 0, 0.03700000036, 0)
+		ImageButtons9.Size = UDim2.new(0.0900000036, 0, 0.03900000036, 0)
 		ImageButtons9.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons9.ZIndex = 6
 		ImageButtons9.Image = "http://www.roblox.com/asset/?id=6031154871"
@@ -893,7 +893,7 @@ Sound2.Ended:Connect(function()
 		ImageButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons.BorderSizePixel = 0
 		ImageButtons.Position = UDim2.new(0.899, 0, 0.014003699, 0)
-		ImageButtons.Size = UDim2.new(0.07000036, 0, 0.05700000036, 0)
+		ImageButtons.Size = UDim2.new(0.09000036, 0, 0.05900000036, 0)
 		ImageButtons.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons.ZIndex = 6
 		ImageButtons.Image = "http://www.roblox.com/asset/?id=82272638714622"
@@ -1235,7 +1235,7 @@ end)
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
 	UserData.BackgroundColor3 = Color3.fromRGB(79,79,79)
-	UserData.BackgroundTransparency = 0.8
+	UserData.BackgroundTransparency = 1
 	UserData.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserData.BorderSizePixel = 0
 	UserData.Position = UDim2.new(-0.000179085735, 0, 0.946525633, 0)
@@ -1591,7 +1591,7 @@ Header.TextXAlignment = Enum.TextXAlignment.Left
 Header.Parent = SectionHead
 			
 local as = Instance.new('UIAspectRatioConstraint')
-as.AspectRatio = 22
+as.AspectRatio = 23
 as.Parent = Header
 as.AspectType = Enum.AspectType.ScaleWithParentSize
 
