@@ -487,7 +487,7 @@ end
 
 local aspect = Instance.new("UIAspectRatioConstraint")
 aspect.Parent = parentFrame
-aspect.AspectRatio = 1.29
+aspect.AspectRatio = 1.3
 
 	-- About Frame
 local aboutFrame = Instance.new("Frame", ScreenGui)
@@ -562,6 +562,25 @@ title.TextXAlignment = Enum.TextXAlignment.Center
 title.TextScaled = true
 title.ZIndex = 50
 -- Info Rows
+
+	local Down1 = Instance.new('Frame')
+Down1.Name = "Down1"
+Down1.Position = UDim2.new(0,0,0.9889999628067017,0)
+Down1.Size = UDim2.new(1,0,0.03900105878710747,0)
+Down1.BackgroundColor3 = Color3.fromRGB(2,32,63)
+Down1.BackgroundTransparency = 0.07999999821186066
+Down1.BorderSizePixel = 0
+Down1.ZIndex = 0
+Down1.Parent = Frame
+
+	
+
+local UICorner = Instance.new('UICorner')
+UICorner.Name = "UICorner"
+UICorner.CornerRadius = UDim.new(0,6)
+UICorner.Parent = Down1
+
+	
 local function AddInfo(label, value, index, isBlue)
 
 local labelTexts = Instance.new("Frame", aboutFrame)
@@ -915,7 +934,7 @@ Sound2.Ended:Connect(function()
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_2.BorderSizePixel = 0
 	Frame_2.Position = UDim2.new(0.223214373, 0, 0.091, 0)
-	Frame_2.Size = UDim2.new(0.79, 0, 0.91, 0)
+	Frame_2.Size = UDim2.new(0.8, 0, 0.91, 0)
 	Frame_2.ZIndex = 2
 	
 	UICorner_2.CornerRadius = UDim.new(0, 6)
@@ -928,9 +947,24 @@ Sound2.Ended:Connect(function()
 	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_3.BorderSizePixel = 0
 	Frame_3.Position = UDim2.new(0.223214373, 0, 0, 0)
-	Frame_3.Size = UDim2.new(0.79, 0, 0.140000001, 0)
+	Frame_3.Size = UDim2.new(0.81, 0, 0.140000001, 0)
 	Frame_3.ZIndex = 4
 
+
+	
+local Down2 = Instance.new('Frame')
+Down2.Name = "Down2"
+Down2.Position = UDim2.new(0,0,0.8999999761581421,0)
+Down2.Size = UDim2.new(1,0,0.1300000101327896,0)
+Down2.BackgroundColor3 = Color3.fromRGB(9,9,19)
+Down2.Parent = Frame_2
+
+local UICorner = Instance.new('UICorner')
+UICorner.Name = "UICorner"
+UICorner.CornerRadius = UDim.new(0,6)
+UICorner.Parent = Down2
+
+	
 	UICorner_3.CornerRadius = UDim.new(0, 6)
 	UICorner_3.Parent = Frame_3
 
@@ -994,7 +1028,7 @@ Sound2.Ended:Connect(function()
 	TabHose.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabHose.BorderSizePixel = 0
 	TabHose.Position = UDim2.new(0.253214373, 0, 0.143462211, 0)
-	TabHose.Size = UDim2.new(0.774635077, 0, 0.856537759, 20)
+	TabHose.Size = UDim2.new(0.795, 0, 0.856537759, 20)
 	TabHose.ZIndex = 5
 
 	outlo.Name = "outlo"
