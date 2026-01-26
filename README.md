@@ -68,11 +68,9 @@ KeySystem:Callback(Start)
 local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
     local Window = NEVERLOSE:AddWindow("NEVERLOSE","SSG-08",'original')
 
-    local Notification = NEVERLOSE:Notification()
-    Notification.MaxNotifications = 6
-    Notification:Notify("info","Notification","Test Notification")
-
-    local RageTab = Window:AddTab("Rage","Rage")
+    
+Window:AddTabLabel("Aimbot")
+    local RageTab = Window:AddTab("Rage","crosshair")
 
     local Main = RageTab:AddSection("MAIN","left")
     Main:AddToggle("Enabled",true,function(v)end)
