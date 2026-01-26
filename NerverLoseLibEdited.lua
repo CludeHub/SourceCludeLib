@@ -860,7 +860,7 @@ Padding.PaddingLeft = UDim.new(0, 26)
 		ImageButtons9.BackgroundTransparency = 1.000
 		ImageButtons9.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons9.BorderSizePixel = 0
-		ImageButtons9.Position = UDim2.new(0.94737024, 0, 0.0140369833, 0)
+		ImageButtons9.Position = UDim2.new(0.95, 0, 0.01800369833, 0)
 		ImageButtons9.Size = UDim2.new(0.0400000036, 0, 0.03400000036, 0)
 		ImageButtons9.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons9.ZIndex = 6
@@ -888,7 +888,7 @@ Sound2.Ended:Connect(function()
 		ImageButtons.BackgroundTransparency = 1.000
 		ImageButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ImageButtons.BorderSizePixel = 0
-		ImageButtons.Position = UDim2.new(0.8970207, 0, 0.012003699, 0)
+		ImageButtons.Position = UDim2.new(0.8970207, 0, 0.014003699, 0)
 		ImageButtons.Size = UDim2.new(0.050000036, 0, 0.05400000036, 0)
 		ImageButtons.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButtons.ZIndex = 6
