@@ -461,6 +461,15 @@ print(Text .. " is Running")
 	Frame.ZIndex = 2
 	Frame.ClipsDescendants= false
 
+	local Mai = Instance.new("Frame")
+	Mai.Name = "Main"
+	Mai.Parent = Frame
+	Mai.BackgroundTransparency = 1
+	Mai.Size = UDim2.new(1,0,1,0)
+	Mai.Position = UDim2.new(0.02, 0, 0, 0)
+
+	
+
 	TweenService:Create(Frame,TweenInfo.new(1,Enum.EasingStyle.Quint),{Size=ooldsize}):Play()
 
 	UICorner.Parent = Frame
@@ -794,12 +803,12 @@ dpiDropdown.MouseButton1Click:Connect(function()
 end)
 
 -- Initial DPI set
-updateDPI("10%") -- DPI options
+updateDPI("100%") -- DPI options
 
 	-- Create the TextBox
 local TextBox = Instance.new("TextBox")
 TextBox.Name = "SearchBox"
-TextBox.Parent = Frame
+TextBox.Parent = Mai
 TextBox.BackgroundColor3 = NEVERLOSE.Themes.SearchColor
 TextBox.BackgroundTransparency = 0
 TextBox.Position = UDim2.new(0.24000001, 0, 0.0200000014, 0)
@@ -845,7 +854,7 @@ Padding.PaddingLeft = UDim.new(0, 26)
 	
 			local ImageButtons9 = Instance.new("ImageButton")
 
-		ImageButtons9.Parent = Frame
+		ImageButtons9.Parent = Mai
 		ImageButtons9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		ImageButtons9.BackgroundTransparency = 1.000
 		ImageButtons9.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -873,7 +882,7 @@ Sound2.Ended:Connect(function()
 
 		local ImageButtons = Instance.new("ImageButton")
 
-		ImageButtons.Parent = Frame
+		ImageButtons.Parent = Mai
 		ImageButtons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		ImageButtons.BackgroundTransparency = 1.000
 		ImageButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -899,7 +908,7 @@ Sound2.Ended:Connect(function()
 			aboutFrame.Visible = not aboutFrame.Visible
 		end)
 
-	Frame_2.Parent = Frame
+	Frame_2.Parent = Mai
 	Frame_2.Name = "Frame_2"
 	Frame_2.BackgroundColor3 = NEVERLOSE.Themes.MewColor1
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -911,7 +920,7 @@ Sound2.Ended:Connect(function()
 	UICorner_2.CornerRadius = UDim.new(0, 6)
 	UICorner_2.Parent = Frame_2
 
-	Frame_3.Parent = Frame
+	Frame_3.Parent = Mai
 	Frame_3.Name = "Frame_3"
 	Frame_3.BackgroundColor3 = NEVERLOSE.Themes.MewColor2
 	Frame_3.BackgroundTransparency = 0
@@ -925,7 +934,7 @@ Sound2.Ended:Connect(function()
 	UICorner_3.Parent = Frame_3
 
 	DropShadow.Name = "DropShadow"
-	DropShadow.Parent = Frame
+	DropShadow.Parent = Mai
 	DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
 	DropShadow.BackgroundTransparency = 1.000
 	DropShadow.BorderSizePixel = 0
@@ -944,7 +953,7 @@ Sound2.Ended:Connect(function()
 	HeadName.BackgroundTransparency = 1.000
 	HeadName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	HeadName.BorderSizePixel = 0
-	HeadName.Position = UDim2.new(0.0100000342, 0, -0.0150000146, 0)
+	HeadName.Position = UDim2.new(0.0200000342, 0, -0.0150000146, 0)
 	HeadName.Size = UDim2.new(0.205458686, 0, 0.115462012, 0)
 	HeadName.ZIndex = 4
 	HeadName.Font = Enum.Font.GothamBlack
@@ -978,7 +987,7 @@ Sound2.Ended:Connect(function()
 	scrolling_connect(TabButtons)
 
 	TabHose.Name = "TabHose"
-	TabHose.Parent = Frame
+	TabHose.Parent = Mai
 	TabHose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	TabHose.BackgroundTransparency = 1.000
 	TabHose.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -988,7 +997,7 @@ Sound2.Ended:Connect(function()
 	TabHose.ZIndex = 5
 
 	outlo.Name = "outlo"
-	outlo.Parent = Frame
+	outlo.Parent = Mai
 	outlo.AnchorPoint = Vector2.new(1, 0)
 	outlo.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
 	outlo.BackgroundTransparency = 0.7872
@@ -1002,7 +1011,7 @@ Sound2.Ended:Connect(function()
 	UICorner_4.Parent = outlo
 
 	outlo_2.Name = "outlo"
-	outlo_2.Parent = Frame
+	outlo_2.Parent = Mai
 	outlo_2.AnchorPoint = Vector2.new(1, 0.5)
 	outlo_2.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
 	outlo_2.BackgroundTransparency = 0.7872
@@ -1016,7 +1025,7 @@ Sound2.Ended:Connect(function()
 	UICorner_5.Parent = outlo_2
 
 	outlo_3.Name = "outlo"
-	outlo_3.Parent = Frame
+	outlo_3.Parent = Mai
 	outlo_3.AnchorPoint = Vector2.new(1, 0)
 	outlo_3.BackgroundColor3 = NEVERLOSE.Themes.TraceColor
 	outlo_3.BackgroundTransparency = 0.7872
@@ -1107,7 +1116,7 @@ Icon_5763.ImageTransparency = 0.30000001192092896
 Icon_5763.ScaleType = Enum.ScaleType.Stretch
 Icon_5763.ImageColor3 = Color3.fromRGB(223,251,255)
 Icon_5763.Parent = MainFrame_7172
-MainFrame_7172.Parent = Frame
+MainFrame_7172.Parent = Mai
 
 	local asp = Instance.new("UIAspectRatioConstraint")
 	asp.Parent = Icon_5763
