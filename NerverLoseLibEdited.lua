@@ -934,7 +934,7 @@ Sound2.Ended:Connect(function()
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_2.BorderSizePixel = 0
 	Frame_2.Position = UDim2.new(0.223214373, 0, 0.091, 0)
-	Frame_2.Size = UDim2.new(0.8, 0, 0.91, 0)
+	Frame_2.Size = UDim2.new(0.81, 0, 0.91, 0)
 	Frame_2.ZIndex = 2
 	
 	UICorner_2.CornerRadius = UDim.new(0, 6)
