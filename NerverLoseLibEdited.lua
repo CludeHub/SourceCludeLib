@@ -563,22 +563,7 @@ title.TextScaled = true
 title.ZIndex = 50
 -- Info Rows
 
-	local Down1 = Instance.new('Frame')
-Down1.Name = "Frame"
-Down1.Position = UDim2.new(0,0,0.9889999628067017,0)
-Down1.Size = UDim2.new(1,0,0.03900105878710747,0)
-Down1.BackgroundColor3 = Color3.fromRGB(2,32,63)
-Down1.BackgroundTransparency = 0.07999999821186066
-Down1.BorderSizePixel = 0
-Down1.ZIndex = 0
-Down1.Parent = Frame
 
-	
-
-local UICorner = Instance.new('UICorner')
-UICorner.Name = "UICorner"
-UICorner.CornerRadius = UDim.new(0,6)
-UICorner.Parent = Down1
 
 	
 local function AddInfo(label, value, index, isBlue)
@@ -952,17 +937,7 @@ Sound2.Ended:Connect(function()
 
 
 	
-local Down2 = Instance.new('Frame')
-Down2.Name = "Frame_2"
-Down2.Position = UDim2.new(0,0,0.8999999761581421,0)
-Down2.Size = UDim2.new(1,0,0.1300000101327896,0)
-Down2.BackgroundColor3 = Color3.fromRGB(9,9,19)
-Down2.Parent = Frame_2
 
-local UICorner = Instance.new('UICorner')
-UICorner.Name = "UICorner"
-UICorner.CornerRadius = UDim.new(0,6)
-UICorner.Parent = Down2
 
 	
 	UICorner_3.CornerRadius = UDim.new(0, 6)
@@ -1895,7 +1870,7 @@ Line.ZIndex = 10
 Line.Parent = Toggle
 
 				UIAspectRatioConstraint.Parent = Toggle
-				UIAspectRatioConstraint.AspectRatio = 7.000
+				UIAspectRatioConstraint.AspectRatio = 7.5
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 				UICorner.CornerRadius = UDim.new(0, 3)
@@ -2056,7 +2031,7 @@ Line.ZIndex = 10
 Line.Parent = Keybind
 
 				UIAspectRatioConstraint.Parent = Keybind
-				UIAspectRatioConstraint.AspectRatio = 7.000
+				UIAspectRatioConstraint.AspectRatio = 7.5
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 				UICorner.CornerRadius = UDim.new(0, 2)
@@ -2228,7 +2203,7 @@ Line.ZIndex = 10
 Line.Parent = Slider
 
 				UIAspectRatioConstraint.Parent = Slider
-				UIAspectRatioConstraint.AspectRatio = 7.000
+				UIAspectRatioConstraint.AspectRatio = 7.5
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 				UICorner.CornerRadius = UDim.new(0, 3)
@@ -2499,7 +2474,7 @@ Line9.Parent = Colorpicker
 
 				local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 				UIAspectRatioConstraint.Parent = Colorpicker
-				UIAspectRatioConstraint.AspectRatio = 7.000
+				UIAspectRatioConstraint.AspectRatio = 7.5
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 				
@@ -2799,7 +2774,7 @@ Line.Parent = Dropdown
 
 				
 				UIAspectRatioConstraint.Parent = Dropdown
-				UIAspectRatioConstraint.AspectRatio = 7.000
+				UIAspectRatioConstraint.AspectRatio = 7.5
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
 				UICorner.CornerRadius = UDim.new(0, 3)
