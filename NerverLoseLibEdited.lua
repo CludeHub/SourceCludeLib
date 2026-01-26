@@ -2,7 +2,7 @@
 
 INTRODUCING NEVERLOSE CS2 CHEAT MENU
 BUILD DATE: 4/21/24
-VERSION: 2.6
+VERSION: 3
 MADE BY CLUDEHUB
 ]]
 local LocalPlayer = game:GetService('Players').LocalPlayer;
