@@ -296,6 +296,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 
 	local ScreenGui = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
+	local Mai = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local Frame_2 = Instance.new("Frame")
 	local UICorner_2 = Instance.new("UICorner")
@@ -461,7 +462,7 @@ print(Text .. " is Running")
 	Frame.ZIndex = 2
 	Frame.ClipsDescendants= false
 
-	local Mai = Instance.new("Frame")
+	
 	Mai.Name = "Main"
 	Mai.Parent = Frame
 	Mai.BackgroundTransparency = 1
