@@ -452,7 +452,7 @@ print(Text .. " is Running")
 	Frame.Parent = ScreenGui
 	Frame.Active = true
 	Frame.BackgroundColor3 = NEVERLOSE.Themes.BlackgroundColor
-	Frame.BackgroundTransparency = 0.4
+	Frame.BackgroundTransparency = 0.08
 	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame.BorderSizePixel = 0
 	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -937,21 +937,6 @@ Sound2.Ended:Connect(function()
 	DropShadow.ImageTransparency = 0.860
 	DropShadow.ScaleType = Enum.ScaleType.Slice
 	DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
-
-	local DropShadow2 = Instance.new('ImageLabel')
-DropShadow2.Position = UDim2.new(0.5, 0, 0.5, 0)
-DropShadow2.Size = UDim2.new(1, 47, 1, 47)
-DropShadow2.AnchorPoint = Vector2.new(0.5, 0.5)
-DropShadow2.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
-DropShadow2.BackgroundTransparency = 1
-DropShadow2.BorderSizePixel = 0
-DropShadow2.Image = "rbxassetid://6014261993"
-DropShadow2.ImageColor3 = Color3.fromRGB(0, 0, 0)
-DropShadow2.ZIndex = 0
-DropShadow2.Parent = game.CoreGui.NEVERLOSE.Frame
-DropShadow2.Rotation = 0.0001
-DropShadow2.ScaleType = Enum.ScaleType.Slice
-DropShadow2.SliceCenter = Rect.new(49, 49, 450, 450)
 	
 	HeadName.Name = "HeadName"
 	HeadName.Parent = Frame
