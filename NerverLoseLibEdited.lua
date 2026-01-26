@@ -915,7 +915,7 @@ Sound2.Ended:Connect(function()
 	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_2.BorderSizePixel = 0
 	Frame_2.Position = UDim2.new(0.223214373, 0, 0.091, 0)
-	Frame_2.Size = UDim2.new(0.774634778, 0, 0.91, 0)
+	Frame_2.Size = UDim2.new(0.79, 0, 0.91, 0)
 	Frame_2.ZIndex = 2
 	
 	UICorner_2.CornerRadius = UDim.new(0, 6)
@@ -928,7 +928,7 @@ Sound2.Ended:Connect(function()
 	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Frame_3.BorderSizePixel = 0
 	Frame_3.Position = UDim2.new(0.223214373, 0, 0, 0)
-	Frame_3.Size = UDim2.new(0.774999976, 0, 0.140000001, 0)
+	Frame_3.Size = UDim2.new(0.79, 0, 0.140000001, 0)
 	Frame_3.ZIndex = 4
 
 	UICorner_3.CornerRadius = UDim.new(0, 6)
