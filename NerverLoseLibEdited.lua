@@ -974,7 +974,7 @@ Sound2.Ended:Connect(function()
 	TabButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabButtons.BorderSizePixel = 0
 	TabButtons.Position = UDim2.new(0.00760957832, 0, 0.09, 0)
-	TabButtons.Size = UDim2.new(0.20784913, 0, 0.7978012202, 0)
+	TabButtons.Size = UDim2.new(0.234084913, 0, 0.7978012202, 0)
 	TabButtons.ZIndex = 5
 	TabButtons.CanvasSize = UDim2.new(0, 0, 0, 0)
 	TabButtons.ScrollBarThickness = 1
@@ -988,12 +988,12 @@ Sound2.Ended:Connect(function()
 	scrolling_connect(TabButtons)
 
 	TabHose.Name = "TabHose"
-	TabHose.Parent = Mai
+	TabHose.Parent = Frame
 	TabHose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	TabHose.BackgroundTransparency = 1.000
 	TabHose.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabHose.BorderSizePixel = 0
-	TabHose.Position = UDim2.new(0.223214373, 0, 0.143462211, 0)
+	TabHose.Position = UDim2.new(0.253214373, 0, 0.143462211, 0)
 	TabHose.Size = UDim2.new(0.774635077, 0, 0.856537759, 20)
 	TabHose.ZIndex = 5
 
