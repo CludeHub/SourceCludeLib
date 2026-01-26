@@ -1038,8 +1038,8 @@ UICorner.Parent = Down2
 	outlo.BackgroundTransparency = 0.7872
 	outlo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	outlo.BorderSizePixel = 0
-	outlo.Position = UDim2.new(1, 0, 0.086999995, 0)
-	outlo.Size = UDim2.new(0.774999976, 0, 0, 2)
+	outlo.Position = UDim2.new(1.02, 0, 0.086999995, 0)
+	outlo.Size = UDim2.new(0.784999976, 0, 0, 2)
 	outlo.ZIndex = 4
 
 	UICorner_4.CornerRadius = UDim.new(0, 4)
