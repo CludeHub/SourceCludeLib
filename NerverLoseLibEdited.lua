@@ -1259,7 +1259,7 @@ end)
 	
 	UserData.Name = "UserData"
 	UserData.Parent = Frame
-	UserData.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	UserData.BackgroundColor3 = Color3.fromRGB(79,79,79)
 	UserData.BackgroundTransparency = 0.8
 	UserData.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserData.BorderSizePixel = 0
