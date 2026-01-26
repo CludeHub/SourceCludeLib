@@ -564,7 +564,7 @@ title.ZIndex = 50
 -- Info Rows
 
 	local Down1 = Instance.new('Frame')
-Down1.Name = "Down1"
+Down1.Name = "Frame"
 Down1.Position = UDim2.new(0,0,0.9889999628067017,0)
 Down1.Size = UDim2.new(1,0,0.03900105878710747,0)
 Down1.BackgroundColor3 = Color3.fromRGB(2,32,63)
@@ -953,7 +953,7 @@ Sound2.Ended:Connect(function()
 
 	
 local Down2 = Instance.new('Frame')
-Down2.Name = "Down2"
+Down2.Name = "Frame_2"
 Down2.Position = UDim2.new(0,0,0.8999999761581421,0)
 Down2.Size = UDim2.new(1,0,0.1300000101327896,0)
 Down2.BackgroundColor3 = Color3.fromRGB(9,9,19)
