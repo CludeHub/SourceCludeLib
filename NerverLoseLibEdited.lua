@@ -462,6 +462,20 @@ print(Text .. " is Running")
 	Frame.ZIndex = 2
 	Frame.ClipsDescendants= false
 
+
+local Shadow = Instance.new('Frame')
+Shadow.Name = "Shadow"
+Shadow.Size = UDim2.new(1.0549999475479126,0,1,0)
+Shadow.BackgroundColor3 = Color3.fromRGB(0,0,0)
+Shadow.BackgroundTransparency = 0.4
+Shadow.ZIndex = 0
+Shadow.Parent = Frame
+
+local UIStroke = Instance.new('UIStroke')
+UIStroke.Name = "UIStroke"
+UIStroke.Transparency = 0.6000000238418579
+UIStroke.Thickness = 5
+UIStroke.Parent = Shadow
 	
 	Mai.Name = "Main"
 	Mai.Parent = Frame
@@ -2495,10 +2509,11 @@ Line9.Parent = Colorpicker
     colorpickerButton.Name = "colorpickerButton"
     colorpickerButton.Parent = Colorpicker
     colorpickerButton.AnchorPoint = Vector2.new(0.5, 0.5)
-    colorpickerButton.BackgroundTransparency = 1
+    colorpickerButton.BackgroundTransparency = 0
+	colorpickerButton.BackgroundColor3 = color
     colorpickerButton.BorderSizePixel = 0
-    colorpickerButton.Image = "rbxassetid://8023491332"
-    colorpickerButton.Position = UDim2.new(0.8690, 0, 0.57, 0)
+    colorpickerButton.Image = "rbxassetid://0"
+    colorpickerButton.Position = UDim2.new(0.8750, 0, 0.57, 0)
     colorpickerButton.Size = UDim2.new(0.08, 0, 0.5,0)
     colorpickerButton.ZIndex = 30
 
