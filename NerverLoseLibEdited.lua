@@ -2448,7 +2448,7 @@ function sectionfunc:Colorpicker(text, color, callback)
         callback = callback
     }
 
-    local hue, sat, val = Color3.toHSV(options.color)
+    local h, s, v = Color3.toHSV(options.color)
 
     local Colorpicker = Instance.new("Frame")
     local colorpickerLabel = Instance.new("TextLabel")
@@ -2475,9 +2475,8 @@ function sectionfunc:Colorpicker(text, color, callback)
     buttoneffect({frame = colorpickerLabel, entered = Colorpicker})
 
     local Line9 = Instance.new('Frame')
-    Line9.Position = UDim2.new(0.05000000029802322,0,1,0)
-    Line9.Size = UDim2.new(0.8900000047683716,0,0,1)
-    Line9.AnchorPoint = Vector2.new(0,0)
+    Line9.Position = UDim2.new(0.05, 0, 1, 0)
+    Line9.Size = UDim2.new(0.89, 0, 0, 1)
     Line9.BackgroundColor3 = Color3.fromRGB(3,35,50)
     Line9.BackgroundTransparency = 0.5
     Line9.BorderSizePixel = 0
@@ -2492,7 +2491,6 @@ function sectionfunc:Colorpicker(text, color, callback)
     colorpickerLabel.Name = "colorpickerLabel"
     colorpickerLabel.Parent = Colorpicker
     colorpickerLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-    colorpickerLabel.BackgroundColor3 = Color3.fromRGB(157, 171, 182)
     colorpickerLabel.BackgroundTransparency = 1.000
     colorpickerLabel.Position = UDim2.new(0.529, 0, 0.5, 0)
     colorpickerLabel.Size = UDim2.new(0.972, 0, 0.35, 0)
@@ -2506,11 +2504,9 @@ function sectionfunc:Colorpicker(text, color, callback)
     colorpickerButton.Name = "colorpickerButton"
     colorpickerButton.Parent = Colorpicker
     colorpickerButton.AnchorPoint = Vector2.new(0.5, 0.5)
-    colorpickerButton.BackgroundTransparency = 0
     colorpickerButton.BackgroundColor3 = options.color
     colorpickerButton.BorderSizePixel = 0
-    colorpickerButton.Image = "rbxassetid://0"
-    colorpickerButton.Position = UDim2.new(0.8850, 0, 0.57, 0)
+    colorpickerButton.Position = UDim2.new(0.880, 0, 0.57, 0)
     colorpickerButton.Size = UDim2.new(0.08, 0, 0.5,0)
     colorpickerButton.ZIndex = 30
 
@@ -2535,8 +2531,8 @@ function sectionfunc:Colorpicker(text, color, callback)
     colorpickerFrame.Position = UDim2.new(1.1, 0, 0, 0)
     colorpickerFrame.Size = UDim2.new(1, 0, 7, 0)
     colorpickerFrame.ZIndex = 150
-    local UICorner= Instance.new("UICorner")
-
+    
+    local UICorner = Instance.new("UICorner")
     UICorner.CornerRadius = UDim.new(0, 3)
     UICorner.Parent = colorpickerFrame
 
@@ -2548,21 +2544,15 @@ function sectionfunc:Colorpicker(text, color, callback)
 
     RGB.Name = "RGB"
     RGB.Parent = colorpickerFrame
-    RGB.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     RGB.BackgroundTransparency = 1.000
-    RGB.BorderSizePixel = 0
-    RGB.Position = UDim2.new(0.0670000017, 0, 0.0680000037, 0)
+    RGB.Position = UDim2.new(0.067, 0, 0.068, 0)
     RGB.Size = UDim2.new(0.74, 0, 0.74, 0)
-    RGB.AutoButtonColor = false
     RGB.Image = "rbxassetid://6523286724"
     RGB.ZIndex = 160
 
     RGBCircle.Name = "RGBCircle"
     RGBCircle.Parent = RGB
-    RGBCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     RGBCircle.BackgroundTransparency = 1.000
-    RGBCircle.BorderColor3 = Color3.fromRGB(27, 42, 53)
-    RGBCircle.BorderSizePixel = 0
     RGBCircle.Size = UDim2.new(0, 14, 0, 14)
     RGBCircle.Image = "rbxassetid://3926309567"
     RGBCircle.ImageRectOffset = Vector2.new(628, 420)
@@ -2571,133 +2561,113 @@ function sectionfunc:Colorpicker(text, color, callback)
 
     Darkness.Name = "Darkness"
     Darkness.Parent = colorpickerFrame
-    Darkness.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Darkness.BorderSizePixel = 0
-    Darkness.Position = UDim2.new(0.831940293, 0, 0.0680000708, 0)
+    Darkness.Position = UDim2.new(0.831, 0, 0.068, 0)
     Darkness.Size = UDim2.new(0.14, 0, 0.74, 0)
-    Darkness.AutoButtonColor = false
     Darkness.Image = "rbxassetid://156579757"
     Darkness.ZIndex = 160
 
     DarknessCircle.Name = "DarknessCircle"
     DarknessCircle.Parent = Darkness
-    DarknessCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     DarknessCircle.BorderSizePixel = 0
-    DarknessCircle.Position = UDim2.new(0, 0, 0, 0)
-    DarknessCircle.Size = UDim2.new(0, 33, 0, 5)
+    DarknessCircle.Size = UDim2.new(1, 0, 0, 5)
     DarknessCircle.ZIndex = 160
 
     colorHex.Name = "colorHex"
     colorHex.Parent = colorpickerFrame
     colorHex.BackgroundColor3 = Color3.fromRGB(9, 8, 13)
-    colorHex.Position = UDim2.new(0.0717131495, 0, 0.850678742, 0)
+    colorHex.Position = UDim2.new(0.071, 0, 0.85, 0)
     colorHex.Size = UDim2.new(0.44, 0, 0.1, 0)
     colorHex.Font = Enum.Font.ArialBold
-    colorHex.Text = "#FFFFFF"
     colorHex.TextColor3 = Color3.fromRGB(234, 239, 245)
-    colorHex.TextSize = 14.000
+    colorHex.TextSize = 14
     colorHex.ZIndex = 160
 
     Copy.Parent = colorpickerFrame
     Copy.BackgroundColor3 = Color3.fromRGB(9, 8, 13)
-    Copy.Position = UDim2.new(0.72111553, 0, 0.850678742, 0)
+    Copy.Position = UDim2.new(0.721, 0, 0.85, 0)
     Copy.Size = UDim2.new(0.25, 0, 0.1, 0)
-    Copy.AutoButtonColor = false
     Copy.Font = Enum.Font.ArialBold
     Copy.Text = "Copy"
     Copy.TextColor3 = Color3.fromRGB(234, 239, 245)
-    Copy.TextSize = 14.000
+    Copy.TextSize = 14
     Copy.ZIndex = 160
     Resize(25)
 
-    Copy.MouseButton1Click:Connect(function()
-        if setclipboard then
-            setclipboard(tostring(colorHex.Text))
-            Notify("Cryptweb:", tostring(colorHex.Text))
-            Notify("Cryptweb:", "Done!")
-        else
-            print(tostring(colorHex.Text))
-            Notify("Cryptweb:", tostring(colorHex.Text))
-            Notify("Cryptweb:", "Your exploit does not support the function 'setclipboard', so we've printed it out.")
-        end
-    end)
-
-    local UserInputService = game:GetService("UserInputService")
-    local getmouse = game.Players.LocalPlayer:GetMouse()
-
-    local WheelDown = false
-    local SlideDown = false
-
-    local currentHue, currentSaturation, currentValue = hue, sat, val
-
-    local function to_hex(color)
-        return string.format("#%02X%02X%02X", color.R * 255, color.G * 255, color.B * 255)
+    local function to_hex(c)
+        return string.format("#%02X%02X%02X", c.R * 255, c.G * 255, c.B * 255)
     end
 
     local function update()
-        local realcolor = Color3.fromHSV(currentHue, currentSaturation, currentValue)
-        colorHex.Text = tostring(to_hex(realcolor))
-        colorpickerButton.BackgroundColor3 = realcolor
-        DarknessCircle.BackgroundColor3 = realcolor
-        options.callback(realcolor)
+        local full_color = Color3.fromHSV(h, s, v)
+        local pure_color = Color3.fromHSV(h, s, 1)
+        
+        colorHex.Text = to_hex(full_color)
+        colorpickerButton.BackgroundColor3 = full_color
+        Darkness.BackgroundColor3 = pure_color
+        DarknessCircle.BackgroundColor3 = full_color
+        
+        options.callback(full_color)
     end
 
-    local function mouseLocation()
-        return game.Players.LocalPlayer:GetMouse()
-    end
-
-    local function UpdateSlide()
-        local ml = mouseLocation()
-        local y = math.clamp((ml.Y - Darkness.AbsolutePosition.Y) / Darkness.AbsoluteSize.Y, 0, 1)
-        currentValue = 1 - y
-        local cy = DarknessCircle.AbsoluteSize.Y / 2
-        DarknessCircle.Position = UDim2.new(0, 0, y, -cy)
+    local function updateRing()
+        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local x = math.clamp((mouse.X - RGB.AbsolutePosition.X) / RGB.AbsoluteSize.X, 0, 1)
+        local y = math.clamp((mouse.Y - RGB.AbsolutePosition.Y) / RGB.AbsoluteSize.Y, 0, 1)
+        h, s = 1 - x, 1 - y
+        RGBCircle.Position = UDim2.new(x, -7, y, -7)
         update()
     end
 
-    local function UpdateRing()
-        local ml = mouseLocation()
-        local x = math.clamp((ml.X - RGB.AbsolutePosition.X) / RGB.AbsoluteSize.X, 0, 1)
-        local y = math.clamp((ml.Y - RGB.AbsolutePosition.Y) / RGB.AbsoluteSize.Y, 0, 1)
-        currentHue = 1 - x
-        currentSaturation = 1 - y
-        local cx = RGBCircle.AbsoluteSize.X / 2
-        local cy = RGBCircle.AbsoluteSize.Y / 2
-        RGBCircle.Position = UDim2.new(x, -cx, y, -cy)
-        Darkness.BackgroundColor3 = Color3.fromHSV(currentHue, currentSaturation, 1)
+    local function updateSlide()
+        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local y = math.clamp((mouse.Y - Darkness.AbsolutePosition.Y) / Darkness.AbsoluteSize.Y, 0, 1)
+        v = 1 - y
+        DarknessCircle.Position = UDim2.new(0, 0, y, -2)
         update()
     end
 
     RGB.MouseButton1Down:Connect(function()
-        WheelDown = true
-        UpdateRing()
+        local moveConn, endConn
+        updateRing()
+        moveConn = game:GetService("UserInputService").InputChanged:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement then updateRing() end
+        end)
+        endConn = game:GetService("UserInputService").InputEnded:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                moveConn:Disconnect()
+                endConn:Disconnect()
+            end
+        end)
     end)
 
     Darkness.MouseButton1Down:Connect(function()
-        SlideDown = true
-        UpdateSlide()
-    end)
-
-    UserInputService.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            WheelDown = false
-            SlideDown = false
-        end
-    end)
-
-    UserInputService.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement then
-            if WheelDown then
-                UpdateRing()
-            elseif SlideDown then
-                UpdateSlide()
+        local moveConn, endConn
+        updateSlide()
+        moveConn = game:GetService("UserInputService").InputChanged:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement then updateSlide() end
+        end)
+        endConn = game:GetService("UserInputService").InputEnded:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                moveConn:Disconnect()
+                endConn:Disconnect()
             end
+        end)
+    end)
+
+    Copy.MouseButton1Click:Connect(function()
+        if setclipboard then
+            setclipboard(colorHex.Text)
+            Notify("Cryptweb:", "Hex Copied!")
         end
     end)
 
+    RGBCircle.Position = UDim2.new(1-h, -7, 1-s, -7)
+    DarknessCircle.Position = UDim2.new(0, 0, 1-v, -2)
     update()
+
     return Colorpicker
-end
+			end
+			
 
 
 			function sectionfunc:AddDropdown(DropdownName,data,Default,callback)
