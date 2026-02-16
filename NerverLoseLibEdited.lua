@@ -2436,6 +2436,7 @@ function Resize(size)
     
 end
 
+
 function sectionfunc:Colorpicker(text, color, callback)
     if not text or not color or not callback then
         Notify("Colorpicker", "Missing arguments!")
@@ -2571,7 +2572,7 @@ function sectionfunc:Colorpicker(text, color, callback)
 
     Darkness.Name = "Darkness"
     Darkness.Parent = colorpickerFrame
-    Darkness.BackgroundColor3 = Color3.fromHSV(hue, sat, 1)
+    Darkness.BackgroundColor3 = options.color
     Darkness.BorderSizePixel = 0
     Darkness.Position = UDim2.new(0.831940293, 0, 0.0680000708, 0)
     Darkness.Size = UDim2.new(0.14, 0, 0.74, 0)
@@ -2583,8 +2584,8 @@ function sectionfunc:Colorpicker(text, color, callback)
     DarknessCircle.Parent = Darkness
     DarknessCircle.BackgroundColor3 = options.color
     DarknessCircle.BorderSizePixel = 0
-    DarknessCircle.Position = UDim2.new(0, 0, 1 - val, -2.5)
-    DarknessCircle.Size = UDim2.new(1, 0, 0, 5)
+    DarknessCircle.Position = UDim2.new(0, 0, 0, 0)
+    DarknessCircle.Size = UDim2.new(0, 33, 0, 5)
     DarknessCircle.ZIndex = 160
 
     colorHex.Name = "colorHex"
@@ -2639,7 +2640,7 @@ function sectionfunc:Colorpicker(text, color, callback)
         colorHex.Text = tostring(to_hex(realcolor))
         colorpickerButton.BackgroundColor3 = realcolor
         DarknessCircle.BackgroundColor3 = realcolor
-        Darkness.BackgroundColor3 = Color3.fromHSV(currentHue, currentSaturation, 1)
+        Darkness.BackgroundColor3 = realcolor
         options.callback(realcolor)
     end
 
@@ -2651,7 +2652,8 @@ function sectionfunc:Colorpicker(text, color, callback)
         local ml = mouseLocation()
         local y = math.clamp((ml.Y - Darkness.AbsolutePosition.Y) / Darkness.AbsoluteSize.Y, 0, 1)
         currentValue = 1 - y
-        DarknessCircle.Position = UDim2.new(0, 0, y, -2.5)
+        local cy = DarknessCircle.AbsoluteSize.Y / 2
+        DarknessCircle.Position = UDim2.new(0, 0, y, -cy)
         update()
     end
 
@@ -2664,6 +2666,7 @@ function sectionfunc:Colorpicker(text, color, callback)
         local cx = RGBCircle.AbsoluteSize.X / 2
         local cy = RGBCircle.AbsoluteSize.Y / 2
         RGBCircle.Position = UDim2.new(x, -cx, y, -cy)
+        Darkness.BackgroundColor3 = Color3.fromHSV(currentHue, currentSaturation, 1)
         update()
     end
 
