@@ -2510,7 +2510,7 @@ function sectionfunc:Colorpicker(text, color, callback)
     colorpickerButton.BackgroundColor3 = options.color
     colorpickerButton.BorderSizePixel = 0
     colorpickerButton.Image = "rbxassetid://0"
-    colorpickerButton.Position = UDim2.new(0.8750, 0, 0.57, 0)
+    colorpickerButton.Position = UDim2.new(0.8850, 0, 0.57, 0)
     colorpickerButton.Size = UDim2.new(0.08, 0, 0.5,0)
     colorpickerButton.ZIndex = 30
 
