@@ -2436,271 +2436,312 @@ function Resize(size)
     
 end
 
-			function sectionfunc:Colorpicker(text, color, callback)
-    if not text or not color or not callback then
-        Notify("Colorpicker", "Missing arguments!")
-        return
-    end
-
-    local options = {
-        text = text,
-        color = color,
-        callback = callback
-    }
-
-    local hue, sat, val = Color3.toHSV(options.color)
-
-    local Colorpicker = Instance.new("Frame")
-    local colorpickerLabel = Instance.new("TextLabel")
-    local colorpickerFrame = Instance.new("Frame")
-    local RGB = Instance.new("ImageButton")
-    local RGBCircle = Instance.new("ImageLabel")
-    local Darkness = Instance.new("ImageButton")
-    local colorpickerButton = Instance.new("ImageButton")
-    local DarknessCircle = Instance.new("Frame")
-    local colorHex = Instance.new("TextLabel")
-    local Copy = Instance.new("TextButton")
-
-    local vis = false
-
-    Colorpicker.Name = "Colorpicker"
-    Colorpicker.Parent = Section
-    Colorpicker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Colorpicker.BackgroundTransparency = 1.000
-    Colorpicker.BorderSizePixel = 0
-    Colorpicker.Position = UDim2.new(0,0,0,0)
-    Colorpicker.Size = UDim2.new(1, 0, -0.351014495, 0)
-    Colorpicker.ZIndex = 2
-
-    buttoneffect({frame = colorpickerLabel, entered = Colorpicker})
-
-    local Line9 = Instance.new('Frame')
-    Line9.Position = UDim2.new(0.05000000029802322,0,1,0)
-    Line9.Size = UDim2.new(0.8900000047683716,0,0,1)
-    Line9.AnchorPoint = Vector2.new(0,0)
-    Line9.BackgroundColor3 = Color3.fromRGB(3,35,50)
-    Line9.BackgroundTransparency = 0.5
-    Line9.BorderSizePixel = 0
-    Line9.ZIndex = 10
-    Line9.Parent = Colorpicker
-
-    local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-    UIAspectRatioConstraint.Parent = Colorpicker
-    UIAspectRatioConstraint.AspectRatio = 7.5
-    UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
-
-    colorpickerLabel.Name = "colorpickerLabel"
-    colorpickerLabel.Parent = Colorpicker
-    colorpickerLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-    colorpickerLabel.BackgroundColor3 = Color3.fromRGB(157, 171, 182)
-    colorpickerLabel.BackgroundTransparency = 1.000
-    colorpickerLabel.Position = UDim2.new(0.529, 0, 0.5, 0)
-    colorpickerLabel.Size = UDim2.new(0.972, 0, 0.35, 0)
-    colorpickerLabel.Font = Enum.Font.ArialBold
-    colorpickerLabel.Text = options.text
-    colorpickerLabel.TextColor3 = Color3.fromRGB(157, 171, 182)
-    colorpickerLabel.TextScaled = true
-    colorpickerLabel.TextXAlignment = Enum.TextXAlignment.Left
-    colorpickerLabel.ZIndex = 100
-
-    colorpickerButton.Name = "colorpickerButton"
-    colorpickerButton.Parent = Colorpicker
-    colorpickerButton.AnchorPoint = Vector2.new(0.5, 0.5)
-    colorpickerButton.BackgroundTransparency = 0
-    colorpickerButton.BackgroundColor3 = options.color
-    colorpickerButton.BorderSizePixel = 0
-    colorpickerButton.Image = "rbxassetid://0"
-    colorpickerButton.Position = UDim2.new(0.8750, 0, 0.57, 0)
-    colorpickerButton.Size = UDim2.new(0.08, 0, 0.5,0)
-    colorpickerButton.ZIndex = 30
-
-    local caa = Instance.new("UICorner")
-    caa.CornerRadius = UDim.new(0, 6)
-    caa.Parent = colorpickerButton
-
-    colorpickerButton.MouseButton1Click:Connect(function()
-        colorpickerFrame.Visible = not colorpickerFrame.Visible
-        vis = not vis
-        TweenService:Create(
-            colorpickerLabel,
-            TweenInfo.new(0.06, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),
-            { TextColor3 = vis and Color3.fromRGB(234, 239, 246) or Color3.fromRGB(157, 171, 182) }
-        ):Play()
-    end)
-
-    colorpickerFrame.Name = "colorpickerFrame"
-    colorpickerFrame.Parent = Colorpicker
-    colorpickerFrame.Visible = false
-    colorpickerFrame.BackgroundColor3 = Color3.fromRGB(0, 10, 21)
-    colorpickerFrame.Position = UDim2.new(1.1, 0, 0, 0)
-    colorpickerFrame.Size = UDim2.new(1, 0, 7, 0)
-    colorpickerFrame.ZIndex = 150
-    local UICorner= Instance.new("UICorner")
-
-    UICorner.CornerRadius = UDim.new(0, 3)
-    UICorner.Parent = colorpickerFrame
-
-    local UIAspectRatioConstraint2 = Instance.new("UIAspectRatioConstraint")
-    UIAspectRatioConstraint2.Parent = colorpickerFrame
-    UIAspectRatioConstraint2.AspectRatio = 1.1
-
-    Dragify(colorpickerFrame, Colorpicker)
-
-    RGB.Name = "RGB"
-    RGB.Parent = colorpickerFrame
-    RGB.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    RGB.BackgroundTransparency = 1.000
-    RGB.BorderSizePixel = 0
-    RGB.Position = UDim2.new(0.0670000017, 0, 0.0680000037, 0)
-    RGB.Size = UDim2.new(0.74, 0, 0.74, 0)
-    RGB.AutoButtonColor = false
-    RGB.Image = "rbxassetid://6523286724"
-    RGB.ZIndex = 160
-
-    RGBCircle.Name = "RGBCircle"
-    RGBCircle.Parent = RGB
-    RGBCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    RGBCircle.BackgroundTransparency = 1.000
-    RGBCircle.BorderColor3 = Color3.fromRGB(27, 42, 53)
-    RGBCircle.BorderSizePixel = 0
-    RGBCircle.Size = UDim2.new(0, 14, 0, 14)
-    RGBCircle.Image = "rbxassetid://3926309567"
-    RGBCircle.ImageRectOffset = Vector2.new(628, 420)
-    RGBCircle.ImageRectSize = Vector2.new(48, 48)
-    RGBCircle.ZIndex = 160
-
-    Darkness.Name = "Darkness"
-    Darkness.Parent = colorpickerFrame
-    Darkness.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Darkness.BorderSizePixel = 0
-    Darkness.Position = UDim2.new(0.831940293, 0, 0.0680000708, 0)
-    Darkness.Size = UDim2.new(0.14, 0, 0.74, 0)
-    Darkness.AutoButtonColor = false
-    Darkness.Image = "rbxassetid://156579757"
-    Darkness.ZIndex = 160
-
-    DarknessCircle.Name = "DarknessCircle"
-    DarknessCircle.Parent = Darkness
-    DarknessCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    DarknessCircle.BorderSizePixel = 0
-    DarknessCircle.Position = UDim2.new(0, 0, 0, 0)
-    DarknessCircle.Size = UDim2.new(0, 33, 0, 5)
-    DarknessCircle.ZIndex = 160
-
-    colorHex.Name = "colorHex"
-    colorHex.Parent = colorpickerFrame
-    colorHex.BackgroundColor3 = Color3.fromRGB(9, 8, 13)
-    colorHex.Position = UDim2.new(0.0717131495, 0, 0.850678742, 0)
-    colorHex.Size = UDim2.new(0.44, 0, 0.1, 0)
-    colorHex.Font = Enum.Font.ArialBold
-    colorHex.Text = "#FFFFFF"
-    colorHex.TextColor3 = Color3.fromRGB(234, 239, 245)
-    colorHex.TextSize = 14.000
-    colorHex.ZIndex = 160
-
-    Copy.Parent = colorpickerFrame
-    Copy.BackgroundColor3 = Color3.fromRGB(9, 8, 13)
-    Copy.Position = UDim2.new(0.72111553, 0, 0.850678742, 0)
-    Copy.Size = UDim2.new(0.25, 0, 0.1, 0)
-    Copy.AutoButtonColor = false
-    Copy.Font = Enum.Font.ArialBold
-    Copy.Text = "Copy"
-    Copy.TextColor3 = Color3.fromRGB(234, 239, 245)
-    Copy.TextSize = 14.000
-    Copy.ZIndex = 160
-    Resize(25)
-
-    Copy.MouseButton1Click:Connect(function()
-        if setclipboard then
-            setclipboard(tostring(colorHex.Text))
-            Notify("Cryptweb:", tostring(colorHex.Text))
-            Notify("Cryptweb:", "Done!")
-        else
-            print(tostring(colorHex.Text))
-            Notify("Cryptweb:", tostring(colorHex.Text))
-            Notify("Cryptweb:", "Your exploit does not support the function 'setclipboard', so we've printed it out.")
-        end
-    end)
-
-    local UserInputService = game:GetService("UserInputService")
-    local getmouse = game.Players.LocalPlayer:GetMouse()
-
-    local WheelDown = false
-    local SlideDown = false
-
-    local currentHue, currentSaturation, currentValue = hue, sat, val
-
-    local function to_hex(color)
-        return string.format("#%02X%02X%02X", color.R * 255, color.G * 255, color.B * 255)
-    end
-
-    local function update()
-        local realcolor = Color3.fromHSV(currentHue, currentSaturation, currentValue)
-        colorHex.Text = tostring(to_hex(realcolor))
-        colorpickerButton.BackgroundColor3 = realcolor
-        DarknessCircle.BackgroundColor3 = realcolor
-        Darkness.BackgroundColor3 = realcolor
-        options.callback(realcolor)
-    end
-
-    local function mouseLocation()
-        return game.Players.LocalPlayer:GetMouse()
-    end
-
-    local function UpdateSlide()
-        local ml = mouseLocation()
-        local y = math.clamp((ml.Y - Darkness.AbsolutePosition.Y) / Darkness.AbsoluteSize.Y, 0, 1)
-        currentValue = 1 - y
-        local cy = DarknessCircle.AbsoluteSize.Y / 2
-        DarknessCircle.Position = UDim2.new(0, 0, y, -cy)
-        update()
-    end
-
-    local function UpdateRing()
-        local ml = mouseLocation()
-        local x = math.clamp((ml.X - RGB.AbsolutePosition.X) / RGB.AbsoluteSize.X, 0, 1)
-        local y = math.clamp((ml.Y - RGB.AbsolutePosition.Y) / RGB.AbsoluteSize.Y, 0, 1)
-        currentHue = 1 - x
-        currentSaturation = 1 - y
-        local cx = RGBCircle.AbsoluteSize.X / 2
-        local cy = RGBCircle.AbsoluteSize.Y / 2
-        RGBCircle.Position = UDim2.new(x, -cx, y, -cy)
-        Darkness.BackgroundColor3 = Color3.fromHSV(currentHue, currentSaturation, 1)
-        update()
-    end
-
-    RGB.MouseButton1Down:Connect(function()
-        WheelDown = true
-        UpdateRing()
-    end)
-
-    Darkness.MouseButton1Down:Connect(function()
-        SlideDown = true
-        UpdateSlide()
-    end)
-
-    UserInputService.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            WheelDown = false
-            SlideDown = false
-        end
-    end)
-
-    UserInputService.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement then
-            if WheelDown then
-                UpdateRing()
-            elseif SlideDown then
-                UpdateSlide()
-            end
-        end
-    end)
-
-    update()
-    return Colorpicker
+function sectionfunc:Colorpicker(text, color, callback)
+if not text or not color or not callback then
+Notify("Colorpicker", "Missing arguments!")
+return
 end
 
+local options = {      
+    text = text,      
+    color = color,      
+    callback = callback      
+}      
+  
+local hue, sat, val = Color3.toHSV(options.color)      
+  
+local Colorpicker = Instance.new("Frame")      
+local colorpickerLabel = Instance.new("TextLabel")      
+local colorpickerFrame = Instance.new("Frame")      
+local RGB = Instance.new("ImageButton")      
+local RGBCircle = Instance.new("ImageLabel")      
+local Darkness = Instance.new("ImageButton")      
+local colorpickerButton = Instance.new("ImageButton")      
+local DarknessCircle = Instance.new("Frame")      
+local colorHex = Instance.new("TextLabel")      
+local Copy = Instance.new("TextButton")      
+  
+      
+local vis = false      
+  
+Colorpicker.Name = "Colorpicker"      
+Colorpicker.Parent = Section      
+Colorpicker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)      
+Colorpicker.BackgroundTransparency = 1.000      
+Colorpicker.BorderSizePixel = 0      
+Colorpicker.Position = UDim2.new(0,0,0,0)      
+Colorpicker.Size = UDim2.new(1, 0, -0.351014495, 0)      
+Colorpicker.ZIndex = 2
 
+buttoneffect({frame = colorpickerLabel, entered = Colorpicker})
+
+local Line9 = Instance.new('Frame')
+Line9.Position = UDim2.new(0.05000000029802322,0,1,0)
+Line9.Size = UDim2.new(0.8900000047683716,0,0,1)
+Line9.AnchorPoint = Vector2.new(0,0)
+Line9.BackgroundColor3 = Color3.fromRGB(3,35,50)
+Line9.BackgroundTransparency = 0.5
+Line9.BorderSizePixel = 0
+Line9.ZIndex = 10
+Line9.Parent = Colorpicker
+
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")      
+			UIAspectRatioConstraint.Parent = Colorpicker      
+			UIAspectRatioConstraint.AspectRatio = 7.5      
+			UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize      
+  
+			      
+colorpickerLabel.Name = "colorpickerLabel"      
+colorpickerLabel.Parent = Colorpicker      
+colorpickerLabel.AnchorPoint = Vector2.new(0.5, 0.5)      
+colorpickerLabel.BackgroundColor3 = Color3.fromRGB(157, 171, 182)      
+colorpickerLabel.BackgroundTransparency = 1.000      
+colorpickerLabel.Position = UDim2.new(0.529, 0, 0.5, 0)      
+colorpickerLabel.Size = UDim2.new(0.972, 0, 0.35, 0)      
+colorpickerLabel.Font = Enum.Font.ArialBold      
+colorpickerLabel.Text = options.text      
+colorpickerLabel.TextColor3 = Color3.fromRGB(157, 171, 182)      
+colorpickerLabel.TextScaled = true      
+colorpickerLabel.TextXAlignment = Enum.TextXAlignment.Left      
+colorpickerLabel.ZIndex = 100      
+  
+colorpickerButton.Name = "colorpickerButton"      
+colorpickerButton.Parent = Colorpicker      
+colorpickerButton.AnchorPoint = Vector2.new(0.5, 0.5)      
+colorpickerButton.BackgroundTransparency = 0      
+colorpickerButton.BackgroundColor3 = color      
+colorpickerButton.BorderSizePixel = 0      
+colorpickerButton.Image = "rbxassetid://0"      
+colorpickerButton.Position = UDim2.new(0.8750, 0, 0.57, 0)      
+colorpickerButton.Size = UDim2.new(0.08, 0, 0.5,0)      
+colorpickerButton.ZIndex = 30
+
+local caa = Instance.new("UICorner")
+caa.CornerRadius = UDim.new(0, 6)
+caa.Parent = colorpickerButton
+
+colorpickerButton.MouseButton1Click:Connect(function()      
+    colorpickerFrame.Visible = not colorpickerFrame.Visible      
+    vis = not vis      
+    TweenService:Create(      
+        colorpickerLabel,      
+        TweenInfo.new(0.06, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut),      
+        { TextColor3 = vis and Color3.fromRGB(234, 239, 246) or Color3.fromRGB(157, 171, 182) }      
+    ):Play()      
+end)      
+  
+colorpickerFrame.Name = "colorpickerFrame"      
+colorpickerFrame.Parent = Colorpicker      
+colorpickerFrame.Visible = false      
+colorpickerFrame.BackgroundColor3 = Color3.fromRGB(0, 10, 21)      
+colorpickerFrame.Position = UDim2.new(1.1, 0, 0, 0)      
+colorpickerFrame.Size = UDim2.new(1, 0, 7, 0)      
+colorpickerFrame.ZIndex = 150
+
+local UICorner= Instance.new("UICorner")
+
+UICorner.CornerRadius = UDim.new(0, 3)
+UICorner.Parent = colorpickerFrame
+
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+UIAspectRatioConstraint.Parent = colorpickerFrame
+UIAspectRatioConstraint.AspectRatio = 1.1
+
+Dragify(colorpickerFrame, Colorpicker)
+
+RGB.Name = "RGB"      
+RGB.Parent = colorpickerFrame      
+RGB.BackgroundColor3 = Color3.fromRGB(255, 255, 255)      
+RGB.BackgroundTransparency = 1.000      
+RGB.BorderSizePixel = 0      
+RGB.Position = UDim2.new(0.0670000017, 0, 0.0680000037, 0)      
+RGB.Size = UDim2.new(0.74, 0, 0.74, 0)      
+RGB.AutoButtonColor = false      
+RGB.Image = "rbxassetid://6523286724"      
+RGB.ZIndex = 160      
+  
+RGBCircle.Name = "RGBCircle"      
+RGBCircle.Parent = RGB      
+RGBCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)      
+RGBCircle.BackgroundTransparency = 1.000      
+RGBCircle.BorderColor3 = Color3.fromRGB(27, 42, 53)      
+RGBCircle.BorderSizePixel = 0      
+RGBCircle.Size = UDim2.new(0, 14, 0, 14)      
+RGBCircle.Image = "rbxassetid://3926309567"      
+RGBCircle.ImageRectOffset = Vector2.new(628, 420)      
+RGBCircle.ImageRectSize = Vector2.new(48, 48)      
+RGBCircle.ZIndex = 160      
+  
+Darkness.Name = "Darkness"      
+Darkness.Parent = colorpickerFrame      
+Darkness.BackgroundColor3 = Color3.fromRGB(255, 255, 255)      
+Darkness.BorderSizePixel = 0      
+Darkness.Position = UDim2.new(0.831940293, 0, 0.0680000708, 0)      
+Darkness.Size = UDim2.new(0.14, 0, 0.74, 0)      
+Darkness.AutoButtonColor = false      
+Darkness.Image = "rbxassetid://156579757"      
+Darkness.ZIndex = 160      
+  
+DarknessCircle.Name = "DarknessCircle"      
+DarknessCircle.Parent = Darkness      
+DarknessCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)      
+DarknessCircle.BorderSizePixel = 0      
+DarknessCircle.Position = UDim2.new(0, 0, 0, 0)      
+DarknessCircle.Size = UDim2.new(0, 33, 0, 5)      
+DarknessCircle.ZIndex = 160      
+  
+colorHex.Name = "colorHex"      
+colorHex.Parent = colorpickerFrame      
+colorHex.BackgroundColor3 = Color3.fromRGB(9, 8, 13)      
+colorHex.Position = UDim2.new(0.0717131495, 0, 0.850678742, 0)      
+colorHex.Size = UDim2.new(0.44, 0, 0.1, 0)      
+colorHex.Font = Enum.Font.ArialBold      
+colorHex.Text = "#FFFFFF"      
+colorHex.TextColor3 = Color3.fromRGB(234, 239, 245)      
+colorHex.TextSize = 14.000      
+colorHex.ZIndex = 160      
+  
+Copy.Parent = colorpickerFrame      
+Copy.BackgroundColor3 = Color3.fromRGB(9, 8, 13)      
+Copy.Position = UDim2.new(0.72111553, 0, 0.850678742, 0)      
+Copy.Size = UDim2.new(0.25, 0, 0.1, 0)      
+Copy.AutoButtonColor = false      
+Copy.Font = Enum.Font.ArialBold      
+Copy.Text = "Copy"      
+Copy.TextColor3 = Color3.fromRGB(234, 239, 245)      
+Copy.TextSize = 14.000      
+Copy.ZIndex = 160      
+Resize(25)      
+  
+Copy.MouseButton1Click:Connect(function()      
+    if setclipboard then      
+        setclipboard(tostring(colorHex.Text))      
+        Notify("Cryptweb:", tostring(colorHex.Text))      
+        Notify("Cryptweb:", "Done!")      
+    else      
+        print(tostring(colorHex.Text))      
+        Notify("Cryptweb:", tostring(colorHex.Text))      
+        Notify("Cryptweb:", "Your exploit does not support the function 'setclipboard', so we've printed it out.")      
+    end      
+end)      
+  
+local ceil, clamp, atan2, pi = math.ceil, math.clamp, math.atan2, math.pi      
+local tostr, sub = tostring, string.sub      
+local fromHSV = Color3.fromHSV      
+local v2, udim2 = Vector2.new, UDim2.new      
+local UserInputService = game:GetService("UserInputService")      
+local getmouse = game.Players.LocalPlayer:GetMouse()      
+  
+local WheelDown = false      
+local SlideDown = false      
+  
+local function toPolar(v)      
+    return atan2(v.y, v.x), v.magnitude      
+end      
+  
+local function radToDeg(x)      
+    return ((x + pi) / (2 * pi)) * 360      
+end      
+  
+local hue, saturation, value = 0, 0, 1      
+local color = {1, 1, 1}      
+  
+local function to_hex(color)      
+    return string.format("#%02X%02X%02X", color.R * 255, color.G * 255, color.B * 255)      
+end      
+  
+local function update()
+    local r = color[1]
+    local g = color[2]
+    local b = color[3]
+    local c = fromHSV(r, g, b)
+    colorHex.Text = tostring(to_hex(c))
+    colorpickerButton.BackgroundColor3 = c
+    Darkness.BackgroundColor3 = c
+    DarknessCircle.BackgroundColor3 = c
+end
+  
+local function mouseLocation()      
+    return game.Players.LocalPlayer:GetMouse()      
+end      
+  
+local function UpdateSlide(iX, iY)      
+    local ml = mouseLocation()      
+    local y = ml.Y - Darkness.AbsolutePosition.Y      
+    local maxY = Darkness.AbsoluteSize.Y      
+    if y < 0 then y = 0 end      
+    if y > maxY then y = maxY end      
+    y = y / maxY      
+    local cy = DarknessCircle.AbsoluteSize.Y / 2      
+    color = {color[1], color[2], 1 - y}      
+    local realcolor = Color3.fromHSV(color[1], color[2], color[3])      
+    DarknessCircle.BackgroundColor3 = realcolor      
+    DarknessCircle.Position = UDim2.new(0, 0, y, -cy)      
+    options.callback(realcolor)      
+    update()      
+end      
+  
+local function UpdateRing(iX, iY)      
+    local ml = mouseLocation()      
+    local x, y = ml.X - RGB.AbsolutePosition.X, ml.Y - RGB.AbsolutePosition.Y      
+    local maxX, maxY = RGB.AbsoluteSize.X, RGB.AbsoluteSize.Y      
+    if x < 0 then x = 0 end      
+    if x > maxX then x = maxX end      
+    if y < 0 then y = 0 end      
+    if y > maxY then y = maxY end      
+    x = x / maxX      
+    y = y / maxY      
+    local cx = RGBCircle.AbsoluteSize.X / 2      
+    local cy = RGBCircle.AbsoluteSize.Y / 2      
+    RGBCircle.Position = UDim2.new(x, -cx, y, -cy)      
+    color = {1 - x, 1 - y, color[3]}      
+    local realcolor = Color3.fromHSV(color[1], color[2], color[3])      
+    Darkness.BackgroundColor3 = realcolor      
+    DarknessCircle.BackgroundColor3 = realcolor      
+    options.callback(realcolor)      
+    update()      
+end      
+  
+RGB.MouseButton1Down:Connect(function()      
+    WheelDown = true      
+    UpdateRing(getmouse.X, getmouse.Y)      
+end)      
+  
+Darkness.MouseButton1Down:Connect(function()      
+    SlideDown = true      
+    UpdateSlide(getmouse.X, getmouse.Y)      
+end)      
+  
+UserInputService.InputEnded:Connect(function(input)      
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then      
+        WheelDown = false      
+        SlideDown = false      
+    end      
+end)      
+  
+RGB.MouseMoved:Connect(function()      
+    if WheelDown then      
+        UpdateRing(getmouse.X, getmouse.Y)      
+    end      
+end)      
+  
+Darkness.MouseMoved:Connect(function()      
+    if SlideDown then      
+        UpdateSlide(getmouse.X, getmouse.Y)      
+    end      
+end)      
+  
+local function setcolor(tbl)      
+    local realcolor = Color3.fromHSV(tbl[1], tbl[2], tbl[3])      
+    colorHex.Text = tostring(to_hex(realcolor))      
+    DarknessCircle.BackgroundColor3 = realcolor      
+end      
+  
+setcolor({hue, sat, val})      
+  
+return Colorpicker
+
+end
 
 			function sectionfunc:AddDropdown(DropdownName,data,Default,callback)
 				data=data or {}
