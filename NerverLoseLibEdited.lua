@@ -2449,6 +2449,7 @@ function sectionfunc:Colorpicker(text, color, callback)
     }
 
     local h, s, v = Color3.toHSV(options.color)
+    local UserInputService = game:GetService("UserInputService")
 
     local Colorpicker = Instance.new("Frame")
     local colorpickerLabel = Instance.new("TextLabel")
@@ -2609,52 +2610,50 @@ function sectionfunc:Colorpicker(text, color, callback)
     end
 
     local function updateRing()
-        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
-        local x = math.clamp((mouse.X - RGB.AbsolutePosition.X) / RGB.AbsoluteSize.X, 0, 1)
-        local y = math.clamp((mouse.Y - RGB.AbsolutePosition.Y) / RGB.AbsoluteSize.Y, 0, 1)
+        local mousePos = UserInputService:GetMouseLocation() - game:GetService("GuiService"):GetGuiInset()
+        local x = math.clamp((mousePos.X - RGB.AbsolutePosition.X) / RGB.AbsoluteSize.X, 0, 1)
+        local y = math.clamp((mousePos.Y - RGB.AbsolutePosition.Y) / RGB.AbsoluteSize.Y, 0, 1)
         h, s = 1 - x, 1 - y
         RGBCircle.Position = UDim2.new(x, -7, y, -7)
         update()
     end
 
     local function updateSlide()
-        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
-        local y = math.clamp((mouse.Y - Darkness.AbsolutePosition.Y) / Darkness.AbsoluteSize.Y, 0, 1)
+        local mousePos = UserInputService:GetMouseLocation() - game:GetService("GuiService"):GetGuiInset()
+        local y = math.clamp((mousePos.Y - Darkness.AbsolutePosition.Y) / Darkness.AbsoluteSize.Y, 0, 1)
         v = 1 - y
         DarknessCircle.Position = UDim2.new(0, 0, y, -2)
         update()
     end
 
+    local isDraggingRing = false
+    local isDraggingSlide = false
+
     RGB.MouseButton1Down:Connect(function()
-        local moveConn, endConn
+        isDraggingRing = true
         updateRing()
-        moveConn = game:GetService("UserInputService").InputChanged:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseMovement then
-                updateRing()
-            end
-        end)
-        endConn = game:GetService("UserInputService").InputEnded:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                moveConn:Disconnect()
-                endConn:Disconnect()
-            end
-        end)
     end)
 
     Darkness.MouseButton1Down:Connect(function()
-        local moveConn, endConn
+        isDraggingSlide = true
         updateSlide()
-        moveConn = game:GetService("UserInputService").InputChanged:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseMovement then
+    end)
+
+    UserInputService.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            if isDraggingRing then
+                updateRing()
+            elseif isDraggingSlide then
                 updateSlide()
             end
-        end)
-        endConn = game:GetService("UserInputService").InputEnded:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                moveConn:Disconnect()
-                endConn:Disconnect()
-            end
-        end)
+        end
+    end)
+
+    UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            isDraggingRing = false
+            isDraggingSlide = false
+        end
     end)
 
     Copy.MouseButton1Click:Connect(function()
@@ -2670,6 +2669,7 @@ function sectionfunc:Colorpicker(text, color, callback)
 
     return Colorpicker
 end
+
 
 
 
