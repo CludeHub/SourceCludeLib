@@ -2506,7 +2506,7 @@ function sectionfunc:Colorpicker(text, color, callback)
     colorpickerButton.AnchorPoint = Vector2.new(0.5, 0.5)
     colorpickerButton.BackgroundColor3 = options.color
     colorpickerButton.BorderSizePixel = 0
-    colorpickerButton.Position = UDim2.new(0.880, 0, 0.57, 0)
+    colorpickerButton.Position = UDim2.new(0.8750, 0, 0.57, 0)
     colorpickerButton.Size = UDim2.new(0.08, 0, 0.5,0)
     colorpickerButton.ZIndex = 30
 
@@ -2591,10 +2591,9 @@ function sectionfunc:Colorpicker(text, color, callback)
     Copy.TextColor3 = Color3.fromRGB(234, 239, 245)
     Copy.TextSize = 14
     Copy.ZIndex = 160
-    Resize(25)
 
     local function to_hex(c)
-        return string.format("#%02X%02X%02X", c.R * 255, c.G * 255, c.B * 255)
+        return string.format("#%02X%02X%02X", math.floor(c.R * 255), math.floor(c.G * 255), math.floor(c.B * 255))
     end
 
     local function update()
@@ -2630,7 +2629,9 @@ function sectionfunc:Colorpicker(text, color, callback)
         local moveConn, endConn
         updateRing()
         moveConn = game:GetService("UserInputService").InputChanged:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseMovement then updateRing() end
+            if input.UserInputType == Enum.UserInputType.MouseMovement then
+                updateRing()
+            end
         end)
         endConn = game:GetService("UserInputService").InputEnded:Connect(function(input)
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -2644,7 +2645,9 @@ function sectionfunc:Colorpicker(text, color, callback)
         local moveConn, endConn
         updateSlide()
         moveConn = game:GetService("UserInputService").InputChanged:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseMovement then updateSlide() end
+            if input.UserInputType == Enum.UserInputType.MouseMovement then
+                updateSlide()
+            end
         end)
         endConn = game:GetService("UserInputService").InputEnded:Connect(function(input)
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -2666,8 +2669,8 @@ function sectionfunc:Colorpicker(text, color, callback)
     update()
 
     return Colorpicker
-			end
-			
+end
+
 
 
 			function sectionfunc:AddDropdown(DropdownName,data,Default,callback)
