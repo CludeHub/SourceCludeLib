@@ -2436,8 +2436,7 @@ function Resize(size)
     
 end
 
-
-function sectionfunc:Colorpicker(text, color, callback)
+			function sectionfunc:Colorpicker(text, color, callback)
     if not text or not color or not callback then
         Notify("Colorpicker", "Missing arguments!")
         return
@@ -2572,7 +2571,7 @@ function sectionfunc:Colorpicker(text, color, callback)
 
     Darkness.Name = "Darkness"
     Darkness.Parent = colorpickerFrame
-    Darkness.BackgroundColor3 = options.color
+    Darkness.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Darkness.BorderSizePixel = 0
     Darkness.Position = UDim2.new(0.831940293, 0, 0.0680000708, 0)
     Darkness.Size = UDim2.new(0.14, 0, 0.74, 0)
@@ -2582,7 +2581,7 @@ function sectionfunc:Colorpicker(text, color, callback)
 
     DarknessCircle.Name = "DarknessCircle"
     DarknessCircle.Parent = Darkness
-    DarknessCircle.BackgroundColor3 = options.color
+    DarknessCircle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     DarknessCircle.BorderSizePixel = 0
     DarknessCircle.Position = UDim2.new(0, 0, 0, 0)
     DarknessCircle.Size = UDim2.new(0, 33, 0, 5)
